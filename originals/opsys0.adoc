@@ -1,0 +1,114 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+== Operating System Interface
+
+=== [#introduction]#Introduction#
+
+As with the BBC micro computer, the star (*) commands provide access to the operating system. Since the BBC operating system is completely different to CP/M-80 there are a number of differences in the star commands.
+
+==== [#specifiers]#File Specifiers#
+
+File specifiers must comply with the standard CP/M-80 conventions.
+
+____
+....
+[drive:]filename.extension
+....
+
+[cols=",",]
+|===
+|`drive:` |The single letter name (A to P) of the drive where the file will be found. The colon is mandatory. If the drive name is omitted, the currently logged-on drive is assumed.
+|`filename` |The name of the file. The length of the name must not exceed 8 characters.
+|`extension` |The optional extension of the file. If an extension is used it must be separated from the filename by a full-stop. If the extension is omitted, .BBC is assumed.
+|===
+____
+
+Drives A: to P: are accepted in file specifications. Filenames in star commands may optionally be enclosed in quotes; unmatched quotes will cause a 'link:annexc.html#badstring[Bad string]' error. The standard CP/M-80 'wild-cards' may be used when an ambiguous file specifier is acceptable.
+
+____
+[cols=",",]
+|===
+|`?        ` |Allow any single character in this position. If this is used as the last character in the name, a null character will be accepted.
+|`*` |Allow any character (including a null) from the position of the '*' to the end of the name or extension.
+|===
+____
+
+==== [#symbols]#Symbols#
+
+The following symbols and abbreviations are used as part of the explanation of the operating system commands.
+
+[cols=",",]
+|===
+|\{} |The enclosed items may be repeated 0 or more times.
+|[] |The items enclosed are optional, they may occur zero or one time.
+|num |A numeric constant.
+|str |A string constant.
+|<num>    |A numeric variable.
+|<str> |A string variable.
+|afsp |An ambiguous file specifier.
+|ufsp |An unambiguous file specifier.
+|d: |A disk drive name.
+|dir |A directory name.
+|===
+
+'''''
+
+=== [#accessing]#Accessing Star Commands#
+
+The star commands may be accessed directly or via the link:bbckey3.html#oscli[OSCLI] statement. The two examples below both access the link:opsys1.html#bye[BYE] command.
+
+____
+....
+*BYE
+
+OSCLI("BYE")
+....
+____
+
+==== [#syntax]#Syntax#
+
+A star command must be the last (or only) command on a program line and its argument may not be a variable. If you need to use one of these commands with a variable as the argument, use the link:bbckey3.html#oscli[OSCLI] statement. Examples of the use of the OSCLI statement are given below in the link:opsys1.html[Resident Star Commands] sub-section.
+
+==== [#case]#Case Conversion#
+
+Star commands and their associated qualifiers are converted from lower-case to upper-case if necessary. For example, *era wombat is converted to *ERA WOMBAT. This is in keeping with the general CP/M-80 philosophy and the BBC Micro's machine operating system (MOS).
+
+==== [#special]#Special Characters#
+
+Control characters, lower-case characters, DEL and quotation marks may be incorporated in filenames by using the 'escape' character '|'.
+
+____
+[cols=",",]
+|===
+||A   |gives ^A.
+||a |gives lower-case A.
+||? |gives Del.
+||" |gives the quote marks ".
+||| |gives the escape character |.
+||! |sets bit 7 of the following character.
+|===
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:opsys1.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

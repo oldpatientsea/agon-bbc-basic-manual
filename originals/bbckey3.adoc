@@ -1,0 +1,1314 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+=== [#mid]#MID$#
+
+A string function which returns 'num' characters of the string starting from character 'start_posn'. If 'num' is not present or if there are insufficient characters in the string, then all the characters from 'start_posn' onwards are returned.
+
+____
+....
+C$=MID$(A$,start_posn,num)
+C$=MID$(A$,Z)
+....
+____
+
+You can use this function to select any part of a string. For instance, if
+
+____
+....
+name$="BBC BASIC (Z80)"
+....
+____
+
+then
+
+____
+....
+part$=MID$(name$,4,5)
+....
+____
+
+would assign BASIC to 'part$'. If the last number is omitted or there are insufficient characters to the right of the specified position, MID$ returns with the right hand part of the string starting at the specified position. Thus,
+
+____
+....
+part$=MID$(name$,9)
+....
+____
+
+would assign `(Z80)` to 'part$'.
+
+For example,
+
+____
+....
+10 name$="BBC BASIC (Z80)"
+20 FOR i=1 TO LEN(name$)
+30   PRINT MID$(name$,i,10)
+40 NEXT
+....
+____
+
+would print
+
+____
+....
+BBC BASIC(8
+BCBASIC(86
+CBASIC (Z80)
+BASIC (Z80)
+ASIC(Z80)
+SIC(Z80)
+IC(Z80)
+C(Z80)
+(Z80)
+86)
+6)
+)
+....
+____
+
+==== Syntax
+
+____
+....
+<s-var>=MID$(<str>,<numeric>[,<numeric>])
+....
+____
+
+==== Associated Keywords
+
+____
+` LEFT$, RIGHT$, LEN, INSTR`
+____
+
+'''''
+
+=== [#mod]#MOD#
+
+A binary operation giving the signed remainder of the integer division.
+
+____
+....
+X=A MOD B
+....
+____
+
+MOD is defined such that,
+
+____
+....
+A MOD B = A - ( A DIV B ) * B.
+....
+____
+
+If you are doing integer division (link:bbckey1.html#div[DIV]) of whole numbers it is often desirable to know the remainder. (A 'teach children to divide' program for instance.) For example, 23 divided by 3 is 7, remainder 2. Thus,
+
+____
+....
+10 PRINT 23 DIV 3
+20 PRINT 23 MOD 3
+....
+____
+
+would print
+
+____
+....
+         7
+         2
+....
+____
+
+You can use real numbers in these calculations, but they are truncated to their integer part before BBC BASIC (Z80) calculates the result. Thus,
+
+____
+....
+10 PRINT 23.1 DIV 3.9
+20 PRINT 23.1 MOD 3.9
+....
+____
+
+would give exactly the same results as the previous example.
+
+==== Syntax
+
+____
+....
+<n-var>=<numeric> MOD <numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` DIV`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#mode]#MODE#
+
+a|
+=== MO.
+
+|===
+
+The MODE command sets the screen display mode. The screen is cleared and all the graphics and text parameters (colours, origin, etc) are reset to their default values.
+
+*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+
+==== Syntax
+
+____
+....
+MODE <numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` CLS, CLG`
+____
+
+'''''
+
+=== [#move]#MOVE#
+
+A statement which moves the graphics cursor to an absolute position without drawing a line.
+
+*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+
+==== Syntax
+
+____
+....
+MOVE <numeric>,<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` DRAW, MODE, GCOL, PLOT`
+____
+
+'''''
+
+=== [#new]#NEW#
+
+A command which initialises the interpreter for a new program to be typed in. The old program may be recovered with the link:#old[OLD] command provided no new program lines have been typed in or deleted and no variables have been created.
+
+____
+....
+NEW
+....
+____
+
+This command effectively 'removes' a program from the computer's memory. In reality, the program is still there, but BBC BASIC (Z80) has been told to forget about it.
+
+If you have made a mistake, you can recover your old program by typing link:#old[OLD]. However, this won't work if you have begun to enter a new program.
+
+==== Syntax
+
+____
+....
+NEW
+....
+____
+
+==== Associated Keywords
+
+____
+` OLD`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#next]#NEXT#
+
+a|
+=== N.
+
+|===
+
+The statement delimiting link:bbckey2.html#for[FOR]...NEXT loops. NEXT takes an optional control variable.
+
+____
+....
+NEXT
+NEXT J
+....
+____
+
+If the control variable is present then FOR....NEXT loops may be 'popped' automatically in an attempt to match the correct link:bbckey2.html#for[FOR] statement (this should not be necessary). If a matching FOR statement cannot be found, a 'link:annexc.html#cantmatchfor[Can't match FOR]' error will be reported.
+
+Leaving out the control variable will make the program run quicker, but this is not to be encouraged.
+
+See the keyword link:bbckey2.html#for[FOR] for more details about the structure of FOR....NEXT loops.
+
+==== Syntax
+
+____
+....
+NEXT [<n-var>{,<n-var>}]
+....
+____
+
+==== Associated Keywords
+
+____
+` FOR, TO, STEP`
+____
+
+'''''
+
+=== [#not]#NOT#
+
+This is a high priority unary operator (the same priority as unary -). It causes a bit-by-bit binary inversion of the numeric to its right. The numeric may be a constant, a variable, or a mathematical or boolean expression. Expressions must be enclosed in brackets.
+
+____
+....
+A=NOT 3
+flag=NOT flag
+flag=NOT(A=B) 
+....
+____
+
+NOT is most commonly used in an link:bbckey2.html#if[IF]....link:bbckey4.html#then[THEN]....link:bbckey1.html#else[ELSE] statement to reverse the effect of the test.
+
+____
+....
+IF NOT(rate>5 AND TIME<100) THEN .....
+IF NOT flag THEN .....
+....
+____
+
+BBC BASIC (Z80) does not have true boolean variables; it makes do with numeric variables. This can lead to confusion because the testable condition in an IF....THEN....ELSE statement is evaluated mathematically and can result in something other than -1 (link:bbckey4.html#true[TRUE]) or 0 (link:bbckey2.html#false[FALSE]).
+
+When the test in an IF....THEN....ELSE is evaluated, FALSE=0 and anything else is considered to be TRUE. If you wish to use NOT to reverse the action of an IF statement it is important to ensure that the testable condition does actually evaluate to -1 for TRUE.
+
+If the testable condition evaluates to 1, for example, the result of the test would be considered to be TRUE and the THEN part of the IF....THEN....ELSE statement would be carried out. However, using NOT in front of the testable condition would not reverse the action. NOT 1 evaluates to -2, which would also be considered to be TRUE.
+
+==== Syntax
+
+____
+....
+<n-var>=NOT<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+=== [#old]#OLD#
+
+A command which undoes the effect of link:#new[NEW] provided no lines have been typed in or deleted, and no variables have been created.
+
+____
+....
+OLD
+....
+____
+
+OLD works even if BBC BASIC (Z80) has been re-loaded and re-started from CP/M-80. However, it will only work if no other programs have been run and BBC BASIC (Z80) loads at the same address as before.
+
+==== Syntax
+
+____
+....
+OLD
+....
+____
+
+==== Associated Keywords
+
+____
+` NEW`
+____
+
+'''''
+
+=== [#on]#ON#
+
+A statement controlling a multi-way switch. The line numbers in the list may be constants or calculated and the 'unwanted' ones are skipped without calculation. The ON statement is used in conjunction with four other key-words: link:bbckey2.html#goto[GOTO], link:bbckey2.html#gosub[GOSUB], link:bbckey4.html#proc[PROC] and link:#onerror[ERROR]. (ON ERROR is explained separately.)
+
+____
+....
+ON option GOTO 1000,2000,3000,4000
+ON action GOSUB 100,3000,200,5000,30
+ON choice PROC_add,PROC_find,PROC_delete
+....
+____
+
+The ON statement alters the path through your program by transferring control to one of a selection of line numbers depending on the value of a variable. For example,
+
+____
+....
+200 ON number GOTO 1000,2000,500,100
+....
+____
+
+would send your program to line 1000 if 'number' was 1, to line 2000 if 'number' was 2, to line 500 if 'number' was 3 and to line 100 if 'number' was 4.
+
+Exceptions may be trapped using the link:bbckey1.html#else[ELSE] statement delimiter.
+
+____
+....
+ON action GOTO 100,300,120 ELSE PRINT"Illegal"
+....
+____
+
+If there is no statement after the ELSE, the program will 'drop through' to the following line if an exception occurs. In the two following examples, the program would drop through to the error handling part of the program if 'choice' or 'B-46' was less than one or more than 3.
+
+____
+....
+ON choice PROC_add,PROC_find(a$),PROC_delete ELSE PRINT 
+"Illegal Choice - Try again"
+
+ON B-46 GOSUB 100,200,(C/200) ELSE PRINT "ERROR"
+....
+____
+
+You can use ON...GOTO, ON...GOSUB, and ON...PROC to execute the appropriate part of your program as the result of a menu selection. The following skeleton example offers a menu with three choices.
+
+____
+....
+ 20 CLS
+ 30 PRINT "SELECT THE ACTION YOU WISH TO TAKE"
+ 40 PRINT "1 OPEN A NEW DATA FILE"
+ 50 PRINT "2 ADD DATA TO THE FILE"
+ 60 PRINT "3 CLOSE THE FILE AND END"''
+ 70 REPEAT
+ 80   INPUT TAB(10,20)"WHAT DO YOU WANT ? "choice
+ 90 UNTIL choice>0 AND choice<4
+100 ON choice PROC_open,PROC_add,PROC_close ELSE
+110 .....etc
+....
+____
+
+==== [#limitations]#Limitations#
+
+If a statement terminator (: or the token for ELSE) appears within the line, the interpreter assumes that the ON... statement is terminated. For example, you cannot pass a colon as a literal string parameter in an ON...PROC command. The program line
+
+____
+....
+ON entry PROC_start,PROC_add(":"),PROC_end
+....
+____
+
+would be interpreted as
+
+____
+....
+ON entry PROC_start,PROC_add("
+:"),PROC_end
+....
+____
+
+and give rise to an interesting crop of error messages.
+
+==== Syntax
+
+____
+....
+ON <numeric> GOTO <l-num>{,<l-num>}
+             [ELSE <stmt>{:<stmt>}]
+ON <numeric> GOSUB <l-num>{,<l-num>}
+             [ELSE <stmt>{:<stmt>}]
+ON <numeric> PROC<name>[(<exp>{,<exp>})]
+             {,PROC<name>[(<exp>{,<exp>})]}
+             [ELSE <stmt>{:<stmt>}]
+....
+____
+
+==== Associated Keywords
+
+____
+` ON ERROR, ON ERROR LOCAL, GOTO, GOSUB, PROC`
+____
+
+'''''
+
+=== [#onerror]#ON ERROR#
+
+A statement controlling error trapping. If an ON ERROR statement has been encountered, BBC BASIC (Z80) will transfer control to it (without taking any reporting action) when an error is detected. This allows error reporting/recovery to be controlled by the program. However, the program control stack is still cleared when the error is detected and it is not possible to link:bbckey4.html#return[RETURN] to the point where the error occurred.
+
+ON ERROR OFF returns the control of error handling to BBC BASIC (Z80).
+
+____
+....
+ON ERROR PRINT"Suicide":END
+ON ERROR GOTO 100
+ON ERROR OFF
+....
+____
+
+For example, the ON ERROR statement can be used to trap out the escape key to prevent a program being terminated at the wrong time by its accidental use.
+
+____
+....
+50 ON ERROR IF ERR=17 THEN 70
+60 PRINT:REPORT:PRINT " at line ";ERL:END
+70 : etc.
+....
+____
+
+Error handling is explained more fully in the link:bbc2.html#errorhandling[General Information] section.
+
+==== Syntax
+
+____
+....
+ON ERROR <stmt>{:<stmt>}
+ON ERROR OFF
+....
+____
+
+==== Associated Keywords
+
+____
+` ON, GOTO, GOSUB, PROC`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#openin]#OPENIN#
+
+a|
+=== OP.
+
+|===
+
+A function which opens a file for reading and returns the file handle of the file. This number must be used in subsequent references to the file with link:bbckey1.html#bget[BGET#], link:bbckey2.html#inputhash[INPUT#], link:bbckey2.html#ext[EXT#], link:bbckey4.html#ptr[PTR#], link:bbckey2.html#eof[EOF#] or link:bbckey1.html#close[CLOSE#].
+
+A returned value of zero signifies that the specified file was not found on the disk.
+
+____
+....
+X=OPENIN "jim"
+X=OPENIN A$
+X=OPENIN (A$)
+X=OPENIN ("FILE1")
+....
+____
+
+The example below reads data from disk into an array. If the data file does not exist, an error message is printed and the program ends.
+
+____
+....
+10 DIM posn(10),name$(10)
+20 fnum=OPENIN "TOPTEN"
+30 IF fnum=0 THEN PRINT "No TOPTEN data": END
+40 FOR i=1 TO 10
+50   INPUT#fnum,posn(i),name$(i)
+60 NEXT
+70 CLOSE#fnum
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=OPENIN(<str>)
+....
+____
+
+==== Associated Keywords
+
+____
+` OPENOUT, OPENUP, CLOSE#, PTR#, PRINT#, INPUT#, BGET#, BPUT#,  EOF#`
+____
+
+'''''
+
+=== [#openout]#OPENOUT#
+
+A function which opens a file for writing and returns the file handle of the file. This number must be used in subsequent references to the file with link:bbckey1.html#bput[BPUT#], link:bbckey4.html#print[PRINT#], link:bbckey2.html#ext[EXT#], link:bbckey4.html#ptr[PTR#] or link:bbckey1.html#close[CLOSE#]. If the specified file does not exist it is created. If the specified file already exists it is truncated to zero length.
+
+A returned value of zero indicates that the specified file could not be created.
+
+____
+....
+X=OPENOUT(A$)
+X=OPENOUT("DATAFILE")
+X=OPENOUT("LPT1")
+....
+____
+
+You can also read from a file which has been opened using OPENOUT. This is of little use until you have written some data to it. However, once you have done so, you can move around the file using link:bbckey4.html#ptr[PTR#] and read back previously written data.
+
+Data is not written to the file at the time it is opened. Consequently, it is possible to successfully open a file on a full disk. Under these circumstances, a 'link:annexc.html#diskfull[Disk full]' error would be reported when you tried to write data to the file for the first time.
+
+The example below writes the contents of two arrays (tables) to a file called 'TOPTEN.BBC'.
+
+____
+....
+10 A=OPENOUT "TOPTEN"
+20 FOR Z=1 TO 10
+30   PRINT#A,N(Z),N$(Z)
+40 NEXT
+50 CLOSE#A
+60 END
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=OPENOUT(<str>)
+....
+____
+
+==== Associated Keywords
+
+____
+` OPENIN, OPENUP, CLOSE#, PTR#, PRINT#, INPUT#, BGET#, BPUT#,  EOF#`
+____
+
+'''''
+
+=== [#openup]#OPENUP#
+
+A function which opens a disk data file for update (reading and writing) and returns the file handle of the file. This number must be used in subsequent references to the file with link:bbckey1.html#bget[BGET#], link:bbckey1.html#bput[BPUT#], link:bbckey2.html#inputhash[INPUT#], link:bbckey4.html#print[PRINT#], link:bbckey2.html#ext[EXT#], link:bbckey4.html#ptr[PTR#], link:bbckey2.html#eof[EOF#] or link:bbckey1.html#close[CLOSE#].
+
+A returned value of zero signifies that the specified file was not found on the disk.
+
+____
+....
+X=OPENUP "jim"
+X=OPENUP A$
+X=OPENUP (A$)
+X=OPENUP ("FILE1")
+....
+____
+
+See the random file examples (F-RAND?) in the link:bbcfile3.html[BBC BASIC Disk Files] section for examples of the use of OPENUP.
+
+==== Syntax
+
+____
+....
+<n-var>=OPENUP(<str>)
+....
+____
+
+==== Associated Keywords
+
+____
+` OPENIN, OPENOUT, CLOSE#, PTR#, PRINT#, INPUT#, BGET#, BPUT#, EOF#`
+____
+
+'''''
+
+=== [#opt]#OPT#
+
+An assembler pseudo operation controlling the method of assembly. (See the link:bbc3.html[Assembler] section for more details.) OPT is followed by an expression with the following meanings:
+
+==== [#codeatp]#Code Assembled Starting at P%#
+
+____
+[cols="^,,",options="header",]
+|===
+| Value  |Action | 
+|0 |assembler errors suppressed;  |no listing.
+|1 |assembler errors suppressed; |listing.
+|2 |assembler errors reported; |no listing.
+|3 |assembler errors reported; |listing (default).
+|===
+____
+
+==== [#codeato]#Code Assembled Starting at O%#
+
+____
+[cols="^,,",options="header",]
+|===
+| Value  |Action | 
+|4 |assembler errors suppressed;  |no listing.
+|5 |assembler errors suppressed; |listing.
+|6 |assembler errors reported; |no listing.
+|7 |assembler errors reported; |listing.
+|===
+____
+
+The possible assembler errors are:
+
+____
+link:annexc.html#outofrange[Out of range] - error code 40. +
+link:annexc.html#nosuchvariable[No such variable] - error code 26. +
+____
+
+==== Syntax
+
+____
+....
+OPT <numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+=== [#or]#OR#
+
+The operation of bitwise integer logical OR between two items. The two operands are internally converted to 4 byte integers before the OR operation.
+
+____
+....
+IF A=2 OR B=3 THEN 110
+X=B OR 4
+....
+____
+
+You can leave out the space between OR and a preceding constant, but it makes your programs difficult to read.
+
+You can use OR as a logical operator or as a 'bit-by-bit' (bitwise) operator. The operands can be boolean (logical) or numeric.
+
+Unfortunately, BBC BASIC does not have true boolean variables; it uses numeric variables and assigns the value 0 for link:bbckey2.html#false[FALSE] and -1 for link:bbckey4.html#true[TRUE]. This can lead to confusion at times. (See link:#not[NOT] for more details.)
+
+In the example below, the operands are boolean (logical). In other words, the result of the tests (IF) A=2 and (IF) B=3 is either TRUE or FALSE. The result of this example will be TRUE if A=2 or B=3.
+
+____
+....
+answer=(A=2 OR B=3)
+....
+____
+
+The brackets are not necessary, they have been included to make the example easier to follow.
+
+The last example, uses the OR in a similar fashion to the numeric operators (+, -, etc).
+
+Suppose X was -20 in the following example,
+
+____
+....
+A=X OR 11
+....
+____
+
+the OR operation would be:
+
+____
+....
+11111111 11111111 11111111 11101100
+00000000 00000000 00000000 00001011
+11111111 11111111 11111111 11101111  = -17
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=<numeric> OR <numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` AND, EOR, NOT`
+____
+
+'''''
+
+=== [#oscli]#OSCLI#
+
+This command allows a string expression to be passed to the operating system. It overcomes the problems caused by the exclusion of variables in the star (*) commands. Using this statement, you can, for instance, erase and rename files whose names you only know at run-time.
+
+____
+....
+command$="ERA PHONE.DTA"
+OSCLI command$
+
+command$="REN ADDRESS.DTA=NAME.DTA"
+OSCLI command$
+....
+____
+
+See the link:opsys0.html[Operating System Interface] section for more details.
+
+==== Syntax
+
+____
+....
+OSCLI <str>
+....
+____
+
+==== Associated Keywords
+
+____
+` All operating system (*) commands.`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#page]#PAGE#
+
+a|
+=== PA.
+
+|===
+
+A pseudo-variable controlling the starting address of the current user program area. It addresses the area where a program is (or will be) stored.
+
+____
+....
+PAGE=&3100
+PRINT ~PAGE
+PAGE=TOP+&100: REM Move to start of next page.
+....
+____
+
+PAGE is automatically initialised by BBC BASIC (Z80) to the address of the lowest available page in RAM, but you may change it.
+
+If you make PAGE less than its original value or greater than the original value of link:bbckey2.html#himem[HIMEM], you will get a 'link:annexc.html#badprogram[Bad program]' error when you try to enter a program line and you may well crash BBC BASIC (Z80).
+
+If you make PAGE greater than HIMEM, a 'link:annexc.html#noroom[No room]' error will occur if the program exits to command level.
+
+With care, several programs can be left around in RAM without the need for saving them.
+
+USE WITH CARE.
+
+==== Syntax
+
+____
+....
+PAGE=<numeric>
+<n-var>=PAGE
+....
+____
+
+==== Associated Keywords
+
+____
+` TOP, LOMEM, HIMEM`
+____
+
+'''''
+
+=== [#pi]#PI#
+
+A function returning 3.14159265.
+
+____
+....
+X=PI
+....
+____
+
+You can use PI to calculate the circumference and area of a circle. The example below calculates the circumference and area of a circle of a given radius.
+
+____
+....
+10 CLS
+20 INPUT "What is the radius of the circle ",rad
+30 PRINT "The circumference is: ";2*PI*rad
+40 PRINT "The area is: ";PI*rad*rad
+50 END
+....
+____
+
+PI can also be used to convert degrees to radians and radians to degrees.
+
+____
+....
+radians=PI/180*degrees
+degrees=180/PI*radians
+....
+____
+
+However, BBC BASIC (Z80) has two functions (link:bbckey4.html#rad[RAD] and link:bbckey1.html#deg[DEG]) which perform these conversions to a higher accuracy.
+
+==== Syntax
+
+____
+....
+<n-var>=PI
+....
+____
+
+==== Associated Keywords
+
+____
+` RAD, DEG`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#plot]#PLOT#
+
+a|
+=== PL.
+
+|===
+
+PLOT is a multi-purpose drawing statement. Three numbers follow the PLOT statement: the first specifies the type of point, line, triangle or circle to be drawn; the second and third give the X and Y coordinates to be used.
+
+*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+
+==== Syntax
+
+____
+....
+PLOT <numeric>,<numeric>,<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` MODE, CLG, MOVE, DRAW, POINT, VDU, GCOL`
+____
+
+'''''
+
+=== [#point]#POINT#
+
+A function which returns a number giving the logical colour of the screen at the coordinates specified. If the point is outside the graphics window, then -1 is returned.
+
+*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+
+==== Syntax
+
+____
+....
+<n-var>=POINT(<numeric>,<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` PLOT, DRAW, MOVE, GCOL`
+____
+
+'''''
+
+=== [#pos]#POS#
+
+A function returning the horizontal position of the cursor on the screen. The left hand column is 0 and the right hand column is one less than the width of the display.
+
+____
+....
+X=POS
+....
+____
+
+COUNT will tell you the print head position of the printer. It is an uncertain indicator of the horizontal position of the cursor on the screen. (See the keyword link:bbckey1.html#count[COUNT] for details.)
+
+See link:bbckey4.html#vpos[VPOS] for an example of the use of POS and VPOS.
+
+==== Syntax
+
+____
+....
+<n-var>=POS
+....
+____
+
+==== Associated Keywords
+
+____
+` COUNT, TAB, VPOS`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#print]#PRINT#
+
+a|
+=== P.
+
+|===
+
+A statement which prints characters on the VDU screen or printer (see link:opsys1.html#opt[*OPT]). The printer may be turned on and off manually by typing ^P. All the characters displayed on the VDU screen after the first ^P will be echoed to the printer. A second ^P will turn the printer off.
+
+==== [#printinfo]#General Information#
+
+The items following PRINT are called the print list. The print list may contain a sequence of string or numeric literals or variables. The spacing between the items printed will vary depending on the punctuation used. If the print list does not end with a semi-colon, a new-line will be printed after all the items in the print list.
+
+In the examples which follow, commas have been printed instead of spaces to help you count.
+
+The screen is divided into zones (initially) 10 characters wide. By default, numeric quantities are printed right justified in the print zone and strings are printed just as they are (with no leading spaces). Numeric quantities can be printed left justified by preceding them with a semi-colon. In the examples the zone width is indicated as z10, z4 etc.
+
+____
+....
+                    z10
+                    012345678901234567890123456789
+PRINT 23.162        ,,,,23.162
+PRINT "HELLO"       HELLO
+PRINT ;23.162       23.162
+....
+____
+
+Initially numeric items are printed in decimal. If a tilde (~) is encountered in the print list, the numeric items which follow it are printed in hexadecimal. If a comma or a semi-colon is encountered further down the print list, the format reverts to decimal.
+
+____
+....
+                    z10
+                    012345678901234567890123456789
+PRINT ~10 58,58     ,,,,,,,,,A,,,,,,,,3A,,,,,,,,58
+....
+____
+
+A comma (,) causes the cursor to TAB to the beginning of the next print zone unless the cursor is already at the start of a print zone. A semi-colon causes the next and following items to be printed on the same line immediately after the previous item. This 'no-gap' printing continues until a comma (or the end of the print list) is encountered. An apostrophe (') will force a new line. link:bbckey4.html#tab[TAB](X) and link:bbckey4.html#tab[TAB](Y,Z) can also be used at any position in the print line to position the cursor.
+
+____
+....
+                    z10
+                    012345678901234567890123456789
+PRINT "HELLO",24.2  HELLO     ,,,,,,24.2
+PRINT "HELLO";24.2  HELLO24.2
+PRINT ;2 5 4.3,2    254.3     ,,,,,,,,,2
+PRINT "HELLO"'2.45  HELLO
+                    ,,,,,,2.45
+....
+____
+
+Unlike most other versions of BASIC, a comma at the end of the print list will not suppress the new line and advance the cursor to the next zone. If you wish to split a line over two or more PRINT statements, end the previous print list with a semicolon and start the following list with a comma or end the line with a comma followed by a semicolon.
+
+____
+....
+                    z10
+                    012345678901234567890123456789
+PRINT "HELLO" 12;   HELLO,,,,,,,,12,,,,,,,,,,23.67
+PRINT ,23.67
+....
+____
+
+or
+
+____
+....
+PRINT "HELLO" 12,;
+PRINT 23.67
+....
+____
+
+Printing a string followed by a numeric effectively moves the start of the print zones towards the right by the length of the string. This displacement continues until a comma is encountered.
+
+____
+....
+                    z10
+                    012345678901234567890123456789
+PRINT "HELLO"12 34  HELLO,,,,,,,,12,,,,,,,,34
+PRINT "HELLO"12,34  HELLO,,,,,,,,12     ,,,,,,,,34
+....
+____
+
+==== [#printformat]#Print Format Control#
+
+Although PRINT USING is not implemented in BBC BASIC, similar control over the print format can be obtained. The overall width of the print zones and print field, the number of figures or decimal places and the print format may be controlled by setting the print variable, @%, to the appropriate value. The print variable (@%) comprises 4 bytes and each byte controls one aspect of the print format. @% can be set equal to a decimal integer, but it is easier to use hexadecimal, since each byte can then be considered separately.
+
+____
+....
+@%=&SSNNPPWW
+....
+
+[cols=",,,",options="header",]
+|===
+|Byte   |Range   |Default   |Purpose
+|SS |00-01 |00 |STR$ Format Control
+|NN |00-02 |00 |Format Selection
+|PP |??-?? |09 |Number of Digits Printed
+|WW |00-0F |0A(10) |Zone and Print Field Width
+|===
+____
+
+===== [#strformat]#STR$ Format Control - SS#
+
+Byte 3 effects the format of the string generated by the link:bbckey4.html#str[STR$] function. If Byte 3 is 1 the string will be generated according to the format set by @%, otherwise the G9 format will be used.
+
+===== [#formatsel]#Format Selection - NN#
+
+Byte 2 selects the general format as follows:
+
+____
+00  General Format (G). +
+01  Exponential Format (E). +
+02  Fixed Format (F).
+____
+
+G Format
+
+Numbers that are integers are printed as such. Numbers in the range 0.1 to 1 will be printed as such. Numbers less than 0.1 will be printed in E format. Numbers greater than the range set by Byte 1 will be printed in E format. In which case, the number of digits printed will still be controlled by Byte 1, but according to the E format rules.
+
+The earlier examples were all printed in G9 format.
+
+E Format
+
+Numbers are printed in the scientific (engineering) notation.
+
+F Format
+
+Numbers are printed with a fixed number of decimal places.
+
+===== [#numdig]#Number of Digits - PP#
+
+Byte 1 controls the number of digits printed in the selected format. The number is rounded (NOT truncated) to this size before it is printed. If Byte 1 is set outside the range allowed for by the selected format, it is taken as 9. The effect of Byte 1 differs slightly with the various formats.
+
+[width="100%",cols="^34%,^33%,33%",options="header",]
+|===
+| Format  |  Range   |Control Function
+|G |01-0A a|
+The maximum number of digits which can be printed, excluding the decimal point, before changing to the E format.
+
+....
+                    01234567890123456789
+&030A - G3z10
+(00'00'03'0A)
+PRINT 1000.31       ,,,,,,,1E3
+PRINT 1016.31       ,,,,1.02E3
+PRINT 10.56         ,,,,,,10.6
+....
+
+|E |01-FF a|
+The total number of digits to be printed excluding the decimal point and the digits after the E. Three characters or spaces are always printed after the E. If the number of significant figures called for is greater than 10, then trailing zeros will be printed.
+
+....
+01030A - E3z10
+(00'01'03'0A)
+                    01234567890123456789
+PRINT 10.56         ,,1.06E1
+
+&010F0A - E15z10
+(00'01'0F'0A)
+                    01234567890123456789
+PRINT 10.56         1.05600000000000E1
+....
+
+|F |00-0A a|
+The number of digits to be printed after the decimal point.
+
+....
+&02020A - F2z10
+(00'02'02'0A)
+                    01234567890123456789
+PRINT 10.56         ,,,,,10.56
+PRINT 100.5864      ,,,,100.59
+PRINT .64862        ,,,,,,0.65
+....
+
+|===
+
+===== [#zonewidth]#Zone Width - WW#
+
+Byte 0 sets the width of the print zones and field.
+
+____
+....
+&020208 - F2z8
+(00'00'02'08)
+....
+____
+
+followed by
+
+____
+....
+&020206 - F2z6
+(00'02'02'06)
+                    01234567890123456789
+PRINT 10.2,3.8      ,,,10.20,,,,3.80
+PRINT 10.2,3.8      ,10.20,,3.80
+....
+____
+
+===== [#changingat]#Changing the Print Control Variable#
+
+It is possible to change the print control variable (@%) within a print list by using the function:
+
+____
+....
+DEF FN_pformat(N):@%=N:=""
+....
+____
+
+Functions have to return an answer, but the value returned by this function is a null string. Consequently, its only effect is to change the print control variable. Thus the PRINT statement
+
+____
+....
+PRINT FN_pformat(&90A) x FN_pformat(&2020A) y
+....
+____
+
+will print x in G9z10 format and y in F2z10 format.
+
+==== [#printeg]#Examples#
+
+____
+....
+G9z10                    G2z10
+&00090A                  &00020A
+012345678901234          012345678901234
+1111.11111               ,,,,,1.1E3
+13.7174211               ,,,,,,,,14
+,1.5241579               ,,,,,,,1.5
+1.88167642E-2            ,,,,1.9E-2
+2.09975158E-3            ,,,,2.1E-3
+
+F2z10                    E2z10
+&02020A                  &0102A
+012345678901234          012345678901234
+,,,1111.11               ,,,1.1E3
+,,,,,13.72               ,,,1.4E1
+,,,,,,1.52               ,,,1.5E0
+,,,,,,0.02               ,,,1.9E-2
+,,,,,,0.00               ,,,2.1E-3
+....
+____
+
+The results obtained by running the following example program show the effect of changing the zone width. The results for zone widths of 5 and 10 (&0A) illustrate what happens when the zone width is too small for the number to be printed properly. The example also illustrates what happens when the number is too large for the chosen precision.
+
+____
+....
+ 10 test=7.8123
+ 20 FOR i=5 TO 25 STEP 5
+ 30   PRINT
+ 40   @%=&020200+i
+ 50   PRINT "@%=&000";~@%
+ 60   PRINT STRING$(3,"0123456789")
+ 70   FOR j=1 TO 10
+ 80     PRINT test^j
+ 90   NEXT
+100   PRINT '
+110 NEXT
+120 @%=&90A
+
+&00020205
+012345678901234567890123456789
+ 7.81
+61.03
+476.80
+3724.91
+29100.11
+227338.75
+1776038.54
+13874945.89
+1.083952398E8
+8.46816132E8
+
+&0002020A
+012345678901234567890123456789
+      7.81
+     61.03
+    476.80
+   3724.91
+  29100.11
+ 227338.75
+1776038.54
+13874945.89
+1.083952398E8
+8.46816132E8
+
+&0002020F
+012345678901234567890123456789
+           7.81
+          61.03
+         476.80
+        3724.91
+       29100.11
+      227338.75
+     1776038.54
+    13874945.89
+   1.083952398E8
+    8.46816132E8
+
+&00020214
+012345678901234567890123456789
+                7.81
+               61.03
+              476.80
+             3724.91
+            29100.11
+           227338.75
+          1776038.54
+         13874945.89
+       1.083952398E8
+        8.46816132E8
+
+&00020219
+012345678901234567890123456789
+                     7.81
+                    61.03
+                   476.80
+                  3724.91
+                 29100.11
+                227338.75
+               1776038.54
+              13874945.89
+            1.083952398E8
+             8.46816132E8
+....
+____
+
+==== Syntax
+
+____
+....
+PRINT {[TAB(<numeric>[,<numeric>])][SPC(<numeric>]
+      ['][,][;][~][<str>|<numeric>]}
+....
+____
+
+==== Associated Keywords
+
+____
+` PRINT#, TAB, POS, STR$, WIDTH, INPUT, VDU`
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:bbckey4.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

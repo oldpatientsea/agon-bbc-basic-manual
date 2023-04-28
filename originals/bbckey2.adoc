@@ -1,0 +1,1679 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+=== [#eof]#EOF##
+
+A function which will return -1 (link:bbckey4.html#true[TRUE]) if the data file whose file handle is the argument is at, or beyond, its end. In other words, when link:bbckey4.html#ptr[PTR#] points beyond the current end of the file. When reading a serial file, EOF# would go true when the last byte of the file had been read.
+
+EOF# is only true if PTR# is set beyond the last byte written to the file. It will NOT be true if an attempt has been made to read from an empty block of a sparse random access file. Because of this, it is difficult to tell which records of a random access file have had data written to them. These files need to be initialised and the unused records marked as empty.
+
+Writing to a byte beyond the current end of file updates the file length immediately, whether the record is physically written to the disk at that time or not. However, the file must be closed in order to ensure that all the data written to it is physically written to the disk.
+
+==== Syntax
+
+____
+....
+<n-var>=EOF#(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, EXT#, PTR#`
+____
+
+'''''
+
+=== [#eor]#EOR#
+
+The operation of bitwise integer logical exclusive-or between two items. The two operands are internally converted to 4 byte integers before the EOR operation. EOR will return a non-zero result if the two items are different.
+
+____
+....
+X=B EOR 4
+IF A=2 EOR B=3 THEN 110
+....
+____
+
+You can use EOR as a logical operator or as a 'bit-by-bit' (bitwise) operator. The operands can be boolean (logical) or numeric.
+
+Unfortunately, BBC BASIC does not have true boolean variables; it uses numeric variables and assigns the value 0 for link:#false[FALSE] and -1 for link:bbckey4.html#true[TRUE]. This can lead to confusion at times. (See link:bbckey3.html#not[NOT] for more details.)
+
+In the example below, the operands are boolean (logical) and the result of the tests (IF) A=2 and (IF) B=3 is either TRUE or FALSE.
+
+The result of this example will be FALSE if A=2 and B=3 or A<>2 and B<>3. In other words, the answer will only be TRUE if the results of the two tests are different.
+
+____
+....
+answer=(A=2 EOR B=3)
+....
+____
+
+The brackets are not necessary, they have been included to make the example easier to follow.
+
+The last example uses EOR in a similar fashion to the numeric operators (+, -, etc).
+
+____
+....
+A=X EOR 11
+....
+____
+
+Suppose X was -20, the EOR operation would be:
+
+____
+....
+11111111 11111111 11111111 11101100
+00000000 00000000 00000000 00001011
+11111111 11111111 11111111 11100111  = -25
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=<numeric> EOR <numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` NOT, AND, OR`
+____
+
+'''''
+
+=== [#erl]#ERL#
+
+A function returning the line number of the line where the last error occurred.
+
+____
+....
+X=ERL
+....
+____
+
+If there was an error in a procedure call, the line number of the calling line would be returned, not the line number of the definition.
+
+The number returned by ERL is the line number printed out when BBC BASIC (Z80) reports an error.
+
+See the link:bbc2.html#errorhandling[Error Handling] sub-section for more information on error handling and correction.
+
+==== Syntax
+
+____
+....
+<n-var>=ERL
+....
+____
+
+==== Associated Keywords
+
+____
+` ON ERROR GOTO, ON ERROR OFF, REPORT, ERR`
+____
+
+'''''
+
+=== [#err]#ERR#
+
+A function returning the error code number of the last error which occurred (see the Annex entitled link:annexc.html[Error Messages and Codes]).
+
+____
+....
+X=ERR
+....
+____
+
+Once you have assumed responsibility for error handling using the link:bbckey3.html#onerror[ON ERROR] statement, you can use this function to discover which error occurred.
+
+See the link:bbc2.html#errorhandling[Error Handling] sub-section for more information on error handling and correction.
+
+==== Syntax
+
+____
+....
+<n-var>=ERR
+....
+____
+
+==== Associated Keywords
+
+____
+` ON ERROR GOTO, ON ERROR OFF, ERL, REPORT`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#eval]#EVAL#
+
+a|
+=== EV.
+
+|===
+
+A function which applies the interpreter's expression evaluation program to the characters held in the argument string.
+
+____
+....
+X=EVAL("X^Q+Y^P")
+X=EVAL"A$+B$"
+X$=EVAL(A$)
+....
+____
+
+In effect, you pass the string to BBC BASIC (Z80)'s evaluation program and say 'work this out'.
+
+You can use this function to accept and evaluate an expression, such as a mathematical equation, whilst the program is running. You could, for instance, use it in a 'calculator' program to accept and evaluate the calculation you wished to perform. Another use would be in a graph plotting program to accept the mathematical equation you wished to plot.
+
+The example below is a 'bare bones' calculator program which evaluates the expression typed in by the user.
+
+____
+....
+10 PRINT "This program evaluates the expression"
+20 PRINT "you type in and prints the answer"
+30 REPEAT
+40   INPUT "Enter an expression" exp$
+50   IF exp$<>"END" PRINT EVAL exp$
+60 UNTIL exp$="END" 
+70 END
+....
+____
+
+You can only use EVAL to work out functions (like link:bbckey4.html#sin[SIN], link:bbckey1.html#cos[COS], etc). It won't execute statements like link:bbckey3.html#mode[MODE 0], link:bbckey3.html#print[PRINT], etc.
+
+==== Syntax
+
+____
+....
+<n-var>=EVAL(<str>)
+<s-var>=EVAL(<str>)
+....
+____
+
+==== Associated Keywords
+
+____
+` STR$, VAL`
+____
+
+'''''
+
+=== [#exp]#EXP#
+
+A function returning 'e' to the power of the argument. The argument must be < 88.7228392. The 'natural' number, 'e', is approximately 2.71828183.
+
+____
+....
+Y=EXP(Z)
+....
+____
+
+This function can be used as the 'anti-log' of a natural logarithm. Logarithms are 'traditionally' used for multiplication (by adding the logarithms) and division (by subtracting the logarithms). For example,
+
+____
+....
+10 log1=LN(2.5)
+20 log2=LN(2)
+30 log3=log1+log2
+40 answer=EXP(log3)
+50 PRINT answer
+....
+____
+
+will calculate 2.5*2 by adding their natural logarithms and print the answer.
+
+==== Syntax
+
+____
+....
+<n-var>=EXP(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` LN, LOG`
+____
+
+'''''
+
+=== [#ext]#EXT##
+
+A function which returns the total length of the file whose file handle is its argument.
+
+____
+....
+length=EXT#f_num
+....
+____
+
+In the case of a sparse random-access file, the value returned is the complete file length from byte zero to the last byte written. This may well be greater than the actual amount of data on the disk, but it is the amount of disk space allocated to the file by CP/M-80.
+
+The file must have been opened before EXT# can be used to find its length.
+
+==== Syntax
+
+____
+....
+<n-var>=EXT#(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, BGET#,  PTR#, EOF#`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#false]#FALSE#
+
+a|
+=== FA.
+
+|===
+
+A function returning the value zero.
+
+____
+....
+10 flag=FALSE
+20 ...
+150 IF flag ...
+....
+____
+
+BBC BASIC (Z80) does not have true Boolean variables. Instead, numeric variables are used and their value is interpreted in a 'logical' manner.
+
+A value of zero is interpreted as FALSE and link:bbckey3.html#not[NOT] FALSE (in other words, NOT 0) is interpreted as TRUE. In practice, any value other than zero is considered TRUE.
+
+You can use FALSE in a link:bbckey4.html#repeat[REPEAT]....link:bbckey4.html#until[UNTIL] loop to make the loop repeat for ever. Consider the following example.
+
+____
+....
+10 terminator=10
+20 REPEAT
+30 PRINT "An endless loop"
+40 UNTIL terminator=0
+....
+____
+
+Since 'terminator' will never be zero, the result of the test 'terminator=0' will always be FALSE. Thus, the following example has the same effect as the previous one.
+
+____
+....
+10 REPEAT
+20 PRINT "An endless loop"
+30 UNTIL FALSE
+....
+____
+
+Similarly, since FALSE=0, the following example will also have the same effect, but its meaning is less clear.
+
+____
+....
+10 REPEAT
+20 PRINT "An endless loop"
+30 UNTIL 0
+....
+____
+
+See the keyword link:bbckey1.html#and[AND] for logical tests and their results.
+
+==== Syntax
+
+____
+....
+<n-var>=FALSE
+....
+____
+
+==== Associated Keywords
+
+____
+` TRUE, EOR, OR, AND, NOT`
+____
+
+'''''
+
+=== [#fn]#FN#
+
+A keyword used at the start of all user declared functions. The first character of the function name can be an underline (or a number)
+
+If there are spaces between the function name and the opening bracket of the parameter list (if any) they must be present both in the definition and the call. It's safer not to have spaces between the function name and the opening bracket.
+
+A function may be defined with any number of parameters of any type, and may return (using =) a string or numeric result. It does not have to be defined before it is used.
+
+A function definition is terminated by '=' used in the statement position.
+
+The following examples show the '=' as part of a program line and at the start of a line. The first two examples are single line function definitions.
+
+____
+....
+DEF FN_mean(Q1,Q2,Q3,Q4)=(Q1+Q2+Q3+Q4)/4
+
+DEF FN_fact(N) IF N<2 =1 ELSE =N*FN_fact(N-1)
+
+DEF FN_reverse(A$)
+LOCAL B$,Z%
+FOR Z%=1 TO LEN(A$)
+  B$=MID$(A$,Z%,1)+B$
+NEXT
+=B$
+....
+____
+
+Functions are re-entrant and the parameters (arguments) are passed by value.
+
+You can write single line, multi statement functions so long as you have a colon after the definition statement.
+
+The following function sets the print control variable to the parameter passed and returns a null string. It may be used in a link:bbckey3.html#print[PRINT] command to change the print control variable (@%) within a print list.
+
+____
+....
+DEF FN_pformat(N):@%=N:=""
+....
+____
+
+Functions have to return an answer, but the value returned by this function is a null string. Consequently, its only effect is to change the print control variable. Thus the PRINT statement
+
+____
+....
+PRINT FN_pformat(&90A) X FN_pformat(&2020A) Y
+....
+____
+
+will print X in G9z10 format and Y in F2z10 format. See the keyword link:bbckey3.html#print[PRINT] for print format details.
+
+==== Syntax
+
+____
+....
+<n-var>|<s-var>=FN<name>[(<exp>{,<exp>})]
+DEF FN<name>[(<n-var>|<s-var>{,<n-var>|<s-var>})]
+....
+____
+
+==== Associated Keywords
+
+____
+` ENDPROC, DEF, LOCAL`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#for]#FOR#
+
+a|
+=== F.
+
+|===
+
+A statement initialising a FOR...NEXT loop. The loop is executed at least once.
+
+____
+....
+FOR temperature%=0 TO 9
+FOR A(2,3,1)=9 TO 1 STEP -0.3
+....
+____
+
+The FOR...NEXT loop is a way of repeating a section of program a set number of times. For example, the two programs below perform identically, but the second is easier to understand.
+
+____
+....
+10 start=4: end=20: step=2
+20 counter=start
+30 PRINT counter," ",counter^2
+40 counter=counter+step
+50 IF counter<=end THEN 30
+60 ...
+
+10 start=4: end=20: step=2
+20 FOR counter=start TO end STEP step
+30   PRINT counter," ",counter^2
+40 NEXT
+50 ...
+....
+____
+
+You can link:#goto[GOTO] anywhere within one FOR...NEXT loop, but not outside it. This means you can't exit the loop with a GOTO. You can force a premature end to the loop by setting the control variable to a value equal to or greater than the end value (assuming a positive link:bbckey4.html#step[STEP]).
+
+____
+....
+110 FOR I=1 TO 20
+120   X=A^I
+130   IF X>1000 THEN I=20: GOTO 150
+140   PRINT I,X
+150 NEXT
+....
+____
+
+It is not necessary to declare the loop variable as an integer type in order to take advantage of fast integer arithmetic. If it is an integer, then fast integer arithmetic is used automatically. See link:annexe.html[Annex E] for an explanation of how BBC BASIC (Z80) recognises an integer value of a real variable.
+
+Any numeric assignable item may be used as the control variable. In particular, a byte variable (?X) may act as the control variable and only one byte of memory will be used. See the link:bbc2.html#indirection[Indirection] sub-section for details of the indirection operators.
+
+____
+....
+FOR ?X=0 TO 16: PRINT ~?X: NEXT
+FOR !X=0 TO 16 STEP 4: PRINT ~!X: NEXT
+....
+____
+
+Because a single stack is used, you cannot use a FOR...NEXT loop to set array elements to link:#local[LOCAL] in a procedure or function.
+
+==== Syntax
+
+____
+....
+FOR <n-var>=<numeric> TO <numeric> [STEP <numeric>]
+....
+____
+
+==== Associated Keywords
+
+____
+` TO, STEP, NEXT`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#gcol]#GCOL#
+
+a|
+=== GC.
+
+|===
+
+A statement which sets the graphics foreground or background logical colour to be used in all subsequent graphics operations.
+
+*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+
+==== Syntax
+
+____
+....
+GCOL <numeric>,<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` CLS, CLG, MODE, COLOUR, PLOT`
+____
+
+'''''
+
+=== [#get]#GET/GET$#
+
+A function and compatible string function that reads the next character from the keyboard buffer (it waits for the character).
+
+____
+....
+N=GET
+N$=GET$
+....
+____
+
+GET and GET$ wait for a 'key' (character) to be present in the keyboard buffer and then return the ASCII number of the key (see link:annexa.html[Annex A]) or a string containing the character of the key. If there are any characters in the keyboard buffer when a GET is issued, then a character will be returned immediately. See the keyword link:#inkey[INKEY] for a way of emptying the keyboard buffer before issuing a GET.
+
+GET and GET$ do not echo the pressed key to the screen. If you want to display the character for the pressed key, you must link:bbckey3.html#print[PRINT] it.
+
+You can use GET and GET$ whenever you want your program to wait for a reply before continuing. For example, you may wish to display several screens of instructions and allow the user to decide when he has read each screen.
+
+____
+....
+REM First screen of instructions
+CLS
+PRINT .......
+PRINT .......
+PRINT "Press any key to continue ";
+temp=GET
+REM Second screen of instructions
+CLS
+PRINT ....... etc
+....
+____
+
+GET can also be used to input data from an I/O port:
+
+____
+....
+N=GET(X) :REM input from port X
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=GET
+<n-var>=GET(<numeric>)
+<s-var>=GET$
+....
+____
+
+==== Associated Keywords
+
+____
+` PUT, INKEY, INKEY$`
+____
+
+'''''
+
+=== [#gosub]#GOSUB#
+
+A statement which calls a section of a program (which is a subroutine) at a specified line number. One subroutine may call another subroutine (or itself).
+
+____
+....
+GOSUB 400
+GOSUB (4*answer+6)
+....
+____
+
+The only limit placed on the depth of nesting is the room available for the stack.
+
+You may calculate the line number. However, if you do, the program should not be link:bbckey4.html#renumber[RENUMBER]ed. A calculated value must be placed in brackets.
+
+Very often you need to use the same group of program instructions at several different places within your program. It is tedious and wasteful to repeat this group of instructions every time you wish to use them. You can separate this group of instructions into a small sub-program. This sub-program is called a subroutine. The subroutine can be 'called' by the main program every time it is needed by using the GOSUB statement. At the end of the subroutine, the link:bbckey4.html#return[RETURN] statement causes the program to return to the statement after the GOSUB statement.
+
+Subroutines are similar to link:bbckey4.html#proc[PROC]edures, but they are called by line number not by name. This can make the program difficult to read because you have no idea what the subroutine does until you have followed it through. You will probably find that PROCedures offer you all the facilities of subroutines and, by choosing their names carefully, you can make your programs much more readable.
+
+==== Syntax
+
+____
+....
+GOSUB <l-num>
+GOSUB (<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` RETURN, ON, PROC`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#goto]#GOTO#
+
+a|
+=== G.
+
+|===
+
+A statement which transfers program control to a line with a specified or calculated line number.
+
+____
+....
+GOTO 100
+GOTO (X*10)
+....
+____
+
+You may not GOTO a line which is outside the current link:#for[FOR]...link:bbckey3.html#next[NEXT], link:bbckey4.html#repeat[REPEAT]...link:bbckey4.html#until[UNTIL] or link:#gosub[GOSUB] loop.
+
+If a calculated value is used, the program should not be link:bbckey4.html#renumber[RENUMBER]ed. A calculated value must be placed in brackets.
+
+The GOTO statement makes BBC BASIC (Z80) jump to a specified line number rather than continuing with the next statement in the program.
+
+You should use GOTO with care. Uninhibited use will make your programs almost impossible to understand (and hence, debug). If you use REPEAT....UNTIL and FOR....NEXT loops you will not need to use many GOTO statements.
+
+==== Syntax
+
+____
+....
+GOTO <l-num>
+GOTO (<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` GOSUB, ON`
+____
+
+'''''
+
+=== [#himem]#HIMEM#
+
+A pseudo-variable which contains the address of the first byte that BBC BASIC (Z80) will not use.
+
+HIMEM must not be changed within a subroutine, procedure, function, link:#for[FOR]...link:bbckey3.html#next[NEXT], link:bbckey4.html#repeat[REPEAT]...link:bbckey4.html#until[UNTIL] or link:#gosub[GOSUB] loop.
+
+____
+....
+HIMEM=HIMEM-40
+....
+____
+
+BBC BASIC (Z80) uses the computer's memory to store your program and the variables that your program uses. When BBC BASIC is first loaded and run it checks to find the highest memory address it can use. If this is in excess of &10000 bytes, HIMEM is set to &10000. Otherwise, HIMEM is set to the maximum available address.
+
+If you want to use a machine code subroutine or store some data for use by a CHAINed program, you can move HIMEM down. This protects the area above HIMEM from being overwritten by BBC BASIC (Z80). See the link:bbc3.html[Assembler] section and the keyword link:bbckey1.html#chain[CHAIN] for details.
+
+If you want to change HIMEM, you should do so early in your program. Once it has been changed it will stay at its new value until set to another value. Thus, if you wish to load a machine code subroutine for use by several programs, you only have to change HIMEM and load the subroutine once.
+
+USE WITH CARE.
+
+==== Syntax
+
+____
+....
+HIMEM=<numeric>
+<n-var>=HIMEM
+....
+____
+
+==== Associated Keywords
+
+____
+` LOMEM, PAGE, TOP`
+____
+
+'''''
+
+=== [#if]#IF#
+
+A statement which sets up a test condition which can be used to control the subsequent flow of the program. It is part of the IF....link:bbckey4.html#then[THEN]....link:bbckey1.html#else[ELSE] structure.
+
+____
+....
+IF length=5 THEN 110
+IF A<C OR A>D GOTO 110
+IF A>C AND C>=D THEN GOTO 110 ELSE PRINT "BBC"
+IF A>Q PRINT"IT IS GREATER":A=1:GOTO 120
+....
+____
+
+The word link:bbckey4.html#then[THEN] is optional under most circumstances.
+
+The IF statement is the primary decision making statement. The testable condition (A=B, etc) is evaluated and the answer is either link:bbckey4.html#true[TRUE] or link:#false[FALSE]. If the answer is TRUE, the rest of the line (up to the link:bbckey1.html#else[ELSE] clause if there is one) is executed.
+
+The '=' sign has two meanings. It can be used to assign a value to a variable or as part of a test. The example shows the two uses in one program line.
+
+____
+....
+A=B=C
+....
+____
+
+In English this reads "A becomes equal to the result of the test B=C". Thus if B does equal C, A will be set to TRUE (-1). However, if B does not equal C, A will be set to FALSE (0). The example below is similar, but A will be set to TRUE (-1) if 'age' is less than 21.
+
+____
+....
+A=age<21
+....
+____
+
+Since the IF statement evaluates the testable condition and acts on the result, you can use a previously set variable name in place of the test.
+
+The two examples below will print 'Under 21' if the value of 'age' is less than 21.
+
+____
+....
+IF age<21 THEN PRINT "Under 21"
+
+flag=age<21
+IF flag THEN PRINT "Under 21"
+....
+____
+
+==== Syntax
+
+____
+....
+IF <t-cond> THEN <stmt>{:<stmt>} [ELSE <stmt>{:<stmt>}]
+IF <exp> THEN <stmt>{:<stmt>} [ELSE <stmt>{:<stmt>}]
+IF <t-cond> GOTO <l-num> [ELSE <l-num>]
+IF <exp> GOTO <l-num> [ELSE <l-num>]
+IF <t-cond> THEN <l-num> [ELSE <l-num>]
+IF <exp> THEN <l-num> [ELSE <l-num>]
+....
+____
+
+==== Associated Keywords
+
+____
+` THEN, ELSE`
+____
+
+'''''
+
+=== [#inkey]#INKEY/INKEY$#
+
+A function and compatible string function which does a link:#get[GET/GET$], waiting for a maximum of 'num' clock ticks of 10ms each. If no key is pressed in the time limit, INKEY will return -1 and INKEY$ will return a null string. The INKEY function will return the ASCII value of the key pressed.
+
+____
+....
+key=INKEY(num)
+N=INKEY(0)
+N$=INKEY$(100)
+....
+____
+
+Since INKEY and INKEY$ remove characters from the keyboard buffer, one character will be returned every time an INKEY is issued. A single INKEY will return the first character and leave the rest in the keyboard buffer.
+
+You can use this function to wait for a specified time for a key to be pressed. A key can be pressed at any time before INKEY is used.
+
+Pressed keys are stored in an input buffer. Since INKEY and INKEY$ get a character from the normal input stream, you may need to empty the input buffer before you use them. You can do this with the following program line.
+
+____
+....
+REPEAT UNTIL INKEY(0)=-1
+....
+____
+
+The number in brackets is the number of 'ticks' (one hundredths of a second) which BBC BASIC (Z80) will wait for a key to be pressed. After this time, BBC BASIC (Z80) will give up and return -1 or a null string. The number of 'ticks' may have any value between 0 and 32767.
+
+==== Syntax
+
+____
+....
+<n-var>=INKEY(<numeric>)
+<s-var>=INKEY$(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` GET, GET$`
+____
+
+'''''
+
+=== [#input]#INPUT#
+
+A statement to input values from the console input channel (usually keyboard).
+
+____
+....
+INPUT A,B,C,D$,"WHO ARE YOU",W$,"NAME"R$
+....
+____
+
+If items are not immediately preceded by a printable prompt string (even if null) then a '?' will be printed as a prompt. If the variable is not separated from the prompt string by a comma, the '?' is not printed. In other words: no comma - no question mark.
+
+Items A, B, C, D$ in the above example can have their answers returned on one to four lines, separate items being separated by commas. Extra items will be ignored.
+
+Then WHO ARE YOU? is printed (the question mark comes from the comma) and W$ is input, then NAME is printed and R$ is input (no comma - no '? ').
+
+When the <Enter> key is pressed to complete an entry, a new-line is generated. BBC BASIC has no facility for suppressing this new-line, but the link:bbckey4.html#tab[TAB] function can be used to reposition the cursor. For example,
+
+____
+....
+INPUT TAB(0,5) "Name ? " N$,TAB(20,5) "Age ? " A
+....
+____
+
+will position the cursor at column 0 of line 5 and print the prompt Name ?. After the name has been entered the cursor will be positioned at column 20 on the same line and Age ? will be printed. When the age has been entered the cursor will move to the next line.
+
+The statement
+
+____
+....
+INPUT A
+....
+____
+
+is exactly equivalent to
+
+____
+....
+INPUT A$: A=VAL(A$)
+....
+____
+
+Leading spaces will be removed from the input line, but not trailing spaces. If the input string is not completely numeric, it will make the best it can of what it is given. If the first character is not numeric, 0 will be returned. Neither of these two cases will produce an error indication. Consequently, your program will not abort back to the command mode if a bad number is input. You may use the link:#eval[EVAL] function to convert a string input to a numeric and report an error if the string is not a proper number or you can include your own validation checks.
+
+____
+....
+INPUT A$
+A=EVAL(A$)
+....
+____
+
+Strings in quoted form are taken as they are, with a possible error occurring for a missing closing quote.
+
+A semicolon following a prompt string is an acceptable alternative to a comma.
+
+==== Syntax
+
+____
+....
+INPUT [TAB(X[,Y])][SPC(<numeric>)]['][<s-const>[,|;]]
+                    <n-var>|<s-var>{,<n-var>|<s-var>}
+....
+____
+
+==== Associated Keywords
+
+____
+` INPUT LINE, INPUT#, GET, INKEY`
+____
+
+'''''
+
+=== [#inputline]#INPUT LINE#
+
+A statement of identical syntax to link:#input[INPUT] which uses a new line for each item to be input. The item input is taken as is, including commas, quotes and leading spaces.
+
+____
+....
+INPUT LINE A$
+....
+____
+
+==== Syntax
+
+____
+....
+INPUT LINE[TAB(X[,Y])][SPC(<numeric>)]['][<s-const>[,|;]]
+                        <s-var>{,<s-var>}
+....
+____
+
+==== Associated Keywords
+
+____
+` INPUT`
+____
+
+'''''
+
+=== [#inputhash]#INPUT##
+
+A statement which reads data in internal format from a file and puts them in the specified variables. INPUT# is normally used with a file or device opened with link:bbckey3.html#openin[OPENIN], link:bbckey3.html#openup[OPENUP] or link:bbckey3.html#openout[OPENOUT], but may alternatively be used with the AUX device (usually a serial port) which has the 'permanently open' handle = 3.
+
+____
+....
+INPUT #E,A,B,C,D$,E$,F$
+INPUT #3,aux$
+....
+____
+
+It is possible to read past the end-of-file without an error being reported. You should always include some form of check for the end of the file.
+
+link:bbckey4.html#readhash[READ#] can be used as an alternative to INPUT#.
+
+See the link:bbcfile1.html[Disk Files] section for more details and numerous examples of the use of INPUT#.
+
+==== Syntax
+
+____
+....
+INPUT #<numeric>,<n-var>|<s-var>{,<n-var>|<s-var>}
+....
+____
+
+==== Associated Keywords
+
+____
+` INPUT, OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, BPUT#, BGET#, EXT#, PTR#, EOF#`
+____
+
+'''''
+
+=== [#instr]#INSTR#
+
+A function which returns the position of a sub-string within a string, optionally starting the search at a specified place in the string. The leftmost character position is 1. If the sub-string is not found, 0 is returned.
+
+The first string is searched for any occurrence of the second string.
+
+There must not be any spaces between INSTR and the opening bracket.
+
+____
+....
+X=INSTR(A$,B$)
+position=INSTR(word$,guess$)
+Y=INSTR(A$,B$,Z%) :REM START AT POSITION Z%
+....
+____
+
+You can use this function for validation purposes. If you wished to test A$ to see if was one of the set 'FRED BERT JIM JOHN', you could use the following:
+
+____
+....
+set$="FRED BERT JIM JOHN"
+IF INSTR(set$,A$) PROC_valid ELSE PROC_invalid
+....
+____
+
+The character used to separate the items in the set must be excluded from the characters possible in A$. One way to do this is to make the separator an unusual character, say CHR$(127).
+
+____
+....
+z$=CHR$(127)
+set$="FRED"+z$+"BERT"+z$+"JIM"+z$+"JOHN"
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=INSTR(<str>,<str>[,<numeric>])
+....
+____
+
+==== Associated Keywords
+
+____
+` LEFT$, MID$, RIGHT$, LEN`
+____
+
+'''''
+
+=== [#int]#INT#
+
+A function truncating a real number to the lower integer.
+
+____
+....
+X=INT(Y)
+
+INT(99.8)   =99
+INT(-12)    =-12
+INT(-12.1)  =-13
+....
+____
+
+This function converts a real number (one with a decimal part) to the nearest integer (whole number) less than the number supplied. Thus,
+
+____
+....
+INT(14.56)
+....
+____
+
+gives 14, whereas
+
+____
+....
+INT(-14.5)
+....
+____
+
+gives -15.
+
+==== Syntax
+
+____
+....
+<n-var>=INT<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+=== [#left]#LEFT$#
+
+A string function which returns the left 'num' characters of the string. If there are insufficient characters in the source string, all the characters are returned.
+
+There must not be any spaces between LEFT$ and the opening bracket.
+
+____
+....
+newstring$=LEFT$(A$,num)
+A$=LEFT$(A$,2)
+A$=LEFT$(RIGHT$(A$,3),2)
+....
+____
+
+For example,
+
+____
+....
+10 name$="BBC BASIC (Z80)"
+20 FOR i=3 TO 13
+30   PRINT LEFT$(name$,i)
+40 NEXT
+50 END
+....
+____
+
+would print
+
+____
+....
+BBC
+BBCB
+BBCBA
+BBCBAS
+BBCBASI
+BBC BASIC
+BBC BASIC(
+BBC BASIC(8
+BBC BASIC(86
+BBC BASIC (Z80)
+BBC BASIC (Z80)
+....
+____
+
+==== Syntax
+
+____
+....
+<s-var>=LEFT$(<str>,<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` RIGHT$, MID$, LEN, INSTR`
+____
+
+'''''
+
+=== [#len]#LEN#
+
+A function which returns the length of the argument string.
+
+____
+....
+X=LEN"fred"
+X=LENA$
+X=LEN(A$+B$)
+....
+____
+
+This function 'counts' the number of characters in a string. For example,
+
+____
+....
+length=LEN("BBC BASIC (Z80)   ")
+....
+____
+
+would set 'length' to 15 since the string consists of the 12 characters of BBC BASIC (Z80) followed by three spaces.
+
+LEN is often used with a link:#for[FOR]....link:bbckey3.html#next[NEXT] loop to 'work down' a string doing something with each letter in the string. For example, the following program looks at each character in a string and checks that it is a valid hexadecimal numeric character.
+
+____
+....
+ 10 valid$="0123456789ABCDEF"
+ 20 REPEAT
+ 30   INPUT "Type in a HEX number" hex$
+ 40   flag=TRUE
+ 50   FOR i=1 TO LEN(hex$)
+ 60     IF INSTR(valid$,MID$(hex$,i,1))=0 flag=FALSE
+ 80   NEXT
+ 90   IF NOT flag THEN PRINT "Bad HEX"
+100 UNTIL flag
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=LEN(<str>)
+....
+____
+
+==== Associated Keywords
+
+____
+` LEFT$, MID$, RIGHT$, INSTR`
+____
+
+'''''
+
+=== [#let]#LET#
+
+LET is an optional assignment statement.
+
+LET is not permitted in the assignment of the pseudo-variables link:#lomem[LOMEM], link:#himem[HIMEM], link:bbckey3.html#page[PAGE], link:bbckey4.html#ptr[PTR#] and link:bbckey4.html#time[TIME].
+
+LET was mandatory in early versions of BASIC. Its use emphasised that when we write
+
+____
+....
+X=X+4
+....
+____
+
+we don't mean to state that X equals X+4 - it can't be, but rather 'let X become equal to what it was plus 4':
+
+____
+....
+LET X=X+4
+....
+____
+
+Most modern versions of BASIC allow you to drop the 'LET' statement. However, if you are writing a program for a novice, the use of LET makes it more understandable.
+
+==== Syntax
+
+____
+....
+[LET] <var>=<exp>
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#list]#LIST#
+
+a|
+=== L.
+
+|===
+
+A command which causes lines of the current program to be listed out to the currently selected output stream (see link:opsys1.html#opt[*OPT]) with the automatic formatting options specified by link:#listo[LISTO].
+
+____
+[cols=",",]
+|===
+|`LIST` |lists the entire program
+|`LIST ,111` |lists up to line 111
+|`LIST 111,` |lists from line 111 to the end
+|`LIST 111,222 ` |lists lines 111 to 222 inclusive
+|`LIST 100` |lists line 100 only
+|===
+____
+
+A hyphen is an acceptable alternative to a comma.
+
+When using the normal screen output (link:opsys1.html#opt[*OPT 0]), the listing may be paused by pressing the <Ctrl> and <Shift> keys together. You can also set the output to paged mode by typing ^N (link:vdu.html#vdu14[VDU 14]). In this mode, the screen output will halt at the end of each page until the <Shift> key is pressed. Paged mode may be turned off by typing ^O (link:vdu.html#vdu15[VDU 15]).
+
+Escape will abort the listing.
+
+You can cause the listing to be printed by pressing ^P. Printing can be stopped by pushing ^P a second time (it's a 'toggle' action).
+
+LIST may be included within a program, but it will exit to the command mode on completion of the listing.
+
+==== Syntax
+
+____
+....
+LIST
+LIST <n-const>
+LIST <n-const>,
+LIST ,<n-const>
+LIST <n-const>,<n-const>
+....
+____
+
+==== Associated Keywords
+
+____
+` LIST IF, LISTO, OLD, NEW`
+____
+
+'''''
+
+=== [#listif]#LIST IF#
+
+A command which causes lines of the current program which contain the specified string to be listed to the currently selected output stream (see link:opsys1.html#opt[*OPT]).
+
+____
+....
+LIST IF *FX
+LIST IF Please press <ENTER> to continue
+....
+____
+
+You can specify the range of line numbers to be listed in a similar manner to LIST. For example,
+
+____
+....
+LIST 100,2500 IF DEF
+....
+____
+
+Will list all the lines between 100 and 2500 which contain the keyword 'DEF'
+
+Keywords are tokenised before the search begins. Consequently, you can use LIST IF to find lines with particular commands in them.
+
+____
+....
+LIST IF PROC
+LIST IF DEF
+....
+____
+
+LIST IF is very useful for locating the lines in a program which define or use functions or procedures.
+
+==== [#limitations]#Limitations#
+
+Because keywords are tokenised wherever they occur in the command line, you cannot use LIST IF to search for a string (including a star command) which contains a keyword. For example, the following will not work:
+
+____
+....
+LIST IF *LOAD
+LIST IF DO YOU WANT TO PRINT THE RESULTS?
+....
+____
+
+You cannot search for the 'left' form of those pseudo-variables which have two forms ( link:bbckey4.html#ptr[PTR#=], link:bbckey3.html#page[PAGE=], link:bbckey4.html#time[TIME=], link:bbckey4.html#times[TIME$=], link:#lomem[LOMEM=], link:#himem[HIMEM=]) because the 'right' form is assumed when the name is tokenised. Consequently,
+
+____
+....
+LIST IF TIME
+....
+____
+
+will find line 20 but not line 10 in the following program segment
+
+____
+....
+10 TIME=20
+20 now=TIME
+....
+____
+
+You cannot search for 'keywords' which are not tokenised in the context of the program. For example,
+
+____
+....
+LIST IF LOAD
+....
+____
+
+will not list lines containing
+
+____
+....
+ZLOAD=1
+PROCLOAD
+FNLOAD
+"LOAD"
+REM LOAD
+
+etc
+....
+____
+
+because link:#load[LOAD] is not tokenised in any of these lines.
+
+The internal format of line numbers (link:#goto[GOTO] 1000, for example) may spuriously match a search string of three characters or less.
+
+==== Syntax
+
+____
+....
+LIST IF <string>
+LIST <n-const> IF <string>
+LIST <n-const>, IF <string>
+LIST ,<n-const> IF <string>
+LIST <n-const>,<n-const> IF <string>
+....
+____
+
+==== Associated Keywords
+
+____
+` LIST, OLD, NEW`
+____
+
+'''''
+
+=== [#listo]#LISTO#
+
+A command which controls the appearance of a link:#list[LIST]ed program. The command controls the setting of the three least significant bits of the format control byte which can, therefore, be set to an integer 0 to 7 (0=all three bits 0, 7=all three bits 1).
+
+==== [#settings]#Bit Settings#
+
+===== Bit 0 (LSB)
+
+If Bit 0 is set, a space will be printed between the line number and the remainder of the line. (All leading spaces are stripped when the line is originally entered.)
+
+===== Bit 1
+
+If Bit 1 is set, two extra spaces will be printed out on lines between link:#for[FOR] and link:bbckey3.html#next[NEXT]. Two extra spaces will be printed for each depth of nesting.
+
+===== Bit 2
+
+If Bit 2 is set two extra spaces will be printed out on lines between link:bbckey4.html#repeat[REPEAT] and link:bbckey4.html#until[UNTIL]. Two extra spaces will be printed for each depth of nesting.
+
+The default setting of LISTO is 7. This will give a properly formatted listing. The indentation of the FOR..NEXT and REPEAT..UNTIL lines is done in the correct manner, in that the NEXT is aligned with the FOR and the REPEAT with the UNTIL.
+
+____
+....
+LISTO 7
+....
+____
+
+will give
+
+____
+....
+ 10 A=20
+ 20 TEST$="FRED"
+ 30 FOR I=1 TO A
+ 40   Z=2^I
+ 50   PRINT I,Z
+ 60   REPEAT
+ 70     PRINT TEST$
+ 80     TEST$=LEFT$(TEST$,LEN(TEST$)-1)
+ 90   UNTIL LEN(TEST$)=0
+100 NEXT
+110 END
+....
+____
+
+at the other extreme
+
+____
+....
+LISTO 0
+....
+____
+
+will give
+
+____
+....
+ 10A=20
+ 20TEST$="FRED"
+ 30FOR I=1 TO A
+ 40Z=2^I
+ 50PRINT I,Z
+ 60REPEAT
+ 70PRINT TEST$
+ 80TEST$=LEFT$(TEST$,LEN(TEST$)-1)
+ 90UNTIL LEN(TEST$)=0
+100NEXT
+110END
+....
+____
+
+and
+
+____
+....
+LISTO 2
+....
+____
+
+will give
+
+____
+....
+ 10A=20
+ 20TEST$="FRED"
+ 30FOR I=1 TO A
+ 40  Z=2^Z
+ 50  PRINT I,Z
+ 60  REPEAT
+ 70  PRINT TEST$
+ 80  TEST$=LEFT$(TEST$,LEN(TEST$)-1)
+ 90  UNTIL LEN(TEST$)=0
+100NEXT
+110END
+....
+____
+
+==== Syntax
+
+____
+....
+LISTO <n-const>
+....
+____
+
+==== Associated Keywords
+
+____
+` LIST`
+____
+
+'''''
+
+=== [#ln]#LN#
+
+A function giving the natural logarithm of its argument.
+
+____
+....
+X=LN(Y)
+....
+____
+
+This function gives the logarithm to the base 'e' of its argument. The 'natural' number, 'e', is approximately 2.71828183.
+
+Logarithms are 'traditionally' used for multiplication (by adding the logarithms) and division (by subtracting the logarithms). For example,
+
+____
+....
+10 log1=LN(2.5)
+20 log2=LN(2)
+30 log3=log1+log2
+40 answer=EXP(log3)
+50 PRINT answer
+....
+____
+
+will calculate 2.5*2 by adding their natural logarithms and print the answer.
+
+==== Syntax
+
+____
+....
+<n-var>=LN<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` LOG, EXP`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#load]#LOAD#
+
+a|
+=== LO.
+
+|===
+
+A command which loads a new program from a file and link:bbckey1.html#clear[CLEAR]s the variables of the old program. The program file must be in 'internal' (tokenised) format.
+
+____
+....
+LOAD "PROG1"
+LOAD A$
+....
+____
+
+File names must conform to the standard CP/M-80 format. However, if no extension is given, .BBC is assumed. If no disk and/or path are given, the current disk and/or path are assumed. See the link:opsys0.html[Operating System Interface] section for a more detailed description of valid file names.
+
+You use LOAD to bring a program in a disk file into memory. The keyword LOAD should be followed by the name of the program file. If the program file is in the current directory, only the file name needs to be given. If the program is not in the current directory, its full drive, path and file name must be specified. For example:
+
+____
+....
+LOAD "a:\bbcprogs\demo"
+....
+____
+
+would load the program 'demo.bbc' from the directory 'bbcprogs' on drive a:.
+
+==== Syntax
+
+____
+....
+LOAD <str>
+....
+____
+
+==== Associated Keywords
+
+____
+` SAVE, CHAIN`
+____
+
+'''''
+
+=== [#local]#LOCAL#
+
+A statement to declare variables for local use inside a function (link:#fn[FN]) or procedure (link:bbckey4.html#proc[PROC]). A null list of variables is not permitted.
+
+____
+....
+LOCAL A$,X,Y%
+....
+____
+
+LOCAL saves the values of its arguments in such a way that they will be restored at '=' or link:bbckey1.html#endproc[ENDPROC].
+
+If a function or a procedure is used recursively, the LOCAL variables will be preserved at each level.
+
+The LOCAL variables are initialised to zero/null.
+
+See the keyword link:bbckey3.html#onerrorlocal[ON ERROR LOCAL] for details of local error trapping.
+
+==== Syntax
+
+____
+....
+LOCAL <n-var>|<s-var>{,<n-var>|<s-var>}
+....
+____
+
+==== Associated Keywords
+
+____
+` DEF, ENDPROC, FN, PROC`
+____
+
+'''''
+
+=== [#log]#LOG#
+
+A function giving the base-10 logarithm of its argument.
+
+____
+....
+X = LOG(Y)
+....
+____
+
+This function calculates the common (base 10) logarithm of its argument. Inverse logarithms (anti-logs) can be calculated by raising 10 to the power of the logarithm. For example, if `x=LOG(y)` then `y=10^x`.
+
+Logarithms are 'traditionally' used for multiplication (by adding the logarithms) and division (by subtracting the logarithms). For example,
+
+____
+....
+10 log1=LOG(2.5)
+20 log2=LOG(2)
+30 log3=log1+log2
+40 answer=10^log3
+50 PRINT answer
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=LOG<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` LN, EXP`
+____
+
+'''''
+
+=== [#lomem]#LOMEM#
+
+A pseudo-variable which controls where in memory the dynamic data structures are to be placed. The default is link:bbckey4.html#top[TOP], the first free address after the end of the program.
+
+____
+....
+LOMEM=LOMEM+100
+PRINT ~LOMEM :REM The ~ makes it print in HEX.
+....
+____
+
+Normally, dynamic variables are stored in memory immediately after your program. (See the Annex entitled link:annexd.html[Format of Program and Variables in Memory].) You can change the address where BBC BASIC (Z80) starts to store these variables by changing LOMEM.
+
+USE WITH CARE. Changing LOMEM in the middle of a program causes BBC BASIC (Z80) to lose track of all the variables you are using.
+
+==== Syntax
+
+____
+....
+LOMEM=<numeric>
+<n-var>=LOMEM
+....
+____
+
+==== Associated Keywords
+
+____
+` HIMEM, TOP, PAGE`
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:bbckey3.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

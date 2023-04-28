@@ -1,0 +1,150 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+== Mathematical Functions
+
+=== Annex B to +
+BBC BASIC (Z80)
+
+BBC BASIC (Z80) has more intrinsic mathematical functions than many other versions of BASIC. Those that are not provided may be calculated as shown below.
+
+Function`       `
+
+Calculation
+
+*SECANT*
+
+ 
+
+`SEC(X)=1/COS(X)`
+
+*COSECANT*
+
+ 
+
+`CSC(X)=1/SIN(X)`
+
+*COTANGENT*
+
+ 
+
+`COT(X)=1/TAN(X)`
+
+*Inverse SECANT*
+
+ 
+
+`ARCSEC(X)=ACS(1/X)`
+
+*Inverse COSECANT*
+
+ 
+
+`ARCCSC(X)=ASN(1/X)`
+
+*Inverse COTANGENT*
+
+ 
+
+`ARCCOT(X)=ATN(1/X) =PI/2-ATN(X)`
+
+*Hyperbolic SINE*
+
+ 
+
+`SINH(X)=(EXP(X)-EXP(-X))/2`
+
+*Hyperbolic COSINE*
+
+ 
+
+`COSH(X)=(EXP(X)+EXP(-X))/2`
+
+*Hyperbolic TANGENT*
+
+ 
+
+`TANH(X)=EXP(-X)/(EXP(X)+EXP(-X))*2+1`
+
+*Hyperbolic SECANT*
+
+ 
+
+`SECH(X)=2/(EXP(X)+EXP(-X))`
+
+*Hyperbolic COSECANT*
+
+ 
+
+`CSCH(X)=2/(EXP(X)-EXP(-X))`
+
+*Hyperbolic COTANGENT*
+
+ 
+
+`COTH(X)=EXP(-X)/(EXP(X)-EXP(-X))*2+1`
+
+*Inverse Hyperbolic SIN*
+
+ 
+
+`ARCSINH(X)=LN(X+SQR(X*X+1))`
+
+*Inverse Hyperbolic COSINE*
+
+ 
+
+`ARCCOSH(X)=LN(X+SQR(X*X-1))`
+
+*Inverse Hyperbolic TANGENT*
+
+ 
+
+`ARCTANH(X)=LN((1+X)/(1-X))/2`
+
+*Inverse Hyperbolic SECANT*
+
+ 
+
+`ARCSECH(X)=LN((SQR(-X*X+1)+1)/X)`
+
+*Inverse Hyperbolic COSECANT*
+
+ 
+
+`ARCCSCH(X)=LN((SGN(X)*SQR(X*X+1)+1)/X`
+
+*Inverse Hyperbolic COTANGENT*
+
+ 
+
+`ARCCOTH(X)=LN((X+1)/(X-1))/2`
+
+*LOGn(X)*
+
+ 
+
+`LOGn(X)=LN(X)/LN(n) =LOG(X)/LOG(n) `
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:annexc.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

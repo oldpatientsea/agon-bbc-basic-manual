@@ -1,0 +1,72 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+== Statements and Functions
+
+=== [#introduction]#Introduction#
+
+The commands and statements are listed alphabetically for ease of reference; they are not separated into two sections.
+
+All statements, except link:bbckey2.html#input[INPUT], can also be used as direct commands.
+
+Where appropriate, the abbreviated form is shown to the right of the statement.
+
+The associated keywords are listed at the end of each explanation.
+
+If the lexical analyser tries to expand a line to more than 255 characters, a 'link:annexc.html#linespace[Line space]' error will be reported.
+
+==== [#syntax]#Syntax#
+
+Abbreviated definitions for the commands and statements in BBC BASIC (Z80) are given at the end of the explanation for each keyword. Most of us have seen formal syntax diagrams and Backus-Naur Form (BNF) definitions for languages, and many of us have found them to be somewhat confusing. Consequently, we have attempted to produce something which, whilst being reasonably precise, is readable by the majority of BBC BASIC (Z80) users. To those amongst you who would have preferred 'the real thing' - we apologise.
+
+===== [#symbols]#Symbols#
+
+The following symbols have special meaning in the syntax definitions.
+
+[cols="^,",]
+|===
+|\{ } |The enclosed item may be repeated zero or more times.
+|[ ] |The items enclosed are optional, they may occur zero or one time.
+|| |Indicates alternatives; one of which must be used.
+|<stmt> |Means a BBC BASIC (Z80) statement.
+|<var> |Means a numeric or string variable.
+|<exp> |Means an expression like PI*radius*height+2 or name$+"FRED"+CHR$(&0D). It can also be a single variable or constant like 23 or "FRED".
+|<l-num> |Means a line number in a BBC BASIC (Z80) program.
+|<k-num> |Means the number of one of the programmable keys.
+|<n-const> |Means a numeric constant like '26.4' or '256'.
+|<n-var> |Means a numeric variable like 'size' or 'weight'.
+|<numeric> |Means a <n-const> or a <n-var> or an expression combining them. For example: PI*radius+2.66
+|<s-const> |Means a string constant like "FRED".
+|<string> |Means an unquoted string of characters.
+|<s-var> |Means a string variable like 'address$'.
+|<str> |Means a <s-const> or a <s-var> or an expression combining them. For example: name$+add$+"Phone".
+|<t-cond> |Means a 'testable condition'. In other words, something which is either TRUE or FALSE. Since BBC BASIC does not have true Boolean variables, TRUE and FALSE are numeric (with a value of -1 and 0). Consequently, a <numeric> can be used anywhere a <t-cond> is specified.
+|<name> |Means a valid variable name.
+|<d:> |Means a disk drive name (A: to P:).
+|<afsp> |Means an ambiguous file specifier.
+|<ufsp> |Means an unambiguous file specifier.
+|<nchr> |Means a character valid for use in a name. 0 to 9, A to Z, a to z and underline.
+|===
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:bbckey1.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

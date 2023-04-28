@@ -1,0 +1,403 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+== Assembler
+
+=== [#introduction]#Introduction#
+
+BBC BASIC (Z80) includes a Z80 assembler. This assembler is similar to the 6502 assembler on the BBC Micro and it is entered in the same way. That is, '[' enters assembler mode and ']' exits assembler mode.
+
+==== [#mnemonics]#Instruction mnemonics#
+
+All standard Zilog mnemonics are accepted: 'ADD', 'ADC' and 'SBC', must be followed by 'A' or 'HL'. For example *ADD A,C* is accepted but *ADD C* is not. However, the brackets around the port address in 'IN' and 'OUT' are optional; thus both *OUT (5),A* and *OUT 5,A* are accepted. The instruction 'IN F,(C)' is *not* accepted but the equivalent object code is produced from 'IN (HL),(C)'.
+
+==== [#statements]#Statements#
+
+An assembly language statement consists of three elements; an optional label, an instruction and an operand. A comment may follow the operand field. The instruction following a label must be separated from it by at least one space. Similarly, the operand must also be separated from the instruction by a space. Statements are terminated by a colon (:) or end of line (<RET>).
+
+==== [#labels]#Labels#
+
+Any BBC BASIC (Z80) numeric variable may be used as a label. These (external) labels are defined by an assignment (count=23 for instance). Internal labels are defined by preceding them with a full stop. When the assembler encounters such a label, a BASIC variable is created containing the current value of the Program Counter (P%). (The Program Counter is described link:#programcounter[later].)
+
+In the example shown later under the heading link:#process[The Assembly Process], two internal labels are defined and used. Labels have the same rules as standard BBC BASIC (Z80) variable names; they should start with a letter and not start with a keyword.
+
+==== [#comments]#Comments#
+
+You can insert comments into assembly language programs by preceding them with a semi-colon (;) or a back-slash (\). In assembly language, a comment ends at the end of the statement. Thus, the following example will work (but it's a bit untidy).
+
+____
+....
+[;start assembly language program
+etc
+LD A,B ;In-line comment:POP HL ;get start address
+RET NZ ;Return if finished:JR loop ;else go back
+etc
+;end assembly language program:]
+....
+____
+
+'''''
+
+==== [#constants]#Constants#
+
+You can store constants within your assembly language program using the define byte (DEFB), define word (DEFW) and define message (DEFM) pseudo-operation commands.
+
+===== [#byte]#Define Byte - DEFB#
+
+DEFB can be used to set one byte of memory to a particular value. For example,
+
+____
+....
+.data DEFB 15
+      DEFB 9
+....
+____
+
+will set two consecutive bytes of memory to 15 and 9 (decimal). The address of the first byte will be stored in the variable 'data'.
+
+===== [#word]#Define Word - DEFW#
+
+DEFW can be used to set two bytes of memory to a particular value. The first byte is set to the least significant byte of the number and the second to the most significant byte. For example,
+
+____
+....
+.data DEFW &90F
+....
+____
+
+will have the same result as the Byte Constant example.
+
+===== [#defm]#Define Message - DEFM#
+
+DEFM can be used to load a string of ASCII characters into memory. For example,
+
+____
+....
+JR continue; jump round the data
+.string DEFM "This is a test message"
+DEFB &D
+.continue; and continue the process
+....
+____
+
+will load the string 'This is a test message' followed by a carriage-return into memory. The address of the start of the message is loaded into the variable 'string'. This is equivalent to the following program segment:
+
+____
+....
+JR continue;    jump round the data
+.string;    leave assembly and load the string
+]
+$P%="This is a test message" REM starting at P%
+P%=P%+LEN($P%)+1 REM adjust P% to next free byte
+[
+OPT opt; reset OPT
+.continue;  and continue the program
+....
+____
+
+'''''
+
+=== [#reserving]#Reserving Memory#
+
+==== [#programcounter]#The Program Counter#
+
+Machine code instructions are assembled as if they were going to be placed in memory at the addresses specified by the program counter, P%. Their actual location in memory may be determined by O% depending on the OPTion specified (see link:#opt[below]). You must make sure that P% (or O%) is pointing to a free area of memory before your program begins assembly. In addition, you need to reserve the area of memory that your machine code program will use so that it is not overwritten at run time. You can reserve memory by using a special version of the link:bbckey1.html#dim[DIM] statement or by changing link:bbckey2.html#himem[HIMEM] or link:bbckey2.html#lomem[LOMEM].
+
+==== [#usingdim]#Using DIM to Reserve Memory#
+
+Using the special version of the DIM statement to reserve an area of memory is the simplest way for short programs which do not have to be located at a particular memory address. (See the keyword link:bbckey1.html#dim[DIM] for more details.) For example,
+
+____
+....
+DIM code 20: REM Note the absence of brackets
+....
+____
+
+will reserve 21 bytes of code (byte 0 to byte 20) and load the variable 'code' with the start address of the reserved area. You can then set P% (or O%) to the start of that area. The example below reserves an area of memory 100 bytes long and sets P% to the first byte of the reserved area.
+
+____
+....
+DIM sort% 99
+P%=sort%
+....
+____
+
+==== [#movinghimem]#Moving HIMEM to Reserve Memory#
+
+If you are going to use a machine code program in a number of your BBC BASIC (Z80) programs, the simplest way is to assemble it once, save it using link:opsys1.html#save[*SAVE] and load it from each of your programs using link:opsys1.html#load[*LOAD]. In order for this to work, the machine code program must be loaded into the same address each time. The most convenient way to arrange this is to move link:bbckey2.html#himem[HIMEM] down by the length of the program and load the machine code program in to this protected area. Theoretically, you could raise link:bbckey2.html#lomem[LOMEM] to provide a similar protected area below your BBC BASIC (Z80) program. However, altering LOMEM destroys ALL your dynamic variables and is more risky.
+
+==== [#length]#Length of Reserved Memory#
+
+You must reserve an area of memory which is sufficiently large for your machine code program before you assemble it, but you may have no real idea how long the program will be until after it is assembled. How then can you know how much memory to reserve? Unfortunately, the answer is that you can't. However, you can add to your program to find the length used and then change the memory reserved by the link:bbckey1.html#dim[DIM] statement to the correct amount.
+
+In the example below, a large amount of memory is initially reserved. To begin with, a single pass is made through the assembly code and the length needed for the code is calculated (lines 100 to 120). After a link:bbckey1.html#clear[CLEAR], the correct amount of memory is reserved (line 140) and a further two passes of the assembly code are performed as usual. Your program should not, of course, subsequently try to use variables set before the clear statement. If you use a similar structure to the example and place the program lines which initiate the assembly function at the start of your program, you can place your assembly code anywhere you like and still avoid this problem.
+
+____
+....
+100 DIM free -1, code HIMEM-free-1000
+110 PROC_ass(0)
+120 L%=P%-code
+130 CLEAR
+140 DIM code L%
+150 PROC_ass(0)
+160 PROC_ass(2)
+
+- - -
+Put the rest of your program here.
+- - -
+
+1000 DEF PROC_ass(opt)
+10010 P%=code
+10020 [OPT opt
+- - -
+Assembler code program.
+- - -
+
+11000 ]
+11010 ENDPROC
+....
+____
+
+==== [#initial]#Initial Setting of the Program Counter#
+
+The program counters, P%, and O% are initialised to zero. Using the assembler without first setting P% (and O%) is liable to corrupt BBC BASIC (Z80)'s workspace (see the Annex entitled link:annexd.html[Format of Program and Variables in Memory]).
+
+'''''
+
+=== [#process]#The Assembly Process#
+
+==== [#opt]#OPT#
+
+The only assembly directive is link:bbckey3.html#opt[OPT]. As with the 6502 assembler, 'OPT' controls the way the assembler works, whether a listing is displayed and whether errors are reported. OPT should be followed by a number in the range 0 to 7. The way the assembler functions is controlled by the three bits of this number in the following manner.
+
+===== Bit 0 - LSB
+
+Bit 0 controls the listing. If it is set, a listing is displayed.
+
+===== Bit 1
+
+Bit 1 controls the error reporting. If it is set, errors are reported.
+
+===== Bit 2
+
+Bit 2 controls where the assembled code is placed. If bit 2 is set, code is placed in memory starting at the address specified by O%. However, the program counter (P%) is still used by the assembler for calculating the instruction addresses.
+
+==== [#different]#Assembly at a Different Address#
+
+In general, machine code will only run properly if it is in memory at the addresses for which it was assembled. Thus, at first glance, the option of assembling it in a different area of memory is of little use. However, using this facility, it is possible to build up a library of machine code utilities for use by a number of programs. The machine code can be assembled for a particular address by one program without any constraints as to its actual location in memory and saved using link:opsys1.html#save[*SAVE]. This code can then be loaded into its working location from a number of different programs using link:opsys1.html#load[*LOAD].
+
+==== [#summary]#OPT Summary#
+
+===== [#codeatp]#Code Assembled Starting at P%#
+
+The code is assembled using the program counter (P%) to calculate the instruction addresses and the code is also placed in memory at the address specified by the program counter.
+
+____
+[cols=",",]
+|===
+|`OPT 0` |reports no errors and gives no listing.
+|`OPT 1` |reports no errors, but gives a listing.
+|`OPT 2` |reports errors, but gives no listing.
+|`OPT 3  ` |reports errors and gives a listing.
+|===
+____
+
+===== [#codeato]#Code Assembled Starting at O%#
+
+The code is assembled using the program counter (P%) to calculate the instruction addresses. However, the assembled code is placed in memory at the address specified by O%.
+
+____
+[cols=",",]
+|===
+|`OPT 4` |reports no errors and gives no listing.
+|`OPT 5` |reports no errors, but gives a listing.
+|`OPT 6` |reports errors, but gives no listing.
+|`OPT 7  ` |reports errors and gives a listing.
+|===
+____
+
+==== [#how]#How the Assembler Works#
+
+The assembler works line by line through the machine code. When it finds a label declared it generates a BBC BASIC (Z80) variable with that name and loads it with the current value of the program counter (P%). This is fine all the while labels are declared before they are used. However, labels are often used for forward jumps and no variable with that name would exist when it was first encountered. When this happens, a 'link:annexc.html#nosuchvariable[No such variable]' error occurs. If error reporting has not been disabled, this error is reported and BBC BASIC (Z80) returns to the direct mode in the normal way. If error reporting has been disabled (link:bbckey3.html#opt[OPT] 0, 1, 4 or 5), the current value of the program counter is used in place of the address which would have been found in the variable, and assembly continues. By the end of the assembly process the variable will exist (assuming the code is correct), but this is of little use since the assembler cannot 'back track' and correct the errors. However, if a second pass is made through the assembly code, all the labels will exist as variables and errors will not occur. The example below shows the result of two passes through a (completely futile) demonstration program. Twelve bytes of memory are reserved for the program. (If the program was run, it would 'doom-loop' from line 50 to 70 and back again.) The program disables error reporting by using OPT 1.
+
+____
+....
+10 DIM code 12
+20 FOR opt=1 TO 3 STEP 2
+30 P%=code
+40 [OPT opt
+50 .jim JR fred
+60 DEFW &2345
+70 .fred JR jim
+80 ]
+90 NEXT
+....
+____
+
+This is the first pass through the assembly process (note that the '`JR fred`' instruction jumps to itself):
+
+____
+....
+3E7B              OPT opt
+3E7B 18 FE        .jim JR fred
+3E7D 45 23        DEFW &2345
+3E7F 18 FA        .fred JR jim
+....
+____
+
+This is the second pass through the assembly process (note that the '`JMP fred`' instruction now jumps to the correct address):
+
+____
+....
+3E7B              OPT opt
+3E7B 18 02        .jim JR fred
+3E7D 45 23        DEFW &2345
+3E7F 18 FA        .fred JR jim
+....
+____
+
+Generally, if labels have been used, you must make two passes through the assembly language code to resolve forward references. This can be done using a link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop. Normally, the first pass should be with link:bbckey3.html#opt[OPT] 0 (or OPT 4) and the second pass with OPT 2 (OPT 6). If you want a listing, use OPT 3 (OPT7) for the second pass. During the first pass, a table of variables giving the address of the labels is built. Labels which have not yet been included in the table (forward references) will generate the address of the current op-code. The correct address will be generated during the second pass.
+
+==== [#saveload]#Saving and Loading Machine Code Programs#
+
+As mentioned earlier, you can use machine code routines in a number of BBC BASIC (Z80) programs by using link:opsys1.html#save[*SAVE] and link:opsys1.html#load[*LOAD]. The safest way to do this is to write a program which consists of only the machine code routines and enough BBC BASIC (Z80) to assemble them. They should be assembled 'out of the way' at the top of memory (each routine starting at a known address) and then *SAVEd. (Don't forget to move link:bbckey2.html#himem[HIMEM] down first.) The BBC BASIC (Z80) programs that use these routines should move HIMEM down to the same value before they *LOAD the assembly code routines into the address at which they were originally assembled. *SAVE and *LOAD are explained below.
+
+===== [#save]#*SAVE#
+
+Save an area of memory to disk. You MUST specify the start address (aaaa) and either the length of the area of memory (llll) or its end address+1 (bbbb).
+
+____
+....
+*SAVE ufsp aaaa +llll
+*SAVE ufsp aaaa bbbb
+OSCLI "SAVE "+<st>+" "+STR$~(<n>)+"+"+STR$~(<n>)
+*SAVE "WOMBAT" 8F00 +80
+*SAVE "WOMBAT" 8F00 8F80
+OSCLI "SAVE "+ufn$+" "+STR$~(add)+"+"+STR$~(len)
+....
+____
+
+===== [#load]#*LOAD#
+
+Load the specified file into memory at hexadecimal address 'aaaa'. The load address MUST always be specified. link:bbckey3.html#oscli[OSCLI] may also be used to load a file. However, you must take care to provide the load address as a hexadecimal number in string format.
+
+____
+....
+*LOAD ufsp aaaa
+OSCLI "LOAD "+<str>+" "+STR$~<num>
+
+*LOAD A:WOMBAT 8F00
+OSCLI "LOAD "+f_name$+" "+STR$~(strt_address)
+....
+____
+
+'''''
+
+=== [#condmacro]#Conditional Assembly and Macros#
+
+==== [#condintro]#Introduction#
+
+Most machine code assemblers provide conditional assembly and macro facilities. The assembler does not directly offer these facilities, but it is possible to implement them by using other features of BBC BASIC (Z80).
+
+==== [#conditional]#Conditional Assembly#
+
+You may wish to write a program which makes use of special facilities and which will be run on different types of computer. The majority of the assembly code will be the same, but some of it will be different. In the example below, different output routines are assembled depending on the value of 'flag'.
+
+____
+....
+DIM code 200
+FOR pass=0 TO 3 STEP 3
+  [OPT pass
+  .start     - - -
+             - - - code - - -
+             - - - :]
+  :
+  IF flag  [OPT  pass: - code for routine 1 -:]
+  IF NOT flag [OPT pass: - code for routine 2 - :]
+  :
+  [OPT pass
+  .more_code - - -
+             - - - code - - -
+             - - -:]
+NEXT
+....
+____
+
+==== [#macros]#Macros#
+
+Within any machine code program it is often necessary to repeat a section of code a number of times and this can become quite tedious. You can avoid this repetition by defining a macro which you use every time you want to include the code. The example below uses a macro to pass a character to the operating system. Conditional assembly is used within the macro to select either the normal CP/M routine or one applicable to the Torch, depending on the value of op_flag.
+
+It is possible to suppress the listing of the code in a macro by forcing bit 0 of link:bbckey3.html#opt[OPT] to zero for the duration of the macro code. This can most easily be done by link:bbckey1.html#and[AND]ing the value passed to OPT with 6. This is illustrated in PROC_normal and PROC_torch in the example below.
+
+____
+....
+DIM code 200
+op_flag=TRUE
+FOR pass=0 TO 3 STEP 3
+  [OPT pass
+  .start   - - -
+           - - - code - - -
+           - - -
+: 
+  OPT FN_select(op_flag); Include code depending on op_flag
+:
+           - - -
+           - - - code - - -
+           - - -:]
+NEXT
+END
+:
+:
+REM Include code depending on value of op_flag
+:
+DEF FN_select(op_flag)
+IF op_flag PROC_torch ELSE PROC_normal
+=pass
+REM Return original value of OPT.  This is a
+REM bit artificial, but necessary to insert
+REM some BBC BASIC code in the assembly code.
+:
+DEF PROC_torch
+[OPT pass AND 6
+LD E,A
+RST &30
+DEFB 2
+RET:]
+ENDPROC
+:
+DEF PROC_normal
+[OPT pass AND 6
+PUSH BC
+LD C,2
+LD E,A
+CALL 5
+POP BC
+RET:]
+ENDPROC
+....
+____
+
+The use of a function call to incorporate the code provides a neat way of incorporating the macro within the program and allows parameters to be passed to it. The function should return the original value of OPT.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:bbckey0.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

@@ -1,0 +1,826 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+== Error Messages and Codes
+
+=== Annex C to +
+BBC BASIC (Z80)
+
+=== [#summary]#Summary#
+
+==== [#trapprog]#Trappable - Program#
+
+____
+[cols=",,,",options="header",]
+|===
+|No |Error |No |Error
+|1 |link:#outofrange[Out of range] |2 |*
+|3 |* |4 |link:#mistake[Mistake]
+|5 |link:#missingcomma[Missing ,] |6 |link:#typemismatch[Type mismatch]
+|7 |link:#nofn[No FN] |8 |*
+|9 |link:#missingquote[Missing "] |10 |link:#baddim[Bad DIM]
+|11 |link:#dimspace[DIM space] |12 |link:#notlocal[Not LOCAL]
+|13 |link:#noproc[No PROC] |14 |link:#array[Array]
+|15 |link:#subscript[Subscript] |16 |link:#syntaxerror[Syntax error]
+|17 |link:#escape[Escape] |18 |link:#divisionbyzero[Division by zero]
+|19 |link:#stringtoolong[String too long] |20 |link:#toobig[Too big]
+|21 |link:#negativeroot[-ve root] |22 |link:#logrange[Log range]
+|23 |link:#accuracylost[Accuracy lost] |24 |link:#exprange[Exp range]
+|25 |* |26 |link:#nosuchvariable[No such variable]
+|27 |link:#missingbracket[Missing )] |28 |link:#badhex[Bad HEX]
+|29 |link:#nosuchfnproc[No such FN/PROC] `  ` |30 |link:#badcall[Bad call]
+|31 |link:#arguments[Arguments] |32 |link:#nofor[No FOR]
+|33 |link:#cantmatchfor[Can't match FOR] |34 |link:#forvariable[FOR variable]
+|35 |* |36 |link:#noto[No TO]
+|37 |* |38 |link:#nogosub[No GOSUB]
+|39 |link:#onsyntax[ON syntax] |40 |link:#onrange[ON range]
+|41 |link:#nosuchline[No such line] |42 |link:#outofdata[Out of DATA]
+|43 |link:#norepeat[No REPEAT] |44`  ` |*
+|45`  ` |link:#missinghash[Missing #] |  | 
+|===
+____
+
+* Not applicable to BBC BASIC (Z80)
+
+==== [#trapos]#Trappable - Operating System#
+
+____
+[cols=",,,",options="header",]
+|===
+|No |Error |No |Error
+|190 |link:#directoryfull[Directory full] `      ` |192 |link:#toomanyopenfiles[Too many open files]
+|196 |link:#fileexists[File exists] |198 |link:#diskfull[Disk full]
+|200 |link:#closeerror[Close error] |204 |link:#badname[Bad name]
+|214 |link:#filenotfound[File not found] |222 |link:#channel[Channel]
+|253` ` |link:#badstring[Bad string] |254` ` |link:#badcommand[Bad command]
+|255` ` |link:#cpmerror[CP/M error] | |
+|===
+____
+
+==== [#untrap]#Untrappable - Error Code 0#
+
+____
+[cols=",",]
+|===
+|link:#noroom[No room] |link:#renumberspace[RENUMBER space]
+|link:#silly[Silly] |link:#linespace[LINE space]
+|link:#sorry[Sorry] |link:#badprogram[Bad program]
+|link:#failedatnnn[Failed at nnn] | 
+|===
+____
+
+Strictly speaking 'Bad program' does not have an error code. It leaves link:bbckey2.html#err[ERR] and link:bbckey2.html#erl[ERL] unchanged.
+
+'''''
+
+=== [#details]#Details#
+
+BBC BASIC (Z80)'s error messages and codes are briefly explained below in alphabetical order.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#accuracylost]#Accuracy lost#
+
+a|
+===== 23
+
+|===
+
+Before BBC BASIC (Z80) calculates trigonometric functions (sin, cos, etc) of very large angles the angles are reduced to +/- link:bbckey3.html#pi[PI] radians. The larger the angle, the greater the inaccuracy of the reduction, and hence the result. When this inaccuracy becomes unacceptable, BBC BASIC (Z80) will issue an 'Accuracy lost' error message.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#arguments]#Arguments#
+
+a|
+===== 31
+
+|===
+
+This error indicates that too many or too few arguments have been passed to a procedure or function or an invalid formal parameter has been used. See the sub-section on link:bbc2.html#procedures[Procedures and Functions].
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#array]#Array#
+
+a|
+===== 14
+
+|===
+
+This error occurs when BBC BASIC (Z80) thinks it should be accessing an array, but does not know which one.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#badcall]#Bad call#
+
+a|
+===== 30
+
+|===
+
+This error indicates that a procedure or function has been incorrectly called.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#badcommand]#Bad command#
+
+a|
+===== 254
+
+|===
+
+This error occurs when a command name is not recognized as a valid BBC BASIC (Z80) command. Star commands which are unknown to BBC BASIC (Z80) are passed to CP/M-80. If the command is unrecognised by CP/M-80, an untrappable 'Bad command or file name' error occurs.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#baddim]#Bad DIM#
+
+a|
+===== 10
+
+|===
+
+Arrays must be positively dimensioned. In other words, the numbers within the brackets must not be negative. This error would be produced by the following example.
+
+____
+....
+DIM table(20,-10)
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#badhex]#Bad HEX#
+
+a|
+===== 28
+
+|===
+
+Hexadecimal numbers can only include the numbers 0 to 9 and A to F. If you try to form a hex number with other characters this error will occur. For example:
+
+____
+....
+&OF instead of &0F
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#badname]#Bad name#
+
+a|
+===== 204
+
+|===
+
+This error is generated if a path name exceeds 64 characters in length.
+
+==== [#badprogram]#Bad program#
+
+From time to time BBC BASIC (Z80) checks to see that the program in memory is of the correct format (See link:annexe.html[Annex E]). If it is unable to follow the program from the start to the 'program end marker' it will report this untrappable error. The error can be caused by a read error, by only loading part of the program or by overwriting part of the program in some way. (Machine code programmers beware.) Without a full understanding of how a program is stored in memory, there is little you can do to recover a bad program.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#badstring]#Bad string#
+
+a|
+===== 253
+
+|===
+
+File names in 'star' commands may optionally be enclosed in quotes. This error will occur if the quotes are unmatched. The following example would give rise to this error.
+
+____
+....
+*SAVE "GRAPHS
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#cantmatchfor]#Can't match FOR#
+
+a|
+===== 33
+
+|===
+
+BBC BASIC (Z80) has been unable to find a link:bbckey2.html#for[FOR] statement corresponding to the link:bbckey3.html#next[NEXT] statement.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#channel]#Channel#
+
+a|
+===== 222
+
+|===
+
+This error is generated by the disk filing system. It occurs if you try to use a channel which has not been opened, possibly because you are using the wrong channel number.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#closeerror]#Close error#
+
+a|
+===== 200
+
+|===
+
+This error will occur if the file(s) specified cannot be closed because the disk has been changed while the file(s) were open.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#dimspace]#DIM space#
+
+a|
+===== 11
+
+|===
+
+This error will be generated if:
+
+* There is insufficient room for an array when you try to dimension it.
+* An attempt has been made to reserve a negative amount of memory. For example,
++
+____
+....
+DIM A% -2
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#directoryfull]#Directory full#
+
+a|
+===== 190
+
+|===
+
+This error will occur if an attempt is made to create more files on the disk than the directory has capacity for.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#diskfull]#Disk full#
+
+a|
+===== 198
+
+|===
+
+This error will occur if there is insufficient room on the disk for the data/program being written to it.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#divisionbyzero]#Division by zero#
+
+a|
+===== 18
+
+|===
+
+Mathematically, dividing by zero gives an infinitely large answer. The computer is unable to understand the concept of infinity (it's not alone) and this error is generated. If there is any possibility that the divisor might be zero, you should test for this condition before carrying out the division. For example:
+
+____
+....
+200 IF divisor=0 THEN PROC_error ELSE...
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#escape]#Escape#
+
+a|
+===== 17
+
+|===
+
+This error is generated by pressing the <Esc> key. You can trap this, and other errors, by using the link:bbckey3.html#onerror[ON ERROR GOTO] statement. You can inhibit the generation of the 'Escape' error by using link:opsys1.html#esc[*ESC OFF]. The <Esc> key then returns the ASCII value of escape (&1B). *ESC ON restores the default action of the <Esc> key.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#exprange]#Exp range#
+
+a|
+===== 24
+
+|===
+
+The link:bbckey2.html#exp[EXP] function is unable to cope with powers greater than 88. If you try to use a larger power, this error will be generated.
+
+==== [#failedatnnn]#Failed at nnn#
+
+During renumbering, BBC BASIC (Z80) tries to resolve all line numbers referred to by link:bbckey2.html#goto[GOTO] and link:bbckey2.html#gosub[GOSUB] statements. Should it fail, it will generate a 'Failed at nnn' error, where nnn is the link:bbckey4.html#renumber[RENUMBER]ED line which contains the unresolved reference.
+
+The following example:
+
+____
+....
+100 REM Demonstration renumber fail program
+110 GOTO 250
+120 END
+....
+____
+
+would renumber as:
+
+____
+....
+10 REM Demonstration renumber fail program
+20 GOTO 250
+30 END
+....
+____
+
+and generate the error message 'Failed at 20'.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#fileexists]#File exists#
+
+a|
+===== 196
+
+|===
+
+This error will be generated if you try to rename a file and a file with the new name already exists.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#filenotfound]#File not found#
+
+a|
+===== 214
+
+|===
+
+This error will occur if you try to link:bbckey2.html#load[LOAD], link:opsys1.html#load[*LOAD] or link:bbckey1.html#chain[CHAIN] a file which does not exist.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#forvariable]#FOR variable#
+
+a|
+===== 34
+
+|===
+
+The variable in a link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop must be a numeric variable. If you use a constant or a string variable this error message will be generated. For example, the following statements are not legal.
+
+____
+....
+20 FOR name$=1 TO 20
+
+20 FOR 10=1 TO 20
+....
+____
+
+==== [#linespace]#LINE space#
+
+A program line is too long to be represented in BBC BASIC (Z80)'s internal format.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#logrange]#Log range#
+
+a|
+===== 22
+
+|===
+
+Logarithms for zero and negative numbers do not exist. This error message will be generated if you try to calculate the log of zero or a negative number or raise a negative number to a non-integer power.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#missingcomma]#Missing ,#
+
+a|
+===== 5
+
+|===
+
+This error message is generated if BBC BASIC (Z80) was unable to find a comma where one was expected. The following example would give rise to this error.
+
+____
+....
+20 PRINT TAB(10 5)
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#missingquote]#Missing "#
+
+a|
+===== 9
+
+|===
+
+This error message is generated if BBC BASIC (Z80) was unable to find a double-quote where one was expected. The following example would give rise to this error.
+
+____
+....
+10 name$="Douglas
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#missingbracket]#Missing )#
+
+a|
+===== 27
+
+|===
+
+This error message is generated if BBC BASIC (Z80) was unable to find a closing bracket where one was expected. The following example would give rise to this error.
+
+____
+....
+10 PRINT SQR(num
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#missinghash]#Missing ##
+
+a|
+===== 45
+
+|===
+
+This error will occur if BBC BASIC (Z80) is unable to find a hash symbol (a pound symbol on some computers) where one was expected. The following example would cause this error.
+
+____
+....
+CLOSE 7
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#mistake]#Mistake#
+
+a|
+===== 4
+
+|===
+
+This error will be generated if BBC BASIC (Z80) is unable to make any sense at all of the input line.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#negativeroot]#-ve root#
+
+a|
+===== 21
+
+|===
+
+This error message will occur if BBC BASIC (Z80) attempted to calculate the square root of a negative number. It is possible for this error to occur with link:bbckey1.html#asn[ASN] and link:bbckey1.html#acs[ACS] as well as link:bbckey4.html#sqr[SQR].
+
+____
+....
+ 90 num=-20
+100 root=SQR(num)
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#nogosub]#No GOSUB#
+
+a|
+===== 38
+
+|===
+
+This error message will be generated if BBC BASIC (Z80) finds a link:bbckey4.html#return[RETURN] statement without first encountering a link:bbckey2.html#gosub[GOSUB] statement. (See the sub-section on link:bbc2.html#programflow[Program Flow Control].)
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#nofn]#No FN#
+
+a|
+===== 7
+
+|===
+
+If BBC BASIC (Z80) encounters an end of function without calling a function definition, this error message will be issued. If you forget to put multi-line function definitions out of harm's way at the end of the program you are very likely to get this error message. (See the sub-section on link:bbc2.html#procedures[Procedures and Functions].)
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#nofor]#No FOR#
+
+a|
+===== 32
+
+|===
+
+This error message indicates that BBC BASIC (Z80) has found a link:bbckey3.html#next[NEXT] statement without first encountering a link:bbckey2.html#for[FOR] statement.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#noproc]#No PROC#
+
+a|
+===== 13
+
+|===
+
+If BBC BASIC (Z80) encounters an link:bbckey1.html#endproc[ENDPROC] without performing (calling) a procedure definition, this error message will be issued. If you forget to put multi-line procedure definitions out of harm's way at the end of the program you are very likely to get this error message. (See the sub-section on link:bbc2.html#procedures[Procedures and Functions].)
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#norepeat]#No REPEAT#
+
+a|
+===== 43
+
+|===
+
+This error message indicates that BBC BASIC (Z80) has found an link:bbckey4.html#until[UNTIL] statement without first encountering a link:bbckey4.html#repeat[REPEAT] statement.
+
+==== [#noroom]#No room#
+
+This untrappable error indicates that all the computer's available memory was used up whilst a program was running. This error may occur as a result of numerous assignments to string variables, as in a string sort. See the explanation of link:bbc2.html#stringsetc[String Variables and Garbage] in the link:bbc2.html#variables[Variables] sub-section for details.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#nosuchfnproc]#No such FN/PROC#
+
+a|
+===== 29
+
+|===
+
+When BBC BASIC (Z80) encounters a name beginning with link:bbckey2.html#fn[FN] or link:bbckey4.html#proc[PROC] it expects to be able to find a corresponding function or procedure definition. This error will occur if such a definition does not exist.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#nosuchline]#No such line#
+
+a|
+===== 41
+
+|===
+
+This error will occur if BBC BASIC (Z80) tries to link:bbckey2.html#goto[GOTO], link:bbckey2.html#gosub[GOSUB], link:bbckey4.html#trace[TRACE] or link:bbckey4.html#restore[RESTORE] to a non-existent line number.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#nosuchvariable]#No such variable#
+
+a|
+===== 26
+
+|===
+
+Variables are brought into existence by assigning a value to them or making them link:bbckey2.html#local[LOCAL] in a function or procedure definition. This error message will be generated if you try to use a variable on the right-hand side of an assignment or access it in a link:bbckey3.html#print[PRINT] statement before it has been created. As shown below, you can create variables very simply.
+
+____
+....
+10 count=0
+20 name$=""
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#noto]#No TO#
+
+a|
+===== 36
+
+|===
+
+This error message will be generated if BBC BASIC (Z80) encounters a link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop with the link:bbckey4.html#to[TO] part missing.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#notlocal]#Not LOCAL#
+
+a|
+===== 12
+
+|===
+
+If you try to define a variable as link:bbckey2.html#local[LOCAL] outside a procedure or function, this error message will be generated. If you forget to put multi-line function definitions out of harm's way at the end of the program you are very likely to get this error message. (See the sub-section on link:bbc2.html#procedures[Procedures and Functions].)
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#onrange]#ON range#
+
+a|
+===== 40
+
+|===
+
+This error will be generated if, in a simple link:bbckey3.html#on[ON GOTO/GOSUB/PROC] statement, the control variable was less than 1 or greater than the number of entries in the ON list. These exceptions can be trapped in ON GOTO/GOSUB/PROC statements by using the link:bbckey1.html#else[ELSE] option. The first example below will generate an 'ON range' error, whilst the second is correct.
+
+____
+....
+10 num=4
+20 ON num GOTO 100,200,300
+
+10 num=4
+20 ON num GOTO 100,200,300 ELSE 1000
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#onsyntax]#ON syntax#
+
+a|
+===== 39
+
+|===
+
+This error will be reported if the link:bbckey3.html#on[ON...GOTO] statement was misformed. For example, the following statement is not legal. (Refer to the keyword link:bbckey3.html#on[ON] for details of legal statements.)
+
+____
+....
+20 ON x TIME=0
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#outofdata]#Out of DATA#
+
+a|
+===== 42
+
+|===
+
+If your program tried to read more items of data than there were in the data list, this error will be generated. You can use link:bbckey4.html#restore[RESTORE] to return the data pointer to the first data statement (or to a particular line with a data statement) if you wish.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#outofrange]#Out of range#
+
+a|
+===== 1
+
+|===
+
+This link:bbc3.html[assembly language] error will be reported if you tried to perform a relative jump of more than +127 or -128 bytes or you used a 16 bit port address when only an 8 bit address is allowed.
+
+==== [#renumberspace]#RENUMBER space#
+
+When BBC BASIC link:bbckey4.html#renumber[RENUMBER]s a program it has to build a cross-reference table of line numbers. If there is insufficient memory to hold this table, the 'RENUMBER space' error results. In this case you can still renumber the program using the RENUMBER.COM utility program supplied.
+
+==== [#silly]#Silly#
+
+This error message will be issued if you try to renumber a program or enter link:bbckey1.html#auto[AUTO] with a step size of 0. AUTO with a step size of more than 255 will work, but it will be evaluated link:bbckey3.html#mod[MOD] 256.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#stringtoolong]#String too long#
+
+a|
+===== 19
+
+|===
+
+You will get this error message if your program tries to generate a string which is longer than 255 characters.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#subscript]#Subscript#
+
+a|
+===== 15
+
+|===
+
+If you try to access an element of an array less than zero or greater than the size of the array you will generate this error. Both lines 20 and 30 of the following example would give rise to this error message.
+
+____
+....
+10 DIM test(10)
+20 test(-4)=20
+30 test(30)=10
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#syntaxerror]#Syntax error#
+
+a|
+===== 16
+
+|===
+
+A command was terminated incorrectly. In other words, the first part of the command was recognized, but the rest of it was meaningless or incomplete. Unlike link:#mistake[Mistake], BBC BASIC (Z80) was able to recognise the start of the command.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#toobig]#Too big#
+
+a|
+===== 20
+
+|===
+
+This error will occur if a number is entered or calculated which is too big for BBC BASIC (Z80) to cope with.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#toomanyopenfiles]#Too many open files#
+
+a|
+===== 192
+
+|===
+
+This error will occur if you try to open more than seven files at any one time.
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== [#typemismatch]#Type mismatch#
+
+a|
+===== 6
+
+|===
+
+This error indicates that a number was encountered when a string was expected and vice-versa. Don't forget that this can occur if the actual parameters and the formal parameters for a function or procedure do not correspond. (See sub-section on link:bbc2.html#procedures[Procedures and Functions] for details of parameter passing to functions and procedures.)
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:annexd.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

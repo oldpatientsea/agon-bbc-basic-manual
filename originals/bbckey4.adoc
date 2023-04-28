@@ -1,0 +1,1751 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#print]#PRINT##
+
+a|
+=== P.#
+
+|===
+
+A statement which writes the internal form of a value out to a data file.
+
+____
+....
+PRINT#E,A,B,C,D$,E$,F$
+PRINT#4,prn$
+....
+____
+
+The format of the variables as written to the file differs from the format used on the BBC Micro. All numeric values are written as five bytes of binary real data (see the Annex entitled link:annexd.html[Format of Program and Variables in Memory]). Strings are written as the bytes in the string (in the correct order) plus a carriage return.
+
+Before you use this statement, you must normally have opened a file using link:bbckey3.html#openout[OPENOUT] or link:bbckey3.html#openup[OPENUP]. PRINT# may alternatively be used with the AUX device (usually a serial port), which has the 'permanently open' handle = 3, or the PRN device (usually a parallel port) which has the 'permanently open' handle = 4.
+
+You can use PRINT# to write data (numbers and strings) to a data file in the 'standard' manner. If you wish to 'pack' your data in a different way, you should use link:bbckey1.html#bput[BPUT#]. You can use PRINT# and BPUT# together to mix or modify the data format. For example, if you wish to write a 'compatible' text file, you could PRINT# the string and BPUT# a line-feed. This would write the string followed by a carriage-return and a line-feed to the file.
+
+Remember, with BBC BASIC (Z80) the format of the file is completely under your control.
+
+==== Syntax
+
+____
+....
+PRINT#<numeric>{,<numeric>|<str>}
+....
+____
+
+==== Associated Keywords
+
+____
+` PRINT, OPENUP, OPENOUT, CLOSE#, INPUT#, BPUT#, BGET#,  EXT#, PTR#, EOF#`
+____
+
+'''''
+
+=== [#proc]#PROC#
+
+A keyword used at the start of all user declared procedures. The first character of a procedure name can be an underline (or a number).
+
+If there are spaces between the procedure name and the opening bracket of the parameter list (if any) they must be present both in the definition and the call. It's safer not to have spaces between the procedure name and the opening bracket.
+
+A procedure may be defined with any number of parameters of any type.
+
+A procedure definition is terminated by link:bbckey1.html#endproc[ENDPROC].
+
+A procedure does not have to be declared before it is called.
+
+Procedures are re-entrant and the parameters (arguments) are passed by value.
+
+____
+....
+ 10 INPUT"Number of discs "F
+ 20 PROC_hanoi(F,1,2,3)
+ 30 END
+ 40 :
+ 50 DEF PROC_hanoi(A,B,C,D)
+ 60 IF A=0 THEN ENDPROC
+ 70 PROC_hanoi(A-1,B,D,C)
+ 80 PRINT"Move disk ";A" from ";B" to ";C
+ 90 PROC_hanoi(A-1,D,C,B)
+100 ENDPROC
+....
+____
+
+See the link:bbc2.html#procedures[Procedures and Functions] sub-section for more details.
+
+==== Syntax
+
+____
+....
+PROC<name>[(<exp>{,<exp>})]
+....
+____
+
+==== Associated Keywords
+
+____
+` DEF, ENDPROC, LOCAL`
+____
+
+'''''
+
+=== [#ptr]#PTR##
+
+A pseudo-variable allowing the random-access pointer of the file whose file handle is its argument to be read and changed.
+
+____
+....
+PTR#F=PTR#F+5 :REM Move pointer to next number
+PTR#F=recordnumber*recordlength
+....
+____
+
+Reading or writing (using link:bbckey1.html#bget[BGET#], link:bbckey1.html#bput[BPUT#], link:bbckey2.html#inputhash[INPUT#] or link:#print[PRINT#]) takes place at the current position of the pointer. The pointer is automatically updated following a read or write operation.
+
+You can use PTR# to select which item in a file is to be read or written to next. In a random file (see the section on link:bbcfile3.html[BBC BASIC (Z80) Disk Files]) you use PTR# to select the record you wish to read or write.
+
+If you wish to move about in a file using PTR# you will need to know the precise format of the data in the file.
+
+A file opened with link:bbckey3.html#openup[OPENUP] may be extended by setting its pointer to its end (PTR#fnum = link:bbckey2.html#ext[EXT#]fnum) and then writing to it. If you do this, you must remember to link:bbckey1.html#close[CLOSE] the file when you have finished with it in order to update the directory entry.
+
+By using PTR# you have complete control over where you read and write data in a file. This is simple concept, but it may initially be difficult to grasp its many ramifications. The link:bbcfile1.html[BBC BASIC (Z80) Disk Files] section has a number of examples of the use of PTR#.
+
+==== Syntax
+
+____
+....
+PTR#<numeric>=<numeric>
+<n-var>=PTR#<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, BGET#,  EXT#, EOF#`
+____
+
+'''''
+
+=== [#put]#PUT#
+
+A statement to output data to an output port.
+
+____
+....
+PUT A,N :REM output N to port A.
+....
+____
+
+This instruction gives direct access from BBC BASIC (Z80) to the computer's I/O hardware. Typically, you can use it to directly access I/O ports.
+
+==== Syntax
+
+____
+....
+PUT <numeric>,<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` GET`
+____
+
+'''''
+
+=== [#rad]#RAD#
+
+A function which converts degrees to radians.
+
+____
+....
+X=RAD(Y)
+X=SIN RAD(90)
+....
+____
+
+Unlike humans, BBC BASIC (Z80) wants angles expressed in radians. You can use this function to convert an angle expressed in degrees to radians before using one of the angle functions (link:#sin[SIN], link:bbckey1.html#cos[COS], etc).
+
+Using RAD is equivalent to multiplying the degree value by link:bbckey3.html#pi[PI]/180, but the result is calculated internally to a greater accuracy.
+
+See link:bbckey1.html#cos[COS], link:#sin[SIN] and link:#tan[TAN] for further examples of the use of RAD.
+
+==== Syntax
+
+____
+....
+<n-var>=RAD<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` DEG`
+____
+
+'''''
+
+=== [#read]#READ#
+
+A statement which will assign to variables values read from the link:bbckey1.html#data[DATA] statements in the program. Strings must be enclosed in double quotes if they have leading spaces or contain commas.
+
+____
+....
+READ C,D,A$
+....
+____
+
+In many of your programs, you will want to use data values which do not change frequently. Because these values are subject to some degree of change, you won't want to use constants. On the other hand, you won't want to input them every time you run the program either. You can get the best of both worlds by declaring these values in DATA statements at the beginning or end of your program and READing them into variables in your program.
+
+A typical use for DATA and READ is a name and address list. The addresses won't change very often, but when they do you can easily amend the appropriate DATA statement.
+
+See link:bbckey1.html#data[DATA] for more details and an example of the use of DATA and READ.
+
+==== Syntax
+
+____
+....
+READ <n-var>|<s-var>{<n-var>|<s-var>}
+....
+____
+
+==== Associated Keywords
+
+____
+` DATA, RESTORE`
+____
+
+'''''
+
+=== [#rem]#REM#
+
+A statement that causes the rest of the line to be ignored thereby allowing comments to be included in a program.
+
+You can use the REM statement to put remarks and comments in to your program to help you remember what the various bits of your program do. BBC BASIC (Z80) completely ignores anything on the line following a REM statement.
+
+You will be able to get away without including any REMarks in simple programs. However, if you go back to a lengthy program after a couple of months you will find it very difficult to understand if you have not included any REMs.
+
+If you include nothing else, include the name of the program, the date you last revised it and a revision number at the start of your program.
+
+____
+....
+10 REM WSCONVERT REV 2.30
+20 REM 5 AUG 84
+30 REM Converts 'hard' carriage-returns to 'soft'
+40 REM ones in preparation for use with WS.
+....
+____
+
+==== Syntax
+
+____
+....
+REM any text
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#renumber]#RENUMBER#
+
+a|
+=== REN.
+
+|===
+
+A command which will renumber the lines and correct the cross references inside a program.
+
+The options are as for link:bbckey1.html#auto[AUTO], but increments of greater than 255 are allowed.
+
+You can specify both the new first number (n1) and/or the step size (s). The default for both the first number and the step size is 10. The two parameters should be separated by a comma or a hyphen.
+
+____
+....
+RENUMBER
+RENUMBER n1
+RENUMBER n1,s
+RENUMBER ,s
+....
+____
+
+For example:
+
+____
+[cols=",",]
+|===
+|`RENUMBER` |First number 10, step 10
+|`RENUMBER 1000` |First number 1000, step 10
+|`RENUMBER 1000-5  ` |First number 1000, step 5
+|`RENUMBER ,5` |First number 10, step 5
+|`RENUMBER -5` |First number 10, step 5
+|===
+____
+
+RENUMBER produces error messages when a cross reference fails. The line number containing the failed cross-reference is renumbered and the line number in the error report is the new line number.
+
+If you renumber a line containing an link:bbckey3.html#on[ON] GOTO/GOSUB statement which has a calculated line number, RENUMBER will correctly cope with line numbers before the calculated line number. However, line numbers after the calculated line number will not be changed.
+
+In the following example, the first two line numbers would be renumbered correctly, but the last two would be left unchanged.
+
+____
+....
+ON action GOSUB 100,200,(type*10+300),400,500
+....
+____
+
+RENUMBER may be used in a program, but it will exit to the command mode on completion.
+
+==== Syntax
+
+____
+....
+RENUMBER [<n-const>[,<n-const>]]
+....
+____
+
+==== Associated Keywords
+
+____
+` LIST`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#repeat]#REPEAT#
+
+a|
+=== REP.
+
+|===
+
+A statement which is the starting point of a REPEAT...link:#until[UNTIL] loop. A single REPEAT may have more than one UNTIL, but this is bad practice.
+
+The purpose of a REPEAT...UNTIL loop is to make BBC BASIC (Z80) repeat a set number of instructions until some condition is satisfied.
+
+____
+....
+REPEAT UNTIL GET=13 :REM wait for CR
+
+X=0
+REPEAT
+  X=X+10
+  PRINT "What do you think of it so far?"
+UNTIL X>45
+....
+____
+
+You must not exit a REPEAT...UNTIL loop with a link:bbckey2.html#goto[GOTO]. If you jump out of a loop with a GOTO (How could you!!!) you should jump back in. If you must jump out of the loop, you should use UNTIL link:#true[TRUE] to 'pop' the stack. For (a ghastly) example:
+
+____
+....
+ 10 i=1
+ 20 REPEAT: REM Print 1 to 100 unless
+ 30   I=I+1: REM interrupted by the
+ 40   PRINT i: REM space bar being pressed
+ 50   x=INKEY(0): REM Get a key
+ 60   IF x=32 THEN 110:REM exit if <SPACE>
+ 70 UNTIL i=100
+ 80 PRINT "****"
+ 90 END
+100 :
+110 UNTIL TRUE: REM Pop the stack
+120 PRINT "Forced exit":REM Carry on with program
+130 FOR j=1000 TO 1005
+140   PRINT j
+150 NEXT
+160 END
+....
+____
+
+See the keyword link:#until[UNTIL] for ways of using REPEAT...UNTIL loops to replace unconditional GOTOs for program looping.
+
+See the sub-section on link:bbc2.html#programflow[Program Flow Control] in the link:bbc2.html[General Information] section for more details on the working of the program stack.
+
+==== Syntax
+
+____
+....
+REPEAT
+....
+____
+
+==== Associated Keywords
+
+____
+` UNTIL`
+____
+
+'''''
+
+=== [#report]#REPORT#
+
+A statement which prints out the error string associated with the last error which occurred.
+
+You can use this statement within your own error handling routines to print out an error message for those errors you are not able to cope with.
+
+The example below is an error handling routine designed to cope only with the <ESCAPE> key being pressed. All other errors are reported and the program terminated.
+
+____
+....
+  10 ON ERROR GOTO 1000
+  20 .....
+ 970 .....
+ 980 END
+ 990 :
+1000 PRINT
+1010 IF ERR=17 THEN PRINT "<ESCAPE> ignored":GOTO 20
+1020 REPORT:PRINT " at line ";ERL
+....
+____
+
+See the sub-section on link:bbc2.html#errorhandling[Error Handling] and the keywords link:bbckey2.html#err[ERR], link:bbckey2.html#erl[ERL] and link:bbckey3.html#onerror[ON ERROR] for more details.
+
+==== Syntax
+
+____
+....
+REPORT
+....
+____
+
+==== Associated Keywords
+
+____
+` ERR, ERL, ON ERROR`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#restore]#RESTORE#
+
+a|
+=== RES.
+
+|===
+
+RESTORE can be used at any time in a program to set the line where link:bbckey1.html#data[DATA] is read from.
+
+RESTORE on its own resets the data pointer to the first data item in the program.
+
+RESTORE followed by a parameter sets the data pointer to the first item of data in the specified line (or the next line containing a DATA statement if the specified line does not contain data). This optional parameter for RESTORE can specify a calculated line number.
+
+____
+....
+RESTORE
+RESTORE 100
+RESTORE (10*A+20)
+....
+____
+
+You can use RESTORE to reset the data pointer to the start of your data in order to re-use it. alternatively, you can have several DATA lists in your program and use RESTORE to set the data pointer to the appropriate list.
+
+==== Syntax
+
+____
+....
+RESTORE [<l-num>]
+RESTORE [(<numeric>)]
+....
+____
+
+==== Associated Keywords
+
+____
+` READ, DATA`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#return]#RETURN#
+
+a|
+=== R.
+
+|===
+
+A statement causing a RETURN to the statement after the most recent link:bbckey2.html#gosub[GOSUB] statement.
+
+You use RETURN at the end of a subroutine to make BBC BASIC (Z80) return to the place in your program which originally 'called' the subroutine.
+
+You may have more than one return statement in a subroutine, but it is preferable to have only one entry point and one exit point (RETURN).
+
+Try to structure your program so you don't leave a subroutine with a link:bbckey2.html#goto[GOTO]. If you do, you should always return to the subroutine and exit via the RETURN statement. If you insist on using GOTO all over the place, you will end up confusing yourself and maybe confusing BBC BASIC (Z80) as well. The sub-section on link:bbc2.html#programflow[Program Flow Control] explains why.
+
+==== Syntax
+
+____
+....
+RETURN
+....
+____
+
+==== Associated Keywords
+
+____
+` GOSUB, ON GOSUB`
+____
+
+'''''
+
+=== [#right]#RIGHT$#
+
+A string function which returns the right 'num' characters of the string. If there are insufficient characters in the string then all are returned.
+
+There must not be any spaces between the RIGHT$ and the opening bracket.
+
+____
+....
+A$=RIGHT$(A$,num)
+A$=RIGHT$(A$,2)
+A$=RIGHT$(LEFT$(A$,3),2)
+....
+____
+
+For example,
+
+____
+....
+10 name$="BBC BASIC (Z80)"
+20 FOR i=3 TO 13
+30   PRINT RIGHT$(name$,i)
+40 NEXT
+50 END
+....
+____
+
+would print
+
+____
+....
+86)
+(Z80)
+C(Z80)
+IC(Z80)
+SIC(Z80)
+ASIC(Z80)
+BASIC (Z80)
+CBASIC (Z80)
+BCBASIC (Z80)
+BBC BASIC (Z80)
+BBC BASIC (Z80)
+....
+____
+
+==== Syntax
+
+____
+....
+<s-var>=RIGHT$(<str>,<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` LEFT$, MID$`
+____
+
+'''''
+
+=== [#rnd]#RND#
+
+A function which returns a random number. The type and range of the number returned depends upon the optional parameter.
+
+____
+[cols=",",]
+|===
+|`RND` |returns a random integer 1 - &FFFFFFFF.
+|`RND(n)` |returns an integer in the range 1 to n (n>1).
+|`RND(1)` |returns a real number in the range 0.0 to .99999999.
+|===
+____
+
+If n is negative the pseudo random sequence generator is set to a number based on n and n is returned.
+
+If n is 0 the last random number is returned in RND(1) format.
+
+____
+....
+X=RND(1)
+X%=RND
+N=RND(6)
+....
+____
+
+The random number generator is initialised by link:#run[RUN] (or link:bbckey1.html#chaim[CHAIN]). Consequently, RND will return zero until the RUN (or CHAIN) command is first issued.
+
+==== Syntax
+
+____
+....
+<n-var>=RND[(<numeric>)]
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+=== [#run]#RUN#
+
+Start execution of the program.
+
+____
+....
+RUN
+....
+____
+
+RUN is a statement and so programs can re-execute themselves.
+
+All variables except @% to Z% are link:bbckey1.html#clear[CLEAR]ed by RUN.
+
+If you want to start a program without clearing all the variables, you can use the statement
+
+____
+....
+GOTO nnnn
+....
+____
+
+where nnnn is number of the line at which you wish execution of the program to start.
+
+RUN "filename" can be used as an alternative to link:bbckey1.html#chain[CHAIN] "filename".
+
+==== Syntax
+
+____
+....
+RUN
+....
+____
+
+==== Associated Keywords
+
+____
+` NEW, OLD, LIST, CHAIN`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#save]#SAVE#
+
+a|
+=== SA.
+
+|===
+
+A statement which saves the current program area to a file, in internal (tokenised) format.
+
+____
+....
+SAVE "FRED.BBC"
+SAVE A$
+....
+____
+
+You use SAVE to save your program for use at a later time. The program must be given a name (file-specifier) and this name becomes the name of the file in which your program is saved.
+
+The name (file-specifier) must follow the normal CP/M-80 naming conventions. See the link:opsys0.html[Operating System Interface] section for a description of a file-specifier (name).
+
+Unless a different extension is specified in the file-specifier, .BBC is automatically used. Thus,
+
+____
+....
+SAVE "FRED"
+....
+____
+
+would save the current program to a file called FRED.BBC in the current directory.
+
+If you want to exclude the extension, include the full-stop in the file name, but don't follow it with anything. For example, to save a program to a file called 'FRED', type,
+
+____
+....
+SAVE "FRED."
+....
+____
+
+==== Syntax
+
+____
+....
+SAVE <str>
+....
+____
+
+==== Associated Keywords
+
+____
+` LOAD, CHAIN`
+____
+
+'''''
+
+=== [#sgn]#SGN#
+
+A function returning -1 for negative argument, 0 for zero argument and +1 for positive argument.
+
+____
+....
+X=SGN(Y)
+result=SGN(answer)
+....
+____
+
+You can use this function to determine whether a number is positive, negative or zero.
+
+SGN returns:
+
+____
+[cols=",",]
+|===
+|+1 |for positive numbers
+|0 |for zero
+|-1 |for negative numbers
+|===
+____
+
+==== Syntax
+
+____
+....
+<n-var>=SGN(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` ABS`
+____
+
+'''''
+
+=== [#sin]#SIN#
+
+A function giving the sine of its radian argument.
+
+____
+....
+X=SIN(Y)
+....
+____
+
+This function returns the sine of an angle. The angle must be expressed in radians, not degrees.
+
+Whilst the computer is quite happy dealing with angles expressed in radians, you may prefer to express angles in degrees. You can use the link:#rad[RAD] function to convert an angle from degrees to radians.
+
+The example below sets Y to the sine of the angle 'degree_angle' expressed in degrees.
+
+____
+....
+Y=SIN(RAD(degree_angle))
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=SIN(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` COS, TAN, ACS, ASN, ATN, DEG, RAD`
+____
+
+'''''
+
+=== [#sound]#SOUND#
+
+A statement which generates sounds using the internal loudspeaker.
+
+*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+
+==== Syntax
+
+____
+....
+SOUND <numeric>,<numeric>,<numeric>,<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` ENVELOPE`
+____
+
+'''''
+
+=== [#spc]#SPC#
+
+A statement which prints a number of spaces to the screen (or currently selected console output stream). The argument specifies the number of spaces (up to 255) to be printed.
+
+SPC can only be used within a PRINT or INPUT statement.
+
+____
+....
+PRINT DATE;SPC(6);SALARY
+
+INPUT SPC(10) "What is your name ",name$
+....
+____
+
+==== Syntax
+
+____
+....
+PRINT SPC(<numeric>)
+INPUT SPC(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` TAB, PRINT, INPUT`
+____
+
+'''''
+
+=== [#sqr]#SQR#
+
+A function returning the square root of its argument.
+
+____
+....
+X=SQR(Y)
+....
+____
+
+If you attempt to calculate the square root of a negative number, a 'link:annexc.html#negativeroot[-ve root]' error will occur. You could use error trapping to recover from this error, but it is better to check that the argument is not negative before using the SQR function.
+
+==== Syntax
+
+____
+....
+<n-var>=SQR(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#step]#STEP#
+
+a|
+=== S.
+
+|===
+
+Part of the link:bbckey2.html#for[FOR] statement, this optional section specifies step sizes other than 1.
+
+____
+....
+FOR i=1 TO 20 STEP 5
+....
+____
+
+The step may be positive or negative. STEP is optional; if it is omitted, a step size of +1 is assumed.
+
+You can use this optional part of the FOR...TO...STEP...NEXT structure to specify the amount by which the link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop control variable is changed each time round the loop. In the example below, the loop control variable, 'cost' starts as 20, ends at 5 and is changed by -5 each time round the loop.
+
+____
+....
+10 FOR cost=20 TO 5 STEP -5
+20   PRINT cost,cost*1.15
+30 NEXT
+....
+____
+
+==== Syntax
+
+____
+....
+FOR <n-var>=<numeric> TO <numeric> [STEP <numeric>]
+....
+____
+
+==== Associated Keywords
+
+____
+` FOR, TO, NEXT`
+____
+
+'''''
+
+=== [#stop]#STOP#
+
+Syntactically identical to link:bbckey1.html#end[END], STOP also prints a message to the effect that the program has stopped.
+
+You can use STOP at various places in your program to aid debugging. If your program is going wrong, you can place STOP commands at various points to see the path taken by your program. (link:#trace[TRACE] is generally a more useful aid to tracing a program's flow unless you are using formatted screen displays.)
+
+Once your program has STOPped you can investigate the values of the variables to find out why things happened the way they did.
+
+STOP DOES NOT CLOSE DATA FILES. If you use STOP to exit a program for debugging, link:bbckey1.html#close[CLOSE] all the data files before link:#run[RUN]ning the program again. If you don't you will get some most peculiar error messages.
+
+==== Syntax
+
+____
+....
+STOP
+....
+____
+
+==== Associated Keywords
+
+____
+` END`
+____
+
+'''''
+
+=== [#str]#STR$#
+
+A string function which returns the string form of the numeric argument as it would have been printed.
+
+If the most significant byte of @% is not zero, STR$ uses the current @% description when generating the string. If it is zero (the initial value) then the G9 format (see link:bbckey3.html#print[PRINT]) is used.
+
+If STR$ is followed by ~ (tilde) then a hexadecimal conversion is carried out.
+
+____
+....
+A$=STR$(PI)
+B$=STR$~(100) :REM B$ will be "64"
+....
+____
+
+The opposite function to STR$ is performed by the link:#val[VAL] function.
+
+==== Syntax
+
+____
+....
+<s-var>=STR$[~](<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` VAL, PRINT`
+____
+
+'''''
+
+=== [#string]#STRING$#
+
+A function returning N concatenations of a string.
+
+____
+....
+A$=STRING$(N,"hello")
+B$=STRING$(10,"-*-")
+C$=STRING$(Z%,S$)
+....
+____
+
+You can use this function to print repeated copies of a string. It is useful for printing headings or underlinings. The last example for link:bbckey3.html#print[PRINT] uses the STRING$ function to print the column numbers across the page. For example,
+
+____
+....
+PRINT STRING$(4,"-=*=-")
+....
+____
+
+would print
+
+____
+....
+-=*=--=*=--=*=--=*=-
+....
+____
+
+and
+
+____
+....
+PRINT STRING$(3,"0123456789")
+....
+____
+
+would print
+
+____
+....
+012345678901234567890123456789
+....
+____
+
+==== Syntax
+
+____
+....
+<s-var>=STRING$(<numeric>,<str>)
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+=== [#tab]#TAB#
+
+A keyword available in link:bbckey3.html#print[PRINT] or link:bbckey2.html#input[INPUT].
+
+There are two versions of TAB: TAB(X) and TAB(X,Y) and they are effectively two different keywords.
+
+TAB(X) is a printer orientated statement. The number of printable characters since the last new-line (link:bbckey1.html#count[COUNT]) is compared with X. If X is equal or greater than COUNT, sufficient spaces to make them equal are printed. These spaces will overwrite any characters which may already be on the screen. If X is less than COUNT, a new-line will be printed first.
+
+TAB(X,Y) is a screen orientated statement. It will move the cursor on the screen to character cell X,Y (column X, row Y) if possible. No characters are overwritten and COUNT is NOT updated. Consequently, a TAB(X,Y) followed by a TAB(X) will give unpredictable (at first glance) results.
+
+The leftmost column is column 0 and the top of the screen is row 0.
+
+____
+....
+PRINT TAB(10);A$
+PRINT TAB(X,Y);B$
+....
+____
+
+==== Syntax
+
+____
+....
+PRINT TAB(<numeric>[,<numeric>])
+INPUT TAB(<numeric>[,<numeric>])
+....
+____
+
+==== Associated Keywords
+
+____
+` POS, VPOS, PRINT, INPUT`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#tan]#TAN#
+
+a|
+=== T.
+
+|===
+
+A function giving the tangent of its radian argument.
+
+____
+....
+X = TAN(Y)
+....
+____
+
+This function returns the tangent of an angle. The angle must be expressed in radians, not degrees.
+
+Whilst the computer is quite happy dealing with angles expressed in radians, you may prefer to express angles in degrees. You can use the link:#rad[RAD] function to convert an angle from degrees to radians.
+
+The example below sets Y to the tangent of the angle 'degree_angle' expressed in degrees.
+
+____
+....
+Y=TAN(RAD(degree_angle))
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=TAN<numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` COS, SIN, ACS, ATN, ASN, DEG, RAD`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#then]#THEN#
+
+a|
+=== TH.
+
+|===
+
+An optional part of the link:bbckey2.html#if[IF]... THEN ... link:bbckey1.html#else[ELSE] statement. It introduces the action to be taken if the testable condition evaluates to TRUE.
+
+____
+....
+IF A=B THEN 3000
+IF A=B THEN PRINT "Equal" ELSE PRINT "Help"
+....
+____
+
+You need to use THEN if it is followed by:
+
+* A line number.
++
+____
+....
+IF a=b THEN 320
+....
+____
+* A 'star' (*) command.
++
+____
+....
+IF a=b THEN *DIR
+....
+____
+* An assignment of a pseudo-variable.
++
+____
+....
+IF a=b THEN TIME=0
+....
+____
+
+or you wish to exit from a function as a result of the test. This is because BBC BASIC (Z80) can't work out what you mean in these circumstances if you leave the THEN out.
+
+____
+....
+IF A=B PRINT "Equal" ELSE PRINT "Help"
+DEF FN_test(num)
+IF a=b THEN =num: REM THEN required on this line
+=num/256
+....
+____
+
+==== Syntax
+
+____
+` IF <t-cond> THEN <stmt>{:<stmt>} [ELSE <stmt>{:<stmt>}]`
+____
+
+==== Associated Keywords
+
+____
+` IF, ELSE`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#time]#TIME#
+
+a|
+=== TI.
+
+|===
+
+A pseudo-variable which reads and sets the elapsed time clock. This functionality depends on BBC BASIC (Z80) being link:bbc1.html#configuration[configured] using the *BBCDIST.MAC* patch program.
+
+____
+....
+X=TIME
+TIME=100
+....
+____
+
+The following example is a simple program to provide a 24 hour clock. Lines 20 to 40 get the correct time, lines 50 and 60 calculate the number of centi-seconds and set TIME, and lines 110 to 130 convert the value in TIME to hours, minutes and seconds. Line 90 stops the time being printed unless it has changed by at least one second.
+
+____
+....
+ 10 CLS
+ 20 INPUT "HOURS ",H
+ 30 INPUT "MINUTES ",M
+ 40 INPUT "SECONDS ",S
+ 50 PRINT "PUSH ANY KEY TO SET THE TIME ";:X=GET
+ 60 TIME=((H*60+M)*60+S)*100
+ 70 T=0
+ 80 REPEAT
+ 90   IF TIME DIV 100=T DIV 100 THEN 150
+100   T=TIME
+110   S=(T DIV 100) MOD 60
+120   M=(T DIV 6000) MOD 60
+130   H=(T DIV 360000) MOD 24
+140   PRINT TAB(0,23) H;":";M;":";S;
+150 UNTIL FALSE
+....
+____
+
+==== Syntax
+
+____
+....
+TIME=<numeric>
+<n-var>=TIME
+....
+____
+
+==== Associated Keywords
+
+____
+``
+____
+
+'''''
+
+=== [#to]#TO#
+
+The part of the link:bbckey2.html#for[FOR] ... TO ... link:#step[STEP] statement which introduces the terminating value for the loop. When the loop control variable exceeds the value following 'TO' the loop is terminated.
+
+For example,
+
+____
+....
+10 FOR i=1 TO 5 STEP 1.5
+20   PRINT i
+30   NEXT
+40 PRINT "**********"
+50 PRINT i
+....
+____
+
+will print
+
+____
+....
+         1
+       2.5
+         4
+**********
+       5.5
+....
+____
+
+Irrespective of the initial value of the loop control variable and the specified terminating value, the loop will execute at least once. For example,
+
+____
+....
+10 FOR i= 20 TO 10
+20   PRINT i
+30 NEXT
+....
+____
+
+will print
+
+____
+....
+        20
+....
+____
+
+==== Syntax
+
+____
+` FOR <n-var>=<numeric> TO <numeric> [STEP <numeric>]`
+____
+
+==== Associated Keywords
+
+____
+` FOR, NEXT, STEP`
+____
+
+'''''
+
+=== [#top]#TOP#
+
+A function which returns the value of the first free location after the end of the current program.
+
+The length of your program is given by TOP-link:bbckey3.html#page[PAGE].
+
+____
+....
+PRINT TOP-PAGE
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=TOP
+....
+____
+
+==== Associated Keywords
+
+____
+` PAGE, HIMEM, LOMEM`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#trace]#TRACE#
+
+a|
+=== TR.
+
+|===
+
+TRACE ON causes the interpreter to print executed line numbers when it encounters them.
+
+TRACE X sets a limit on the size of line numbers which will be printed out. Only those line numbers less than X will appear. If you are careful and place all your subroutines at the end of the main program, you can display the main structure of the program without cluttering up the trace with the subroutines.
+
+TRACE OFF turns trace off. TRACE is also turned off if an error is reported or you press <Esc>.
+
+Line numbers are printed as the line is entered. For example,
+
+____
+....
+10 FOR Z=0 TO 2:Q=Q*Z:NEXT
+20 END
+....
+____
+
+would trace as
+
+____
+....
+[10] [20] >_
+....
+____
+
+whereas
+
+____
+....
+10 FOR Z=0 TO 2
+20   Q=Q*Z:NEXT
+30 END
+....
+____
+
+would trace as
+
+____
+....
+[10] [20] [20] [20] [30] >_
+....
+____
+
+and
+
+____
+....
+10 FOR Z=0 TO 3
+20 Q=Q*Z
+30 NEXT
+40 END
+....
+____
+
+would trace as
+
+____
+....
+[10] [20] [30] [20] [30] [20] [30] [40] >_
+....
+____
+
+==== Syntax
+
+____
+....
+TRACE ON|OFF|<l-num>
+TRACE ON|OFF|(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` None`
+____
+
+'''''
+
+=== [#true]#TRUE#
+
+A function returning the value -1.
+
+____
+....
+ 10 flag=FALSE
+....
+100 IF answer$=correct$ flag=TRUE
+....
+150 IF flag PROC_got_it_right ELSE PROC_wrong
+....
+____
+
+BBC BASIC (Z80) does not have true Boolean variables. Instead, numeric variables are used and their value is interpreted in a 'logical' manner. A value of 0 is interpreted as false and NOT link:bbckey2.html#false[FALSE] (in other words, NOT 0 (= -1)) is interpreted as TRUE.
+
+In practice, any value other than zero is considered TRUE. This can lead to confusion; see the keyword link:bbckey3.html#not[NOT] for details.
+
+See the link:bbc2.html#boolean[Variables] sub-section for more details on Boolean variables and the keyword link:bbckey1.html#and[AND] for logical tests and their results.
+
+==== Syntax
+
+____
+....
+<n-var>=TRUE
+....
+____
+
+==== Associated Keywords
+
+____
+` FALSE`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#until]#UNTIL#
+
+a|
+=== U.
+
+|===
+
+The part of the link:#repeat[REPEAT] ... UNTIL structure which signifies its end.
+
+You can use a REPEAT...UNTIL loop to repeat a set of program instructions until some condition is met.
+
+If the condition associated with the UNTIL statement is never met, the loop will execute for ever. (At least, until <Esc> is pressed or some other error occurs.)
+
+The following example will continually ask for a number and print its square. The only way to stop it is by pressing <Esc> or forcing a 'link:annexc.html#toobig[Too big]' error.
+
+____
+....
+10 z=1
+20 REPEAT
+30   INPUT "Enter a number " num
+40   PRINT "The square of ";num;" is ";num*num
+50 UNTIL z=0
+....
+____
+
+Since the result of the test z=0 is ALWAYS FALSE, we can replace z=0 with link:bbckey2.html#false[FALSE]. The program now becomes:
+
+____
+....
+20 REPEAT
+30   INPUT "Enter a number " num
+40   PRINT "The square of ";num;" is ";num*num
+50 UNTIL FALSE
+....
+____
+
+This is a much neater way of unconditionally looping than using a link:bbckey2.html#goto[GOTO] statement. The program executes at least as fast and the section of program within the loop is highlighted by the indentation.
+
+See the keyword link:#repeat[REPEAT] for more details on REPEAT...UNTIL loops. See the link:bbc2.html#boolean[Variables] sub-section for more details on Boolean variables and the keyword link:bbckey1.html#and[AND] for logical tests and their results.
+
+==== Syntax
+
+____
+....
+UNTIL <t-cond>
+....
+____
+
+==== Associated Keywords
+
+____
+` REPEAT`
+____
+
+'''''
+
+=== [#usr]#USR#
+
+A function which allows a link:bbc3.html[machine code] routine to return a value directly.
+
+USR calls the machine code subroutine whose start address is its argument. The processor's A, B, C, D, E, F, H and L registers are initialised to the least significant words of A%, B%, C%, D%, E%, F%, H% and L% respectively (see also link:bbckey1.html#call[CALL]).
+
+USR provides you with a way of calling a machine code routine which is designed to return one integer value. Parameters are passed via the processor's registers and the machine code routine returns a 32-bit integer result composed of the processor's HLH'L' registers.
+
+____
+....
+X=USR(lift_down)
+....
+____
+
+Unlike CALL, USR returns a result. Consequently, you must assign the result to a variable. It may help your understanding if you look upon CALL as the machine code equivalent to a PROCedure and USR as the equivalent to Function.
+
+==== Syntax
+
+____
+....
+<n-var>=USR(<numeric>)
+....
+____
+
+==== Associated Keywords
+
+____
+` CALL`
+____
+
+'''''
+
+=== [#val]#VAL#
+
+A function which converts a character string representing a number into numeric form.
+
+____
+....
+X=VAL(A$)
+....
+____
+
+VAL makes the best sense it can of its argument. If the argument starts with numeric characters (with or without a preceding sign), VAL will work from left to right until it meets a non numeric character. It will then 'give up' and return what it has got so far. If it can't make any sense of its argument, it returns zero.
+
+For example,
+
+____
+....
+PRINT VAL("-123.45.67ABC")
+....
+____
+
+would print
+
+____
+....
+-123.45
+....
+____
+
+and
+
+____
+....
+PRINT VAL("A+123.45")
+....
+____
+
+would print
+
+____
+....
+0
+....
+____
+
+VAL will NOT work with hexadecimal numbers. You must use link:bbckey2.html#eval[EVAL] to convert hexadecimal number strings.
+
+==== Syntax
+
+____
+....
+<n-var>=VAL(<str>)
+....
+____
+
+==== Associated Keywords
+
+____
+` STR$, EVAL`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#vdu]#VDU#
+
+a|
+=== V.
+
+|===
+
+A statement which takes a list of numeric arguments and sends their least-significant bytes as characters to the current 'output stream' (see link:opsys1.html#opt[*OPT]).
+
+A 16-bit value can be sent if the value is followed by a '*;*'. It is sent as a pair of characters, least significant byte first.
+
+____
+....
+VDU 8,8 :REM cursor left two places.
+VDU &0A0D;&0A0D; :REM CRLF twice
+....
+____
+
+The bytes sent using the VDU statement do not contribute to the value of link:bbckey1.html#count[COUNT], but may well change link:bbckey3.html#pos[POS] and link:#vpos[VPOS].
+
+You can use VDU to send characters direct to the current output stream without having to use a link:bbckey3.html#print[PRINT] statement. It offers a convenient way of sending a number of control characters to the console or printer.
+
+==== Syntax
+
+____
+....
+VDU <numeric>{,|;<numeric>}[;]
+....
+____
+
+==== Associated Keywords
+
+____
+` CHR$`
+____
+
+'''''
+
+=== [#vpos]#VPOS#
+
+A function returning the vertical cursor position. The top of the screen is line 0.
+
+____
+....
+Y=VPOS
+....
+____
+
+You can use VPOS in conjunction with link:bbckey3.html#pos[POS] to return to the present position on the screen after printing a message somewhere else. The example below is a procedure for printing a 'status' message at line 23. The cursor is returned to its previous position after the message has been printed.
+
+____
+....
+1000 DEF PROC_message(message$)
+1010 LOCAL x,y
+1020 x=POS
+1030 y=VPOS
+1040 PRINT TAB(0,23) CHR$(7);message$;
+1050 PRINT TAB(x,y);
+1060 ENDPROC
+....
+____
+
+==== Syntax
+
+____
+....
+<n-var>=VPOS
+....
+____
+
+==== Associated Keywords
+
+____
+` POS`
+____
+
+'''''
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+=== [#width]#WIDTH#
+
+a|
+=== W.
+
+|===
+
+A statement controlling output overall field width.
+
+____
+....
+WIDTH 80
+....
+____
+
+If the specified width is zero (the initial value) the interpreter will not attempt to control the overall field width.
+
+WIDTH n will cause the interpreter to force a new line after n link:bbckey3.html#mod[MOD] 256 characters have been printed.
+
+WIDTH also affects the output to the printer.
+
+==== Syntax
+
+____
+....
+WIDTH <numeric>
+....
+____
+
+==== Associated Keywords
+
+____
+` COUNT`
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:opsys0.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

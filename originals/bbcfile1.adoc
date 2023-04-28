@@ -1,0 +1,542 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+== BBC BASIC (Z80) Disk Files
+
+=== [#introduction]#Introduction#
+
+These notes start with some link:#basics[basic information on files], and then go on to discuss link:#access[program file manipulation], link:bbcfile2.html[simple serial files], link:bbcfile3.html[random files] and, finally, link:bbcfile4.html[indexed files]. The commands and functions used are explained, and followed by examples.
+
+If you are new to BBC BASIC (Z80), or you are experiencing difficulty with disk files you might find these notes useful. Some of the concepts and procedures described are quite complicated and require an understanding of file structures. If you have trouble understanding these parts, don't worry. Try the examples and write some programs for yourself and then go back and read the notes again. As you become more comfortable with the fundamentals, the complicated bits become easier.
+
+'''''
+
+=== [#structure]#The Structure of Files#
+
+If you understand the way files work, skip the next two paragraphs. If you understand random and indexed files, skip the following two paragraphs as well.
+
+==== [#basics]#Basics#
+
+Many people are confused by the jargon that is often used to describe the process of storing and retrieving information. This is unfortunate, because the individual elements are very simple and the most complicated procedures are only a collection of simple bits and pieces.
+
+All computers are able to store and retrieve information from a non-volatile medium. (In other words, you don't lose the information when the power gets turned off.) Audio cassettes are used for small micro computers, diskettes for medium sized systems and magnetic tape and large disks for big machines. In order to be able to find the information you want, the information has to be organised in some way. All the information on one general subject is gathered together into a FILE. Within the file, information on individual items is grouped together into RECORDS.
+
+==== [#serial]#Serial (Sequential) Files#
+
+Look upon the cassette or diskette as a drawer in a filing cabinet. The drawer is full of folders called FILES and each file holds a number of enclosures called RECORDS. Sometimes the files are in order in the drawer, sometimes not. If you want a particular file, you start at the beginning of the drawer and search your way through until you find the file you want. Then you search your way through the records in the file until you find the record you want.
+
+This is very similar to the way a cassette is searched for a particular file. You put the cassette in the recorder, type in the name of the file you want and push play. You then go and make a cup of tea whilst the computer reads through all the files until it comes to the one you want. Because the cassette is read serially from start to end, it's very difficult to do it any other way.
+
+Life is easier with a computer that uses diskettes (or disks). There is an index which tells the computer where to look for each of the files and the serial search for the file is not necessary. However, once you have found the file, you still need to read through it to find the record you want.
+
+There are a number of ways to overcome this problem. We will consider the two simplest; random access (or relative) files and indexed files.
+
+==== [#random]#Random Access Files#
+
+The easiest way to find the record you want is to identify each record with a number, like an account number. You can then ask for, say, the 23rd record. This is similar to turning to page 23 in the account book. This works very well at first. Every time you get a new customer you start a new page. Most of the pages have a lot of empty space, but you must have the same amount of space available for each account, otherwise your numbering system won't work. So, even at the start, there are a lot of gaps.
+
+What happens when you close an account? You can't tear out the page because that would upset the numbering system. All you can do is draw a line through it - in effect, turn it into a blank page. Before long, quite a number of pages will be 'blank' and a growing proportion of your book is wasted.
+
+With other forms of 'numbering', say by the letters of the alphabet, you could still not guarantee to fill all the pages. You would have to provide room for the Zs, but you may never get one. When you started entering data, most of the pages would be blank and the book would only gradually fill up.
+
+The same happens with this sort of file on a diskette. A random file which has a lot of empty space in it is described as sparse. Most random files start this way and most never get more than about ¾ full. Count the number of empty 'slots' in your address book and see what proportion this is of the total available.
+
+==== [#indexed]#Indexed Files#
+
+Suppose we want to hold our address book on the computer. We need a number of records each holding the name, address, telephone number, etc of one person. In our address book, we have one or two pages per letter of the alphabet and a number of 'slots' on each page. With this arrangement, the names are in alphabetical order of their first letter. This is very similar to the way the accounts book was organised except that we don't know the page number for each name.
+
+If we had an index at the front of the book we could scan the index for the name and then turn to the appropriate page. We would still be wasting a lot of space because some names, addresses etc are longer than others and our 'slots' must be large enough to hold the longest.
+
+Suppose we numbered all the character positions in the book and we could easily move to any character position. We could write all the names, addresses, etc, one after the other and our index would tell us the character position for the start of each name and address. There would be no wasted space and we would still be able to turn directly to the required name.
+
+What would happen when we wanted to cancel an entry? We would just delete the name from the index. The entry would stay in its original place in the book, but we would never refer to it. Similarly, if someone changed their address, we would just write the name and the new address immediately after the last entry in the book and change the start position in the index. Every couple of years we would rewrite the address book, leaving out those items not referenced in the index and up-date the index (or write another one).
+
+This is not a practical way to run a paper and pencil address book because it's not possible to turn directly to the 3423rd character in a book, and the saving in space would not be worth the tedium involved. However, with BBC BASIC you can turn to a particular character in a file and the tedium only takes a couple of seconds, so it's well worth doing.
+
+'''''
+
+=== [#bbcfiles]#Files in BBC BASIC (Z80)#
+
+==== [#bbcintro]#Introduction#
+
+Conventional serial disk file procedures are little different from file procedures for cassette based computers. With serial files the records need only be as large as the data to be stored and there are no empty records. (The data item FRED only occupies 4 bytes whereas ERMINTRUDE occupies 10 bytes.) Consequently serial files are the most space efficient way to hold data on a disk (or any other storage media).
+
+Serial files cannot be used to access particular records from within the file quickly and easily. In order to do this with the minimum access time, random access files are necessary. However, a random file generally occupies more space on the disk than a serial file holding the same amount of data because the records must be a fixed length and some of the records will be empty.
+
+Most versions of BASIC only offer serial and random files, but because of the way that disk files are handled by BBC BASIC (both on the BBC computer and CP/M-80 computers using BBC BASIC (Z80)), it is possible to construct indexed, and even linked, files as well. Indexed files take a little longer to access than random files and it is necessary to have a separate index file, but they are generally the best space/speed compromise for files holding a large amount of data.
+
+==== [#howdata]#How Data is Read/Written#
+
+As far as the programmer is concerned, data can be written to and read from a file a data item or a character (byte) at a time. In fact, there is a buffer between the program and the disk operating system (CP/M), but this need only concern you when you are organising your program for maximum disk efficiency.
+
+Because of the character by character action of the write/read process, it is possible (in fact, necessary) to keep track of your position within the file. BBC BASIC does this for you automatically and provides a pointer link:#ptr[PTR] (a pseudo-variable) which holds the position of the NEXT character (byte) to be written/read. Every time a character is written/read PTR is incremented by 1, but it is possible to set PTR to any number you like. This ability to 'jump around' the file enables you to construct both random (relative) and indexed files.
+
+BBC BASIC provides the facility for completely free-format binary data files. Any file which can be read by the computer, from any source and in any data format, can be processed using the link:#bget[BGET], link:#bput[BPUT] and link:#ptr[PTR] functions.
+
+==== [#howstored]#How Data is Stored#
+
+===== [#numeric]#Numeric Data#
+
+In order to make the most efficient use of disk space and to preserve accuracy, numerics are stored in a data file in binary format, not as strings of characters. To prevent confusion when numerics are being read from a file, both integers and reals occupy 5 bytes (40 bits). If they were stored as character strings they could occupy up to 10 bytes. For compatibility with other BASICs, you can store numerics as strings by using the link:bbckey4.html#str[STR$] function.
+
+===== [#strings]#How Strings are Stored#
+
+Strings are stored in a data file as the ASCII bytes of the string followed by a carriage-return. If you need a line feed as well, it's no problem to add it using the Byte-Put function link:#bput[BPUT#]. Similarly, extraneous characters included in files produced by other programs can be read and, if necessary, discarded using link:#bget[BGET#].
+
+==== [#referred]#How Files are Referred To#
+
+We refer to a file by its name. Unfortunately, this is too complicated for the Disk Operating System (CP/M). Consequently, the only time CP/M refers to a file by its name is when it opens the file. From then on, it refers to the file by the number it allocated to it when it was opened. This number is called the 'file handle'.
+
+==== [#buffering]#File Buffering#
+
+Logically, BBC BASIC (Z80) transfers data to and from files one byte at a time. CP/M-80 does not handle single byte data transfer directly so BBC BASIC (Z80) buffers the data into blocks; this is transparent to the user.
+
+'''''
+
+=== [#commands]#Disk File Commands#
+
+==== [#commandintro]#Introduction#
+
+The commands and statements used in disk file manipulation are described below. They are not in alphabetical order, but in the order you are likely to want to use them. Whilst these notes repeat much of the material covered in the link:bbckey0.html[Statements and Functions] section, additional information has been added and they are presented in a more readable order.
+
+==== [#filenames]#Filenames#
+
+Please refer to your CP/M-80 User Guide for a full explanation of disk, directory and file names. The explanation below is only intended as a brief reference guide.
+
+The CP/M-80 operating system allows a composite file name in the following format:
+
+____
+....
+DRIVENAME:FILENAME.EXTension
+....
+____
+
+The drivename is a single letter followed by a colon and denotes the disk drive on which the file will be found or created.
+
+The file name can be up to 8 characters long, and the extension up to three characters. Whenever a file name without an extension is given, BBC BASIC (Z80) will append .BBC as the default extension.
+
+==== [#organisation]#Organisation of Examples#
+
+Simple examples are given throughout this section with the explanation of the various commands. The following sections contain examples of complete programs for serial files, random files and, finally, indexed files. If you have problems understanding the action of any of the commands you may find the examples helpful. The best way to learn is to do - so have a go.
+
+==== [#manipulation]#Program File Manipulation#
+
+===== [#save]#SAVE#
+
+Save the current program to a file, in internal (tokenised) format. The filename can be a variable or a string.
+
+____
+....
+SAVE filename
+
+SAVE "FRED"
+
+A$="COMPOUND"
+SAVE A$
+....
+____
+
+The first example will save the program to a file named FRED.BBC. The second will save COMPOUND.BBC.
+
+You can specify a drivename as well as the file name. The following example will save the current program to a file called TEST.BBC on drive D:
+
+____
+....
+SAVE "D:TEST"
+....
+____
+
+===== [#load]#LOAD#
+
+Load the program 'filename' into the program area. The old program is deleted (as if a link:bbckey3.html#new[NEW] command had been given prior to the LOAD) and all the dynamic variables are cleared. The program must be in tokenised format. File names must conform to the standard CP/M-80 format. However, if no extension is given, .BBC is assumed.
+
+____
+....
+LOAD filename
+
+LOAD "FRED"
+
+A$="HEATING"
+LOAD A$
+....
+____
+
+As with SAVE, you can specify a drive name. The example below loads the program saved previously as an example of the SAVE command.
+
+____
+....
+LOAD "D:TEST"
+....
+____
+
+===== [#chain]#CHAIN#
+
+LOAD and RUN the program 'filename'. All the dynamic variables are cleared. The program must be in tokenised format.
+
+____
+....
+CHAIN filename
+
+CHAIN "GAME1"
+
+A$="PART2"
+CHAIN A$
+....
+____
+
+As with SAVE and LOAD, you can specify a drive name.
+
+===== [#merge]#MERGE#
+
+There is no MERGE command, however there are two ways of merging BBC BASIC (Z80) programs.
+
+===== Using MERGE.BBC
+
+MERGE.BBC is a BBC BASIC (Z80) program which combines two program files into a third program file. It asks you for the names of the two input files and the name of the output file. If the same line number exists in both files, the program line from the second file will be included in the output file immediately after the line from the first file (the number of both lines will be the same). This may confuse you, but it won't confuse your computer; providing the program is still syntactically correct, it will run. If you want to clean up the mess, renumber the resulting program and delete the lines you don't want.
+
+===== Using *LOAD
+
+You can also use link:opsys1.html#load[*LOAD] to perform a quick (and somewhat 'dirty') merge of two files. If you don't want to get disconcerting results, you should ensure that the second program uses larger line numbers than the first program.
+
+Load the first program (with the lower line numbers) in the normal way. Then, find out the top address of the program less 3 by typing
+
+____
+....
+PRINT ~TOP-3<Enter>
+....
+____
+
+This will print the address in hex (nnnn) at which the first byte of the second program file must be loaded. Finally, load the second program by typing
+
+____
+....
+*LOAD "PROG2" nnnn<Enter>
+OLD<Enter>
+....
+____
+
+===== [#delete]#*ERA#
+
+Delete the file 'filename'. Since variables are not allowed as arguments to * commands, the filename must be a constant.
+
+____
+....
+*ERA filename
+
+*ERA FRED
+*ERA PHONE.DTA
+....
+____
+
+To delete a file whose name is known only at run-time, use the link:bbckey3.html#oscli[OSCLI] command. It's a bit clumsy, but a lot better than the original specification for BBC BASIC allowed. This time all of the command, including the ERA, must be supplied as the argument for the OSCLI command. You can use OSCLI for erasing a file whose name is a constant, but you must include all of the command line - in quotes this time.
+
+____
+....
+fname$="FRED"
+OSCLI "ERA "+fname$
+
+fname$="PHONE.DTA"
+command$="ERA "
+OSCLI command$+fname$
+
+OSCLI "ERA FRED"
+....
+____
+
+You can include a drive name in both the *ERA and *OSCLI command formats.
+
+Although CP/M-80 will allow you to do so, it is bad practice to erase an open file.
+
+===== [#rename]#*REN#
+
+Rename 'file1' to be called 'file2'. The syntax is similar to the normal CP/M-80 command except that the extension defaults to .BBC.
+
+____
+....
+*REN file2=file1
+
+*REN FRED2=FRED1
+
+*REN PHONE.DTA=PHONE
+....
+____
+
+Once again, if you want to rename files whose names are only known at run-time, you must use the link:bbckey3.html#oscli[OSCLI] command.
+
+____
+....
+fname1$="FRED1"
+fname2$="FRED2"
+OSCLI "REN "+fname2$+"="+fname1$
+....
+____
+
+Because CP/M-80 refers to files by their handles, it does not get confused if you rename an open file. However, in all probability, the same cannot be said for you.
+
+[width="100%",cols="50%,50%",]
+|===
+a|
+===== [#dir]#*DIR#
+
+a|
+===== *.
+
+|===
+
+List the directory. The default drive is the currently logged drive and the default extension is .BBC. The format is the same as the normal CP/M-80 command.
+
+____
+[cols=",",]
+|===
+|`*DIR` |List *.BBC files on the current drive.
+|`*.B:*.DTA ` |List *.DTA files on drive B.
+|===
+____
+
+==== [#datafiles]#Disk Data Files#
+
+===== [#dataintro]#Introduction#
+
+The statements and functions used for data files are:
+
+____
+....
+OPENIN
+OPENUP
+OPENOUT
+EXT#
+PTR#
+INPUT#      BGET#
+PRINT#      BPUT#
+CLOSE#      END
+EOF#
+....
+____
+
+===== [#opening]#Opening Files#
+
+You cannot use a file until you have told the system it exists. In order to do this you must OPEN the file for use. Other versions of BASIC allow you to choose the file number. In order to improve efficiency, BBC BASIC (Z80) chooses the number for you.
+
+When you open the file, a file handle (an integer number) is returned by the interpreter and you will need to store it for future use. (The open commands are, in fact, functions which open the appropriate file and return its file handle.)
+
+You use the file handle for all subsequent access to the file. (With the exception of the link:opsys0.html[STAR commands] outlined previously.)
+
+If the system has been unable to open the file, the handle returned will be 0. This will occur if you try to open a non-existent file in the input mode (link:#openin[OPENIN] or link:#openup[OPENUP]).
+
+===== [#functions]#File Opening Functions#
+
+The three functions which open files are link:#openin[OPENIN], link:#openup[OPENUP] and link:#openout[OPENOUT]. OPENOUT should be used to create new files, or overwrite old ones. OPENIN should be used for input only and OPENUP should be used for input/output.
+
+===== [#openout]#OPENOUT#
+
+Open the file 'filename' for output and return the file handle allocated. The use of OPENOUT destroys the contents of the file if it previously existed. (The directory is updated with the length of the new file you have just written when you close the file.)
+
+____
+....
+OPENOUT filename
+
+file_num=OPENOUT "PHONENUMS"
+....
+____
+
+You always need to store the file handle because it must be used for all the other file commands and functions. If you choose a variable with the same name as the file, you will make programs which use a number of files easier to understand.
+
+____
+....
+phonenums=OPENOUT "PHONENUMS"
+opfile=OPENOUT opfile$
+....
+____
+
+On a networked system, OPENOUT opens the file in 'compatibility' mode and the file is not available to any other user. If you wish to create a new file which can be read, concurrently by other users, you should open it with OPENOUT, immediately close it and re-open it with link:#openup[OPENUP]. See the earlier sub-section link:#networking[Networking - Shared Files] for more details.
+
+===== [#openin]#OPENIN#
+
+Open the file 'filename' for input only. Unlike the Z80 version of BBC BASIC, you cannot write to a file opened with OPENIN.
+
+____
+....
+OPENIN filename
+
+address=OPENIN "ADDRESS"
+check_file=OPENIN check_file$
+....
+____
+
+You will be unable to open for input (file handle returned = 0) if the file does not already exist.
+
+===== [#openup]#OPENUP#
+
+Open the file 'filename' for update (input or output) without destroying the contents of the file. The file may be read from or written to. When the file is closed, the directory is updated to show the maximum used length of the file. None of the previously written data is lost unless it has been overwritten. Consequently, you would use OPENUP for reading serial and random files, adding to the end of serial files or writing to random files.
+
+____
+....
+OPENUP filename
+
+address=OPENUP "ADDRESS"
+check_file=OPENUP check_file$
+....
+____
+
+You will be unable to open for update (file handle returned = 0) if the file does not already exist.
+
+On a networked system, OPENUP opens a file in the 'read-write, deny write' mode. A file may be opened *once* with OPENUP and any number of times by any number of users with link:#openin[OPENIN]. See the earlier sub-section link:#networking[Networking - Shared Files] for more details.
+
+===== [#close]#CLOSE##
+
+Close the file opened as 'fnum'. CLOSE#0, link:bbckey1.html#end[END] or 'dropping off the end' of a program will close all files.
+
+____
+....
+CLOSE#fnum
+....
+____
+
+When a file is closed its file buffer (if it has one) will be flushed to CP/M-80 before the file is closed.
+
+===== [#input]#INPUT##
+
+Read from the file opened as 'fnum' into the variable 'var'. Several variables can be read using the same INPUT# statement.
+
+____
+....
+INPUT#fnum,var
+
+data=OPENIN "DATA"
+:
+INPUT#data,name$,age,height,sex$
+:
+:
+....
+____
+
+link:bbckey4.html#readhash[READ#] can be used as an alternative to INPUT#
+
+===== [#print]#PRINT##
+
+Write the variable 'var' to the file opened as 'fnum'. Several variables can be written using the same PRINT# statement.
+
+____
+....
+PRINT#fnum,var 
+....
+____
+
+String variables are written as the character bytes in the string plus a carriage-return. Numeric variables are written as 5 bytes of binary data.
+
+____
+....
+data=OPENOUT "DATA"
+:
+:
+PRINT#data,name$,age,height,sex$
+:
+:
+....
+____
+
+===== [#ext]#EXT##
+
+Return the total length of the file opened as 'fnum'.
+
+____
+....
+EXT#fnum 
+....
+____
+
+In the case of a sparse random-access file the value returned is the length of the file to the last byte actually written to the file. Although much of the file may well be unused, writing this 'last byte' reserved physical space on the disk for a file of this length. Thus it is possible to write a single byte to a file and get a 'link:annexc.html#diskfull[Disk full]' error.
+
+===== [#ptr]#PTR##
+
+A pseudo-variable which points to the position within the file from where the next byte to be read will be taken or where the next byte to be written will be put.
+
+____
+....
+PTR#fnum 
+....
+____
+
+When the file is OPENED, PTR# is set to zero. However, you can set PTR# to any value you like. (Even beyond the end of the file - so take care).
+
+Reading or writing, using link:#input[INPUT#] and link:#print[PRINT#], (and link:#bget[BGET#] and link:#bput[BPUT#] - explained later), takes place at the current position of the pointer. The pointer is automatically updated following a read or write operation.
+
+A file opened with link:#openup[OPENUP] may be extended by setting PTR# to its end (PTR# = link:#ext[EXT#]), and then writing the new data to it. You must remember to link:#close[CLOSE] such a file in order to update its directory entry with its new length. A couple of examples of this are included in the sections on serial and indexed files.
+
+Using a 'PTR#fnum=' statement will flush the appropriate BBC BASIC (Z80) file buffer to CP/M-80.
+
+===== [#eof]#EOF##
+
+A function which will return -1 (link:bbckey4.html#true[TRUE]) if the data file whose file handle is the argument is at (or beyond) its end. In other words, when link:#ptr[PTR#] points beyond the current end of the file.
+
+____
+....
+eof=EOF#fnum 
+....
+____
+
+Attempting to read beyond the current end of file will not give rise to an error. Either zero or a null string will be returned depending on the type of variable read.
+
+EOF# is only really of use when dealing with serial (sequential) files. It indicates that link:#ptr[PTR#] is greater than the recorded length of the file (found by using link:#ext[EXT#]). When reading a serial file, EOF# would go true when the last byte of the file had been read.
+
+EOF# is only true if PTR# is set beyond the last byte written to in the file. It will NOT be true if an attempt has been made to read from an empty area of a sparse random access file. Reading from an empty area of a sparse file will return garbage. Because of this, it is difficult to tell which records of an uninitialised random access file have had data written to them and which are empty. These files need to be initialised and the unused records marked as empty.
+
+Writing to a byte beyond the current end of file updates the file length immediately, whether the record is physically written to the disk at that time or not.
+
+===== [#bget]#BGET##
+
+A function which reads a byte of data from the file opened as 'fnum', from the position pointed to by link:#ptr[PTR#fnum]. PTR#fnum is incremented by 1 following the read. A positive integer between 0 and 255 is returned (as you might expect). This can be converted into a string variable using the link:bbckey1.html#chr[CHR$] function.
+
+____
+....
+BGET#fnum
+
+byte=BGET#fnum
+char$=CHR$(byte)
+....
+____
+
+or, more expediently
+
+____
+....
+char$=CHR$(BGET#fnum)
+....
+____
+
+===== [#bput]#BPUT##
+
+Write the least significant byte of the variable 'var' to the file opened as 'fnum', at the position pointed to by link:#ptr[PTR#fnum]. PTR#fnum is incremented by 1 following the write.
+
+____
+....
+BPUT#fnum,var
+
+BPUT#fnum,&1B
+BPUT#fnum,house_num
+BPUT#fnum,ASC "E"
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:bbcfile2.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

@@ -1,0 +1,193 @@
+image:rtrlogo.gif[RTR logo,width=190,height=140] +
+
+== R. T. RUSSELL
+
+=== BBC BASIC (Z80) Manual
+
+ +
+
+'''''
+
+=== [#resident]#Resident Star Commands#
+
+==== [#bye]#*BYE#
+
+Return to CP/M.
+
+==== [#cpm]#*CPM#
+
+Return to CP/M (same as *BYE).
+
+==== [#dir]#*DIR#
+
+List the disk directory. The syntax is similar to the CP/M DIR command except that the extension defaults to .BBC if it is omitted.
+
+____
+....
+*DIR [afsp]
+....
+
+[cols=",",]
+|===
+|`*DIR` |`List all .BBC files on the disk.`
+|`*DIR B:*.* ` |`List all files on disk B.`
+|`*.*.*` |`List all the files on the current disk.`
+|===
+____
+
+==== [#drive]#*DRIVE#
+
+Select the drive to be used as the default drive for subsequent disk operations. The colon is a mandatory part of the drive name.
+
+____
+....
+*DRIVE d:
+
+*DRIVE A:
+....
+____
+
+==== [#erase]#*ERA#
+
+Delete the specified disk file. The syntax is similar to the CP/M-80 ERA command except that the extension defaults to .BBC if it is omitted.
+
+____
+....
+*ERA ufsp
+
+*ERA GAME1.DTA
+....
+____
+
+This command will delete only one file at a time; wild cards are not permitted in the file specifier.
+
+link:bbckey3.html#oscli[OSCLI] may also be used to delete files.
+
+____
+....
+OSCLI "ERA "+<str>
+
+OSCLI "ERA "+name$
+OSCLI "ERA GAME1.DTA"
+....
+____
+
+==== [#load]#*LOAD#
+
+Load the specified file into memory at hexadecimal address 'aaaa'. The load address MUST always be specified.
+
+____
+....
+*LOAD ufsp aaaa
+
+*LOAD A:WOMBAT 8F00
+....
+____
+
+link:bbckey3.html#oscli[OSCLI] may also be used to load a file. However, you must take care to provide the load address as a hexadecimal number in string format.
+
+____
+....
+OSCLI "LOAD "+<str>+" "+STR$~<num>
+
+OSCLI "LOAD "+file_name$+" "+STR$~(start_address)
+....
+____
+
+==== [#opt]#*OPT#
+
+Select the destination 'output stream' for console output. The default is OPT 0.
+
+____
+[cols=",",]
+|===
+|`*OPT 0` |*Console output.* The output is sent to the screen.
+|`*OPT 1` |*Auxiliary Output.* The output is sent to the auxiliary output.
+|`*OPT 2` |*Printer Output.* The output is sent to the list device.
+|===
+____
+
+All characters sent to the console are vectored with *OPT.
+
+____
+....
+10 *OPT 2
+20 PRINT "THIS WILL APPEAR ON THE PRINTER"
+30 *OPT 0
+40 PRINT "THIS WILL APPEAR ON THE SCREEN"
+....
+____
+
+==== [#rename]#*REN#
+
+Rename a disk file. The syntax is similar to the CP/M REN command except that the extension defaults to .BBC if it is omitted. link:bbckey3.html#oscli[OSCLI] can also be used to rename a file.
+
+____
+....
+*RENAME ufspnew=ufspold
+*REN ufspnew=ufspold
+OSCLI "REN "+<str>+"="+<str>
+
+*REN NEWFILE=OLDFILE
+
+OSCLI "REN "file_name$+".BAK="+filename$+".BBC"
+....
+____
+
+==== [#reset]#*RESET#
+
+Reset the disk system.
+
+==== [#save]#*SAVE#
+
+Save an area of memory to a disk file. If the extension is omitted, .BBC is assumed.
+
+You MUST specify the start address (aaaa) and either the length of the area of memory (llll) or its end address+1 (bbbb). There is no 'load address' or 'execute address'.
+
+____
+....
+*SAVE ufsp aaaa +llll
+*SAVE ufsp aaaa bbbb
+
+*SAVE "WOMBAT" 8F00 +80
+*SAVE "WOMBAT" 8F00 8F80
+....
+____
+
+link:bbckey3.html#oscli[OSCLI] can also be used to save a file.
+
+____
+....
+OSCLI "SAVE "+<str>+" "+STR$~(<num>)+" "+STR$(<num>)
+
+OSCLI "SAVE "+ufn$+" "+STR$~(add)+"+"+STR$~(len)
+....
+____
+
+==== [#type]#*TYPE#
+
+Type the specified file on the screen. This command is similar in action to the CP/M-80 TYPE command except that the extension .BBC is assumed if it is omitted.
+
+____
+....
+*TYPE ufsp
+
+*TYPE ADDRESS.LST
+....
+____
+
+[width="100%",cols="50%,>50%",]
+|===
+a|
+==== image:larr.gif[Left,width=15,height=15] link:index.html[CONTENTS]
+
+a|
+==== link:bbcfile1.html[CONTINUE] image:rarr.gif[Right,width=15,height=15]
+
+|===
+
+'''''
+
+http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
+
+© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009
