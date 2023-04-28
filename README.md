@@ -15,3 +15,18 @@ Licence to be determined. It will be as open as possible while respecting the co
 (a) better instructions for newcomers to BASIC (the original docs assume familiarity with the language)
 (b) More Agon-specific material, eg instructions on updating firmware
 4. Create an automated workflow for generating and publishing the outputs from the source (possibly using GitHub actions) 
+
+## Generating Documentation
+
+### Requirements
+
+asciidoctor
+
+### Building
+
+For each file in src/adoc,
+
+```
+asciidoctor filename.adoc
+```
+
