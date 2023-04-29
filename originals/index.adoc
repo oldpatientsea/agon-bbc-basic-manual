@@ -1,12 +1,6 @@
-http://www.rtrussell.co.uk/index.html[image:rtrlogo.gif[R.T.Russell Home Page,width=190,height=140]] +
-
 == R. T. RUSSELL
 
 === BBC BASIC (Z80) Manual
-
- +
-
-'''''
 
 == Table of Contents
 
@@ -434,18 +428,3 @@ http://www.rtrussell.co.uk/index.html[image:rtrlogo.gif[R.T.Russell Home Page,wi
 ... link:annexd.html#string[String Variables]
 ... link:annexd.html#fixedstrings[Fixed Strings]
 
-[width="100%",cols="50%,>50%",]
-|===
-a|
-==== image:larr.gif[Left,width=15,height=15] http://www.rtrussell.co.uk/index.html[HOME]
-
-a|
-==== link:bbc1.html[INTRODUCTION] image:rarr.gif[Right,width=15,height=15]
-
-|===
-
-'''''
-
-http://www.anybrowser.org/[image:logoab8.gif[Best viewed with Any Browser,width=88,height=31]] http://validator.w3.org/[image:vh32.gif[Valid HTML 3.2!,width=88,height=31]]
-
-© mailto:richard@rtrussell.co.uk[Richard Russell]
