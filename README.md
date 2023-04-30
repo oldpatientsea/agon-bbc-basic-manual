@@ -6,6 +6,58 @@ Documentation is written in asciidoc and asciidoctor will be used to generate HT
 
 Licence to be determined. It will be as open as possible while respecting the copyrights of the authors of the original sources.
 
+## Directory structure
+
+├── dist
+│   └── HTML
+├── modules
+│   └── ROOT
+│       ├── attachments
+│       ├── examples
+│       ├── images
+│       ├── pages
+│       └── partials
+└── originals
+
+### dist
+
+This for the moment is a place to cache manually generated output files. Once a fully automated build process is in place, it will probably be removed.
+
+### originals
+
+This is a dump of the original BBC BASIC (Z80) manual, each html page transformed into adoc format. 
+
+The headers and footers have been removed from each individual page because otherwise ebook (EPUB, PDF) output repeats each at the head and foot of each section which is offputting. The copyright from the footer has been placed in its own adoc file. This and the header information will need to be combined with the rest of the files in the process of transforming them into the desired output (HTML, EPUB, PDF). 
+
+### modules/ROOT/pages
+
+The modules/ROOT directory structure is dictated by the conventions used by [Antora](https://antora.org/), the tool that will be used to generate HTML output from the asciidoc source files.
+
+The "pages" directory contains the .adoc files used to generate the output.
+
+This contains the transformed BBC BASIC (Z80) manual files which will be used as the source of the BBC BASIC (Z80) for Agon manual.
+
+The starting point is the contents of the originals directory, but these will diverge as the files are updated with Agon specific edits. 
+
+## Generating Documentation
+
+### Requirements
+
+asciidoctor for testing each file individually
+antora for generating HTML site
+node.js LTS release to run antora
+opt: nvm to manage node.js
+
+### Building
+
+For each file in src/adoc,
+
+```
+asciidoctor filename.adoc
+```
+
+TODO add antora instructions
+
 ## Rough Roadmap
 
 1. Convert R.T. Russell’s BBC BASIC (Z80) Manual to adoc source from which the contents of the original site can be regenerated
@@ -16,17 +68,4 @@ Licence to be determined. It will be as open as possible while respecting the co
 (b) More Agon-specific material, eg instructions on updating firmware
 4. Create an automated workflow for generating and publishing the outputs from the source (possibly using GitHub actions) 
 
-## Generating Documentation
-
-### Requirements
-
-asciidoctor
-
-### Building
-
-For each file in src/adoc,
-
-```
-asciidoctor filename.adoc
-```
 
