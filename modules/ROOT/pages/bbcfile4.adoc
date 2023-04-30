@@ -22,7 +22,7 @@ The files are organised as shown below:
 1 to 31 bytes |`index(1)` +
 5 bytes |`index$(2)` +
 1 to 31 bytes |`index(2)` +
-5 bytes |`etc.`image:rarr.gif[Right,width=15,height=15]
+5 bytes |`etc.`→
 |===
 
 Where `index(n)` points to a record in the data file as follows:

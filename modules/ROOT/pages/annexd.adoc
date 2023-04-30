@@ -33,9 +33,9 @@ a|
 [width="100%",cols="^100%",]
 |===
 |Stack +
-image:darr.gif[Down,width=15,height=15]
+↓
 |(unused)
-|image:uarr.gif[Up,width=15,height=15] +
+|↑ +
 Heap
 |User's Program
 |Interpreter and workspace
@@ -123,11 +123,11 @@ The program is stored in memory in the format shown below. The first program lin
 
  
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
 Reserved Word Tokens
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
  
 
@@ -139,11 +139,11 @@ CR
 
 Line No
 
-image:larr.gif[Left,width=15,height=15]
+←
 
 Program Line
 
-image:rarr.gif[Right,width=15,height=15]
+→
 
  
 
@@ -180,23 +180,23 @@ Integers are held in two's complement format. They occupy 4 bytes, with the LSB 
 |LSB |MSB |U |M |B |E |R |% |&00 |LSB |  |  |MSB
 |===
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
-image:larr.gif[Left,width=15,height=15]
+←
 
 Rest of Name
 
-image:rarr.gif[Right,width=15,height=15]
+→
 
  
 
-image:larr.gif[Left,width=15,height=15]
+←
 
 Value
 
-image:rarr.gif[Right,width=15,height=15]
+→
 
 Address of next variable
 
@@ -209,19 +209,19 @@ The smallest amount of space is taken up by a variable with a single letter name
 |LSB |MSB |% |&00 |LSB |  |  |MSB
 |===
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
-image:uarr.gif[Up,width=15,height=15]
-
- 
+↑
 
  
 
-image:larr.gif[Left,width=15,height=15]
+ 
+
+←
 
 Value
 
-image:rarr.gif[Right,width=15,height=15]
+→
 
 Address of next variable
 
@@ -236,25 +236,25 @@ Real numbers are held in binary floating point format. The mantissa is held as a
 |LSB |MSB |U |M |B |E |R |&00 |LSB |  |  |MSB |EXP
 |===
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
-image:larr.gif[Left,width=15,height=15]
+←
 
 Rest of Name
 
-image:rarr.gif[Right,width=15,height=15]
+→
 
  
 
-image:larr.gif[Left,width=15,height=15]
+←
 
 Mantissa
 
-image:rarr.gif[Right,width=15,height=15]
+→
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
 Address of next variable
 
@@ -284,7 +284,7 @@ ____
 
 1000 0010
 
-image:uarr.gif[Up,width=15,height=15]Sign Bit
+↑Sign Bit
 
  
 
@@ -482,11 +482,11 @@ The layout of the variable 'NMBR' in memory is shown below.
 
  
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
  
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
  
 
@@ -496,13 +496,13 @@ A%-5 points here
 
 A%-2 points here
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
  
 
 A%-1 points here
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
 A% points here
 
@@ -542,25 +542,25 @@ String variables are stored as the string of characters. Since the current lengt
 |LSB |MSB |A |M |E |$ |&00 |len |max |LSB |MSB
 |===
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
-image:larr.gif[Left,width=15,height=15]
+←
 
 Rest of name
 
-image:rarr.gif[Right,width=15,height=15]
+→
 
  
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
  
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
-image:uarr.gif[Up,width=15,height=15]
+↑
 
 Address of next variable
 
@@ -570,7 +570,7 @@ String start address
 
 starting with the same letter
 
-Max (original) length image:uarr.gif[Up,width=15,height=15]`  `
+Max (original) length ↑`  `
 
  
 
