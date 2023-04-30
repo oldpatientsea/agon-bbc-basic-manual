@@ -1,6 +1,5 @@
 = BBC BASIC (Z80) for the Agon light™
 Adapted from BBC BASIC (Z80) © Doug Mounter and Richard Russell 2009, and Dean Belfield's Wiki
-:toc: left
 
 == Introduction
 :url-bbc-basic-for-z80: https://www.bbcbasic.co.uk/bbcbasic/mancpm/index.html
