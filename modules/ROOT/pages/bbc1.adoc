@@ -1,37 +1,70 @@
-=== [#beforestart]#Before You Start#
+= BBC BASIC (Z80) for the Agon light™
+Adapted from BBC BASIC (Z80) © Doug Mounter and Richard Russell 2009, and Dean Belfield's Wiki
+:toc: left
+
+== Introduction
+:url-bbc-basic-for-z80: https://www.bbcbasic.co.uk/bbcbasic/mancpm/index.html
+:url-agon-docs-wiki: https://github.com/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon
+
+[quote,John James Audubon,The Birds of America]
+When the bird and the book disagree, believe the bird. 
+
+This document is an adaptation of R.T. Russell's {url-bbc-basic-for-z80}[BBC BASIC (Z80) Manual] to describe the implementation of BBC BASIC on the Agon light™ and AgonLight 2. It is made with the permission of the original author, using information from {url-agon-docs-wiki}[Dean Belfield's wiki] with his consent. 
+
+The Agon light™ is an open source, eZ80-based single board computer and microcontroller designed by Bernardo Kastrup. The names "Agon" and "Agon Light" in this document refer equally to Bernardo's original design, his forthcoming Origins collector's edition, and to the re-engineered AgonLight 2 by Tsvetan Usunov, owner of Olimex Ltd. All use the same firmware. The names do not refer to a possible Agon 65X which is being designed at the moment by Kyle Cardoza and will, if it is released, have a 6502-series CPU, the W65C265S. BBC BASIC (Z80) requires a Z80 processor. BASIC in this document, unless otherwise specified, refers to BBC BASIC (Z80) for the Agon light™.
+
+The original BBC BASIC (Z80) Manual includes contributions from Doug Mounter who wrote adaptations for the Z88 and Tatung Einstein. R.T. Russell, Doug Mounter, Dean Belfield, Bernardo Kastrup and Tsvetan Usunov retain any and all original copyrights to and trademarks for their work. 
+
+This first draft has been collated by Tim Delmare from information shared by the Agon Light community. Any mistakes are mine. When the code and the document disagree, believe the code.
+
+== A Brief History of Agon BASIC
+
+BASIC (Beginner's All-purpose Symbolic Instruction Code) was born in 1964 at Dartmouth College, New Hampshire along with DTSS, the Dartmouth Time Sharing System on which it ran, the work respectively of two brilliant mathematicians, professors John Kemeny and Thomas Kurtz.
+
+Immediately popular, the language proliferated and later saw an explosion of different dialects during the home computer boom of the 80s, a period of creativity within tight constraints that retains a particular charm for many. Kemeny and Kurtz were less impressed. "We are greatly concerned that a generation of students is growing up learning Street BASIC, an illiterate dialect of a lovely language." 
+
+If any BASIC deserved this scorn, one dialect in particular did not: BBC BASIC.
+
+The original version of BBC BASIC was written by Sophie Wilson at Acorn in 1981 for the BBC Micro range of computers, and was designed to support the UK Computer Literacy Project. R.T. Russell was involved in the specification of BBC BASIC, and wrote his own Z80 version, BBC BASIC (Z80), that was subsequently ported to a number of Z80 based machines. Many years later, he made it open source under a zlib licence.
+
+In 2022, Dean Belfield began work on the QUARK firmware for the Agon light™. The firmware consists of three parts: Agon MOS for the eZ80, the CPU driving the machine; Agon VDP for the ESP32-PICO-D4 that handles video and audio as well as managing keyboard input; and, BBC BASIC for Agon, a new port of BBC BASIC (Z80) with a number of modifications to make it run on this specific hardware. The same firmware runs on the AgonLight 2. 
+
+The current version of BBC BASIC for Agon is v1.04. 
+
+== Before You Start
 
 This is a reference manual, it is not intended to teach you BASIC. It gives a summary of the BBC BASIC commands and functions plus some hints and tips on their use. A general knowledge of BASIC has been assumed.
 
-File handling with BBC BASIC (Z80) is different in approach to most other versions of BASIC. Because of this, BBC BASIC (Z80) file handling has been covered in some link:bbcfile1.html[detail].
-
 BBC BASIC (Z80) has been designed to be as compatible as possible with the 6502 BBC BASIC resident in the BBC Microcomputer. The language syntax is not always completely identical to that of the 6502 version, but in most cases the Z80 version is more tolerant.
 
-==== [#requirements]#System Requirements#
+Agon BBC BASIC is comparable with BBC BASIC IV and most simple listings for the BBC Micro can be adapted with a little work, although there are differences in the graphics modes and in the handling of sound. 
 
-BBC BASIC (Z80) requires a Z80 processor. It is assumed that all the Z80 registers are available for use; BBC BASIC will *not* run on a system which reserves the _alternate registers_ (AF', BC', DE', HL') for the use of interrupts.
+About 15 Kbytes of code space and about 1 Kbyte of data space are used by the interpreter. The remainder of the TPA is available for the user's program, data (heap) and stack. 
 
-The CP/M version of BBC BASIC (Z80) requires CP/M-80 version 2.2 or later; about 15 Kbytes of code space and about 1 Kbyte of data space are used by the interpreter. The remainder of the TPA is available for the user's program, data (heap) and stack.
+Those familiar with BBC BASIC on RISC OS may notice some omissions such as the absence of CASE-OF-WHEN-OTHERWISE-ENDCASE in Agon BBC BASIC. The Acorn Archimedes used a 32-bit ARM CPU and removed the 16 KB limit on the BASIC code size, allowing new features to be added in BBC BASIC V which is the version still used in RISC OS. Agon BASIC is still under development and future versions may add some of these missing BBC BASIC V features.
 
-==== [#configuration]#Configuration#
+== System Requirements
 
-Few CP/M systems offer colour graphics and sound of the quality provided on the BBC Microcomputer, therefore the generic CP/M version of BBC BASIC (Z80) does not support these features. Versions of BBC BASIC specifically configured for the Amstrad CPC6128 Colour Computer, the Tatung Einstein and the Torch Second Processor are available which support graphics and sound to the extent that they are provided by the host machine.
+:url-agon-bbc-basic-v104: https://github.com/breakintoprogram/agon-bbc-basic/releases/tag/v1.04
+:url-updating-firmware-intructions: https://github.com/breakintoprogram/agon-docs/wiki/Updating-Firmware
 
-Many CP/M systems do, however, support cursor addressing (*TAB(X,Y)*), clearing the screen (*CLS*), an elapsed-time clock (*TIME*) and the ability to read the keyboard with a maximum waiting time (*INKEY*). Because these features do not, in general, use a standardised software interface BBC BASIC (Z80) cannot come preconfigured to make use of them. Therefore the source code of a small patch program (*BBCDIST.MAC*) is supplied, which can be edited and assembled to make these facilities available. The patch resides at address 100H and must not exceed 256 bytes in length.
+This document describes {url-agon-bbc-basic-v104}[v1.04 of Agon BBC BASIC]. In order to run this version, you must be using AGON QUARK Firmware v1.03 (MOS v1.03 on the eZ80 and VDP v1.03 on the ESP32). 
 
-BBC BASIC (Z80) supports line-editing using the cursor-control and other keys on the keyboard. However the codes generated by these keys are not standardised. The last 12 bytes of the patch area (1F4H to 1FFH) contain the width of the screen (in characters) followed by the control codes corresponding to the editing keys. As supplied, these are set to the codes generated by an ADM3a terminal.
+Where possible, differences between BASIC versions are noted however if you are running an earlier version of the firmware and BASIC you are recommended to follow the {url-updating-firmware-intructions}[instructions for updating online].
 
-=== [#running]#Running BBC BASIC (Z80)#
+== Set Up
 
-In the following examples, the system prompts and responses are shown in normal type and your entries are shown in bold type. The examples also assume that BBC BASIC (Z80) has been installed on drive C:.
+It is assumed that you have already setup your Agon Light, have a microSD card inserted that is formatted and ready to use with {url-agon-bbc-basic-v104}[v1.04 of Agon BBC BASIC] copied to it.
 
-To run BBC BASIC (Z80), bring up CP/M and type
+== Running BBC BASIC (Z80) for Agon
+
+To run BBC BASIC (Z80) for Agon, from the MOS prompt type
 
 [source,console]
 ----
-C>BBCBASIC<Enter>
+>LOAD bbcbasic.bin
+>RUN
 ----
-
-(<Enter> means 'press the Enter key')
 
 The system will reply:
 
@@ -39,14 +72,14 @@ The system will reply:
 ----
 BBC BASIC (Z80) Version 3.00
 (C) Copyright R.T.Russell 1987
->
 ----
 
-To exit BBC BASIC (Z80) type
+Note, MOS automatically runs the contents of the AUTOEXEC.TXT file found in the root directory of your microSD card. If you have copied the default AUTOEXEC.TXT file when setting up your device, then it will include the commands above and therefore your Agon Light will appear to boot directly to BASIC without you needed to type anything. 	
+
+To exit BBC BASIC (Z80) and return to MOS type
 
 [source,console]
 ----
->*BYE<Enter>
+>*BYE
 ----
 
-© Doug Mounter and mailto:richard@rtrussell.co.uk[Richard Russell] 2009

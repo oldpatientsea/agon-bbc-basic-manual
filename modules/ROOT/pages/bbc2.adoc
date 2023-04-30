@@ -14,10 +14,8 @@ For example, the following will work.
 
 [source,console]
 ----
-10 FOR i=1 TO 5 PRINT i : NEXT
+ 10 FOR i=1 TO 5 PRINT i : NEXT
 ----
-
-'''''
 
 === [#editing]#The Line Editor#
 
@@ -25,7 +23,8 @@ The link:bbckey1.html#edit[EDIT] command may be used to edit or concatenate-and-
 
 [source,console]
 ----
-EDIT 230 EDIT 200,230
+*EDIT 230 
+*EDIT 200,230
 ----
 
 The following control functions are active in the immediate and edit modes and in response to an link:bbckey2.html#input[INPUT] command in a program. The codes shown are the default codes as supplied; they may be changed by editing the *BBCDIST.MAC* link:bbc1.html#configuration[patch program]:
@@ -89,8 +88,6 @@ N=A+B/C-D N=A+(B/C)-D
 N=A/B+C/D N=(A/B)+(C/D)
 ----
 
-'''''
-
 === [#variables]#Variables#
 
 ==== [#specification]#Specification#
@@ -99,12 +96,9 @@ Variable names may be of unlimited length and all characters are significant. Va
 
 The following types of variable are allowed:
 
-[source,console]
-----
-`A ` real numeric +
-`A%` integer numeric +
-`A$` string
-----
+* A:  real numeric 
+* A%: integer numeric 
+* A$: string
 
 ==== [#numeric]#Numeric Variables#
 
@@ -150,7 +144,6 @@ Unlike numeric variables, string variables do not have a fixed length. When you 
 
 You can overcome the problem of 'garbage' by reserving enough memory for the longest string you will ever put into a variable before you use it. You do this simply by assigning a string of spaces to the variable. If your program needs to find an empty string the first time it is used, you can subsequently assign a null string to it. The same technique can be used for string arrays. The example below sets up a single dimensional string array with room for 20 characters in each entry, and then empties it ready for use.
 
-
 [source,console]
 ----
 10 DIM names$(10)
@@ -162,6 +155,7 @@ You can overcome the problem of 'garbage' by reserving enough memory for the lon
 70   name$(i)="";
 80 NEXT
 ----
+
 
 Assigning a null string to `stop$` prevents the space for the last entry in the array being recovered when it is emptied.
 
@@ -185,7 +179,6 @@ Unlike the BBC Micro, which has separate stacks for FOR...NEXT, REPEAT...UNTIL G
 
 Apart from memory size, there is no limit to the level of nesting of link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT], link:bbckey4.html#repeat[REPEAT]...link:bbckey4.html#until[UNTIL] and link:bbckey2.html#gosub[GOSUB]...link:bbckey4.html#return[RETURN] operations. The untrappable error message link:annexc.html#noroom['No room]' will be issued if all the stack space is used up. Because a single stack is used, the following error messages do not exist.
 
-
 [source,console]
 ----
 Too many FORs
@@ -193,14 +186,14 @@ Too many REPEATs
 Too many GOSUBs
 ----
 
+
 ==== [#structure]#Program Structure Limitations#
 
 The use of a common stack has one disadvantage (if it is a disadvantage) in that it forces stricter adherence to proper program structure. It is not good practice to exit from a link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop without passing through the NEXT statement. It makes the program more difficult to understand and the FOR address is left on the stack. Similarly, the loop or return address is left on the stack if a link:bbckey4.html#repeat[REPEAT]...link:bbckey4.html#until[UNTIL] loop or a link:bbckey2.html#gosub[GOSUB]...link:bbckey4.html#return[RETURN] structure is incorrectly exited. This means that if you leave a FOR..NEXT loop without executing the NEXT statement, and then subsequently encounter, for example, a RETURN statement, BBC BASIC (Z80) will report an error. (In this case, a 'link:annexc.html#nogosub[No GOSUB] at line nnnn' error.) The example below would result in the error message 'link:annexc.html#noproc[No PROC] at line 500'.
 
-
 [source,console]
 ----
-400 - - -
+400 ...
 410 INPUT "What number should I stop at", num
 420 PROC_error_demo
 430 END
@@ -213,6 +206,7 @@ The use of a common stack has one disadvantage (if it is a disadvantage) in that
 500 ENDPROC
 ----
 
+
 BBC BASIC (Z80) is a little unusual in detecting this error, but it is always risky. It usually results in an inconsistent program structure and an unexpected 'Too many FORs/REPEATs/GOSUBs' error on the BBC Micro when the control stack overflows.
 
 ==== [#leavingloops]#Leaving Program Loops#
@@ -223,10 +217,9 @@ There are a number of ways to leave a program loop which do not conflict with th
 
 The simplest way to overcome the problem of exiting a link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop is to restructure it as a link:bbckey4.html#repeat[REPEAT]...link:bbckey4.html#until[UNTIL] loop. The example below performs the same function as the previous example, but exits the structure properly. It has the additional advantage of more clearly showing the conditions which will cause the loop to be terminated.
 
-
 [source,console]
 ----
-400 - - -
+400 ...
 410 INPUT "What number should I stop at", num
 420 PROC_error_demo
 430 END
@@ -240,14 +233,14 @@ The simplest way to overcome the problem of exiting a link:bbckey2.html#for[FOR]
 510 ENDPROC
 ----
 
+
 ===== [#changing]#Changing the Loop Variable#
 
 A simple way of forcing an exit from a link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop is to set the loop variable to a value equal to the limit value and then link:bbckey2.html#goto[GOTO] to the NEXT statement. alternatively, you could set the loop variable to a value greater than the limit (assuming a positive step), but in this case the value on exit would be different depending on why the loop was terminated. (In some circumstances, this may be an advantage.) The example below uses this method to exit from the loop. Notice, however, that the conditions which cause the loop to terminate are less clear since they do not appear together.
 
-
 [source,console]
 ----
-400 - - -
+400 ...
 410 INPUT "What number should I stop at", num
 420 PROC_error_demo
 430 END
@@ -256,20 +249,20 @@ A simple way of forcing an exit from a link:bbckey2.html#for[FOR]...link:bbckey3
 460 FOR i=1 TO 100
 470   PRINT i;
 480   IF i=num THEN i=500: GOTO 510
-490   ----
+490   ....
 500 More program here if necessary
 510 NEXT
 520 ENDPROC
 ----
 
+
 ===== [#popping]#Popping the Inner Variable#
 
 A less satisfactory way of exiting a link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop is to enclose the loop in a dummy outer loop and rely on BBC BASIC (Z80)'s ability to 'pop' inner control variables off the stack until they match. If you use this method you MUST include the variable name in the NEXT statement. This method, which is demonstrated below, is very artificial and the conditions which cause the loop to terminate are unclear.
 
-
 [source,console]
 ----
-400 - - -
+400 ...
 410 INPUT "What number should I stop at", num
 420 PROC_error_demo
 430 END
@@ -279,17 +272,17 @@ A less satisfactory way of exiting a link:bbckey2.html#for[FOR]...link:bbckey3.h
 470 FOR i=1 TO 100
 480   PRINT i;
 490   IF i=num THEN 530 :REM Jump to outer NEXT
-500   - - -
+500   ...
 510 More program here if necessary
 520 NEXT i
 530 NEXT dummy
 540 ENDPROC
 ----
 
+
 ==== [#localstack]#Local Variables#
 
 Since local variables are also stored on the processor's stack, you cannot use a link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop to make an array link:bbckey2.html#local[LOCAL]. For example, the following program will give the the error message 'link:annexc.html#notlocal[Not LOCAL] at line 400'.
-
 
 [source,console]
 ----
@@ -300,8 +293,8 @@ Since local variables are also stored on the processor's stack, you cannot use a
 420 ENDPROC
 ----
 
-You can overcome this by fabricating the loop using an link:bbckey2.html#if[IF]...link:bbckey4.html#then[THEN] statement as shown below. This is probably the only occasion when the use of a single stack promotes poor program structure.
 
+You can overcome this by fabricating the loop using an link:bbckey2.html#if[IF]...link:bbckey4.html#then[THEN] statement as shown below. This is probably the only occasion when the use of a single stack promotes poor program structure.
 
 [source,console]
 ----
@@ -312,6 +305,7 @@ You can overcome this by fabricating the loop using an link:bbckey2.html#if[IF].
 420 IF i<11 THEN 400
 430 ENDPROC
 ----
+
 
 ==== [#stack]#Stack Pointer#
 
@@ -347,6 +341,7 @@ There are three indirection operators:
 
 The query operator accesses individual bytes of memory. ?M means 'the contents of' memory location 'M'. The first two examples below write &23 to memory location &4FA2, the second two examples set 'number' to the contents of that memory location and the third two examples print the contents of that memory location.
 
+[source,console]
 ----
      ?&4FA2=&23
 or
@@ -354,6 +349,7 @@ or
      ?memory=&23
 ----
 
+[source,console]
 ----
      number=?&4FA2
 or
@@ -361,6 +357,7 @@ or
      number=?memory
 ----
 
+[source,console]
 ----
      PRINT ?&4FA2
 or
@@ -370,8 +367,10 @@ or
 
 Thus, '?' provides a direct replacement for PEEK and POKE.
 
+
 `?A=B ` is equivalent to ` POKE A,B` +
 `B=?A ` is equivalent to ` B=PEEK(A)`
+
 
 ===== [#bytequery]#Query as a Byte Variable#
 
@@ -381,33 +380,35 @@ A byte variable, '?count' for instance, may be used as the control variable in a
 ----
 DIM count% 0
 FOR ?count%=0 TO 20
-...
+  ...
 
-...
+  ...
 NEXT
 ----
+
 
 ==== [#exclamation]#Exclamation#
 
 The query (?) indirection operator works on one byte of memory. The word indirection operator (!) works on 4 bytes (an integer word) of memory. Thus,
 
-[source,console]
-----
-!M=&12345678
-----
+
+` !M=&12345678`
+
 
 would load
+
 
 `&78` into address M +
 `&56` into address M+1 +
 `&34` into address M+2 +
 `&12` into address M+3. +
 
+
 and
 
 [source,console]
 ----
-PRINT ~!M  ` (print !M in hex format
+`PRINT ~!M  ` (print !M in hex format)
 ----
 
 would give
@@ -451,6 +452,7 @@ memory?5=&50
 PRINT memory?5
 ----
 
+
 Thus,
 
 [source,console]
@@ -461,6 +463,7 @@ Thus,
 
 The two examples below show how two operands can be used with the byte indirection operator (?) to examine the contents of memory. The first example displays the contents of 12 bytes of memory from location &4000. The second example displays the memory contents for a real numeric variable. (See the Annex entitled link:annexd.html[Format of Program and Variables in Memory].)
 
+
 [source,console]
 ----
 10 memory=&4000
@@ -468,6 +471,7 @@ The two examples below show how two operands can be used with the byte indirecti
 30   PRINT ~memory+offset, ~memory?offset
 40 NEXT
 ----
+
 
 Line 30 prints the memory address and the contents in hexadecimal format.
 
@@ -498,16 +502,12 @@ Indirection operators can be used to create special data structures, and as such
 
 If M is the address of the start of the structure then:
 
-[source,console]
-----
-`$M   ` is the string +
-`M?11 ` is the 8 bit number +
-`M!12 ` is the address of the related structure
-----
+* $M    is the string +
+* M?11  is the 8 bit number +
+* M!12  is the address of the related structure
+
 
 Linked lists and tree structures can easily be created and manipulated in memory using this facility.
-
-'''''
 
 === [#operators]#Operators and Special Symbols#
 
@@ -544,8 +544,6 @@ The following list is a rather terse summary of the meaning of the various opera
 |^ |Binary operation of exponentation between integers and reals.
 |~ |A character in the start of a print field indicating that the item is to be printed in hexadecimal. Also used with link:bbckey4.html#str[STR$] to cause conversion to a hexadecimal string.
 |===
-
-'''''
 
 === [#keywords]#Keywords#
 
@@ -586,8 +584,6 @@ Keywords Available
 |link:bbckey4.html#vdu[VDU] |*link:bbckey4.html#vpos[VPOS]* |link:bbckey4.html#width[WIDTH] | |
 |===
 
-'''''
-
 === [#errorhandling]#Error Handling#
 
 ==== [#errorintro]#Introduction#
@@ -621,6 +617,7 @@ Why would you want to take over responsibility for handling run-time errors? Whe
 60 :REM key is pressed
 ----
 
+
 Example run:
 
 [source,console]
@@ -640,9 +637,11 @@ Type in a number -2
 -ve root at line 30
 ----
 
+
 ==== [#errortrapping]#Error Trapping Commands#
 
 The *ON ERROR* command directs BBC BASIC (Z80) to execute the statement(s) following ON ERROR when a trappable error occurs:
+
 
 [source,console]
 ----
@@ -693,6 +692,7 @@ The example below does not try to deal with errors, it just uses link:bbckey2.ht
 130 END
 ----
 
+
 Example run:
 
 [source,console]
@@ -712,6 +712,7 @@ Error No 17
 Escape at line 20
 ----
 
+
 The example below has been further expanded to include error trapping. The only 'predictable' error is that the user will try a negative number. Any other error is unacceptable, so it is reported and the program aborted. Consequently, when <ESC> is used to abort the program, it is reported as an error. However, a further test for ERR=17 could be included so that the program would halt on ESCAPE without an error being reported.
 
 [source,console]
@@ -729,6 +730,7 @@ The example below has been further expanded to include error trapping. The only 
 120 REPORT:PRINT " at line ";ERL
 130 END
 ----
+
 
 Example run:
 
@@ -756,6 +758,7 @@ Type a number <Esc>
 Escape at line 20
 ----
 
+
 The above example is very simple and was chosen for clarity. In practice, it would be better to test for a negative number before using SQR rather than trap the 'link:annexc.html#negativeroot[-ve root]' error. A more realistic example is the evaluation of a user-supplied HEX number, where trapping 'link:annexc.html#badhex[Bad hex]' would be much easier than testing the input string beforehand.
 
 [source,console]
@@ -775,8 +778,6 @@ The above example is very simple and was chosen for clarity. In practice, it wou
 130 END
 ----
 
-'''''
-
 === [#procedures]#Procedures and Functions#
 
 ==== [#procintro]#Introduction#
@@ -788,14 +789,18 @@ Arguably, the major advantage of procedures and functions is that they can be re
 [source,console]
 ----
 100 IF name$="ZZ" THEN GOSUB 500 ELSE GOSUB 800
+----
+and
 
-
+[source,console]
+----
 100 IF name$="ZZ" THEN PROC_end ELSE PROC_print
 ----
 
 The first statement gives no indication of what the subroutines at 500 and 800 actually do. The second, however, tells you what to expect from the two procedures. This enhanced readability stems from the choice of meaningful names for the two procedures.
 
 A function often carries out a number of actions, but it always produces a single result. For instance, the 'built in' function link:bbckey2.html#int[INT] returns the integer part of its argument.
+
 
 [source,console]
 ----
@@ -816,12 +821,16 @@ It may seem hardly worth while defining a function to do something this simple. 
 ==== [#names]#Names#
 
 The names of procedures and functions MUST start with link:bbckey4.html#proc[PROC] or link:bbckey2.html#fn[FN] and, like variable names, they cannot contain spaces. (A space tells BBC BASIC (Z80) that it has reached the end of the word.) This restriction can give rise to some pretty unreadable names. However, the underline character can be used to advantage. Consider the procedure and function names below and decide which is the easier to read.
-@
+
 [source,console]
 ----
 PROCPRINTDETAILS      FNDISCOUNT
+----
 
+or
 
+[source,console]
+----
 PROC_print_details    FN_discount
 ----
 
@@ -868,6 +877,7 @@ You can define a whole library of procedures and functions and include them in y
 190 ENDPROC
 ----
 
+
 ==== [#parameters]#Passing Parameters#
 
 When you define a procedure or a function, you list the parameters to be passed to it in brackets. For instance, the discount example expected one parameter (the retail price) to be passed to it. You can write the definition to accept any number of parameters. For example, we may wish to pass both the retail price and the discount percentage. The function definition would then look something like this:
@@ -881,31 +891,34 @@ In this case, to use the function we would need to pass two parameters.
 
 [source,console]
 ----
- 90 ----
+ 90 ....
 100 retail_price=26.55
 110 discount_price=FN_discount(retail_price,25)
-120 ----
+120 ....
 ----
+
 
 or
 
 [source,console]
 ----
- 90 ----
+ 90 ....
 100 price=26.55
 110 discount=25
 120 price=FN_discount(price,discount)
-130 ----
+130 ....
 ----
+
 
 or
 
 [source,console]
 ----
- 90 ----
+ 90 ....
 100 price=FN_discount(26.55,25)
-110 ----
+110 ....
 ----
+
 
 ===== [#formalactual]#Formal and Actual Parameters#
 
@@ -923,6 +936,7 @@ The value of the first parameter in the line using the procedure or function is 
 60 ENDPROC
 ----
 
+
 ====== Arguments Error
 
 [source,console]
@@ -934,6 +948,7 @@ The value of the first parameter in the line using the procedure or function is 
 50 PRINT num1,name$,num2
 60 ENDPROC
 ----
+
 
 ====== Type Mismatch
 
@@ -958,7 +973,7 @@ Variables which are not formal variables or declared as link:bbckey2.html#local[
 
 ===== [#reentrant]#Re-entrant Functions/Procedures#
 
-Because the formal parameters which receive the passed parameters are local, all procedures and functions can be re- entrant. That is, they can call themselves. But for this feature, the short example program below would be very difficult to code. It is the often used example of a factorial number routine. (The factorial of a number n is n * n-1 * n-2 *----* 1. Factorial 6, for instance, is 6*5*4*3*2*1)
+Because the formal parameters which receive the passed parameters are local, all procedures and functions can be re- entrant. That is, they can call themselves. But for this feature, the short example program below would be very difficult to code. It is the often used example of a factorial number routine. (The factorial of a number n is n * n-1 * n-2 *....* 1. Factorial 6, for instance, is 6*5*4*3*2*1)
 
 [source,console]
 ----
@@ -975,6 +990,7 @@ Because the formal parameters which receive the passed parameters are local, all
 110 =n*FN_fact_num(n-1)
 120 REM Else go round again
 ----
+
 
 Since 'n' is the input variable to the function FN_fact_num, it is local to each and every use of the function. The function keeps calling itself until it returns the answer 1. It then works its way back through all the calls until it has completed the final multiplication, when it returns the answer. The limit of 35 on the input number prevents the answer being too big for the computer to handle.
 
