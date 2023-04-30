@@ -8,6 +8,7 @@ Licence to be determined. It will be as open as possible while respecting the co
 
 ## Directory structure
 
+```
 ├── dist
 │   └── HTML
 ├── modules
@@ -18,6 +19,7 @@ Licence to be determined. It will be as open as possible while respecting the co
 │       ├── pages
 │       └── partials
 └── originals
+```
 
 ### dist
 
