@@ -16,6 +16,14 @@ The original BBC BASIC (Z80) Manual includes contributions from Doug Mounter who
 
 This first draft has been collated by Tim Delmare from information shared by the Agon Light community. Any mistakes are mine. When the code and the document disagree, believe the code.
 
+== Contributing
+
+The source code for the content of this document can be found at https://github.com/oldpatientsea/agon-bbc-basic-manual.
+
+The source code for the antora playbook used to generate a web version of the manual is at https://github.com/oldpatientsea/agon-bbc-basic-manual-playbook
+
+Note, this is an incomplete first draft so please hold off with flagging issues until the documentation is in a more finished state. Once a stable release is complete, please feel then free to raise issues on github pages with questions, requests for clarification, errors spotted and suggestions for enhancements. 
+
 == A Brief History of Agon BASIC
 
 BASIC (Beginner's All-purpose Symbolic Instruction Code) was born in 1964 at Dartmouth College, New Hampshire along with DTSS, the Dartmouth Time Sharing System on which it ran, the work respectively of two brilliant mathematicians, professors John Kemeny and Thomas Kurtz.
