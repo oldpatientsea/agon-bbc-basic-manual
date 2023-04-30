@@ -1,0 +1,9 @@
+name: agon-bbc-basic-manual
+title: BBC BASIC (Z80) for the Agon Light
+version: 0.1
+start_page: index.adoc
+asciidoc:
+    attributes:
+        source-language: asciidoc@
+        table-caption: false
+
