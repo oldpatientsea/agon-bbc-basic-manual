@@ -74,13 +74,20 @@ opt: nvm to manage node.js
 
 ### Building
 
-For each file in src/adoc,
+For simple testing, for each file in src/adoc,
 
 ```
 asciidoctor filename.adoc
 ```
 
-TODO add antora instructions
+Antora is used to generate the HTML output. See https://github.com/oldpatientsea/agon-bbc-basic-manual-playbook 
+
+For EPUB
+
+```
+cd epub
+asciidoctor-epub3 BBCBASICforAgonLight.adoc
+```
 
 ## Rough Roadmap
 
