@@ -22,7 +22,7 @@ The source code for the content of this document can be found at https://github.
 
 The source code for the antora playbook used to generate a web version of the manual is at https://github.com/oldpatientsea/agon-bbc-basic-manual-playbook
 
-Note, this is an incomplete first draft so please hold off with flagging issues until the documentation is in a more finished state. Once a stable release is complete, please then feel free to raise issues on github pages with questions, requests for clarification, errors spotted and suggestions for enhancements. 
+Please then feel free to raise issues on github pages with questions, requests for clarification, errors spotted and suggestions for enhancements. 
 
 == A Brief History of Agon BASIC
 
