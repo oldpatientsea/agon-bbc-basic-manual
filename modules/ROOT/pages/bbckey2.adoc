@@ -430,7 +430,14 @@ TO, STEP, NEXT
 
 A statement which sets the graphics foreground or background logical colour to be used in all subsequent graphics operations.
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+The first number sets the mode of action, which is currently ignored. 
+
+The modes are:
+0	plot the colour specified
+1	OR the specified colour with that already there
+2	AND the specified colour with that already there
+3	Exclusive-OR the specified colour with that already there
+4 	Invert the colour already there
 
 ==== Syntax
 
@@ -449,6 +456,8 @@ CLS, CLG, MODE, COLOUR, PLOT
 === [#get]#GET/GET$#
 
 A function and compatible string function that reads the next character from the keyboard buffer (it waits for the character).
+
+See the keyword link:#getxy[INKEY] for a way of emptying the keyboard buffer before issuing a GET.
 
 [source,console]
 ----
@@ -495,7 +504,25 @@ N=GET(X) :REM input from port X
 
 [source,console]
 ----
-PUT, INKEY, INKEY$
+GET$(x,y), PUT, INKEY, INKEY$,
+----
+
+=== [#getxy]#GET$(x,y)#
+
+Returns the ASCII character at position x,y.
+
+==== Syntax
+
+[source,console]
+----
+<n-var>=GET$(<numeric>,<numeric>)
+----
+
+==== Associated Keywords
+
+[source,console]
+----
+POINT(x,y), GET 
 ----
 
 === [#gosub]#GOSUB#

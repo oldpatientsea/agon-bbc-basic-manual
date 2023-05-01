@@ -1,0 +1,329 @@
+* link:/breakintoprogram/agon-docs[Code]
+* link:/breakintoprogram/agon-docs/pulls[Pull requests]
+* link:/breakintoprogram/agon-docs/actions[Actions]
+* link:/breakintoprogram/agon-docs/wiki[Wiki]
+* link:/breakintoprogram/agon-docs/security[Security]
+* link:/breakintoprogram/agon-docs/pulse[Insights]
+
+[[repo-content-pjax-container]]
+[[wiki-wrapper]]
+== BBC BASIC for Agon
+
+link:#wiki-pages-box[Jump to bottom]
+
+Dean Belfield edited this page Apr 16, 2023 · link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon/_history[5 revisions]
+
+[[wiki-content]]
+[[wiki-pages-box]]
+== Pages [.Counter .Counter--primary]#11#
+
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki[Home] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon[BBC BASIC for Agon] #
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#what-is-bbc-basic-for-agon[What is BBC BASIC for Agon?]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#implementation-on-the-agon-light[Implementation on the Agon Light]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#changes-specific-to-agon-light[Changes specific to Agon Light]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#star-commands[Star Commands]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#bye[BYE]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#edit[EDIT]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#fx[FX]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#version[VERSION]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#mos-commands[MOS commands]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#basic[BASIC]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#rem[REM]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#load[LOAD]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#save[SAVE]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#mode[MODE]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#colour[COLOUR]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#gcol[GCOL]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#point[POINT]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#plot[PLOT]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#get[GET$]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#sound[SOUND]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#time[TIME$]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#vdu[VDU]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#inline-assembler[Inline Assembler]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#integration-with-mos[Integration with MOS]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#accessing-the-mos-system-variables[Accessing the MOS system variables]
+** link:/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon#running-star-commands-with-variables[Running star commands with variables]
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/External-Documentation[External Documentation] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/FAQ[FAQ] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/GPIO[GPIO] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/MOS[MOS] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/MOS-API[MOS API] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/Projects[Projects] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/Third-Party-Projects[Third Party Projects] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/Updating-Firmware[Updating Firmware] #
+* {blank}
++
+[.Truncate]# link:/breakintoprogram/agon-docs/wiki/VDP[VDP] #
+
+== Clone this wiki locally
+
+[[wiki-body]]
+== link:#what-is-bbc-basic-for-agon[]What is BBC BASIC for Agon?
+
+The original version of BBC Basic was written by Sophie Wilson at Acorn in 1981 for the BBC Micro range of computers, and was designed to support the UK Computer Literacy Project. R.T.Russell was involved in the specification of BBC Basic, and wrote his own Z80 version that was subsequently ported to a number of Z80 based machines. http://www.bbcbasic.co.uk/bbcbasic/history.html[I highly recommend reading his account of this on his website for more details].
+
+As an aside, R.T.Russell still supports BBC Basic, and has ported it for a number of modern platforms, including Android, Windows, and SDL, which are https://www.bbcbasic.co.uk/index.html[available from his website here].
+
+BBC BASIC for Agon is a port of his BBC BASIC for Z80, which is now open source, with a number of modifications to make it run on Agon.
+
+== link:#implementation-on-the-agon-light[]Implementation on the Agon Light
+
+BBC BASIC for Z80 runs in Z80 mode, that is within a 64K segment. The interpreter takes around 16K of RAM, leaving around 48K available for user programs and data.
+
+If you are not familiar with the BASIC programming language, or need a refresher on BBC BASIC, please refer to the https://www.bbcbasic.co.uk/bbcbasic/mancpm/index.html[official documentation here], specifically chapters 1 to 4, and the appendices from A onwards.
+
+It needs a full 64K segment, so cannot be run from the MOS folder as a star command.
+
+To run, load into memory and run as follows:
+
+[source,notranslate]
+----
+LOAD bbcbasic.bin
+RUN
+----
+
+It is possible to automatically CHAIN (load and run) a BBC BASIC program by passing the filename as a parameter:
+
+[source,notranslate]
+----
+LOAD bbcbasic.bin
+RUN . /path/to/file.bas
+----
+
+Note that passing a . as the first parameter of RUN is informing MOS to use the default value there (&40000)
+
+== link:#changes-specific-to-agon-light[]Changes specific to Agon Light
+
+=== link:#star-commands[]Star Commands
+
+The following * commands are supported
+
+==== link:#bye[]BYE
+
+Syntax: `*BYE`
+
+Exit BASIC and return to MOS.
+
+==== link:#edit[]EDIT
+
+Syntax: `*EDIT linenum`
+
+Pull a line into the editor for editing.
+
+==== link:#fx[]FX
+
+Syntax: `*FX osbyte, params`
+
+Execute an OSBYTE command.
+
+The only OSBYTE commands supported at the moment are:
+
+* 19: Wait for vertical blank retrace
+
+And from MOS 1.03 or above
+
+* 11: Set keyboard repeat delay in ms (250, 500, 750 or 1000)
+* 12: Set keyboard repeat rate ins ms (between 33 and 500ms)
+* 118: Set keyboard LED (Bit 0: Scroll Lock, Bit 1: Caps Lock, Bit 2: Num Lock) - does not currently change status, just the LED
+
+==== link:#version[]VERSION
+
+Syntax: `*VERSION`
+
+Display the current version of BBC BASIC
+
+==== link:#mos-commands[]MOS commands
+
+In addition, any of the MOS commands can be called by prefixing them with a *
+
+See the MOS documentation for more details
+
+=== link:#basic[]BASIC
+
+The following statements are not currently implemented:
+
+* ENVELOPE
+* ADVAL
+
+The following statements differ from the BBC Basic standard:
+
+==== link:#rem[]REM
+
+REM does not tokenise any statements within comments. This is to bring it inline with string literals for internationalisation.
+
+==== link:#load[]LOAD
+
+==== link:#save[]SAVE
+
+The following file extensions are supported:
+
+* `.BBC`: LOAD and SAVE in BBC BASIC for Z80 tokenised format
+* `.BAS`: LOAD and SAVE in plain text format (also `.TXT` and `.ASC`)
+
+If a file extension is omitted, ".BBC" is assumed.
+
+==== link:#mode[]MODE
+
+The modes differ from those on the BBC series of microcomputers.
+
+From MOS 1.03, they are as follows:
+
+* 0: 1024 x 768 @ 60Hz, 2 colours per pixel
+* 1: 512 x 384 @ 60Hz, 16 colours per pixel
+* 2: 320 x 200 @ 75Hz, 64 colours per pixel
+* 3: 640 x 480 @ 60Hz, 16 colours per pixel
+
+Modes with less than 64 colours per pixel are paletted; each logical colour can be assigned a different physical colour. See the COLOUR statement below for more information.
+
+==== link:#colour[]COLOUR
+
+Syntax: `COLOUR c`
+
+Change the the current text output colour
+
+* If c is between 0 and 63, the foreground text colour will be set
+* If c is between 128 and 191, the background text colour will be set
+
+The following two commands are only applicable to paletted modes with less than 64 colours.
+
+Syntax: `COLOUR l,p`
+
+Set the logical colour l to the physical colour p
+
+Syntax: `COLOUR l,r,g,b`
+
+==== link:#gcol[]GCOL
+
+Syntax: `GCOL mode,c`
+
+Set the graphics colour to c; mode is currently ignored.
+
+==== link:#point[]POINT
+
+Syntax: `POINT(x,y)`
+
+This returns the physical colour index of the colour at pixel position (x, y)
+
+==== link:#plot[]PLOT
+
+Syntax: `PLOT mode,x,y`
+
+Plot supports the following operations:
+
+* 4: Move
+* 5: Line
+* 80: Filled Triangle
+* 144: Circle with radius specified either by x or y
+* 148: Circle passing through point x,y
+
+==== link:#get[]GET$
+
+Syntax: `GET$(x,y)`
+
+Returns the ASCII character at position x,y
+
+==== link:#sound[]SOUND
+
+Syntax: `SOUND channel,volume,pitch,duration`
+
+Play a sound through the Agon Light buzzer and audio output jack
+
+* `Channel`: 0 to 2
+* `Volume`: 0 (off) to -15 (full volume)
+* `Pitch`: 0 to 255
+* `Duration`: -1 to 254 (duration in 20ths of a second, -1 = play forever)
+
+==== link:#time[]TIME$
+
+Access the ESP32 RTC data
+
+Example:
+
+[source,notranslate]
+----
+  10 REM CLOCK
+  20 : 
+  30 CLS
+  40 PRINT TAB(2,2); TIME$
+  50 GOTO 40
+----
+
+NB: This is a virtual string variable; at the moment only getting the time works. Setting is not yet implemented.
+
+==== link:#vdu[]VDU
+
+The VDU commands on the Agon Light will be familiar to those who have coded on Acorn machines. Please read the link:/breakintoprogram/agon-docs/wiki/VDP[VDP] documentation for details on what VDU commands are supported.
+
+=== link:#inline-assembler[]Inline Assembler
+
+BBC BASIC for Z80, like its 6502 counterpart, includes an inline assembler. For instructions on usage, please refer to the https://www.bbcbasic.co.uk/bbcbasic/mancpm/bbc3.html#introduction[original documentation].
+
+In addition to the standard set of Z80 instructions, the following eZ80 instructions have been added
+
+* `MLT`
+
+The assembler will only compile 8-bit Z80 code and there are currently no plans for extending the instruction set much further in this version.
+
+=== link:#integration-with-mos[]Integration with MOS
+
+For the most part, the MOS is transparent to BASIC; most of the operations via the MOS and VDP are accessed via normal BBC BASIC statements, with the following exceptions:
+
+==== link:#accessing-the-mos-system-variables[]Accessing the MOS system variables
+
+MOS has a small system variables area which is in an area of RAM outside of its 64K segment. To access these, you will need to do an OSBYTE call
+
+Example: Print the least significant byte of the internal clock counter
+
+[source,notranslate]
+----
+10 L%=&00 : REM The system variable to fetch
+20 A%=&A0 : REM The OSBYTE number
+30 PRINT USR(&FFF4)
+----
+
+For a full list of system variables, please refer to https://github.com/breakintoprogram/agon-mos/blob/main/src/mos_api.inc[mos_api.inc].
+
+==== link:#running-star-commands-with-variables[]Running star commands with variables
+
+The star command parser does not use the same evaluator as BBC BASIC, so whilst commands can be run in BASIC, variable names are treated as literals.
+
+Example: This will not work
+
+[source,notranslate]
+----
+10 INPUT "Filename";f$
+20 INPUT "Load Address";addr%
+30 *LOAD f$ addr%
+----
+
+To do this correctly, you must call the star command indirectly using the OSCLI command
+
+Example: This will work
+
+[source,notranslate]
+----
+30 OSCLI("LOAD " + f$ + " " + STR$(addr%)) 
+----
+

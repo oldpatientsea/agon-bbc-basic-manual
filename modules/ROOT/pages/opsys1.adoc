@@ -1,155 +1,66 @@
 === [#resident]#Resident Star Commands#
 
+The following * commands are supported
+
 ==== [#bye]#*BYE#
 
-Return to CP/M.
+Exit BASIC and return to MOS.
 
-==== [#cpm]#*CPM#
-
-Return to CP/M (same as *BYE).
-
-==== [#dir]#*DIR#
-
-List the disk directory. The syntax is similar to the CP/M DIR command except that the extension defaults to .BBC if it is omitted.
+===== Syntax
 
 [source,console]
 ----
-*DIR [afsp]
+*BYE
 ----
 
-[cols=",",]
-|===
-|`*DIR` |`List all .BBC files on the disk.`
-|`*DIR B:*.* ` |`List all files on disk B.`
-|`*.*.*` |`List all the files on the current disk.`
-|===
+==== link:#edit[]EDIT
 
-==== [#drive]#*DRIVE#
+Pull a line into the editor for editing.
 
-Select the drive to be used as the default drive for subsequent disk operations. The colon is a mandatory part of the drive name.
+===== Syntax
 
 [source,console]
 ----
-*DRIVE d:
-
-*DRIVE A:
+*EDIT linenum
 ----
 
-==== [#erase]#*ERA#
+==== link:#fx[]FX
 
-Delete the specified disk file. The syntax is similar to the CP/M-80 ERA command except that the extension defaults to .BBC if it is omitted.
+Execute an OSBYTE command.
+
+The only OSBYTE commands supported at the moment are:
+
+* 19: Wait for vertical blank retrace
+
+And from MOS 1.03 or above
+
+* 11: Set keyboard repeat delay in ms (250, 500, 750 or 1000)
+* 12: Set keyboard repeat rate ins ms (between 33 and 500ms)
+* 118: Set keyboard LED (Bit 0: Scroll Lock, Bit 1: Caps Lock, Bit 2: Num Lock) - does not currently change status, just the LED
+
+===== Syntax
 
 [source,console]
 ----
-*ERA ufsp
-
-*ERA GAME1.DTA
+*FX osbyte, params
 ----
 
-This command will delete only one file at a time; wild cards are not permitted in the file specifier.
+==== link:#version[]VERSION
 
-link:bbckey3.html#oscli[OSCLI] may also be used to delete files.
+
+Display the current version of BBC BASIC
+
+===== Syntax
 
 [source,console]
 ----
-OSCLI "ERA "+<str>
-
-OSCLI "ERA "+name$
-OSCLI "ERA GAME1.DTA"
+*VERSION
 ----
 
-==== [#load]#*LOAD#
+==== link:#mos-commands[]MOS commands
 
-Load the specified file into memory at hexadecimal address 'aaaa'. The load address MUST always be specified.
+In addition, any of the MOS commands can be called by prefixing them with a *
 
-[source,console]
-----
-*LOAD ufsp aaaa
+See the MOS documentation for more details
 
-*LOAD A:WOMBAT 8F00
-----
-
-link:bbckey3.html#oscli[OSCLI] may also be used to load a file. However, you must take care to provide the load address as a hexadecimal number in string format.
-
-[source,console]
-----
-OSCLI "LOAD "+<str>+" "+STR$~<num>
-
-OSCLI "LOAD "+file_name$+" "+STR$~(start_address)
-----
-
-==== [#opt]#*OPT#
-
-Select the destination 'output stream' for console output. The default is OPT 0.
-
-[cols=",",]
-|===
-|`*OPT 0` |*Console output.* The output is sent to the screen.
-|`*OPT 1` |*Auxiliary Output.* The output is sent to the auxiliary output.
-|`*OPT 2` |*Printer Output.* The output is sent to the list device.
-|===
-
-All characters sent to the console are vectored with *OPT.
-
-[source,console]
-----
-10 *OPT 2
-20 PRINT "THIS WILL APPEAR ON THE PRINTER"
-30 *OPT 0
-40 PRINT "THIS WILL APPEAR ON THE SCREEN"
-----
-
-==== [#rename]#*REN#
-
-Rename a disk file. The syntax is similar to the CP/M REN command except that the extension defaults to .BBC if it is omitted. link:bbckey3.html#oscli[OSCLI] can also be used to rename a file.
-
-[source,console]
-----
-*RENAME ufspnew=ufspold
-*REN ufspnew=ufspold
-OSCLI "REN "+<str>+"="+<str>
-
-*REN NEWFILE=OLDFILE
-
-OSCLI "REN "file_name$+".BAK="+filename$+".BBC"
-----
-
-==== [#reset]#*RESET#
-
-Reset the disk system.
-
-==== [#save]#*SAVE#
-
-Save an area of memory to a disk file. If the extension is omitted, .BBC is assumed.
-
-You MUST specify the start address (aaaa) and either the length of the area of memory (llll) or its end address+1 (bbbb). There is no 'load address' or 'execute address'.
-
-[source,console]
-----
-*SAVE ufsp aaaa +llll
-*SAVE ufsp aaaa bbbb
-
-*SAVE "WOMBAT" 8F00 +80
-*SAVE "WOMBAT" 8F00 8F80
-----
-
-link:bbckey3.html#oscli[OSCLI] can also be used to save a file.
-
-[source,console]
-----
-OSCLI "SAVE "+<str>+" "+STR$~(<num>)+" "+STR$(<num>)
-
-OSCLI "SAVE "+ufn$+" "+STR$~(add)+"+"+STR$~(len)
-----
-
-==== [#type]#*TYPE#
-
-Type the specified file on the screen. This command is similar in action to the CP/M-80 TYPE command except that the extension .BBC is assumed if it is omitted.
-
-[source,console]
-----
-*TYPE ufsp
-
-*TYPE ADDRESS.LST
-----
 

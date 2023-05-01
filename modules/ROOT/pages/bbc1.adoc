@@ -32,7 +32,7 @@ Immediately popular, the language proliferated and later saw an explosion of dif
 
 If any BASIC deserved this scorn, one dialect in particular did not: BBC BASIC.
 
-The original version of BBC BASIC was written by Sophie Wilson at Acorn in 1981 for the BBC Micro range of computers, and was designed to support the UK Computer Literacy Project. R.T. Russell was involved in the specification of BBC BASIC, and wrote his own Z80 version, BBC BASIC (Z80), that was subsequently ported to a number of Z80 based machines. Many years later, he made it open source under a zlib licence.
+The original version of BBC BASIC was written by Sophie Wilson at Acorn in 1981 for the BBC Micro range of computers, and was designed to support the UK Computer Literacy Project. R.T. Russell was involved in the specification of BBC BASIC, and wrote his own Z80 version, BBC BASIC (Z80), that was subsequently ported to a number of Z80 based machines.  http://www.bbcbasic.co.uk/bbcbasic/history.html[His account] is worth reading. Many years later, he made BBC BASIC (Z80) open source under a zlib licence. He still supports BBC Basic, and has ported it for a number of modern platforms, including Android, Windows, and SDL, which are https://www.bbcbasic.co.uk/index.html[available from his website here].
 
 In 2022, Dean Belfield began work on the QUARK firmware for the Agon light™. The firmware consists of three parts: Agon MOS for the eZ80, the CPU driving the machine; Agon VDP for the ESP32-PICO-D4 that handles video and audio as well as managing keyboard input; and, BBC BASIC for Agon, a new port of BBC BASIC (Z80) with a number of modifications to make it run on this specific hardware. The same firmware runs on the AgonLight 2. 
 
@@ -46,7 +46,9 @@ BBC BASIC (Z80) has been designed to be as compatible as possible with the 6502 
 
 Agon BBC BASIC is comparable with BBC BASIC IV and most simple listings for the BBC Micro can be adapted with a little work, although there are differences in the graphics modes and in the handling of sound. 
 
-About 15 Kbytes of code space and about 1 Kbyte of data space are used by the interpreter. The remainder of the TPA is available for the user's program, data (heap) and stack. 
+BASIC runs in Z80 mode, that is within a 64K segment. The interpreter takes around 16K of RAM, leaving around 48K available for user programs and data.
+
+It needs a full 64K segment, so cannot be run from the MOS folder as a star command.
 
 Those familiar with BBC BASIC on RISC OS may notice some omissions such as the absence of CASE-OF-WHEN-OTHERWISE-ENDCASE in Agon BBC BASIC. The Acorn Archimedes used a 32-bit ARM CPU and removed the 16 KB limit on the BASIC code size, allowing new features to be added in BBC BASIC V which is the version still used in RISC OS. Agon BASIC is still under development and future versions may add some of these missing BBC BASIC V features.
 
@@ -83,10 +85,21 @@ BBC BASIC (Z80) Version 3.00
 
 Note, MOS automatically runs the contents of the AUTOEXEC.TXT file found in the root directory of your microSD card. If you have copied the default AUTOEXEC.TXT file when setting up your device, then it will include the commands above and therefore your Agon Light will appear to boot directly to BASIC without you needed to type anything. 	
 
+It is possible to automatically CHAIN (load and run) a BBC BASIC program by passing the filename as a parameter:
+
+[source,console]
+----
+LOAD bbcbasic.bin
+RUN . /path/to/file.bas
+----
+
+Note that passing a . as the first parameter of RUN is informing MOS to use the default value there (&40000)
+
 To exit BBC BASIC (Z80) and return to MOS type
 
 [source,console]
 ----
 >*BYE
 ----
+
 

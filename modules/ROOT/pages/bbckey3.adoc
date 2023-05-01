@@ -133,7 +133,16 @@ DIV
 
 The MODE command sets the screen display mode. The screen is cleared and all the graphics and text parameters (colours, origin, etc) are reset to their default values.
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+The modes differ from those on the BBC series of microcomputers.
+
+From MOS 1.03, they are as follows:
+
+* 0: 1024 x 768 @ 60Hz, 2 colours per pixel
+* 1: 512 x 384 @ 60Hz, 16 colours per pixel
+* 2: 320 x 200 @ 75Hz, 64 colours per pixel
+* 3: 640 x 480 @ 60Hz, 16 colours per pixel
+
+Modes with less than 64 colours per pixel are paletted; each logical colour can be assigned a different physical colour. See the COLOUR statement below for more information.
 
 ==== Syntax
 
@@ -750,9 +759,16 @@ RAD, DEG
 
 === [#plot]#PLOT#, PL.
 
-PLOT is a multi-purpose drawing statement. Three numbers follow the PLOT statement: the first specifies the type of point, line, triangle or circle to be drawn; the second and third give the X and Y coordinates to be used.
+PLOT is a multi-purpose drawing statement. Three numbers follow the PLOT statement: the first specifies the mode, that is the type of point, line, triangle or circle to be drawn; the second and third give the X and Y coordinates to be used.
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+Plot supports the following operations:
+
+* 4: Move
+* 5: Line
+* 80: Filled Triangle
+* 144: Circle with radius specified either by x or y
+* 148: Circle passing through point x,y
+
 
 ==== Syntax
 
@@ -770,9 +786,9 @@ MODE, CLG, MOVE, DRAW, POINT, VDU, GCOL
 
 === [#point]#POINT#
 
-A function which returns a number giving the logical colour of the screen at the coordinates specified. If the point is outside the graphics window, then -1 is returned.
+A function which returns a number giving the physical colour of the screen at the coordinates specified. If the point is outside the graphics window, then -1 is returned.
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+Note, this differs from the BBC Basic standard which returns the logical colour not the physical colour.
 
 ==== Syntax
 

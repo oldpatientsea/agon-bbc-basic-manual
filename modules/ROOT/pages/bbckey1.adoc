@@ -94,7 +94,7 @@ ASN, ATN, SIN, COS, TAN, RAD, DEG
 
 This function returns information about the analogue to digital converter channels on the Games Adapter card (if fitted). The information returned depends upon the argument passed to ADVAL.
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+*_Not implemented_*
 
 ==== Syntax
 
@@ -721,25 +721,38 @@ CLS
 CLG, COLOUR
 ----
 
-[width="100%",cols="50%,>50%",]
-|===
-a|
-=== [#colour]#COLOUR# [.small]#(COLOR)#
+=== [#colour]#COLOUR#, #COLOR#, C.
 
-a|
-=== C.
+Change the the current text output colour.
 
-|===
+* If c is between 0 and 63, the foreground text colour will be set
+* If c is between 128 and 191, the background text colour will be set
 
-Sets the text foreground and background colours. If the parameter is less than 128, the colour of the text is set. If the number is 128 or greater, the colour of the background is set.
+Note, since BBC BASIC is British, the British spelling of "colour" is the default. The US spelling is however recognised as an alternative.
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+The following two commands are only applicable to paletted modes with fewer than 64 colours.
+
+[source,console]
+----
+COLOUR l,p
+----
+
+Set the logical colour l to the physical colour p
+
+[source,console]
+----
+COLOUR l,r,g,b
+----
+
+Set the logical colour l to the physical colour represented by the RGB value where r(ed), g(reen) and b(lue) are each specified as a base 10 integer value in the range 0-255.
 
 ==== Syntax
 
 [source,console]
 ----
-COLOUR<numeric>
+COLOUR c
+COLOUR l,p
+COLOUR l,r,g,b
 ----
 
 ==== Associated Keywords
@@ -1276,7 +1289,7 @@ DEF, FN, PROC, LOCAL
 
 A statement which is used, in conjunction with the link:bbckey4.html#sound[SOUND] statement, to control the pitch of a sound whilst it is playing.
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+*_Not implemented_*
 
 ==== Syntax
 

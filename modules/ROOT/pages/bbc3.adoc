@@ -8,6 +8,15 @@ BBC BASIC (Z80) includes a Z80 assembler. This assembler is similar to the 6502 
 
 All standard Zilog mnemonics are accepted: 'ADD', 'ADC' and 'SBC', must be followed by 'A' or 'HL'. For example *ADD A,C* is accepted but *ADD C* is not. However, the brackets around the port address in 'IN' and 'OUT' are optional; thus both *OUT (5),A* and *OUT 5,A* are accepted. The instruction 'IN F,(C)' is *not* accepted but the equivalent object code is produced from 'IN (HL),(C)'.
 
+In addition to the standard set of Z80 instructions, the following eZ80 instructions have been added
+
+[source,console]
+----
+MLT
+----
+
+The assembler will only compile 8-bit Z80 code and there are currently no plans for extending the instruction set much further in this version.
+
 ==== [#statements]#Statements#
 
 An assembly language statement consists of three elements; an optional label, an instruction and an operand. A comment may follow the operand field. The instruction following a label must be separated from it by at least one space. Similarly, the operand must also be separated from the instruction by a space. Statements are terminated by a colon (:) or end of line (<RET>).

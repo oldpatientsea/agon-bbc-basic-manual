@@ -197,6 +197,8 @@ DATA, RESTORE
 
 A statement that causes the rest of the line to be ignored thereby allowing comments to be included in a program.
 
+REM does not tokenise any statements within comments. This is to bring it inline with string literals for internationalisation.
+
 You can use the REM statement to put remarks and comments in to your program to help you remember what the various bits of your program do. BBC BASIC (Z80) completely ignores anything on the line following a REM statement.
 
 You will be able to get away without including any REMarks in simple programs. However, if you go back to a lengthy program after a couple of months you will find it very difficult to understand if you have not included any REMs.
@@ -573,6 +575,11 @@ You use SAVE to save your program for use at a later time. The program must be g
 
 The name (file-specifier) must follow the normal CP/M-80 naming conventions. See the link:opsys0.html[Operating System Interface] section for a description of a file-specifier (name).
 
+The following file extensions are supported:
+
+* `.BBC`: LOAD and SAVE in BBC BASIC for Z80 tokenised format
+* `.BAS`: LOAD and SAVE in plain text format (also `.TXT` and `.ASC`)
+
 Unless a different extension is specified in the file-specifier, .BBC is automatically used. Thus,
 
 [source,console]
@@ -674,9 +681,15 @@ COS, TAN, ACS, ASN, ATN, DEG, RAD
 
 === [#sound]#SOUND#
 
-A statement which generates sounds using the internal loudspeaker.
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+Syntax: `SOUND channel,volume,pitch,duration`
+
+Play a sound through the Agon Light buzzer and audio output jack
+
+* `Channel`: 0 to 2
+* `Volume`: 0 (off) to -15 (full volume)
+* `Pitch`: 0 to 255
+* `Duration`: -1 to 254 (duration in 20ths of a second, -1 = play forever)
 
 ==== Syntax
 
@@ -1010,50 +1023,35 @@ IF <t-cond> THEN <stmt>{:<stmt>} [ELSE <stmt>{:<stmt>}]
 IF, ELSE
 ----
 
-=== [#time]#TIME#, TI.
+=== [#time]#TIME$#, TI.
 
-A pseudo-variable which reads and sets the elapsed time clock. This functionality depends on BBC BASIC (Z80) being link:bbc1.html#configuration[configured] using the *BBCDIST.MAC* patch program.
+A pseudo-variable which reads and sets the elapsed time clock by accessing the ESP32 RTC data.
 
-[source,console]
-----
-X=TIME
-TIME=100
-----
+NB: This is a virtual string variable; at the moment only getting the time works. Setting is not yet implemented.
 
-The following example is a simple program to provide a 24 hour clock. Lines 20 to 40 get the correct time, lines 50 and 60 calculate the number of centi-seconds and set TIME, and lines 110 to 130 convert the value in TIME to hours, minutes and seconds. Line 90 stops the time being printed unless it has changed by at least one second.
+Example:
 
 [source,console]
 ----
- 10 CLS
- 20 INPUT "HOURS ",H
- 30 INPUT "MINUTES ",M
- 40 INPUT "SECONDS ",S
- 50 PRINT "PUSH ANY KEY TO SET THE TIME ";:X=GET
- 60 TIME=((H*60+M)*60+S)*100
- 70 T=0
- 80 REPEAT
- 90   IF TIME DIV 100=T DIV 100 THEN 150
-100   T=TIME
-110   S=(T DIV 100) MOD 60
-120   M=(T DIV 6000) MOD 60
-130   H=(T DIV 360000) MOD 24
-140   PRINT TAB(0,23) H;":";M;":";S;
-150 UNTIL FALSE
+  10 REM CLOCK
+  20 : 
+  30 CLS
+  40 PRINT TAB(2,2); TIME$
+  50 GOTO 40
 ----
 
 ==== Syntax
 
 [source,console]
 ----
-TIME=<numeric>
-<n-var>=TIME
+<n-var>=TIME$
 ----
 
 ==== Associated Keywords
 
 [source,console]
 ----
-
+None
 ----
 
 === [#to]#TO#
@@ -1373,6 +1371,8 @@ STR$, EVAL
 ----
 
 === [#vdu]#VDU#, V.
+
+The VDU commands on the Agon Light will be familiar to those who have coded on Acorn machines. Please read the link:/breakintoprogram/agon-docs/wiki/VDP[VDP] documentation for details on what VDU commands are supported.
 
 A statement which takes a list of numeric arguments and sends their least-significant bytes as characters to the current 'output stream' (see link:opsys1.html#opt[*OPT]).
 

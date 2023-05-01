@@ -2,49 +2,24 @@
 
 === [#introduction]#Introduction#
 
-As with the BBC micro computer, the star (*) commands provide access to the operating system. Since the BBC operating system is completely different to CP/M-80 there are a number of differences in the star commands.
+As with the BBC micro computer, the star (*) commands provide access to the operating system. 
 
-==== [#specifiers]#File Specifiers#
+For the most part, the MOS is transparent to BASIC; most of the operations via the MOS and VDP are accessed via normal BBC BASIC statements, with the following exceptions:
 
-File specifiers must comply with the standard CP/M-80 conventions.
+==== link:#accessing-the-mos-system-variables[]Accessing the MOS system variables
 
-[source,console]
+MOS has a small system variables area which is in an area of RAM outside of its 64K segment. To access these, you will need to do an OSBYTE call
+
+Example: Print the least significant byte of the internal clock counter
+
+[source,notranslate]
 ----
-[drive:]filename.extension
+10 L%=&00 : REM The system variable to fetch
+20 A%=&A0 : REM The OSBYTE number
+30 PRINT USR(&FFF4)
 ----
 
-[cols=",",]
-|===
-|`drive:` |The single letter name (A to P) of the drive where the file will be found. The colon is mandatory. If the drive name is omitted, the currently logged-on drive is assumed.
-|`filename` |The name of the file. The length of the name must not exceed 8 characters.
-|`extension` |The optional extension of the file. If an extension is used it must be separated from the filename by a full-stop. If the extension is omitted, .BBC is assumed.
-|===
-
-Drives A: to P: are accepted in file specifications. Filenames in star commands may optionally be enclosed in quotes; unmatched quotes will cause a 'link:annexc.html#badstring[Bad string]' error. The standard CP/M-80 'wild-cards' may be used when an ambiguous file specifier is acceptable.
-
-[cols=",",]
-|===
-|`?        ` |Allow any single character in this position. If this is used as the last character in the name, a null character will be accepted.
-|`*` |Allow any character (including a null) from the position of the '*' to the end of the name or extension.
-|===
-
-==== [#symbols]#Symbols#
-
-The following symbols and abbreviations are used as part of the explanation of the operating system commands.
-
-[cols=",",]
-|===
-|\{} |The enclosed items may be repeated 0 or more times.
-|[] |The items enclosed are optional, they may occur zero or one time.
-|num |A numeric constant.
-|str |A string constant.
-|<num>    |A numeric variable.
-|<str> |A string variable.
-|afsp |An ambiguous file specifier.
-|ufsp |An unambiguous file specifier.
-|d: |A disk drive name.
-|dir |A directory name.
-|===
+For a full list of system variables, please refer to https://github.com/breakintoprogram/agon-mos/blob/main/src/mos_api.inc[mos_api.inc].
 
 '''''
 
@@ -65,7 +40,7 @@ A star command must be the last (or only) command on a program line and its argu
 
 ==== [#case]#Case Conversion#
 
-Star commands and their associated qualifiers are converted from lower-case to upper-case if necessary. For example, *era wombat is converted to *ERA WOMBAT. This is in keeping with the general CP/M-80 philosophy and the BBC Micro's machine operating system (MOS).
+Star commands and their associated qualifiers are converted from lower-case to upper-case if necessary. For example, \*era wombat is converted to \*ERA WOMBAT. 
 
 ==== [#special]#Special Characters#
 
@@ -80,4 +55,26 @@ Control characters, lower-case characters, DEL and quotation marks may be incorp
 |\|\| |gives the escape character \|.
 |\|! |sets bit 7 of the following character.
 |===
+
+==== link:#running-star-commands-with-variables[]Running star commands with variables
+
+The star command parser does not use the same evaluator as BBC BASIC, so whilst commands can be run in BASIC, variable names are treated as literals.
+
+Example: This will not work
+
+[source,console]
+----
+10 INPUT "Filename";f$
+20 INPUT "Load Address";addr%
+30 *LOAD f$ addr%
+----
+
+To do this correctly, you must call the star command indirectly using the OSCLI command
+
+Example: This will work
+
+[source,console]
+----
+30 OSCLI("LOAD " + f$ + " " + STR$(addr%)) 
+----
 
