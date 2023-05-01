@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: BBC BASIC (Z80) for the Agon Light</title>
+    <link rel="canonical" href="https://oldpatientsea.github.io/agon-bbc-basic-manual/0.1/annexc.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://oldpatientsea.github.io">BBC BASIC (Z80) for the Agon Light</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="agon-bbc-basic-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc2.html">General Information</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc3.html">Assembler</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey0.html">Statements and Functions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey1.html">ABS-ENVELOPE</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey2.html">EOF#-LOMEM</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey3.html">MID$-PRINT</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey4.html">PRINT#-WIDTH</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys0.html">Operating System Interface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys1.html">Resident Star Commands</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile1.html">BBC BASIC (Z80) Disk Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile2.html">Serial Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile3.html">Random (Relative) Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile4.html">Indexed Data Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexa.html">Table of ASCII Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexb.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="annexc.html">Error Messages and Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexd.html">Format of Program and Variables in Memory</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="copyright.html">Copyrights</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BBC BASIC (Z80) for the Agon Light</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">BBC BASIC (Z80) for the Agon Light</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="bbc1.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></li>
+    <li><a href="annexc.html">Error Messages and Codes</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/oldpatientsea/agon-bbc-basic-manual/edit/main/modules/ROOT/pages/annexc.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="_error_messages_and_codes"><a class="anchor" href="#_error_messages_and_codes"></a>Error Messages and Codes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_annex_c_to_bbc_basic_z80"><a class="anchor" href="#_annex_c_to_bbc_basic_z80"></a>Annex C to BBC BASIC (Z80)</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_summary"><a class="anchor" href="#_summary"></a><span id="summary">Summary</span></h3>
+<div class="sect3">
+<h4 id="_trappable_program"><a class="anchor" href="#_trappable_program"></a><span id="trapprog">Trappable - Program</span></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">No</th>
+<th class="tableblock halign-left valign-top">Error</th>
+<th class="tableblock halign-left valign-top">No</th>
+<th class="tableblock halign-left valign-top">Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#outofrange">Out of range</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mistake">Mistake</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#missingcomma">Missing ,</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#typemismatch">Type mismatch</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nofn">No FN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#missingquote">Missing "</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#baddim">Bad DIM</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#dimspace">DIM space</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#notlocal">Not LOCAL</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#noproc">No PROC</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#array">Array</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#subscript">Subscript</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#syntaxerror">Syntax error</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#escape">Escape</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#divisionbyzero">Division by zero</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#stringtoolong">String too long</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#toobig">Too big</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#negativeroot">-ve root</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#logrange">Log range</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#accuracylost">Accuracy lost</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exprange">Exp range</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nosuchvariable">No such variable</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#missingbracket">Missing )</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#badhex">Bad HEX</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nosuchfnproc">No such FN/PROC</a> `  `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#badcall">Bad call</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#arguments">Arguments</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nofor">No FOR</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#cantmatchfor">Can&#8217;t match FOR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#forvariable">FOR variable</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#noto">No TO</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">37</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">38</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nogosub">No GOSUB</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">39</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#onsyntax">ON syntax</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#onrange">ON range</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">41</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#nosuchline">No such line</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#outofdata">Out of DATA</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#norepeat">No REPEAT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">44`  `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45`  `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#missinghash">Missing #</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Not applicable to BBC BASIC (Z80)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_trappable_operating_system"><a class="anchor" href="#_trappable_operating_system"></a><span id="trapos">Trappable - Operating System</span></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">No</th>
+<th class="tableblock halign-left valign-top">Error</th>
+<th class="tableblock halign-left valign-top">No</th>
+<th class="tableblock halign-left valign-top">Error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">190</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#directoryfull">Directory full</a> `      `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">192</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#toomanyopenfiles">Too many open files</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">196</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#fileexists">File exists</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">198</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#diskfull">Disk full</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#closeerror">Close error</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">204</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#badname">Bad name</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">214</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#filenotfound">File not found</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">222</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#channel">Channel</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">253` `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#badstring">Bad string</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">254` `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#badcommand">Bad command</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">255` `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#cpmerror">CP/M error</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_untrappable_error_code_0"><a class="anchor" href="#_untrappable_error_code_0"></a><span id="untrap">Untrappable - Error Code 0</span></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#noroom">No room</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#renumberspace">RENUMBER space</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#silly">Silly</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#linespace">LINE space</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sorry">Sorry</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#badprogram">Bad program</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#failedatnnn">Failed at nnn</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Strictly speaking 'Bad program' does not have an error code. It leaves <a href="bbckey2.html#err">ERR</a> and <a href="bbckey2.html#erl">ERL</a> unchanged.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_details"><a class="anchor" href="#_details"></a><span id="details">Details</span></h3>
+<div class="paragraph">
+<p>BBC BASIC (Z80)'s error messages and codes are briefly explained below in alphabetical order.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_accuracy_lost"><a class="anchor" href="#_accuracy_lost"></a><span id="accuracylost">Accuracy lost</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_23"><a class="anchor" href="#_23"></a>23</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Before BBC BASIC (Z80) calculates trigonometric functions (sin, cos, etc) of very large angles the angles are reduced to +/- <a href="bbckey3.html#pi">PI</a> radians. The larger the angle, the greater the inaccuracy of the reduction, and hence the result. When this inaccuracy becomes unacceptable, BBC BASIC (Z80) will issue an 'Accuracy lost' error message.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_arguments"><a class="anchor" href="#_arguments"></a><span id="arguments">Arguments</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_31"><a class="anchor" href="#_31"></a>31</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error indicates that too many or too few arguments have been passed to a procedure or function or an invalid formal parameter has been used. See the sub-section on <a href="bbc2.html#procedures">Procedures and Functions</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_array"><a class="anchor" href="#_array"></a><span id="array">Array</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_14"><a class="anchor" href="#_14"></a>14</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error occurs when BBC BASIC (Z80) thinks it should be accessing an array, but does not know which one.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_bad_call"><a class="anchor" href="#_bad_call"></a><span id="badcall">Bad call</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_30"><a class="anchor" href="#_30"></a>30</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error indicates that a procedure or function has been incorrectly called.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_bad_command"><a class="anchor" href="#_bad_command"></a><span id="badcommand">Bad command</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_254"><a class="anchor" href="#_254"></a>254</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error occurs when a command name is not recognized as a valid BBC BASIC (Z80) command. Star commands which are unknown to BBC BASIC (Z80) are passed to CP/M-80. If the command is unrecognised by CP/M-80, an untrappable 'Bad command or file name' error occurs.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_bad_dim"><a class="anchor" href="#_bad_dim"></a><span id="baddim">Bad DIM</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_10"><a class="anchor" href="#_10"></a>10</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Arrays must be positively dimensioned. In other words, the numbers within the brackets must not be negative. This error would be produced by the following example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM table(20,-10)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_bad_hex"><a class="anchor" href="#_bad_hex"></a><span id="badhex">Bad HEX</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_28"><a class="anchor" href="#_28"></a>28</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Hexadecimal numbers can only include the numbers 0 to 9 and A to F. If you try to form a hex number with other characters this error will occur. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&amp;OF instead of &amp;0F</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_bad_name"><a class="anchor" href="#_bad_name"></a><span id="badname">Bad name</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_204"><a class="anchor" href="#_204"></a>204</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error is generated if a path name exceeds 64 characters in length.</p>
+</div>
+<div class="sect3">
+<h4 id="_bad_program"><a class="anchor" href="#_bad_program"></a><span id="badprogram">Bad program</span></h4>
+<div class="paragraph">
+<p>From time to time BBC BASIC (Z80) checks to see that the program in memory is of the correct format (See <a href="annexe.html">Annex E</a>). If it is unable to follow the program from the start to the 'program end marker' it will report this untrappable error. The error can be caused by a read error, by only loading part of the program or by overwriting part of the program in some way. (Machine code programmers beware.) Without a full understanding of how a program is stored in memory, there is little you can do to recover a bad program.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_bad_string"><a class="anchor" href="#_bad_string"></a><span id="badstring">Bad string</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_253"><a class="anchor" href="#_253"></a>253</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>File names in 'star' commands may optionally be enclosed in quotes. This error will occur if the quotes are unmatched. The following example would give rise to this error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">*SAVE "GRAPHS</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_cant_match_for"><a class="anchor" href="#_cant_match_for"></a><span id="cantmatchfor">Can&#8217;t match FOR</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_33"><a class="anchor" href="#_33"></a>33</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>BBC BASIC (Z80) has been unable to find a <a href="bbckey2.html#for">FOR</a> statement corresponding to the <a href="bbckey3.html#next">NEXT</a> statement.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_channel"><a class="anchor" href="#_channel"></a><span id="channel">Channel</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_222"><a class="anchor" href="#_222"></a>222</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error is generated by the disk filing system. It occurs if you try to use a channel which has not been opened, possibly because you are using the wrong channel number.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_close_error"><a class="anchor" href="#_close_error"></a><span id="closeerror">Close error</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_200"><a class="anchor" href="#_200"></a>200</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will occur if the file(s) specified cannot be closed because the disk has been changed while the file(s) were open.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_dim_space"><a class="anchor" href="#_dim_space"></a><span id="dimspace">DIM space</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_11"><a class="anchor" href="#_11"></a>11</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will be generated if:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>There is insufficient room for an array when you try to dimension it.</p>
+</li>
+<li>
+<p>An attempt has been made to reserve a negative amount of memory. For example,</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM A% -2</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_directory_full"><a class="anchor" href="#_directory_full"></a><span id="directoryfull">Directory full</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_190"><a class="anchor" href="#_190"></a>190</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will occur if an attempt is made to create more files on the disk than the directory has capacity for.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_disk_full"><a class="anchor" href="#_disk_full"></a><span id="diskfull">Disk full</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_198"><a class="anchor" href="#_198"></a>198</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will occur if there is insufficient room on the disk for the data/program being written to it.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_division_by_zero"><a class="anchor" href="#_division_by_zero"></a><span id="divisionbyzero">Division by zero</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_18"><a class="anchor" href="#_18"></a>18</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Mathematically, dividing by zero gives an infinitely large answer. The computer is unable to understand the concept of infinity (it&#8217;s not alone) and this error is generated. If there is any possibility that the divisor might be zero, you should test for this condition before carrying out the division. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">200 IF divisor=0 THEN PROC_error ELSE...</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_escape"><a class="anchor" href="#_escape"></a><span id="escape">Escape</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_17"><a class="anchor" href="#_17"></a>17</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error is generated by pressing the &lt;Esc&gt; key. You can trap this, and other errors, by using the <a href="bbckey3.html#onerror">ON ERROR GOTO</a> statement. You can inhibit the generation of the 'Escape' error by using <a href="opsys1.html#esc">*ESC OFF</a>. The &lt;Esc&gt; key then returns the ASCII value of escape (&amp;1B). *ESC ON restores the default action of the &lt;Esc&gt; key.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_exp_range"><a class="anchor" href="#_exp_range"></a><span id="exprange">Exp range</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_24"><a class="anchor" href="#_24"></a>24</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The <a href="bbckey2.html#exp">EXP</a> function is unable to cope with powers greater than 88. If you try to use a larger power, this error will be generated.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_failed_at_nnn"><a class="anchor" href="#_failed_at_nnn"></a><span id="failedatnnn">Failed at nnn</span></h4>
+<div class="paragraph">
+<p>During renumbering, BBC BASIC (Z80) tries to resolve all line numbers referred to by <a href="bbckey2.html#goto">GOTO</a> and <a href="bbckey2.html#gosub">GOSUB</a> statements. Should it fail, it will generate a 'Failed at nnn' error, where nnn is the <a href="bbckey4.html#renumber">RENUMBER</a>ED line which contains the unresolved reference.</p>
+</div>
+<div class="paragraph">
+<p>The following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">100 REM Demonstration renumber fail program
+110 GOTO 250
+120 END</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>would renumber as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 REM Demonstration renumber fail program
+20 GOTO 250
+30 END</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and generate the error message 'Failed at 20'.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_file_exists"><a class="anchor" href="#_file_exists"></a><span id="fileexists">File exists</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_196"><a class="anchor" href="#_196"></a>196</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will be generated if you try to rename a file and a file with the new name already exists.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_file_not_found"><a class="anchor" href="#_file_not_found"></a><span id="filenotfound">File not found</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_214"><a class="anchor" href="#_214"></a>214</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will occur if you try to <a href="bbckey2.html#load">LOAD</a>, <a href="opsys1.html#load">*LOAD</a> or <a href="bbckey1.html#chain">CHAIN</a> a file which does not exist.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_for_variable"><a class="anchor" href="#_for_variable"></a><span id="forvariable">FOR variable</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_34"><a class="anchor" href="#_34"></a>34</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The variable in a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop must be a numeric variable. If you use a constant or a string variable this error message will be generated. For example, the following statements are not legal.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">20 FOR name$=1 TO 20
+
+20 FOR 10=1 TO 20</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_line_space"><a class="anchor" href="#_line_space"></a><span id="linespace">LINE space</span></h4>
+<div class="paragraph">
+<p>A program line is too long to be represented in BBC BASIC (Z80)'s internal format.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_log_range"><a class="anchor" href="#_log_range"></a><span id="logrange">Log range</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_22"><a class="anchor" href="#_22"></a>22</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Logarithms for zero and negative numbers do not exist. This error message will be generated if you try to calculate the log of zero or a negative number or raise a negative number to a non-integer power.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_missing"><a class="anchor" href="#_missing"></a><span id="missingcomma">Missing ,</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_5"><a class="anchor" href="#_5"></a>5</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error message is generated if BBC BASIC (Z80) was unable to find a comma where one was expected. The following example would give rise to this error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">20 PRINT TAB(10 5)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_missing_2"><a class="anchor" href="#_missing_2"></a><span id="missingquote">Missing "</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_9"><a class="anchor" href="#_9"></a>9</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error message is generated if BBC BASIC (Z80) was unable to find a double-quote where one was expected. The following example would give rise to this error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 name$="Douglas</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_missing_3"><a class="anchor" href="#_missing_3"></a><span id="missingbracket">Missing )</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_27"><a class="anchor" href="#_27"></a>27</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error message is generated if BBC BASIC (Z80) was unable to find a closing bracket where one was expected. The following example would give rise to this error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 PRINT SQR(num</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_missing_4"><a class="anchor" href="#_missing_4"></a><span id="missinghash">Missing #</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_45"><a class="anchor" href="#_45"></a>45</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will occur if BBC BASIC (Z80) is unable to find a hash symbol (a pound symbol on some computers) where one was expected. The following example would cause this error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLOSE 7</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_mistake"><a class="anchor" href="#_mistake"></a><span id="mistake">Mistake</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_4"><a class="anchor" href="#_4"></a>4</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will be generated if BBC BASIC (Z80) is unable to make any sense at all of the input line.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_ve_root"><a class="anchor" href="#_ve_root"></a><span id="negativeroot">-ve root</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_21"><a class="anchor" href="#_21"></a>21</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error message will occur if BBC BASIC (Z80) attempted to calculate the square root of a negative number. It is possible for this error to occur with <a href="bbckey1.html#asn">ASN</a> and <a href="bbckey1.html#acs">ACS</a> as well as <a href="bbckey4.html#sqr">SQR</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 90 num=-20
+100 root=SQR(num)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_gosub"><a class="anchor" href="#_no_gosub"></a><span id="nogosub">No GOSUB</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_38"><a class="anchor" href="#_38"></a>38</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error message will be generated if BBC BASIC (Z80) finds a <a href="bbckey4.html#return">RETURN</a> statement without first encountering a <a href="bbckey2.html#gosub">GOSUB</a> statement. (See the sub-section on <a href="bbc2.html#programflow">Program Flow Control</a>.)</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_fn"><a class="anchor" href="#_no_fn"></a><span id="nofn">No FN</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_7"><a class="anchor" href="#_7"></a>7</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If BBC BASIC (Z80) encounters an end of function without calling a function definition, this error message will be issued. If you forget to put multi-line function definitions out of harm&#8217;s way at the end of the program you are very likely to get this error message. (See the sub-section on <a href="bbc2.html#procedures">Procedures and Functions</a>.)</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_for"><a class="anchor" href="#_no_for"></a><span id="nofor">No FOR</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_32"><a class="anchor" href="#_32"></a>32</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error message indicates that BBC BASIC (Z80) has found a <a href="bbckey3.html#next">NEXT</a> statement without first encountering a <a href="bbckey2.html#for">FOR</a> statement.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_proc"><a class="anchor" href="#_no_proc"></a><span id="noproc">No PROC</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_13"><a class="anchor" href="#_13"></a>13</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If BBC BASIC (Z80) encounters an <a href="bbckey1.html#endproc">ENDPROC</a> without performing (calling) a procedure definition, this error message will be issued. If you forget to put multi-line procedure definitions out of harm&#8217;s way at the end of the program you are very likely to get this error message. (See the sub-section on <a href="bbc2.html#procedures">Procedures and Functions</a>.)</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_repeat"><a class="anchor" href="#_no_repeat"></a><span id="norepeat">No REPEAT</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_43"><a class="anchor" href="#_43"></a>43</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error message indicates that BBC BASIC (Z80) has found an <a href="bbckey4.html#until">UNTIL</a> statement without first encountering a <a href="bbckey4.html#repeat">REPEAT</a> statement.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_no_room"><a class="anchor" href="#_no_room"></a><span id="noroom">No room</span></h4>
+<div class="paragraph">
+<p>This untrappable error indicates that all the computer&#8217;s available memory was used up whilst a program was running. This error may occur as a result of numerous assignments to string variables, as in a string sort. See the explanation of <a href="bbc2.html#stringsetc">String Variables and Garbage</a> in the <a href="bbc2.html#variables">Variables</a> sub-section for details.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_such_fnproc"><a class="anchor" href="#_no_such_fnproc"></a><span id="nosuchfnproc">No such FN/PROC</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_29"><a class="anchor" href="#_29"></a>29</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>When BBC BASIC (Z80) encounters a name beginning with <a href="bbckey2.html#fn">FN</a> or <a href="bbckey4.html#proc">PROC</a> it expects to be able to find a corresponding function or procedure definition. This error will occur if such a definition does not exist.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_such_line"><a class="anchor" href="#_no_such_line"></a><span id="nosuchline">No such line</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_41"><a class="anchor" href="#_41"></a>41</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will occur if BBC BASIC (Z80) tries to <a href="bbckey2.html#goto">GOTO</a>, <a href="bbckey2.html#gosub">GOSUB</a>, <a href="bbckey4.html#trace">TRACE</a> or <a href="bbckey4.html#restore">RESTORE</a> to a non-existent line number.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_such_variable"><a class="anchor" href="#_no_such_variable"></a><span id="nosuchvariable">No such variable</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_26"><a class="anchor" href="#_26"></a>26</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Variables are brought into existence by assigning a value to them or making them <a href="bbckey2.html#local">LOCAL</a> in a function or procedure definition. This error message will be generated if you try to use a variable on the right-hand side of an assignment or access it in a <a href="bbckey3.html#print">PRINT</a> statement before it has been created. As shown below, you can create variables very simply.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 count=0
+20 name$=""</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_no_to"><a class="anchor" href="#_no_to"></a><span id="noto">No TO</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_36"><a class="anchor" href="#_36"></a>36</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error message will be generated if BBC BASIC (Z80) encounters a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop with the <a href="bbckey4.html#to">TO</a> part missing.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_not_local"><a class="anchor" href="#_not_local"></a><span id="notlocal">Not LOCAL</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_12"><a class="anchor" href="#_12"></a>12</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If you try to define a variable as <a href="bbckey2.html#local">LOCAL</a> outside a procedure or function, this error message will be generated. If you forget to put multi-line function definitions out of harm&#8217;s way at the end of the program you are very likely to get this error message. (See the sub-section on <a href="bbc2.html#procedures">Procedures and Functions</a>.)</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_on_range"><a class="anchor" href="#_on_range"></a><span id="onrange">ON range</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_40"><a class="anchor" href="#_40"></a>40</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will be generated if, in a simple <a href="bbckey3.html#on">ON GOTO/GOSUB/PROC</a> statement, the control variable was less than 1 or greater than the number of entries in the ON list. These exceptions can be trapped in ON GOTO/GOSUB/PROC statements by using the <a href="bbckey1.html#else">ELSE</a> option. The first example below will generate an 'ON range' error, whilst the second is correct.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 num=4
+20 ON num GOTO 100,200,300
+
+10 num=4
+20 ON num GOTO 100,200,300 ELSE 1000</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_on_syntax"><a class="anchor" href="#_on_syntax"></a><span id="onsyntax">ON syntax</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_39"><a class="anchor" href="#_39"></a>39</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will be reported if the <a href="bbckey3.html#on">ON&#8230;&#8203;GOTO</a> statement was misformed. For example, the following statement is not legal. (Refer to the keyword <a href="bbckey3.html#on">ON</a> for details of legal statements.)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">20 ON x TIME=0</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_out_of_data"><a class="anchor" href="#_out_of_data"></a><span id="outofdata">Out of DATA</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_42"><a class="anchor" href="#_42"></a>42</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If your program tried to read more items of data than there were in the data list, this error will be generated. You can use <a href="bbckey4.html#restore">RESTORE</a> to return the data pointer to the first data statement (or to a particular line with a data statement) if you wish.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_out_of_range"><a class="anchor" href="#_out_of_range"></a><span id="outofrange">Out of range</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_1"><a class="anchor" href="#_1"></a>1</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This <a href="bbc3.html">assembly language</a> error will be reported if you tried to perform a relative jump of more than +127 or -128 bytes or you used a 16 bit port address when only an 8 bit address is allowed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_renumber_space"><a class="anchor" href="#_renumber_space"></a><span id="renumberspace">RENUMBER space</span></h4>
+<div class="paragraph">
+<p>When BBC BASIC <a href="bbckey4.html#renumber">RENUMBER</a>s a program it has to build a cross-reference table of line numbers. If there is insufficient memory to hold this table, the 'RENUMBER space' error results. In this case you can still renumber the program using the RENUMBER.COM utility program supplied.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_silly"><a class="anchor" href="#_silly"></a><span id="silly">Silly</span></h4>
+<div class="paragraph">
+<p>This error message will be issued if you try to renumber a program or enter <a href="bbckey1.html#auto">AUTO</a> with a step size of 0. AUTO with a step size of more than 255 will work, but it will be evaluated <a href="bbckey3.html#mod">MOD</a> 256.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_string_too_long"><a class="anchor" href="#_string_too_long"></a><span id="stringtoolong">String too long</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_19"><a class="anchor" href="#_19"></a>19</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You will get this error message if your program tries to generate a string which is longer than 255 characters.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_subscript"><a class="anchor" href="#_subscript"></a><span id="subscript">Subscript</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_15"><a class="anchor" href="#_15"></a>15</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If you try to access an element of an array less than zero or greater than the size of the array you will generate this error. Both lines 20 and 30 of the following example would give rise to this error message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 DIM test(10)
+20 test(-4)=20
+30 test(30)=10</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_syntax_error"><a class="anchor" href="#_syntax_error"></a><span id="syntaxerror">Syntax error</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_16"><a class="anchor" href="#_16"></a>16</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>A command was terminated incorrectly. In other words, the first part of the command was recognized, but the rest of it was meaningless or incomplete. Unlike <a href="#mistake">Mistake</a>, BBC BASIC (Z80) was able to recognise the start of the command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_too_big"><a class="anchor" href="#_too_big"></a><span id="toobig">Too big</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_20"><a class="anchor" href="#_20"></a>20</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will occur if a number is entered or calculated which is too big for BBC BASIC (Z80) to cope with.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_too_many_open_files"><a class="anchor" href="#_too_many_open_files"></a><span id="toomanyopenfiles">Too many open files</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_192"><a class="anchor" href="#_192"></a>192</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error will occur if you try to open more than seven files at any one time.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="sect3">
+<h4 id="_type_mismatch"><a class="anchor" href="#_type_mismatch"></a><span id="typemismatch">Type mismatch</span></h4>
+
+</div></div></td>
+<td class="tableblock halign-right valign-top"><div class="content"><div class="sect4">
+<h5 id="_6"><a class="anchor" href="#_6"></a>6</h5>
+
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This error indicates that a number was encountered when a string was expected and vice-versa. Don&#8217;t forget that this can occur if the actual parameters and the formal parameters for a function or procedure do not correspond. (See sub-section on <a href="bbc2.html#procedures">Procedures and Functions</a> for details of parameter passing to functions and procedures.)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

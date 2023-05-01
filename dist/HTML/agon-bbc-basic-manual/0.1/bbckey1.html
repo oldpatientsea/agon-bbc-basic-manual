@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: BBC BASIC (Z80) for the Agon Light</title>
+    <link rel="canonical" href="https://oldpatientsea.github.io/agon-bbc-basic-manual/0.1/bbckey1.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://oldpatientsea.github.io">BBC BASIC (Z80) for the Agon Light</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="agon-bbc-basic-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc2.html">General Information</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc3.html">Assembler</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey0.html">Statements and Functions</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="bbckey1.html">ABS-ENVELOPE</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey2.html">EOF#-LOMEM</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey3.html">MID$-PRINT</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey4.html">PRINT#-WIDTH</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys0.html">Operating System Interface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys1.html">Resident Star Commands</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile1.html">BBC BASIC (Z80) Disk Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile2.html">Serial Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile3.html">Random (Relative) Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile4.html">Indexed Data Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexa.html">Table of ASCII Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexb.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexc.html">Error Messages and Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexd.html">Format of Program and Variables in Memory</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="copyright.html">Copyrights</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BBC BASIC (Z80) for the Agon Light</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">BBC BASIC (Z80) for the Agon Light</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="bbc1.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></li>
+    <li><a href="bbckey1.html">ABS-ENVELOPE</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/oldpatientsea/agon-bbc-basic-manual/edit/main/modules/ROOT/pages/bbckey1.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="_abs"><a class="anchor" href="#_abs"></a><span id="abs">ABS</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function giving the absolute value of its argument.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">X = ABS(deficit)
+length = ABS(X1-X2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This function converts negative numbers into positive ones. It can be used to give the difference between two numbers without regard to the sign of the answer.</p>
+</div>
+<div class="paragraph">
+<p>It is particularly useful when you want to know the difference between two values, but you don&#8217;t know which is the larger. For instance, if X=6 and Y=10 then the following examples would give the same result.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">difference = ABS(X-Y)
+difference = ABS(Y-X)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use this function to check that a calculated answer is within certain limits of a specified value. For example, suppose you wanted to check that 'answer' was equal to 'ideal' plus or minus (up to) 0.5. One way would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF answer&gt;ideal-0.5 AND answer&lt;ideal+0.5 THEN----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, the following example would be a more elegant solution.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF ABS(answer-ideal)&lt;0.5 THEN----</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=ABS(&lt;numeric&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords"><a class="anchor" href="#_associated_keywords"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">SGN</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acs"><a class="anchor" href="#_acs"></a><span id="acs">ACS</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function giving the arc cosine of its argument in radians. The permitted range of the argument is -1 to +1.</p>
+</div>
+<div class="paragraph">
+<p>If you know the cosine of the angle, this function will tell you the angle (in radians). Unfortunately, you cannot do this with complete certainty because two angles within the range /- PI (/- 180 degrees) can have the same cosine. This means that one cosine has two associated angles.</p>
+</div>
+<div class="paragraph">
+<p>The following diagram illustrates the problem:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/acs.gif" alt="Arc cosine" width="352" height="236"></span></p>
+</div>
+<div class="paragraph">
+<p>Within the four quadrants, there are two angles which have the same cosine, two with the same sine and two with the same tangent. When you are working back from the cosine, sine or tangent you don&#8217;t know which of the two possible angles is correct.</p>
+</div>
+<div class="paragraph">
+<p>By convention, ACS gives a result in the top two quadrants (0 to PI - 0 to 180 degrees) and <a href="#asn">ASN</a> and <a href="#atn">ATN</a> in the right-hand two quadrants (-PI/2 to +PI/2 - -90 to + 90 degrees).</p>
+</div>
+<div class="paragraph">
+<p>In the example below, 'radian_angle' becomes equal to the angle (in radians) whose cosine is 'y'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">radian_angle=ACS(y)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can convert the answer to degrees by using the <a href="#deg">DEG</a> function (or multiplying by 180/PI).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">degree_angle=DEG(ACS(y))</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_2"><a class="anchor" href="#_syntax_2"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=ACS(&lt;numeric&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_2"><a class="anchor" href="#_associated_keywords_2"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ASN, ATN, SIN, COS, TAN, RAD, DEG</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adval"><a class="anchor" href="#_adval"></a><span id="adval">ADVAL</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This function returns information about the analogue to digital converter channels on the Games Adapter card (if fitted). The information returned depends upon the argument passed to ADVAL.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Not implemented</em></strong></p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_3"><a class="anchor" href="#_syntax_3"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=ADVAL(&lt;numeric&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_3"><a class="anchor" href="#_associated_keywords_3"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">SOUND, INPUT, GET</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_and_a"><a class="anchor" href="#_and_a"></a><span id="and">AND, A.</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The operation of integer bitwise logical AND between two items. The 2 operands are internally converted to four byte integers before the AND operation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">answer=num1 AND num2
+char=byte AND &amp;7F
+
+IF (num AND &amp;F0)
+
+test=(count=3 AND total=5)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use AND as a logical operator or as a 'bit-by-bit' (bitwise) operator. The operands can be boolean (logical) or numeric.</p>
+</div>
+<div class="paragraph">
+<p>In the following example program segment, AND is used as a bitwise operator to remove the most significant bit of a byte read from a file before writing it to another file. This is useful for converting some word-processor files into standard <a href="annexa.html">ASCII</a> format.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">210 byte=BGET#infile AND &amp;7F
+220 BPUT#outfile,byte</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unfortunately, BBC BASIC does not have true boolean variables; it uses numeric variables and assigns the value 0 for <a href="bbckey2.html#false">FALSE</a> and -1 for <a href="bbckey4.html#true">TRUE</a>. This can lead to confusion at times. (See <a href="bbckey3.html#not">NOT</a> for more details.) In the example below, the operands are boolean (logical). In other words, the result of the tests (IF) A=2 and (IF) B=3 is either TRUE or FALSE. The result of this example will be TRUE if A=2 and B=3.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">answer=(A=2 AND B=3)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The brackets are not necessary, they have been included to make the example easier to follow.</p>
+</div>
+<div class="paragraph">
+<p>The second example is similar to the first, but in the more familiar surroundings of an IF statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF A=2 AND B=3 THEN 110</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">answer= A=2 AND B=3     `(without brackets this time)` IF answer THEN 110</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The final example, uses the AND in a similar fashion to the numeric operators (+, -, etc).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`A=X AND 11`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Suppose X was -20, the AND operation would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">11111111 11111111 11111111 11101100
+00000000 00000000 00000000 00001011
+00000000 00000000 00000000 00001000  = 8</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_4"><a class="anchor" href="#_syntax_4"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=&lt;numeric&gt; AND &lt;numeric&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_4"><a class="anchor" href="#_associated_keywords_4"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">EOR, OR, FALSE, TRUE, NOT</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_asc"><a class="anchor" href="#_asc"></a><span id="asc">ASC</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function returning the ASCII character value of the first character of the argument string. If the string is null then -1 will be returned.</p>
+</div>
+<div class="paragraph">
+<p>A computer only understands numbers. In order to deal with characters, each character is assigned a code number. For example (in the <a href="annexa.html">ASCII code table</a>) the character 'A' is given the code number 65 (decimal). A part of the computer generates special electronic signals which cause the characters to be displayed on the screen. The signals generated vary according to the code number.</p>
+</div>
+<div class="paragraph">
+<p>You could use this function to convert ASCII codes to some other coding scheme.</p>
+</div>
+<div class="paragraph">
+<p>|==
+|<code>ascii_code=ASC("H")</code> |Result would be 72
+|<code>X=ASC("HELLO")</code> |Result would be 72
+| |
+|<code>name$="FRED"</code> |
+|<code>ascii_code=ASC(name$)</code> |Result would be 70
+|<code>X=ASC"e"</code> |Result would be 101
+| |
+|<code>X=ASC(MID$(A$,position))</code> |Result depends on A$ and position.
+|==</p>
+</div>
+<div class="paragraph">
+<p>ASC is the complement of <a href="#chr">CHR$</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_5"><a class="anchor" href="#_syntax_5"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=ASC(&lt;str&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_5"><a class="anchor" href="#_associated_keywords_5"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CHR$, STR$, VAL</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_asn"><a class="anchor" href="#_asn"></a><span id="asn">ASN</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function giving the arc sine of its argument in radians. The permitted range of the argument is -1 to +1.</p>
+</div>
+<div class="paragraph">
+<p>By convention, the result will be in the range -PI/2 to +PI/2 (-90 to +90 degrees).</p>
+</div>
+<div class="paragraph">
+<p>If you know the sine of the angle, this function will tell you the angle (in radians). Unfortunately, you cannot do this with complete certainty because one sine has two associated angles. (See <a href="#acs">ACS</a> for details.)</p>
+</div>
+<div class="paragraph">
+<p>In the example below, 'radian_angle' becomes equal to the angle (in radians) whose sine is 'y'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">radian_angle=ASN(y)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can convert the answer to degrees by using the <a href="#deg">DEG</a> function. (The DEG function is equivalent to multiplying by 180/PI.) The example below is similar to the first one, but the angle is in degrees.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">degree_angle=DEG(ASN(y))</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_6"><a class="anchor" href="#_syntax_6"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=ASN(&lt;numeric&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_6"><a class="anchor" href="#_associated_keywords_6"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ACS, ATN, SIN, COS, TAN, RAD, DEG</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_atn"><a class="anchor" href="#_atn"></a><span id="atn">ATN</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function giving the arc tangent of its argument in radians. The permitted range of the argument is from - to + infinity.</p>
+</div>
+<div class="paragraph">
+<p>By convention, the result will be in the range -PI/2 to +PI/2 (-90 to +90 degrees).</p>
+</div>
+<div class="paragraph">
+<p>If you know the tangent of the angle, this function will tell you the angle (in radians).</p>
+</div>
+<div class="paragraph">
+<p>As the magnitude of the argument (tangent) becomes very large (approaches + or - infinity) the accuracy diminishes.</p>
+</div>
+<div class="paragraph">
+<p>In the example below, 'radian_angle' becomes equal to the angle (in radians) whose tangent is 'y'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">radian_angle=ATN(y)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can convert the answer to degrees by using the <a href="#deg">DEG</a> function. (The DEG function is equivalent to multiplying by 180/PI.) The example below is similar to the first one, but the angle is in degrees.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">degree_angle=DEG(ATN(y))</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_7"><a class="anchor" href="#_syntax_7"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=ATN(&lt;numeric&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_7"><a class="anchor" href="#_associated_keywords_7"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ACS, ASN, SIN, COS, TAN, RAD, DEG</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_auto_au"><a class="anchor" href="#_auto_au"></a><span id="auto">AUTO</span>, AU.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A command allowing the user to enter lines without first typing in the number of the line. The line numbers are preceded by the usual prompt (&gt;).</p>
+</div>
+<div class="paragraph">
+<p>You can use this command to tell the computer to type the line numbers automatically for you when you are entering a program (or part of a program).</p>
+</div>
+<div class="paragraph">
+<p>If AUTO is used on its own, the line numbers will start at 10 and go up by 10 for each line. However, you can specify the start number and the value by which the line numbers will increment. The step size can be in the range 1 to 255.</p>
+</div>
+<div class="paragraph">
+<p>You cannot use the AUTO command within a program or a multi-statement command line.</p>
+</div>
+<div class="paragraph">
+<p>You can leave the AUTO mode by pressing the escape key.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">AUTO start_number,step_size</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>|==
+|<code>AUTO</code> |offers line numbers 10, 20, 30 &#8230;&#8203;
+|<code>AUTO 100</code> |starts at 100 with step 10
+|<code>AUTO 100,1</code> |starts at 100 with step 1
+|<code>AUTO ,2</code> |starts at 10 with step 2
+|==</p>
+</div>
+<div class="paragraph">
+<p>A hyphen is an acceptable alternative to a comma.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_8"><a class="anchor" href="#_syntax_8"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">AUTO [&lt;n-const&gt; [,&lt;n-const&gt;]]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_8"><a class="anchor" href="#_associated_keywords_8"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">None</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bget_b"><a class="anchor" href="#_bget_b"></a><span id="bget">BGET</span>#, B.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function which gets a byte from the file whose file handle is its argument. The file pointer is incremented after the byte has been read.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">E=BGET#n
+aux=BGET#3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You must normally have opened a file using <a href="bbckey3.html#openout">OPENOUT</a>, <a href="bbckey3.html#openin">OPENIN</a> or <a href="bbckey3.html#openup">OPENUP</a> before you use this statement. (See these keywords and the <a href="bbcfile1.html">BBC BASIC (Z80) Disk Files</a> section for details.) BGET# may alternatively be used with the AUX device (usually a serial port) which has the 'permanently open' handle = 3.</p>
+</div>
+<div class="paragraph">
+<p>You can use BGET# to read single bytes from a disk file. This enables you to read back small integers which have been 'packed' into fewer than 5 bytes (see <a href="#bput">BPUT#</a>). It is also very useful if you need to perform some conversion operation on a file. Each byte read is numeric, but you can use <a href="#chr">CHR$</a>(BGET#n) to convert it to a string.</p>
+</div>
+<div class="paragraph">
+<p>The input file in the example below is a text file produced by a word-processor.</p>
+</div>
+<div class="paragraph">
+<p>Words to be underlined are 'bracketed' with ^S. The program produces an output file suitable for a printer which expects such words to be bracketed by ^Y. You could, of course, perform several such translations in one program.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 REM Open i/p and o/p files. End if error.
+ 20 infile=OPENIN "WSFILE.DOC"
+ 30 IF infile=0 THEN END
+ 40 outfile=OPENOUT "BROTH.DOC"
+ 50 IF outfile=0 THEN END
+ 60 :
+ 70 REM Process file, converting ^S to ^Y
+ 80 REPEAT
+ 90   temp=BGET#infile :REM Read byte
+100    IF temp=&amp;13 THEN temp=&amp;19 :REM Convert ^S
+110    BPUT#outfile,temp :REM Write byte
+120 UNTIL temp=&amp;1A :REM ^Z
+130 CLOSE#0 :REM Close all files
+140 END</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To make the program more useful, it could ask for the names of the input and output files at 'run time':</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10INPUT "Enter name of INPUT file " infile$
+ 20 INPUT "Enter name of OUTPUT file " outfile$
+ 30 REM Open i/p and o/p files. End if error.
+ 40 infile=OPENIN(infile$)
+ 50 IF infile=0 THEN END
+ 60 outfile=OPENOUT(outfile$)
+ 70 IF outfile=0 THEN END
+ 80 :
+ 90 REM Process file, converting ^S to ^Y
+100 REPEAT
+110    temp=BGET#infile :REM Read byte
+120    IF temp=&amp;13 THEN temp=&amp;19 :REM Convert ^S
+130    BPUT#outfile,temp :REM Write byte
+140 UNTIL temp=&amp;1A :REM ^Z
+150 CLOSE#0 :REM Close all files
+160 END</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_9"><a class="anchor" href="#_syntax_9"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=BGET#&lt;numeric&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_9"><a class="anchor" href="#_associated_keywords_9"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BGET#, EXT#, PTR#, EOF#</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bput_bp"><a class="anchor" href="#_bput_bp"></a><span id="bput">BPUT</span>#, BP.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement which puts a byte to the data file whose file handle is the first argument. The second argument&#8217;s least significant byte is written to the file. The file pointer is incremented after the byte has been written.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">BPUT#E,32
+BPUT#staff_file,A/256
+BPUT#4,prn</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Before you use this statement you must normally have opened a file for output using <a href="bbckey3.html#openout">OPENOUT</a> or <a href="bbckey3.html#openup">OPENUP</a>. (See these keywords and the <a href="bbcfile1.html">BBC BASIC (Z80) Disk Files</a> section for details.) BPUT# may alternatively be used with the AUX device (usually a serial port), which has the 'permanently open' handle = 3, or the PRN device (usually a parallel port) which has the 'permanently open' handle = 4.</p>
+</div>
+<div class="paragraph">
+<p>You can use this statement to write single bytes to a disk file. The number that is sent to the file is in the range 0 to 255. Real numbers are converted internally to integers and the top three bytes are 'masked off'. Each byte written is numeric, but you can use <a href="#asc">ASC</a>(character$) to convert (the first character of) 'character$' to a number.</p>
+</div>
+<div class="paragraph">
+<p>The example below is a program segment that 'packs' an integer number between 0 and 65535 (&amp;FFFF) into two bytes, least significant byte first. The file must have already been opened for output and the file handle stored in 'fnum'. The integer variable number% contains the value to be written to the file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">100 BPUT#fnum,number% MOD 256
+110 BPUT#fnum,number% DIV 256</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_10"><a class="anchor" href="#_syntax_10"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">BPUT#&lt;numeric&gt;,&lt;numeric&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_10"><a class="anchor" href="#_associated_keywords_10"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BGET#, EXT#, PTR#, EOF#</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_call_ca"><a class="anchor" href="#_call_ca"></a><span id="call">CALL</span>, CA.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement to call a machine code subroutine.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CALL Muldiv,A,B,C,D
+CALL &amp;FFE3
+CALL 12340,A$,M,J$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The processor&#8217;s A, B, C, D, E, F, H and L registers are initialised to the least significant words of A%, B%, C%, D%, E%, F%, H% and L% respectively (see also <a href="bbckey4.html#usr">USR</a>).</p>
+</div>
+<div class="sect2">
+<h3 id="_parameter_table"><a class="anchor" href="#_parameter_table"></a><span id="callparms">Parameter Table</span></h3>
+<div class="paragraph">
+<p>CALL sets up a table in RAM containing details of the parameters. The IX register is set to the address of this parameter table.</p>
+</div>
+<div class="paragraph">
+<p>Variables included in the parameter list need not have been declared before the CALL statement.</p>
+</div>
+<div class="paragraph">
+<p>The parameter types are:</p>
+</div>
+<div class="paragraph">
+<p>|==
+|Code No |Parameter Type
+|0: |byte (8 bits)
+|4: |word (32 bits)
+|5: |real (40 bits)
+|128: |fixed string
+|129: |movable string
+|==</p>
+</div>
+<div class="paragraph">
+<p>|==
+|Number of parameters |1 byte (at IX)
+| |
+|Parameter type |1 byte (at IX+1)
+|Parameter address |2 bytes (at IX+2 IX+3 LSB first)
+| |
+|Parameter type |)repeated as often as necessary.
+|Parameter address |)
+|==</p>
+</div>
+<div class="paragraph">
+<p>Except in the case of a movable string (normal string variable), the parameter address given is the absolute address at which the item is stored. In the case of movable strings (type 129), it is the address of a parameter block containing the current length, the maximum length and the start address of the string, in that order</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_parameter_formats"><a class="anchor" href="#_parameter_formats"></a><span id="callformats">Parameter Formats</span></h3>
+<div class="paragraph">
+<p>Integer variables are stored in twos complement format with their least significant byte first.</p>
+</div>
+<div class="paragraph">
+<p>Fixed strings are stored as the characters of the string followed by a carriage return (&amp;0D).</p>
+</div>
+<div class="paragraph">
+<p>Floating point variables are stored in binary floating point format with their least significant byte first. The fifth byte is the exponent. The mantissa is stored as a binary fraction in sign and magnitude format. Bit 7 of the most significant byte is the sign bit and, for the purposes of calculating the magnitude of the number, this bit is assumed to be set to one. The exponent is stored as a positive integer in excess 127 format. (To find the exponent subtract 127 from the value in the fifth byte.)</p>
+</div>
+<div class="paragraph">
+<p>If the exponent of a floating point number is zero, the number is stored in integer format in the mantissa. If the exponent is not zero, then the variable has a floating point value. Thus, an integer can be stored in two different formats in a real variable. For example, 5 can be stored as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 00 00 00 05 00   `Integer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 20 00 00 00 82   `(.5+.125) * 2^3 =</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(the <code>&amp;20</code> becomes <code>&amp;A0</code> because the MSB is always assumed)</p>
+</div>
+<div class="paragraph">
+<p>In the case of a movable string (normal string variable), the parameter address points to the 'string descriptor'. This descriptor gives the current length of the string, the number of bytes allocated to the string (the maximum length of the string) and the address of the start of the string (LSB first).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_11"><a class="anchor" href="#_syntax_11"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CALL &lt;numeric&gt;{,&lt;n-var&gt;|&lt;s-var&gt;}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_11"><a class="anchor" href="#_associated_keywords_11"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">USR</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chain"><a class="anchor" href="#_chain"></a><span id="chain">CHAIN</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement which loads and runs the program whose name is specified in the argument.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CHAIN "GAME1"
+CHAIN A$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The program file must be in tokenised format.</p>
+</div>
+<div class="paragraph">
+<p>All but the static variables @% to Z% are <a href="#clear">CLEAR</a>ed.</p>
+</div>
+<div class="paragraph">
+<p>CHAIN sets ON ERROR OFF before chaining the specified program.</p>
+</div>
+<div class="paragraph">
+<p><a href="bbckey4.html#run">RUN</a> may be used as an alternative to CHAIN.</p>
+</div>
+<div class="paragraph">
+<p>You can use CHAIN (or RUN) to link program modules together. This allows you to write modular programs which would, if written in one piece, be too large for the memory available.</p>
+</div>
+<div class="paragraph">
+<p>Passing data between CHAINed programs can be a bit of a problem because COMMON variables cannot be declared and all but the static variables are cleared by CHAIN.</p>
+</div>
+<div class="paragraph">
+<p>If you wish to pass large amounts of data between CHAINed programs, you should use a data file. However, if the amount of data to be passed is small and you do not wish to suffer the time penalty of using a data file, you can pass data to the CHAINed program by using the indirection operators to store them at known addresses. The safest way to do this is to move <a href="bbckey2.html#himem">HIMEM</a> down and store common data at the top of memory.</p>
+</div>
+<div class="paragraph">
+<p>The following sample program segment moves HIMEM down 100 bytes and stores the input and output file names in the memory above HIMEM. There is, of course, still plenty of room for other data in this area.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">100 HIMEM=HIMEM-100
+110 $HIMEM=in_file$
+120 $(HIMEM+13)=out_file$
+130 CHAIN "NEXTPROG"</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_12"><a class="anchor" href="#_syntax_12"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CHAIN &lt;str&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_12"><a class="anchor" href="#_associated_keywords_12"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">LOAD, RUN, SAVE</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chr"><a class="anchor" href="#_chr"></a><span id="chr">CHR$</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function which returns a string of length 1 containing the ASCII character specified by the least significant byte of the numeric argument.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">A$=CHR$(72)
+B$=CHR$(12)
+C$=CHR$(A/200)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>CHR$ generates an ASCII character (symbol, letter, number character, control character, etc) from the number given. The number specifies the position of the generated character in the ASCII table (See <a href="annexa.html">Annex A</a>). For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">char$=CHR$(65)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will set char$ equal to the character 'A'. You can use CHR$ to send a special character to the terminal or printer. (Generally, <a href="bbckey4.html#vdu">VDU</a> is better for sending characters to the screen.) For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CHR$(7)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will generate the ASCII character ^G. So,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">PRINT "ERROR"+CHR$(7)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will print the message 'ERROR' and sound the PC&#8217;s 'bell'.</p>
+</div>
+<div class="paragraph">
+<p>CHR$ is the complement of <a href="#asc">ASC</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_13"><a class="anchor" href="#_syntax_13"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;s-var&gt;=CHR$(&lt;numeric&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_13"><a class="anchor" href="#_associated_keywords_13"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ASC, STR$, VAL, VDU</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clear_cl"><a class="anchor" href="#_clear_cl"></a><span id="clear">CLEAR</span>, CL.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement which clears all the dynamically declared variables, including strings. CLEAR does not affect the static variables.</p>
+</div>
+<div class="paragraph">
+<p>The CLEAR command tells BBC BASIC (Z80) to 'forget' about ALL the dynamic variables used so far. This includes strings and arrays, but the static variables (@% to Z%) are not altered.</p>
+</div>
+<div class="paragraph">
+<p>You can use the <a href="bbc2.html#indirection">indirection</a> operators to store integers and strings at known addresses and these will not be affected by CLEAR. However, you will need to 'protect' the area of memory used. The easiest way to do this is to move <a href="bbckey2.html#himem">HIMEM</a> down. See <a href="#chain">CHAIN</a> for an example.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_14"><a class="anchor" href="#_syntax_14"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLEAR</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_14"><a class="anchor" href="#_associated_keywords_14"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">None</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_close_clo"><a class="anchor" href="#_close_clo"></a><span id="close">CLOSE</span>#, CLO.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement used to close a data file. CLOSE #0 will close all data files.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLOSE#file_num
+CLOSE#0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You use CLOSE# to tell BBC BASIC (Z80) that you have completely finished with a data file for this phase of the program. Any data still in the file buffer is written to the file before the file is closed.</p>
+</div>
+<div class="paragraph">
+<p>You can open and close a file several times within one program, but it is generally considered 'better form' not to close a file until you have finally finished with it. However, if you wish to <a href="#clear">CLEAR</a> the variables, it is simpler if you close the data files first.</p>
+</div>
+<div class="paragraph">
+<p>You should also close data files before chaining another program. <a href="#chain">CHAIN</a> does not automatically close data files, but it does clear the variables in which the file handles were stored. You can still access the open file if you have used one of the static variables (A% to Z%) to store the file handle. Alternatively, you could reserve an area of memory (by moving <a href="bbckey2.html#himem">HIMEM</a> down for example) and use the byte indirection operator to store the file handle. (See the keyword <a href="#chain">CHAIN</a> for more details.)</p>
+</div>
+<div class="paragraph">
+<p><a href="#end">END</a> or 'dropping off' the end of a program will also close all open data files. However, <a href="bbckey4.html#stop">STOP</a> does not close data files.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_15"><a class="anchor" href="#_syntax_15"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLOSE#&lt;numeric&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_15"><a class="anchor" href="#_associated_keywords_15"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">OPENIN, OPENUP, OPENOUT, PRINT#, INPUT#, BPUT#, BGET#, EXT#,  PTR#, EOF#</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_clg"><a class="anchor" href="#_clg"></a><span id="clg">CLG</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement which clears the graphics area of the screen and sets it to the currently selected graphics background colour,</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Not implemented in the generic CP/M version of BBC BASIC (Z80)</em></strong></p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_16"><a class="anchor" href="#_syntax_16"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLG</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_16"><a class="anchor" href="#_associated_keywords_16"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLS, GCOL</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cls"><a class="anchor" href="#_cls"></a><span id="cls">CLS</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement which clears the text area of the screen and sets it to the currently selected text background colour. The text cursor is moved to the 'home' position (0,0) at the top left-hand corner of the text area.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_17"><a class="anchor" href="#_syntax_17"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLS</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_17"><a class="anchor" href="#_associated_keywords_17"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLG, COLOUR</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_colour_color_c"><a class="anchor" href="#_colour_color_c"></a><span id="colour">COLOUR</span>, <mark>COLOR</mark>, C.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Change the the current text output colour.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If c is between 0 and 63, the foreground text colour will be set</p>
+</li>
+<li>
+<p>If c is between 128 and 191, the background text colour will be set</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note, since BBC BASIC is British, the British spelling of "colour" is the default. The US spelling is however recognised as an alternative.</p>
+</div>
+<div class="paragraph">
+<p>The following two commands are only applicable to paletted modes with fewer than 64 colours.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">COLOUR l,p</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Set the logical colour l to the physical colour p</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">COLOUR l,r,g,b</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Set the logical colour l to the physical colour represented by the RGB value where r(ed), g(reen) and b(lue) are each specified as a base 10 integer value in the range 0-255.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_18"><a class="anchor" href="#_syntax_18"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">COLOUR c
+COLOUR l,p
+COLOUR l,r,g,b</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_18"><a class="anchor" href="#_associated_keywords_18"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">VDU, GCOL, MODE</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cos"><a class="anchor" href="#_cos"></a><span id="cos">COS</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function giving the cosine of its radian argument.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">X=COS(angle)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This function returns the cosine of an angle. The angle must be expressed in radians, not degrees.</p>
+</div>
+<div class="paragraph">
+<p>Whilst the computer is quite happy dealing with angles expressed in radians, you may prefer to express angles in degrees. You can use the <a href="bbckey4.html#rad">RAD</a> function to convert an angle from degrees to radians.</p>
+</div>
+<div class="paragraph">
+<p>The example below sets Y to the cosine of the angle 'degree_angle' expressed in degrees.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Y=COS(RAD(degree_angle))</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_19"><a class="anchor" href="#_syntax_19"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=COS(&lt;numeric&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_19"><a class="anchor" href="#_associated_keywords_19"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">SIN, TAN, ACS, ASN, ATN, DEG, RAD</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_count_cou"><a class="anchor" href="#_count_cou"></a><span id="count">COUNT</span>, COU.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function returning the number of characters sent to the output stream (VDU or printer) since the last new line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">char_count=COUNT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Characters with an <a href="annexa.html">ASCII</a> value of less than 13 (carriage return/new-line/enter) have no effect on COUNT.</p>
+</div>
+<div class="paragraph">
+<p>Because control characters above 13 are included in COUNT, you cannot reliably use it to find the position of the cursor on the screen. If you need to know the cursor&#8217;s horizontal position use the <a href="bbckey3.html#pos">POS</a> function.</p>
+</div>
+<div class="paragraph">
+<p>Count is NOT set to zero if the output stream is changed using the <a href="opsys1.html#opt">*OPT</a> command.</p>
+</div>
+<div class="paragraph">
+<p>The example below prints strings from the string array 'words$'. The strings are printed on the same line until the line length exceeds 65. When the line length is in excess of 65, a new-line is printed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">90 ----
+100 PRINT
+110 FOR i=1 TO 1000
+120 PRINT words$(i);
+130 IF COUNT&gt;65 THEN PRINT
+140 NEXT
+150 ----</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_20"><a class="anchor" href="#_syntax_20"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=COUNT</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_20"><a class="anchor" href="#_associated_keywords_20"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">POS</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>|==
+a|
+== <span id="data">DATA</span></p>
+</div>
+<div class="paragraph">
+<p>a|
+== D.</p>
+</div>
+<div class="paragraph">
+<p>|==</p>
+</div>
+<div class="paragraph">
+<p>A program object which must precede all lists of data for use by the <a href="bbckey4.html#read">READ</a> statement.</p>
+</div>
+<div class="paragraph">
+<p>As for <a href="bbckey2.html#input">INPUT</a>, string values may be quoted or unquoted. However, quotes need to be used if the string contains commas or leading spaces.</p>
+</div>
+<div class="paragraph">
+<p>Numeric values may include calculation so long as there are no keywords.</p>
+</div>
+<div class="paragraph">
+<p>Data items in the list should be separated by a comma.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DATA 10.7,2,HELLO," THIS IS A COMMA,",1/3,PRINT
+DATA " This is a string with leading spaces."</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use DATA in conjunction with <a href="bbckey4.html#read">READ</a> to include data in your program which you may need to change from time to time, but which does not need to be different every time you run the program.</p>
+</div>
+<div class="paragraph">
+<p>The following example program segment reads through a list of names looking for the name in 'name$'. If the name is found, the name and age are printed. If not, an error message is printed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">100 DATA FRED,17,BILL,21,ALLISON,21,NOEL,32
+110 DATA JOAN,26,JOHN,19,WENDY,35,ZZZZ,0
+120 REPEAT
+130 READ list$,age
+140 IF list$=name$ THEN PRINT name$,age
+150 UNTIL list$=name$ OR list$="ZZZZ"
+160 IF list$="ZZZZ" PRINT "Name not in list"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_21"><a class="anchor" href="#_syntax_21"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DATA &lt;s-const&gt;|&lt;n-const&gt;{,&lt;s-const&gt;|&lt;n-const&gt;}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_21"><a class="anchor" href="#_associated_keywords_21"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">READ, RESTORE</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_def"><a class="anchor" href="#_def"></a><span id="def">DEF</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A program object which must precede declaration of a user defined function (<a href="bbckey2.html#fn">FN</a>) or procedure (<a href="bbckey4.html#proc">PROC</a>). DEF must be used at the start of a program line.</p>
+</div>
+<div class="paragraph">
+<p>If DEF is encountered during execution, the rest of the line is ignored. As a consequence, single line definitions can be put anywhere in the program.</p>
+</div>
+<div class="paragraph">
+<p>Multi-line definitions must not be executed. The safest place to put multi-line definitions is at the end of the main program after the <a href="#end">END</a> statement.</p>
+</div>
+<div class="paragraph">
+<p>There is no speed advantage to be gained by placing function or procedure definitions at the start of the program.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DEF FNMEAN ----
+DEF PROCJIM ----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In order to make the text more readable (always a GOOD THING) the function or procedure name may start with an underline.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DEF FN_mean ----
+DEF PROC_Jim$ ----</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Function and procedure names may end with a '$'. This is not compulsory for functions which return strings.</p>
+</div>
+<div class="paragraph">
+<p>A procedure definition is terminated by the statement <a href="#endproc">ENDPROC</a>.</p>
+</div>
+<div class="paragraph">
+<p>A function definition is terminated by a statement which starts with an equals (=) sign. The function returns the value of the expression to the right of the equals sign.</p>
+</div>
+<div class="paragraph">
+<p>For examples of function and procedure declarations, see <a href="bbckey2.html#fn">FN</a> and <a href="bbckey4.html#proc">PROC</a>. For a general explanation of functions and procedures, refer to the <a href="bbc2.html#procedures">Procedures and Functions</a> sub-section in the <a href="bbc2.html">General Information</a> section.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_22"><a class="anchor" href="#_syntax_22"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DEF PROC&lt;name&gt;[(&lt;s-var&gt;|&lt;n-var&gt;{,&lt;s-var&gt;|&lt;n-var&gt;})]
+DEF FN&lt;name&gt;[(&lt;s-var&gt;|&lt;n-var&gt;{,&lt;s-var&gt;|&lt;n-var&gt;})]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_22"><a class="anchor" href="#_associated_keywords_22"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ENDPROC, FN, PROC</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deg"><a class="anchor" href="#_deg"></a><span id="deg">DEG</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A function which converts radians to degrees.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">degree_angle=DEG(PI/2)
+X=DEG(ATN(1))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use this function to convert an angle expressed in radians to degrees. One radian is approximately 57 degrees (actually 180/PI). PI/2 radians is 90 degrees and <a href="bbckey3.html#pi">PI</a> radians is 180 degrees.</p>
+</div>
+<div class="paragraph">
+<p>Using DEG is equivalent to multiplying the radian value by 180/PI, but the result is calculated internally to a greater accuracy.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#acs">ACS</a>, <a href="#asn">ASN</a> and <a href="#atn">ATN</a> for further examples of the use of DEG.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_23"><a class="anchor" href="#_syntax_23"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=DEG(&lt;numeric&gt;)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_23"><a class="anchor" href="#_associated_keywords_23"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">RAD, SIN, COS, TAN, ACS, ASN, ATN, PI</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_delete_del"><a class="anchor" href="#_delete_del"></a><span id="delete">DELETE</span>, DEL.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A command which deletes a group of lines from the program. Both start and end lines of the group will be deleted.</p>
+</div>
+<div class="paragraph">
+<p>You can use DELETE to remove a number of lines from your program. To delete a single line, just type the line number followed by &lt;Enter&gt;.</p>
+</div>
+<div class="paragraph">
+<p>The example below deletes all the lines between line 10 and 15 (inclusive).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DELETE 10,15</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To delete up to a line from the beginning of the program, use 0 as the first line number. The following example deletes all the lines up to (and including) line 120.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DELETE 0,120</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To delete from a given line to the end of the program, use 65535 as the last line number. To delete from line 2310 to the end of the program, type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DELETE 2310,65535</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A hyphen is an acceptable alternative to a comma.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_24"><a class="anchor" href="#_syntax_24"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DELETE &lt;n-const&gt;,&lt;n-const&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_24"><a class="anchor" href="#_associated_keywords_24"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">EDIT, LIST, OLD, NEW</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dim"><a class="anchor" href="#_dim"></a><span id="dim">DIM</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two quite different uses for the DIM statement: the first dimensions an array and the second reserves an area of memory for special applications.</p>
+</div>
+<div class="sect2">
+<h3 id="_dimensioning_arrays"><a class="anchor" href="#_dimensioning_arrays"></a><span id="dimarrays">Dimensioning Arrays</span></h3>
+<div class="paragraph">
+<p>The DIM statement is used to declare arrays. Arrays must be pre-declared before use and they must not be re-dimensioned. Both numeric and string arrays may be multi dimensional.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM A(2),Ab(2,3),A$(2,3,4),A%(3,4,5,6)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After DIM, all elements in the array are 0/null.</p>
+</div>
+<div class="paragraph">
+<p>The subscript base is 0, so <code>DIM X(12)</code> defines an array of 13 elements.</p>
+</div>
+<div class="paragraph">
+<p>Arrays are like lists or tables. A list of names is a single dimension array. In other words, there is only one column - the names. Its single dimension in a DIM statement would be the maximum number of names you expected in the table less 1.</p>
+</div>
+<div class="paragraph">
+<p>If you wanted to describe the position of the pieces on a chess board you could use a two dimensional array. The two dimensions would represent the row (numbered 0 to 7) and the column (also numbered 0 to 7). The contents of each 'cell' of the array would indicate the presence (if any) of a piece and its value.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM chess_board(7,7)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Such an array would only represent the chess board at one moment of play. If you wanted to represent a series of board positions you would need to use a three dimensional array. The third dimension would represent the 'move number'. Each move would use about 320 bytes of memory, so you could record 40 moves in about 12.5k bytes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM chess_game(7,7,40)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reserving_an_area_of_memory"><a class="anchor" href="#_reserving_an_area_of_memory"></a><span id="dimreserving">Reserving an Area of Memory</span></h3>
+<div class="paragraph">
+<p>A DIM statement is used to reserve an area of memory which the interpreter will not then use. The variable in the DIM statement is set by BBC BASIC (Z80) to the start address of this memory area. This reserved area can be used by the indirection operators, machine code, etc.</p>
+</div>
+<div class="paragraph">
+<p>The example below reserves 68 bytes of memory and sets A% equal to the address of the first byte. Thus A%?0 to A%?67 are free for use by the program (68 bytes in all):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM A% 67</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A '<a href="annexc.html#dimspace">DIM space</a>' error will occur if a size of less than -1 is used (DIM P% -2). DIM P%-1 is a special case; it reserves zero bytes of memory. This is of more use than you might think, since it tells you the limit of the dynamic variable allocation. Thus,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM P% -1
+PRINT HIMEM-P%</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>is the equivalent of PRINT FREE(0) in some other versions of BASIC. See the <a href="bbc3.html">Assembler</a> section for a more detailed description of the use of DIM for reserving memory for machine code programs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_25"><a class="anchor" href="#_syntax_25"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM &lt;n-var&gt;|&lt;s-var&gt;(&lt;numeric&gt;{,&lt;numeric&gt;})
+DIM &lt;n-var&gt; &lt;numeric&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_25"><a class="anchor" href="#_associated_keywords_25"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLEAR</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_div"><a class="anchor" href="#_div"></a><span id="div">DIV</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A binary operation giving the integer quotient of two items. The result is always an integer.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">X=A DIV B
+y=(top+bottom+1) DIV 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use this function to give the 'whole number' part of the answer to a division. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">21 DIV 4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>would give 5 (with a 'remainder' of 1).</p>
+</div>
+<div class="paragraph">
+<p>Whilst it is possible to use DIV with real numbers, it is really intended for use with integers. If you do use real numbers, BBC BASIC (Z80) converts them to integers by truncation before DIViding them.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_26"><a class="anchor" href="#_syntax_26"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">&lt;n-var&gt;=&lt;numeric&gt; DIV &lt;numeric&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_26"><a class="anchor" href="#_associated_keywords_26"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">MOD</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_draw"><a class="anchor" href="#_draw"></a><span id="draw">DRAW</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement which draws a line on the screen in the graphics modes. The statement is followed by the X and Y coordinates of the end of the line.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Not implemented in the generic CP/M version of BBC BASIC (Z80)</em></strong></p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_27"><a class="anchor" href="#_syntax_27"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DRAW &lt;numeric&gt;,&lt;numeric&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_27"><a class="anchor" href="#_associated_keywords_27"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">MODE, PLOT, MOVE, CLG, VDU, GCOL</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_edit_e"><a class="anchor" href="#_edit_e"></a><span id="edit">EDIT</span>, E.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A command to edit or concatenate and edit the specified program line(s). The specified lines (including their line numbers) are listed as a single line. By changing only the line number, you can also use EDIT to duplicate a line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">EDIT 230
+EDIT 200,230</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The codes shown are the default codes as supplied; they may be changed by editing the <strong>BBCDIST.MAC</strong> <a href="bbc1.html#configuration">patch program</a>:</p>
+</div>
+<div class="paragraph">
+<p>|==
+|Ctrl/E |Move the cursor up one line
+|Ctrl/X |Move the cursor down one line
+|Ctrl/S |Move the cursor left one character
+|Ctrl/D |Move the cursor right one character
+|Ctrl/A |Move the cursor to the start of the line
+|Ctrl/F |Move the cursor to the end of the line
+|Del |Backspace and delete
+|Ctrl/G |Delete the character at the cursor
+|Ctrl/U |Clear line to the left of the cursor
+|Ctrl/T |Clear the line to the right of the cursor
+|Ctrl/V |Insert a space at the cursor position
+|Enter |Enter the line and exit the edit mode
+|Esc |Abort and leave the line unchanged
+|==</p>
+</div>
+<div class="paragraph">
+<p>To abort the single line editor and leave the line unchanged, press &lt;Esc&gt;.</p>
+</div>
+<div class="paragraph">
+<p>You can use the <a href="bbckey1.html#edit">EDIT</a> command to edit and join (concatenate) program lines. When you use it to join lines, remember to delete any unwanted ones. EDIT on its own will start at the beginning of the program and concatenate as many lines as it can. This process will stop when the concatenated line length exceeds 255.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_28"><a class="anchor" href="#_syntax_28"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">EDIT &lt;l-num&gt;
+EDIT &lt;l-num&gt;,&lt;l-num&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_28"><a class="anchor" href="#_associated_keywords_28"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DELETE, LIST, OLD, NEW</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_else_el"><a class="anchor" href="#_else_el"></a><span id="else">ELSE</span>, EL.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement delimiter which provides an alternative course of action in <a href="bbckey2.html#if">IF</a>&#8230;&#8203;<a href="bbckey4.html#then">THEN</a>, <a href="bbckey3.html#on">ON&#8230;&#8203;GOSUB</a>, <a href="bbckey3.html#on">ON&#8230;&#8203;GOTO</a> and <a href="bbckey3.html#on">ON&#8230;&#8203;PROC</a> statements.</p>
+</div>
+<div class="paragraph">
+<p>In an <a href="bbckey2.html#if">IF</a> statement, if the test is <a href="bbckey2.html#false">FALSE</a>, the statements after ELSE will be executed. This makes the following work:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF A=B THEN B=C ELSE B=D
+IF A=B THEN B=C:PRINT"WWW" ELSE B=D:PRINT"QQQ"
+IF A=B THEN B=C ELSE IF A=C THEN------------...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In a multi statement line containing more than one <a href="bbckey2.html#if">IF</a>, the statement(s) after the ELSE delimiter will be actioned if ANY of the tests fail. For instance, the example below would print the error message &#8216;er$&#8217; if 'x' did not equal 3 OR if 'a' did not equal 'b'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF x=3 THEN IF a=b THEN PRINT a$ ELSE PRINT er$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to 'nest' the tests, you should use a procedure call. The following example, would print 'Bad' ONLY if x was equal to 3 AND 'a' was not equal to 'b'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF x=3 THEN PROC_ab_test
+...
+DEF PROC_ab_test
+IF a=b THEN PRINT a$ ELSE PRINT er$
+ENDPROC</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use ELSE with <a href="bbckey3.html#on">ON&#8230;&#8203;GOSUB</a>, <a href="bbckey3.html#on">ON&#8230;&#8203;GOTO</a> and <a href="bbckey3.html#on">ON&#8230;&#8203;PROC</a> statements to prevent an out of range control variable causing an '<a href="annexc.html#onrange">ON range</a>' error.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ON action GOTO 100, 200, 300 ELSE PRINT "Error"
+ON number GOSUB 100,200,300 ELSE PRINT "Error"
+ON value PROCa,PROCb,PROCc ELSE PRINT "Error"</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax_29"><a class="anchor" href="#_syntax_29"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF &lt;t-cond&gt; THEN &lt;stmt&gt; ELSE &lt;stmt&gt;
+ON &lt;n-var&gt; GOTO &lt;l-num&gt;{,&lt;l-num&gt;} ELSE &lt;stmt&gt;
+ON &lt;n-var&gt; GOSUB &lt;l-num&gt;{,&lt;l-num&gt;} ELSE &lt;stmt&gt;
+ON &lt;n-var&gt; PROC&lt;name&gt;{,PROC&lt;name&gt;} ELSE &lt;stmt&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_29"><a class="anchor" href="#_associated_keywords_29"></a>Associated Keywords:</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF, THEN, ON</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_end"><a class="anchor" href="#_end"></a><span id="end">END</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement causing the interpreter to return to direct mode. There can be any number (&gt;=0) of END statements anywhere in a program. END closes all open data files.</p>
+</div>
+<div class="paragraph">
+<p>END tells BBC BASIC (Z80) that it has reached the end of the program. You don&#8217;t have to use END, just 'running out of program' will have the same effect, but it&#8217;s a bit messy.</p>
+</div>
+<div class="paragraph">
+<p>You can use END within, for instance, an <a href="bbckey2.html#if">IF</a>&#8230;&#8203;<a href="bbckey4.html#then">THEN</a>&#8230;&#8203;<a href="#else">ELSE</a> statement to stop your program if certain conditions are satisfied. You should also use END to stop BBC BASIC (Z80) 'running into' any procedure or function definitions at the end of your program.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_30"><a class="anchor" href="#_syntax_30"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">END</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_30"><a class="anchor" href="#_associated_keywords_30"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">STOP</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_endproc"><a class="anchor" href="#_endproc"></a><span id="endproc">ENDPROC</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement denoting the end of a procedure.</p>
+</div>
+<div class="paragraph">
+<p>All local variables and the dummy arguments are restored at ENDPROC and the program returns to the statement after the calling statement.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_31"><a class="anchor" href="#_syntax_31"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ENDPROC</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_31"><a class="anchor" href="#_associated_keywords_31"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DEF, FN, PROC, LOCAL</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_envelope"><a class="anchor" href="#_envelope"></a><span id="envelope">ENVELOPE</span></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A statement which is used, in conjunction with the <a href="bbckey4.html#sound">SOUND</a> statement, to control the pitch of a sound whilst it is playing.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Not implemented</em></strong></p>
+</div>
+<div class="sect2">
+<h3 id="_syntax_32"><a class="anchor" href="#_syntax_32"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ENVELOPE &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;, &lt;numeric&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_associated_keywords_32"><a class="anchor" href="#_associated_keywords_32"></a>Associated Keywords</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">SOUND</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

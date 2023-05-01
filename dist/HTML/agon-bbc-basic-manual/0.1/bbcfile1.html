@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: BBC BASIC (Z80) for the Agon Light</title>
+    <link rel="canonical" href="https://oldpatientsea.github.io/agon-bbc-basic-manual/0.1/bbcfile1.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://oldpatientsea.github.io">BBC BASIC (Z80) for the Agon Light</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="agon-bbc-basic-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc2.html">General Information</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc3.html">Assembler</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey0.html">Statements and Functions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey1.html">ABS-ENVELOPE</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey2.html">EOF#-LOMEM</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey3.html">MID$-PRINT</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey4.html">PRINT#-WIDTH</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys0.html">Operating System Interface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys1.html">Resident Star Commands</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="bbcfile1.html">BBC BASIC (Z80) Disk Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile2.html">Serial Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile3.html">Random (Relative) Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile4.html">Indexed Data Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexa.html">Table of ASCII Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexb.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexc.html">Error Messages and Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexd.html">Format of Program and Variables in Memory</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="copyright.html">Copyrights</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BBC BASIC (Z80) for the Agon Light</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">BBC BASIC (Z80) for the Agon Light</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="bbc1.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></li>
+    <li><a href="bbcfile1.html">BBC BASIC (Z80) Disk Files</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/oldpatientsea/agon-bbc-basic-manual/edit/main/modules/ROOT/pages/bbcfile1.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="_bbc_basic_z80_disk_files"><a class="anchor" href="#_bbc_basic_z80_disk_files"></a>BBC BASIC (Z80) Disk Files</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introduction"><a class="anchor" href="#_introduction"></a><span id="introduction">Introduction</span></h3>
+<div class="paragraph">
+<p>These notes start with some <a href="#basics">basic information on files</a>, and then go on to discuss <a href="#access">program file manipulation</a>, <a href="bbcfile2.html">simple serial files</a>, <a href="bbcfile3.html">random files</a> and, finally, <a href="bbcfile4.html">indexed files</a>. The commands and functions used are explained, and followed by examples.</p>
+</div>
+<div class="paragraph">
+<p>If you are new to BBC BASIC (Z80), or you are experiencing difficulty with disk files you might find these notes useful. Some of the concepts and procedures described are quite complicated and require an understanding of file structures. If you have trouble understanding these parts, don&#8217;t worry. Try the examples and write some programs for yourself and then go back and read the notes again. As you become more comfortable with the fundamentals, the complicated bits become easier.</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_the_structure_of_files"><a class="anchor" href="#_the_structure_of_files"></a><span id="structure">The Structure of Files</span></h3>
+<div class="paragraph">
+<p>If you understand the way files work, skip the next two paragraphs. If you understand random and indexed files, skip the following two paragraphs as well.</p>
+</div>
+<div class="sect3">
+<h4 id="_basics"><a class="anchor" href="#_basics"></a><span id="basics">Basics</span></h4>
+<div class="paragraph">
+<p>Many people are confused by the jargon that is often used to describe the process of storing and retrieving information. This is unfortunate, because the individual elements are very simple and the most complicated procedures are only a collection of simple bits and pieces.</p>
+</div>
+<div class="paragraph">
+<p>All computers are able to store and retrieve information from a non-volatile medium. (In other words, you don&#8217;t lose the information when the power gets turned off.) Audio cassettes are used for small micro computers, diskettes for medium sized systems and magnetic tape and large disks for big machines. In order to be able to find the information you want, the information has to be organised in some way. All the information on one general subject is gathered together into a FILE. Within the file, information on individual items is grouped together into RECORDS.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_serial_sequential_files"><a class="anchor" href="#_serial_sequential_files"></a><span id="serial">Serial (Sequential) Files</span></h4>
+<div class="paragraph">
+<p>Look upon the cassette or diskette as a drawer in a filing cabinet. The drawer is full of folders called FILES and each file holds a number of enclosures called RECORDS. Sometimes the files are in order in the drawer, sometimes not. If you want a particular file, you start at the beginning of the drawer and search your way through until you find the file you want. Then you search your way through the records in the file until you find the record you want.</p>
+</div>
+<div class="paragraph">
+<p>This is very similar to the way a cassette is searched for a particular file. You put the cassette in the recorder, type in the name of the file you want and push play. You then go and make a cup of tea whilst the computer reads through all the files until it comes to the one you want. Because the cassette is read serially from start to end, it&#8217;s very difficult to do it any other way.</p>
+</div>
+<div class="paragraph">
+<p>Life is easier with a computer that uses diskettes (or disks). There is an index which tells the computer where to look for each of the files and the serial search for the file is not necessary. However, once you have found the file, you still need to read through it to find the record you want.</p>
+</div>
+<div class="paragraph">
+<p>There are a number of ways to overcome this problem. We will consider the two simplest; random access (or relative) files and indexed files.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_random_access_files"><a class="anchor" href="#_random_access_files"></a><span id="random">Random Access Files</span></h4>
+<div class="paragraph">
+<p>The easiest way to find the record you want is to identify each record with a number, like an account number. You can then ask for, say, the 23rd record. This is similar to turning to page 23 in the account book. This works very well at first. Every time you get a new customer you start a new page. Most of the pages have a lot of empty space, but you must have the same amount of space available for each account, otherwise your numbering system won&#8217;t work. So, even at the start, there are a lot of gaps.</p>
+</div>
+<div class="paragraph">
+<p>What happens when you close an account? You can&#8217;t tear out the page because that would upset the numbering system. All you can do is draw a line through it - in effect, turn it into a blank page. Before long, quite a number of pages will be 'blank' and a growing proportion of your book is wasted.</p>
+</div>
+<div class="paragraph">
+<p>With other forms of 'numbering', say by the letters of the alphabet, you could still not guarantee to fill all the pages. You would have to provide room for the Zs, but you may never get one. When you started entering data, most of the pages would be blank and the book would only gradually fill up.</p>
+</div>
+<div class="paragraph">
+<p>The same happens with this sort of file on a diskette. A random file which has a lot of empty space in it is described as sparse. Most random files start this way and most never get more than about ¾ full. Count the number of empty 'slots' in your address book and see what proportion this is of the total available.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_indexed_files"><a class="anchor" href="#_indexed_files"></a><span id="indexed">Indexed Files</span></h4>
+<div class="paragraph">
+<p>Suppose we want to hold our address book on the computer. We need a number of records each holding the name, address, telephone number, etc of one person. In our address book, we have one or two pages per letter of the alphabet and a number of 'slots' on each page. With this arrangement, the names are in alphabetical order of their first letter. This is very similar to the way the accounts book was organised except that we don&#8217;t know the page number for each name.</p>
+</div>
+<div class="paragraph">
+<p>If we had an index at the front of the book we could scan the index for the name and then turn to the appropriate page. We would still be wasting a lot of space because some names, addresses etc are longer than others and our 'slots' must be large enough to hold the longest.</p>
+</div>
+<div class="paragraph">
+<p>Suppose we numbered all the character positions in the book and we could easily move to any character position. We could write all the names, addresses, etc, one after the other and our index would tell us the character position for the start of each name and address. There would be no wasted space and we would still be able to turn directly to the required name.</p>
+</div>
+<div class="paragraph">
+<p>What would happen when we wanted to cancel an entry? We would just delete the name from the index. The entry would stay in its original place in the book, but we would never refer to it. Similarly, if someone changed their address, we would just write the name and the new address immediately after the last entry in the book and change the start position in the index. Every couple of years we would rewrite the address book, leaving out those items not referenced in the index and up-date the index (or write another one).</p>
+</div>
+<div class="paragraph">
+<p>This is not a practical way to run a paper and pencil address book because it&#8217;s not possible to turn directly to the 3423rd character in a book, and the saving in space would not be worth the tedium involved. However, with BBC BASIC you can turn to a particular character in a file and the tedium only takes a couple of seconds, so it&#8217;s well worth doing.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_files_in_bbc_basic_z80"><a class="anchor" href="#_files_in_bbc_basic_z80"></a><span id="bbcfiles">Files in BBC BASIC (Z80)</span></h3>
+<div class="sect3">
+<h4 id="_introduction_2"><a class="anchor" href="#_introduction_2"></a><span id="bbcintro">Introduction</span></h4>
+<div class="paragraph">
+<p>Conventional serial disk file procedures are little different from file procedures for cassette based computers. With serial files the records need only be as large as the data to be stored and there are no empty records. (The data item FRED only occupies 4 bytes whereas ERMINTRUDE occupies 10 bytes.) Consequently serial files are the most space efficient way to hold data on a disk (or any other storage media).</p>
+</div>
+<div class="paragraph">
+<p>Serial files cannot be used to access particular records from within the file quickly and easily. In order to do this with the minimum access time, random access files are necessary. However, a random file generally occupies more space on the disk than a serial file holding the same amount of data because the records must be a fixed length and some of the records will be empty.</p>
+</div>
+<div class="paragraph">
+<p>Most versions of BASIC only offer serial and random files, but because of the way that disk files are handled by BBC BASIC (both on the BBC computer and CP/M-80 computers using BBC BASIC (Z80)), it is possible to construct indexed, and even linked, files as well. Indexed files take a little longer to access than random files and it is necessary to have a separate index file, but they are generally the best space/speed compromise for files holding a large amount of data.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_data_is_readwritten"><a class="anchor" href="#_how_data_is_readwritten"></a><span id="howdata">How Data is Read/Written</span></h4>
+<div class="paragraph">
+<p>As far as the programmer is concerned, data can be written to and read from a file a data item or a character (byte) at a time. In fact, there is a buffer between the program and the disk operating system (CP/M), but this need only concern you when you are organising your program for maximum disk efficiency.</p>
+</div>
+<div class="paragraph">
+<p>Because of the character by character action of the write/read process, it is possible (in fact, necessary) to keep track of your position within the file. BBC BASIC does this for you automatically and provides a pointer <a href="#ptr">PTR</a> (a pseudo-variable) which holds the position of the NEXT character (byte) to be written/read. Every time a character is written/read PTR is incremented by 1, but it is possible to set PTR to any number you like. This ability to 'jump around' the file enables you to construct both random (relative) and indexed files.</p>
+</div>
+<div class="paragraph">
+<p>BBC BASIC provides the facility for completely free-format binary data files. Any file which can be read by the computer, from any source and in any data format, can be processed using the <a href="#bget">BGET</a>, <a href="#bput">BPUT</a> and <a href="#ptr">PTR</a> functions.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_data_is_stored"><a class="anchor" href="#_how_data_is_stored"></a><span id="howstored">How Data is Stored</span></h4>
+<div class="sect4">
+<h5 id="_numeric_data"><a class="anchor" href="#_numeric_data"></a><span id="numeric">Numeric Data</span></h5>
+<div class="paragraph">
+<p>In order to make the most efficient use of disk space and to preserve accuracy, numerics are stored in a data file in binary format, not as strings of characters. To prevent confusion when numerics are being read from a file, both integers and reals occupy 5 bytes (40 bits). If they were stored as character strings they could occupy up to 10 bytes. For compatibility with other BASICs, you can store numerics as strings by using the <a href="bbckey4.html#str">STR$</a> function.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_how_strings_are_stored"><a class="anchor" href="#_how_strings_are_stored"></a><span id="strings">How Strings are Stored</span></h5>
+<div class="paragraph">
+<p>Strings are stored in a data file as the ASCII bytes of the string followed by a carriage-return. If you need a line feed as well, it&#8217;s no problem to add it using the Byte-Put function <a href="#bput">BPUT#</a>. Similarly, extraneous characters included in files produced by other programs can be read and, if necessary, discarded using <a href="#bget">BGET#</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_files_are_referred_to"><a class="anchor" href="#_how_files_are_referred_to"></a><span id="referred">How Files are Referred To</span></h4>
+<div class="paragraph">
+<p>We refer to a file by its name. Unfortunately, this is too complicated for the Disk Operating System (CP/M). Consequently, the only time CP/M refers to a file by its name is when it opens the file. From then on, it refers to the file by the number it allocated to it when it was opened. This number is called the 'file handle'.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_file_buffering"><a class="anchor" href="#_file_buffering"></a><span id="buffering">File Buffering</span></h4>
+<div class="paragraph">
+<p>Logically, BBC BASIC (Z80) transfers data to and from files one byte at a time. CP/M-80 does not handle single byte data transfer directly so BBC BASIC (Z80) buffers the data into blocks; this is transparent to the user.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disk_file_commands"><a class="anchor" href="#_disk_file_commands"></a><span id="commands">Disk File Commands</span></h3>
+<div class="sect3">
+<h4 id="_introduction_3"><a class="anchor" href="#_introduction_3"></a><span id="commandintro">Introduction</span></h4>
+<div class="paragraph">
+<p>The commands and statements used in disk file manipulation are described below. They are not in alphabetical order, but in the order you are likely to want to use them. Whilst these notes repeat much of the material covered in the <a href="bbckey0.html">Statements and Functions</a> section, additional information has been added and they are presented in a more readable order.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_filenames"><a class="anchor" href="#_filenames"></a><span id="filenames">Filenames</span></h4>
+<div class="paragraph">
+<p>Please refer to your CP/M-80 User Guide for a full explanation of disk, directory and file names. The explanation below is only intended as a brief reference guide.</p>
+</div>
+<div class="paragraph">
+<p>The CP/M-80 operating system allows a composite file name in the following format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DRIVENAME:FILENAME.EXTension</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The drivename is a single letter followed by a colon and denotes the disk drive on which the file will be found or created.</p>
+</div>
+<div class="paragraph">
+<p>The file name can be up to 8 characters long, and the extension up to three characters. Whenever a file name without an extension is given, BBC BASIC (Z80) will append .BBC as the default extension.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organisation_of_examples"><a class="anchor" href="#_organisation_of_examples"></a><span id="organisation">Organisation of Examples</span></h4>
+<div class="paragraph">
+<p>Simple examples are given throughout this section with the explanation of the various commands. The following sections contain examples of complete programs for serial files, random files and, finally, indexed files. If you have problems understanding the action of any of the commands you may find the examples helpful. The best way to learn is to do - so have a go.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_program_file_manipulation"><a class="anchor" href="#_program_file_manipulation"></a><span id="manipulation">Program File Manipulation</span></h4>
+<div class="sect4">
+<h5 id="_save"><a class="anchor" href="#_save"></a><span id="save">SAVE</span></h5>
+<div class="paragraph">
+<p>Save the current program to a file, in internal (tokenised) format. The filename can be a variable or a string.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">SAVE filename
+
+SAVE "FRED"
+
+A$="COMPOUND"
+SAVE A$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first example will save the program to a file named FRED.BBC. The second will save COMPOUND.BBC.</p>
+</div>
+<div class="paragraph">
+<p>You can specify a drivename as well as the file name. The following example will save the current program to a file called TEST.BBC on drive D:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">SAVE "D:TEST"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_load"><a class="anchor" href="#_load"></a><span id="load">LOAD</span></h5>
+<div class="paragraph">
+<p>Load the program 'filename' into the program area. The old program is deleted (as if a <a href="bbckey3.html#new">NEW</a> command had been given prior to the LOAD) and all the dynamic variables are cleared. The program must be in tokenised format. File names must conform to the standard CP/M-80 format. However, if no extension is given, .BBC is assumed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">LOAD filename
+
+LOAD "FRED"
+
+A$="HEATING"
+LOAD A$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As with SAVE, you can specify a drive name. The example below loads the program saved previously as an example of the SAVE command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">LOAD "D:TEST"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_chain"><a class="anchor" href="#_chain"></a><span id="chain">CHAIN</span></h5>
+<div class="paragraph">
+<p>LOAD and RUN the program 'filename'. All the dynamic variables are cleared. The program must be in tokenised format.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CHAIN filename
+
+CHAIN "GAME1"
+
+A$="PART2"
+CHAIN A$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As with SAVE and LOAD, you can specify a drive name.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_merge"><a class="anchor" href="#_merge"></a><span id="merge">MERGE</span></h5>
+<div class="paragraph">
+<p>There is no MERGE command, however there are two ways of merging BBC BASIC (Z80) programs.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_using_merge_bbc"><a class="anchor" href="#_using_merge_bbc"></a>Using MERGE.BBC</h5>
+<div class="paragraph">
+<p>MERGE.BBC is a BBC BASIC (Z80) program which combines two program files into a third program file. It asks you for the names of the two input files and the name of the output file. If the same line number exists in both files, the program line from the second file will be included in the output file immediately after the line from the first file (the number of both lines will be the same). This may confuse you, but it won&#8217;t confuse your computer; providing the program is still syntactically correct, it will run. If you want to clean up the mess, renumber the resulting program and delete the lines you don&#8217;t want.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_using_load"><a class="anchor" href="#_using_load"></a>Using *LOAD</h5>
+<div class="paragraph">
+<p>You can also use <a href="opsys1.html#load">*LOAD</a> to perform a quick (and somewhat 'dirty') merge of two files. If you don&#8217;t want to get disconcerting results, you should ensure that the second program uses larger line numbers than the first program.</p>
+</div>
+<div class="paragraph">
+<p>Load the first program (with the lower line numbers) in the normal way. Then, find out the top address of the program less 3 by typing</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">PRINT ~TOP-3&lt;Enter&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will print the address in hex (nnnn) at which the first byte of the second program file must be loaded. Finally, load the second program by typing</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">*LOAD "PROG2" nnnn&lt;Enter&gt;
+OLD&lt;Enter&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_era"><a class="anchor" href="#_era"></a><span id="delete">*ERA</span></h5>
+<div class="paragraph">
+<p>Delete the file 'filename'. Since variables are not allowed as arguments to * commands, the filename must be a constant.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">*ERA filename
+
+*ERA FRED
+*ERA PHONE.DTA</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To delete a file whose name is known only at run-time, use the <a href="bbckey3.html#oscli">OSCLI</a> command. It&#8217;s a bit clumsy, but a lot better than the original specification for BBC BASIC allowed. This time all of the command, including the ERA, must be supplied as the argument for the OSCLI command. You can use OSCLI for erasing a file whose name is a constant, but you must include all of the command line - in quotes this time.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">fname$="FRED"
+OSCLI "ERA "+fname$
+
+fname$="PHONE.DTA"
+command$="ERA "
+OSCLI command$+fname$
+
+OSCLI "ERA FRED"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can include a drive name in both the *ERA and *OSCLI command formats.</p>
+</div>
+<div class="paragraph">
+<p>Although CP/M-80 will allow you to do so, it is bad practice to erase an open file.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ren"><a class="anchor" href="#_ren"></a><span id="rename">*REN</span></h5>
+<div class="paragraph">
+<p>Rename 'file1' to be called 'file2'. The syntax is similar to the normal CP/M-80 command except that the extension defaults to .BBC.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">*REN file2=file1
+
+*REN FRED2=FRED1
+
+*REN PHONE.DTA=PHONE</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once again, if you want to rename files whose names are only known at run-time, you must use the <a href="bbckey3.html#oscli">OSCLI</a> command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">fname1$="FRED1"
+fname2$="FRED2"
+OSCLI "REN "+fname2$+"="+fname1$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because CP/M-80 refers to files by their handles, it does not get confused if you rename an open file. However, in all probability, the same cannot be said for you.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_dir"><a class="anchor" href="#_dir"></a><span id="dir">*DIR</span>, *.</h5>
+<div class="paragraph">
+<p>List the directory. The default drive is the currently logged drive and the default extension is .BBC. The format is the same as the normal CP/M-80 command.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*DIR</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List *.BBC files on the current drive.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`*.B:*.DTA `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List *.DTA files on drive B.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_disk_data_files"><a class="anchor" href="#_disk_data_files"></a><span id="datafiles">Disk Data Files</span></h4>
+<div class="sect4">
+<h5 id="_introduction_4"><a class="anchor" href="#_introduction_4"></a><span id="dataintro">Introduction</span></h5>
+<div class="paragraph">
+<p>The statements and functions used for data files are:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">OPENIN
+OPENUP
+OPENOUT
+EXT#
+PTR#
+INPUT#      BGET#
+PRINT#      BPUT#
+CLOSE#      END
+EOF#</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_opening_files"><a class="anchor" href="#_opening_files"></a><span id="opening">Opening Files</span></h5>
+<div class="paragraph">
+<p>You cannot use a file until you have told the system it exists. In order to do this you must OPEN the file for use. Other versions of BASIC allow you to choose the file number. In order to improve efficiency, BBC BASIC (Z80) chooses the number for you.</p>
+</div>
+<div class="paragraph">
+<p>When you open the file, a file handle (an integer number) is returned by the interpreter and you will need to store it for future use. (The open commands are, in fact, functions which open the appropriate file and return its file handle.)</p>
+</div>
+<div class="paragraph">
+<p>You use the file handle for all subsequent access to the file. (With the exception of the <a href="opsys0.html">STAR commands</a> outlined previously.)</p>
+</div>
+<div class="paragraph">
+<p>If the system has been unable to open the file, the handle returned will be 0. This will occur if you try to open a non-existent file in the input mode (<a href="#openin">OPENIN</a> or <a href="#openup">OPENUP</a>).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_file_opening_functions"><a class="anchor" href="#_file_opening_functions"></a><span id="functions">File Opening Functions</span></h5>
+<div class="paragraph">
+<p>The three functions which open files are <a href="#openin">OPENIN</a>, <a href="#openup">OPENUP</a> and <a href="#openout">OPENOUT</a>. OPENOUT should be used to create new files, or overwrite old ones. OPENIN should be used for input only and OPENUP should be used for input/output.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_openout"><a class="anchor" href="#_openout"></a><span id="openout">OPENOUT</span></h5>
+<div class="paragraph">
+<p>Open the file 'filename' for output and return the file handle allocated. The use of OPENOUT destroys the contents of the file if it previously existed. (The directory is updated with the length of the new file you have just written when you close the file.)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">OPENOUT filename
+
+file_num=OPENOUT "PHONENUMS"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You always need to store the file handle because it must be used for all the other file commands and functions. If you choose a variable with the same name as the file, you will make programs which use a number of files easier to understand.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">phonenums=OPENOUT "PHONENUMS"
+opfile=OPENOUT opfile$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On a networked system, OPENOUT opens the file in 'compatibility' mode and the file is not available to any other user. If you wish to create a new file which can be read, concurrently by other users, you should open it with OPENOUT, immediately close it and re-open it with <a href="#openup">OPENUP</a>. See the earlier sub-section <a href="#networking">Networking - Shared Files</a> for more details.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_openin"><a class="anchor" href="#_openin"></a><span id="openin">OPENIN</span></h5>
+<div class="paragraph">
+<p>Open the file 'filename' for input only. Unlike the Z80 version of BBC BASIC, you cannot write to a file opened with OPENIN.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">OPENIN filename
+
+address=OPENIN "ADDRESS"
+check_file=OPENIN check_file$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will be unable to open for input (file handle returned = 0) if the file does not already exist.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_openup"><a class="anchor" href="#_openup"></a><span id="openup">OPENUP</span></h5>
+<div class="paragraph">
+<p>Open the file 'filename' for update (input or output) without destroying the contents of the file. The file may be read from or written to. When the file is closed, the directory is updated to show the maximum used length of the file. None of the previously written data is lost unless it has been overwritten. Consequently, you would use OPENUP for reading serial and random files, adding to the end of serial files or writing to random files.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">OPENUP filename
+
+address=OPENUP "ADDRESS"
+check_file=OPENUP check_file$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will be unable to open for update (file handle returned = 0) if the file does not already exist.</p>
+</div>
+<div class="paragraph">
+<p>On a networked system, OPENUP opens a file in the 'read-write, deny write' mode. A file may be opened <strong>once</strong> with OPENUP and any number of times by any number of users with <a href="#openin">OPENIN</a>. See the earlier sub-section <a href="#networking">Networking - Shared Files</a> for more details.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_close"><a class="anchor" href="#_close"></a><span id="close">CLOSE</span>#</h5>
+<div class="paragraph">
+<p>Close the file opened as 'fnum'. CLOSE#0, <a href="bbckey1.html#end">END</a> or 'dropping off the end' of a program will close all files.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">CLOSE#fnum</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When a file is closed its file buffer (if it has one) will be flushed to CP/M-80 before the file is closed.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_input"><a class="anchor" href="#_input"></a><span id="input">INPUT</span>#</h5>
+<div class="paragraph">
+<p>Read from the file opened as 'fnum' into the variable 'var'. Several variables can be read using the same INPUT# statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">INPUT#fnum,var
+
+data=OPENIN "DATA"
+:
+INPUT#data,name$,age,height,sex$
+:
+:</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="bbckey4.html#readhash">READ#</a> can be used as an alternative to INPUT#</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_print"><a class="anchor" href="#_print"></a><span id="print">PRINT</span>#</h5>
+<div class="paragraph">
+<p>Write the variable 'var' to the file opened as 'fnum'. Several variables can be written using the same PRINT# statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">PRINT#fnum,var</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>String variables are written as the character bytes in the string plus a carriage-return. Numeric variables are written as 5 bytes of binary data.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">data=OPENOUT "DATA"
+:
+:
+PRINT#data,name$,age,height,sex$
+:
+:</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ext"><a class="anchor" href="#_ext"></a><span id="ext">EXT</span>#</h5>
+<div class="paragraph">
+<p>Return the total length of the file opened as 'fnum'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">EXT#fnum</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the case of a sparse random-access file the value returned is the length of the file to the last byte actually written to the file. Although much of the file may well be unused, writing this 'last byte' reserved physical space on the disk for a file of this length. Thus it is possible to write a single byte to a file and get a '<a href="annexc.html#diskfull">Disk full</a>' error.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ptr"><a class="anchor" href="#_ptr"></a><span id="ptr">PTR</span>#</h5>
+<div class="paragraph">
+<p>A pseudo-variable which points to the position within the file from where the next byte to be read will be taken or where the next byte to be written will be put.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">PTR#fnum</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the file is OPENED, PTR# is set to zero. However, you can set PTR# to any value you like. (Even beyond the end of the file - so take care).</p>
+</div>
+<div class="paragraph">
+<p>Reading or writing, using <a href="#input">INPUT#</a> and <a href="#print">PRINT#</a>, (and <a href="#bget">BGET#</a> and <a href="#bput">BPUT#</a> - explained later), takes place at the current position of the pointer. The pointer is automatically updated following a read or write operation.</p>
+</div>
+<div class="paragraph">
+<p>A file opened with <a href="#openup">OPENUP</a> may be extended by setting PTR# to its end (PTR# = <a href="#ext">EXT#</a>), and then writing the new data to it. You must remember to <a href="#close">CLOSE</a> such a file in order to update its directory entry with its new length. A couple of examples of this are included in the sections on serial and indexed files.</p>
+</div>
+<div class="paragraph">
+<p>Using a 'PTR#fnum=' statement will flush the appropriate BBC BASIC (Z80) file buffer to CP/M-80.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_eof"><a class="anchor" href="#_eof"></a><span id="eof">EOF</span>#</h5>
+<div class="paragraph">
+<p>A function which will return -1 (<a href="bbckey4.html#true">TRUE</a>) if the data file whose file handle is the argument is at (or beyond) its end. In other words, when <a href="#ptr">PTR#</a> points beyond the current end of the file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">eof=EOF#fnum</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Attempting to read beyond the current end of file will not give rise to an error. Either zero or a null string will be returned depending on the type of variable read.</p>
+</div>
+<div class="paragraph">
+<p>EOF# is only really of use when dealing with serial (sequential) files. It indicates that <a href="#ptr">PTR#</a> is greater than the recorded length of the file (found by using <a href="#ext">EXT#</a>). When reading a serial file, EOF# would go true when the last byte of the file had been read.</p>
+</div>
+<div class="paragraph">
+<p>EOF# is only true if PTR# is set beyond the last byte written to in the file. It will NOT be true if an attempt has been made to read from an empty area of a sparse random access file. Reading from an empty area of a sparse file will return garbage. Because of this, it is difficult to tell which records of an uninitialised random access file have had data written to them and which are empty. These files need to be initialised and the unused records marked as empty.</p>
+</div>
+<div class="paragraph">
+<p>Writing to a byte beyond the current end of file updates the file length immediately, whether the record is physically written to the disk at that time or not.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bget"><a class="anchor" href="#_bget"></a><span id="bget">BGET</span>#</h5>
+<div class="paragraph">
+<p>A function which reads a byte of data from the file opened as 'fnum', from the position pointed to by <a href="#ptr">PTR#fnum</a>. PTR#fnum is incremented by 1 following the read. A positive integer between 0 and 255 is returned (as you might expect). This can be converted into a string variable using the <a href="bbckey1.html#chr">CHR$</a> function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">BGET#fnum
+
+byte=BGET#fnum
+char$=CHR$(byte)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or, more expediently</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">char$=CHR$(BGET#fnum)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bput"><a class="anchor" href="#_bput"></a><span id="bput">BPUT</span>#</h5>
+<div class="paragraph">
+<p>Write the least significant byte of the variable 'var' to the file opened as 'fnum', at the position pointed to by <a href="#ptr">PTR#fnum</a>. PTR#fnum is incremented by 1 following the write.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">BPUT#fnum,var
+
+BPUT#fnum,&amp;1B
+BPUT#fnum,house_num
+BPUT#fnum,ASC "E"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

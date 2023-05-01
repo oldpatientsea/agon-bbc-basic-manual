@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: BBC BASIC (Z80) for the Agon Light</title>
+    <link rel="canonical" href="https://oldpatientsea.github.io/agon-bbc-basic-manual/0.1/bbc3.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://oldpatientsea.github.io">BBC BASIC (Z80) for the Agon Light</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="agon-bbc-basic-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc2.html">General Information</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="bbc3.html">Assembler</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey0.html">Statements and Functions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey1.html">ABS-ENVELOPE</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey2.html">EOF#-LOMEM</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey3.html">MID$-PRINT</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey4.html">PRINT#-WIDTH</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys0.html">Operating System Interface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys1.html">Resident Star Commands</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile1.html">BBC BASIC (Z80) Disk Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile2.html">Serial Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile3.html">Random (Relative) Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile4.html">Indexed Data Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexa.html">Table of ASCII Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexb.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexc.html">Error Messages and Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexd.html">Format of Program and Variables in Memory</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="copyright.html">Copyrights</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BBC BASIC (Z80) for the Agon Light</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">BBC BASIC (Z80) for the Agon Light</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="bbc1.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></li>
+    <li><a href="bbc3.html">Assembler</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/oldpatientsea/agon-bbc-basic-manual/edit/main/modules/ROOT/pages/bbc3.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="_assembler"><a class="anchor" href="#_assembler"></a>Assembler</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introduction"><a class="anchor" href="#_introduction"></a><span id="introduction">Introduction</span></h3>
+<div class="paragraph">
+<p>BBC BASIC (Z80) includes a Z80 assembler. This assembler is similar to the 6502 assembler on the BBC Micro and it is entered in the same way. That is, '[' enters assembler mode and ']' exits assembler mode.</p>
+</div>
+<div class="sect3">
+<h4 id="_instruction_mnemonics"><a class="anchor" href="#_instruction_mnemonics"></a><span id="mnemonics">Instruction mnemonics</span></h4>
+<div class="paragraph">
+<p>All standard Zilog mnemonics are accepted: 'ADD', 'ADC' and 'SBC', must be followed by 'A' or 'HL'. For example <strong>ADD A,C</strong> is accepted but <strong>ADD C</strong> is not. However, the brackets around the port address in 'IN' and 'OUT' are optional; thus both <strong>OUT (5),A</strong> and <strong>OUT 5,A</strong> are accepted. The instruction 'IN F,&#169;' is <strong>not</strong> accepted but the equivalent object code is produced from 'IN (HL),&#169;'.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the standard set of Z80 instructions, the following eZ80 instructions have been added</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">MLT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The assembler will only compile 8-bit Z80 code and there are currently no plans for extending the instruction set much further in this version.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_statements"><a class="anchor" href="#_statements"></a><span id="statements">Statements</span></h4>
+<div class="paragraph">
+<p>An assembly language statement consists of three elements; an optional label, an instruction and an operand. A comment may follow the operand field. The instruction following a label must be separated from it by at least one space. Similarly, the operand must also be separated from the instruction by a space. Statements are terminated by a colon (:) or end of line (&lt;RET&gt;).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_labels"><a class="anchor" href="#_labels"></a><span id="labels">Labels</span></h4>
+<div class="paragraph">
+<p>Any BBC BASIC (Z80) numeric variable may be used as a label. These (external) labels are defined by an assignment (count=23 for instance). Internal labels are defined by preceding them with a full stop. When the assembler encounters such a label, a BASIC variable is created containing the current value of the Program Counter (P%). (The Program Counter is described <a href="#programcounter">later</a>.)</p>
+</div>
+<div class="paragraph">
+<p>In the example shown later under the heading <a href="#process">The Assembly Process</a>, two internal labels are defined and used. Labels have the same rules as standard BBC BASIC (Z80) variable names; they should start with a letter and not start with a keyword.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_comments"><a class="anchor" href="#_comments"></a><span id="comments">Comments</span></h4>
+<div class="paragraph">
+<p>You can insert comments into assembly language programs by preceding them with a semi-colon (;) or a back-slash (\). In assembly language, a comment ends at the end of the statement. Thus, the following example will work (but it&#8217;s a bit untidy).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">[;start assembly language program
+etc
+LD A,B ;In-line comment:POP HL ;get start address
+RET NZ ;Return if finished:JR loop ;else go back
+etc
+;end assembly language program:]</code></pre>
+</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="_constants"><a class="anchor" href="#_constants"></a><span id="constants">Constants</span></h4>
+<div class="paragraph">
+<p>You can store constants within your assembly language program using the define byte (DEFB), define word (DEFW) and define message (DEFM) pseudo-operation commands.</p>
+</div>
+<div class="sect4">
+<h5 id="_define_byte_defb"><a class="anchor" href="#_define_byte_defb"></a><span id="byte">Define Byte - DEFB</span></h5>
+<div class="paragraph">
+<p>DEFB can be used to set one byte of memory to a particular value. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">.data DEFB 15
+      DEFB 9</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will set two consecutive bytes of memory to 15 and 9 (decimal). The address of the first byte will be stored in the variable 'data'.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_define_word_defw"><a class="anchor" href="#_define_word_defw"></a><span id="word">Define Word - DEFW</span></h5>
+<div class="paragraph">
+<p>DEFW can be used to set two bytes of memory to a particular value. The first byte is set to the least significant byte of the number and the second to the most significant byte. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">.data DEFW &amp;90F</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will have the same result as the Byte Constant example.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_define_message_defm"><a class="anchor" href="#_define_message_defm"></a><span id="defm">Define Message - DEFM</span></h5>
+<div class="paragraph">
+<p>DEFM can be used to load a string of ASCII characters into memory. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">JR continue; jump round the data
+.string DEFM "This is a test message"
+DEFB &amp;D
+.continue; and continue the process</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will load the string 'This is a test message' followed by a carriage-return into memory. The address of the start of the message is loaded into the variable 'string'. This is equivalent to the following program segment:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">JR continue;    jump round the data
+.string;    leave assembly and load the string
+]
+$P%="This is a test message" REM starting at P%
+P%=P%+LEN($P%)+1 REM adjust P% to next free byte
+[
+OPT opt; reset OPT
+.continue;  and continue the program</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reserving_memory"><a class="anchor" href="#_reserving_memory"></a><span id="reserving">Reserving Memory</span></h3>
+<div class="sect3">
+<h4 id="_the_program_counter"><a class="anchor" href="#_the_program_counter"></a><span id="programcounter">The Program Counter</span></h4>
+<div class="paragraph">
+<p>Machine code instructions are assembled as if they were going to be placed in memory at the addresses specified by the program counter, P%. Their actual location in memory may be determined by O% depending on the OPTion specified (see <a href="#opt">below</a>). You must make sure that P% (or O%) is pointing to a free area of memory before your program begins assembly. In addition, you need to reserve the area of memory that your machine code program will use so that it is not overwritten at run time. You can reserve memory by using a special version of the <a href="bbckey1.html#dim">DIM</a> statement or by changing <a href="bbckey2.html#himem">HIMEM</a> or <a href="bbckey2.html#lomem">LOMEM</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_dim_to_reserve_memory"><a class="anchor" href="#_using_dim_to_reserve_memory"></a><span id="usingdim">Using DIM to Reserve Memory</span></h4>
+<div class="paragraph">
+<p>Using the special version of the DIM statement to reserve an area of memory is the simplest way for short programs which do not have to be located at a particular memory address. (See the keyword <a href="bbckey1.html#dim">DIM</a> for more details.) For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM code 20: REM Note the absence of brackets</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will reserve 21 bytes of code (byte 0 to byte 20) and load the variable 'code' with the start address of the reserved area. You can then set P% (or O%) to the start of that area. The example below reserves an area of memory 100 bytes long and sets P% to the first byte of the reserved area.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM sort% 99
+P%=sort%</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_moving_himem_to_reserve_memory"><a class="anchor" href="#_moving_himem_to_reserve_memory"></a><span id="movinghimem">Moving HIMEM to Reserve Memory</span></h4>
+<div class="paragraph">
+<p>If you are going to use a machine code program in a number of your BBC BASIC (Z80) programs, the simplest way is to assemble it once, save it using <a href="opsys1.html#save">*SAVE</a> and load it from each of your programs using <a href="opsys1.html#load">*LOAD</a>. In order for this to work, the machine code program must be loaded into the same address each time. The most convenient way to arrange this is to move <a href="bbckey2.html#himem">HIMEM</a> down by the length of the program and load the machine code program in to this protected area. Theoretically, you could raise <a href="bbckey2.html#lomem">LOMEM</a> to provide a similar protected area below your BBC BASIC (Z80) program. However, altering LOMEM destroys ALL your dynamic variables and is more risky.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_length_of_reserved_memory"><a class="anchor" href="#_length_of_reserved_memory"></a><span id="length">Length of Reserved Memory</span></h4>
+<div class="paragraph">
+<p>You must reserve an area of memory which is sufficiently large for your machine code program before you assemble it, but you may have no real idea how long the program will be until after it is assembled. How then can you know how much memory to reserve? Unfortunately, the answer is that you can&#8217;t. However, you can add to your program to find the length used and then change the memory reserved by the <a href="bbckey1.html#dim">DIM</a> statement to the correct amount.</p>
+</div>
+<div class="paragraph">
+<p>In the example below, a large amount of memory is initially reserved. To begin with, a single pass is made through the assembly code and the length needed for the code is calculated (lines 100 to 120). After a <a href="bbckey1.html#clear">CLEAR</a>, the correct amount of memory is reserved (line 140) and a further two passes of the assembly code are performed as usual. Your program should not, of course, subsequently try to use variables set before the clear statement. If you use a similar structure to the example and place the program lines which initiate the assembly function at the start of your program, you can place your assembly code anywhere you like and still avoid this problem.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">100 DIM free -1, code HIMEM-free-1000
+110 PROC_ass(0)
+120 L%=P%-code
+130 CLEAR
+140 DIM code L%
+150 PROC_ass(0)
+160 PROC_ass(2)
+
+...
+Put the rest of your program here.
+...
+
+1000 DEF PROC_ass(opt)
+10010 P%=code
+10020 [OPT opt
+...
+Assembler code program.
+...
+
+11000 ]
+11010 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_initial_setting_of_the_program_counter"><a class="anchor" href="#_initial_setting_of_the_program_counter"></a><span id="initial">Initial Setting of the Program Counter</span></h4>
+<div class="paragraph">
+<p>The program counters, P%, and O% are initialised to zero. Using the assembler without first setting P% (and O%) is liable to corrupt BBC BASIC (Z80)'s workspace (see the Annex entitled <a href="annexd.html">Format of Program and Variables in Memory</a>).</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_assembly_process"><a class="anchor" href="#_the_assembly_process"></a><span id="process">The Assembly Process</span></h3>
+<div class="sect3">
+<h4 id="_opt"><a class="anchor" href="#_opt"></a><span id="opt">OPT</span></h4>
+<div class="paragraph">
+<p>The only assembly directive is <a href="bbckey3.html#opt">OPT</a>. As with the 6502 assembler, 'OPT' controls the way the assembler works, whether a listing is displayed and whether errors are reported. OPT should be followed by a number in the range 0 to 7. The way the assembler functions is controlled by the three bits of this number in the following manner.</p>
+</div>
+<div class="sect4">
+<h5 id="_bit_0_lsb"><a class="anchor" href="#_bit_0_lsb"></a>Bit 0 - LSB</h5>
+<div class="paragraph">
+<p>Bit 0 controls the listing. If it is set, a listing is displayed.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bit_1"><a class="anchor" href="#_bit_1"></a>Bit 1</h5>
+<div class="paragraph">
+<p>Bit 1 controls the error reporting. If it is set, errors are reported.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bit_2"><a class="anchor" href="#_bit_2"></a>Bit 2</h5>
+<div class="paragraph">
+<p>Bit 2 controls where the assembled code is placed. If bit 2 is set, code is placed in memory starting at the address specified by O%. However, the program counter (P%) is still used by the assembler for calculating the instruction addresses.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_assembly_at_a_different_address"><a class="anchor" href="#_assembly_at_a_different_address"></a><span id="different">Assembly at a Different Address</span></h4>
+<div class="paragraph">
+<p>In general, machine code will only run properly if it is in memory at the addresses for which it was assembled. Thus, at first glance, the option of assembling it in a different area of memory is of little use. However, using this facility, it is possible to build up a library of machine code utilities for use by a number of programs. The machine code can be assembled for a particular address by one program without any constraints as to its actual location in memory and saved using <a href="opsys1.html#save">*SAVE</a>. This code can then be loaded into its working location from a number of different programs using <a href="opsys1.html#load">*LOAD</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_opt_summary"><a class="anchor" href="#_opt_summary"></a><span id="summary">OPT Summary</span></h4>
+<div class="sect4">
+<h5 id="_code_assembled_starting_at_p"><a class="anchor" href="#_code_assembled_starting_at_p"></a><span id="codeatp">Code Assembled Starting at P%</span></h5>
+<div class="paragraph">
+<p>The code is assembled using the program counter (P%) to calculate the instruction addresses and the code is also placed in memory at the address specified by the program counter.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OPT 0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reports no errors and gives no listing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OPT 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reports no errors, but gives a listing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OPT 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reports errors, but gives no listing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`OPT 3  `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reports errors and gives a listing.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_code_assembled_starting_at_o"><a class="anchor" href="#_code_assembled_starting_at_o"></a><span id="codeato">Code Assembled Starting at O%</span></h5>
+<div class="paragraph">
+<p>The code is assembled using the program counter (P%) to calculate the instruction addresses. However, the assembled code is placed in memory at the address specified by O%.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OPT 4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reports no errors and gives no listing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OPT 5</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reports no errors, but gives a listing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OPT 6</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reports errors, but gives no listing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`OPT 7  `</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reports errors and gives a listing.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_the_assembler_works"><a class="anchor" href="#_how_the_assembler_works"></a><span id="how">How the Assembler Works</span></h4>
+<div class="paragraph">
+<p>The assembler works line by line through the machine code. When it finds a label declared it generates a BBC BASIC (Z80) variable with that name and loads it with the current value of the program counter (P%). This is fine all the while labels are declared before they are used. However, labels are often used for forward jumps and no variable with that name would exist when it was first encountered. When this happens, a '<a href="annexc.html#nosuchvariable">No such variable</a>' error occurs. If error reporting has not been disabled, this error is reported and BBC BASIC (Z80) returns to the direct mode in the normal way. If error reporting has been disabled (<a href="bbckey3.html#opt">OPT</a> 0, 1, 4 or 5), the current value of the program counter is used in place of the address which would have been found in the variable, and assembly continues. By the end of the assembly process the variable will exist (assuming the code is correct), but this is of little use since the assembler cannot 'back track' and correct the errors. However, if a second pass is made through the assembly code, all the labels will exist as variables and errors will not occur. The example below shows the result of two passes through a (completely futile) demonstration program. Twelve bytes of memory are reserved for the program. (If the program was run, it would 'doom-loop' from line 50 to 70 and back again.) The program disables error reporting by using OPT 1.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 DIM code 12
+20 FOR opt=1 TO 3 STEP 2
+30 P%=code
+40 [OPT opt
+50 .jim JR fred
+60 DEFW &amp;2345
+70 .fred JR jim
+80 ]
+90 NEXT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is the first pass through the assembly process (note that the &#8216;JR fred&#8217; instruction jumps to itself):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">3E7B              OPT opt
+3E7B 18 FE        .jim JR fred
+3E7D 45 23        DEFW &amp;2345
+3E7F 18 FA        .fred JR jim</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is the second pass through the assembly process (note that the &#8216;JMP fred&#8217; instruction now jumps to the correct address):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">3E7B              OPT opt
+3E7B 18 02        .jim JR fred
+3E7D 45 23        DEFW &amp;2345
+3E7F 18 FA        .fred JR jim</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Generally, if labels have been used, you must make two passes through the assembly language code to resolve forward references. This can be done using a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop. Normally, the first pass should be with <a href="bbckey3.html#opt">OPT</a> 0 (or OPT 4) and the second pass with OPT 2 (OPT 6). If you want a listing, use OPT 3 (OPT7) for the second pass. During the first pass, a table of variables giving the address of the labels is built. Labels which have not yet been included in the table (forward references) will generate the address of the current op-code. The correct address will be generated during the second pass.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_saving_and_loading_machine_code_programs"><a class="anchor" href="#_saving_and_loading_machine_code_programs"></a><span id="saveload">Saving and Loading Machine Code Programs</span></h4>
+<div class="paragraph">
+<p>As mentioned earlier, you can use machine code routines in a number of BBC BASIC (Z80) programs by using <a href="opsys1.html#save">*SAVE</a> and <a href="opsys1.html#load">*LOAD</a>. The safest way to do this is to write a program which consists of only the machine code routines and enough BBC BASIC (Z80) to assemble them. They should be assembled 'out of the way' at the top of memory (each routine starting at a known address) and then *SAVEd. (Don&#8217;t forget to move <a href="bbckey2.html#himem">HIMEM</a> down first.) The BBC BASIC (Z80) programs that use these routines should move HIMEM down to the same value before they *LOAD the assembly code routines into the address at which they were originally assembled. *SAVE and *LOAD are explained below.</p>
+</div>
+<div class="sect4">
+<h5 id="_save"><a class="anchor" href="#_save"></a><span id="save">*SAVE</span></h5>
+<div class="paragraph">
+<p>Save an area of memory to disk. You MUST specify the start address (aaaa) and either the length of the area of memory (llll) or its end address+1 (bbbb).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">*SAVE ufsp aaaa +llll
+*SAVE ufsp aaaa bbbb
+OSCLI "SAVE "+&lt;st&gt;+" "+STR$~(&lt;n&gt;)+"+"+STR$~(&lt;n&gt;)
+*SAVE "WOMBAT" 8F00 +80
+*SAVE "WOMBAT" 8F00 8F80
+OSCLI "SAVE "+ufn$+" "+STR$~(add)+"+"+STR$~(len)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_load"><a class="anchor" href="#_load"></a><span id="load">*LOAD</span></h5>
+<div class="paragraph">
+<p>Load the specified file into memory at hexadecimal address 'aaaa'. The load address MUST always be specified. <a href="bbckey3.html#oscli">OSCLI</a> may also be used to load a file. However, you must take care to provide the load address as a hexadecimal number in string format.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">*LOAD ufsp aaaa
+OSCLI "LOAD "+&lt;str&gt;+" "+STR$~&lt;num&gt;
+
+*LOAD A:WOMBAT 8F00
+OSCLI "LOAD "+f_name$+" "+STR$~(strt_address)</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conditional_assembly_and_macros"><a class="anchor" href="#_conditional_assembly_and_macros"></a><span id="condmacro">Conditional Assembly and Macros</span></h3>
+<div class="sect3">
+<h4 id="_introduction_2"><a class="anchor" href="#_introduction_2"></a><span id="condintro">Introduction</span></h4>
+<div class="paragraph">
+<p>Most machine code assemblers provide conditional assembly and macro facilities. The assembler does not directly offer these facilities, but it is possible to implement them by using other features of BBC BASIC (Z80).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_conditional_assembly"><a class="anchor" href="#_conditional_assembly"></a><span id="conditional">Conditional Assembly</span></h4>
+<div class="paragraph">
+<p>You may wish to write a program which makes use of special facilities and which will be run on different types of computer. The majority of the assembly code will be the same, but some of it will be different. In the example below, different output routines are assembled depending on the value of 'flag'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM code 200
+FOR pass=0 TO 3 STEP 3
+  [OPT pass
+  .start     ...
+             ... code ...
+             ... :]
+  :
+  IF flag  [OPT  pass: - code for routine 1 -:]
+  IF NOT flag [OPT pass: - code for routine 2 - :]
+  :
+  [OPT pass
+  .more_code ...
+             ... code ...
+             ...:]
+NEXT</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_macros"><a class="anchor" href="#_macros"></a><span id="macros">Macros</span></h4>
+<div class="paragraph">
+<p>Within any machine code program it is often necessary to repeat a section of code a number of times and this can become quite tedious. You can avoid this repetition by defining a macro which you use every time you want to include the code. The example below uses a macro to pass a character to the operating system. Conditional assembly is used within the macro to select either the normal CP/M routine or one applicable to the Torch, depending on the value of op_flag.</p>
+</div>
+<div class="paragraph">
+<p>It is possible to suppress the listing of the code in a macro by forcing bit 0 of <a href="bbckey3.html#opt">OPT</a> to zero for the duration of the macro code. This can most easily be done by <a href="bbckey1.html#and">AND</a>ing the value passed to OPT with 6. This is illustrated in PROC_normal and PROC_torch in the example below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM code 200
+op_flag=TRUE
+FOR pass=0 TO 3 STEP 3
+  [OPT pass
+  .start   ...
+           ... code ...
+           ...
+:
+  OPT FN_select(op_flag); Include code depending on op_flag
+:
+           ...
+           ... code ...
+           ...:]
+NEXT
+END
+:
+:
+REM Include code depending on value of op_flag
+:
+DEF FN_select(op_flag)
+IF op_flag PROC_torch ELSE PROC_normal
+=pass
+REM Return original value of OPT.  This is a
+REM bit artificial, but necessary to insert
+REM some BBC BASIC code in the assembly code.
+:
+DEF PROC_torch
+[OPT pass AND 6
+LD E,A
+RST &amp;30
+DEFB 2
+RET:]
+ENDPROC
+:
+DEF PROC_normal
+[OPT pass AND 6
+PUSH BC
+LD C,2
+LD E,A
+CALL 5
+POP BC
+RET:]
+ENDPROC</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The use of a function call to incorporate the code provides a neat way of incorporating the macro within the program and allows parameters to be passed to it. The function should return the original value of OPT.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

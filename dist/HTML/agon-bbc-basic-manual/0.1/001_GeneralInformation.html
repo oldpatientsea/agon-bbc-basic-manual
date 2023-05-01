@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: BBC BASIC (Z80) for the Agon Light</title>
+    <link rel="canonical" href="https://oldpatientsea.github.io/agon-bbc-basic-manual/0.1/001_GeneralInformation.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://oldpatientsea.github.io">BBC BASIC (Z80) for the Agon Light</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="agon-bbc-basic-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="000_Introduction.html">BBC BASIC (Z80) for the Agon light™</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="001_GeneralInformation.html">001_GeneralInformation.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc1.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc2.html">General Information</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbc3.html">Assembler</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey0.html">Statements and Functions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey1.html">ABS-ENVELOPE</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey2.html">EOF#-LOMEM</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey3.html">MID$-PRINT</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbckey4.html">PRINT#-WIDTH</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys0.html">Operating System Interface</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="opsys1.html">Resident Star Commands</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile1.html">BBC BASIC (Z80) Disk Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile2.html">Serial Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile3.html">Random (Relative) Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="bbcfile4.html">Indexed Data Files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexa.html">Table of ASCII Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexb.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexc.html">Error Messages and Codes</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="annexd.html">Format of Program and Variables in Memory</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="copyright.html">Copyrights</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BBC BASIC (Z80) for the Agon Light</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="index.html">BBC BASIC (Z80) for the Agon Light</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">BBC BASIC (Z80) for the Agon Light</a></li>
+    <li><a href="001_GeneralInformation.html">001_GeneralInformation.adoc</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/oldpatientsea/agon-bbc-basic-manual/edit/main/modules/ROOT/pages/001_GeneralInformation.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="_general_information"><a class="anchor" href="#_general_information"></a>General Information</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introduction"><a class="anchor" href="#_introduction"></a><span id="introduction">Introduction</span></h3>
+<div class="sect3">
+<h4 id="_line_numbers"><a class="anchor" href="#_line_numbers"></a><span id="linenumbers">Line Numbers</span></h4>
+<div class="paragraph">
+<p>Line numbers up to 65535 are allowed. If line 65535 does not exist, then GOTO 65535 is equivalent to END. Line number 0 is not permitted.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_statement_separators"><a class="anchor" href="#_statement_separators"></a><span id="separators">Statement Separators</span></h4>
+<div class="paragraph">
+<p>When it is necessary to write more than one statement on a line, the statements may be separated by a colon ':'. BBC BASIC (Z80) will tolerate the omission of the separator if this does not lead to ambiguity. It&#8217;s safer to leave it in and the program is easier to read.</p>
+</div>
+<div class="paragraph">
+<p>For example, the following will work.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 10 FOR i=1 TO 5 PRINT i : NEXT</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_line_editor"><a class="anchor" href="#_the_line_editor"></a><span id="editing">The Line Editor</span></h3>
+<div class="paragraph">
+<p>The <a href="bbckey1.html#edit">EDIT</a> command may be used to edit or concatenate-and-edit the specified program line(s). The specified lines (including their line numbers) are listed as a single line. By changing only the line number, you can also use EDIT to duplicate a line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">*EDIT 230
+*EDIT 200,230</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following control functions are active in the immediate and edit modes and in response to an <a href="bbckey2.html#input">INPUT</a> command in a program. The codes shown are the default codes as supplied; they may be changed by editing the <strong>BBCDIST.MAC</strong> <a href="bbc1.html#configuration">patch program</a>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/E</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move the cursor up one line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move the cursor down one line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move the cursor left one character</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move the cursor right one character</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move the cursor to the start of the line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/F</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move the cursor to the end of the line</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Del</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Backspace and delete</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/G</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete the character at the cursor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/U</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clear line to the left of the cursor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clear the line to the right of the cursor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ctrl/V</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insert a space at the cursor position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Enter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the line and exit the edit mode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Esc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abort and leave the line unchanged</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>To abort the single line editor and leave the line unchanged, press &lt;Esc&gt;.</p>
+</div>
+<div class="paragraph">
+<p>You can use the <a href="bbckey1.html#edit">EDIT</a> command to edit and join (concatenate) program lines. When you use it to join lines, remember to delete any unwanted ones. EDIT on its own will start at the beginning of the program and concatenate as many lines as it can. This process will stop when the concatenated line length exceeds 255.</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_expression_priority"><a class="anchor" href="#_expression_priority"></a><span id="expression">Expression Priority</span></h3>
+<div class="sect3">
+<h4 id="_order_of_evaluation"><a class="anchor" href="#_order_of_evaluation"></a><span id="evaluation">Order of Evaluation</span></h4>
+<div class="paragraph">
+<p>The various mathematical and logical operators have a priority order. The computer will evaluate an expression taking this priority order into account. Operators with the same priority will be evaluated from left to right. For example, in a line containing multiplication and subtraction, ALL the multiplications would be performed before any of the subtractions were carried out. The various operators are listed below in priority order.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">variables  functions  ()  !  ?  &amp;  unary+-  NOT
+^
+*  /  MOD  DIV
++  -
+=  &lt;&gt;  &lt;=  &gt;=  &gt;  &lt;
+AND
+EOR  OR</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_examples"><a class="anchor" href="#_examples"></a><span id="examples">Examples</span></h4>
+<div class="paragraph">
+<p>The following are some examples of the way expression priority can be used. It often makes things easier for us humans to understand if you include the brackets whether the computer needs them or not.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">IF A=2 AND B=3 THEN
+IF ((A=2)AND(B=3))THEN
+
+IF A=1 OR C=2 AND B=3 THEN
+IF((A=1)OR((C=2)AND(B=3)))THEN
+
+IF NOT(A=1 AND B=2) THEN
+IF(NOT((A=1)AND(B=2)))THEN
+
+N=A+B/C-D N=A+(B/C)-D
+N=A/B+C/D N=(A/B)+(C/D)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_variables"><a class="anchor" href="#_variables"></a><span id="variables">Variables</span></h3>
+<div class="sect3">
+<h4 id="_specification"><a class="anchor" href="#_specification"></a><span id="specification">Specification</span></h4>
+<div class="paragraph">
+<p>Variable names may be of unlimited length and all characters are significant. Variable names must start with a letter. They can only contain the characters A..Z, a..z, 0..9 and underline. Embedded keywords are allowed. Upper and lower case variables of the same name are different.</p>
+</div>
+<div class="paragraph">
+<p>The following types of variable are allowed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A:  real numeric</p>
+</li>
+<li>
+<p>A%: integer numeric</p>
+</li>
+<li>
+<p>A$: string</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_numeric_variables"><a class="anchor" href="#_numeric_variables"></a><span id="numeric">Numeric Variables</span></h4>
+<div class="sect4">
+<h5 id="_real_variables"><a class="anchor" href="#_real_variables"></a><span id="real">Real Variables</span></h5>
+<div class="paragraph">
+<p>Real variables have a range of ±5.9E-39 to ±3.4E38 and numeric functions evaluate to 9 significant figure accuracy. Internally every real number is stored in 40 bits (5 bytes). The number is composed of a 4 byte mantissa and a single byte exponent. An explanation of how variables are stored is given at <a href="annexd.html">Annex D</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_integer_variables"><a class="anchor" href="#_integer_variables"></a><span id="integer">Integer Variables</span></h5>
+<div class="paragraph">
+<p>Integer variables are stored in 32 bits and have a range of +2147483647 to -2147483648. It is not necessary to declare a variable as an integer for advantage to be taken of fast integer arithmetic. For example, FOR&#8230;&#8203;NEXT loops execute at integer speed whether or not the control variable is an 'integer variable' (% type), so long as it has an integer value.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_static_variables"><a class="anchor" href="#_static_variables"></a><span id="static">Static Variables</span></h5>
+<div class="paragraph">
+<p>The variables A%..Z% are a special type of integer variable in that they are not cleared by the statements <a href="bbckey4.html#run">RUN</a>, <a href="bbckey1.html#chain">CHAIN</a> and <a href="bbckey1.html#clear">CLEAR</a>. In addition A%, B%, C%, D%, E%, H% and L% have special uses in <a href="bbckey1.html#call">CALL</a> and <a href="bbckey4.html#usr">USR</a> routines and P% and O% have a special meaning in the <a href="bbc3.html">assembler</a> (P% is the program counter and O% points to the code origin). The special variable @% controls numeric <a href="bbckey3.html#print">print formatting</a>. The variables @%..Z% are called 'static', all other variables are called 'dynamic'.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_boolean_variables"><a class="anchor" href="#_boolean_variables"></a><span id="boolean">Boolean Variables</span></h5>
+<div class="paragraph">
+<p>Boolean variables can only take one of the two values TRUE or FALSE. Unfortunately, BBC BASIC does not have true boolean variables. However, it does allow numeric variables to be used for logical operations. The operands are converted to 4 byte integers (by truncation) before the logical operation is performed. For example:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">` PRINT NOT 1.5         -2`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The argument, 1.5, is truncated to 1 and the logical inversion of this gives -2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">` PRINT NOT -1.5          0`</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The argument is truncated to -1 and the logical inversion of this gives 0</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Two numeric functions, <a href="bbckey4.html#true">TRUE</a> and <a href="bbckey2.html#false">FALSE</a>, are provided. TRUE returns the value -1 and FALSE the value 0. These values allow the logical operators (NOT, AND, EOR and OR) to work properly. However, anything which is non-zero is considered to be TRUE. This can give rise to confusion, since +1 is considered to be TRUE and NOT(+1) is -2, which is also considered to be TRUE.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_numeric_accuracy"><a class="anchor" href="#_numeric_accuracy"></a><span id="accuracy">Numeric Accuracy</span></h5>
+<div class="paragraph">
+<p>Numbers are stored in binary format. Integers and the mantissa of real numbers are stored in 32 bits. This gives a maximum accuracy of just over 9 decimal digits. It is possible to display up to 10 digits before switching to exponential (scientific) notation (<a href="bbckey3.html#print">PRINT</a> and <a href="bbckey4.html#str">STR$</a>). This is of little use when displaying real numbers because the accuracy of the last digit is suspect, but it does allow the full range of integers to be displayed. Numbers up to the maximum integer value may be entered as a decimal constant without any loss of accuracy. For instance, A%=2147483647 is equivalent to A%=&amp;7FFFFFFF.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_string_variables_and_garbage"><a class="anchor" href="#_string_variables_and_garbage"></a><span id="stringsetc">String Variables and Garbage</span></h4>
+<div class="sect4">
+<h5 id="_strings"><a class="anchor" href="#_strings"></a><span id="strings">Strings</span></h5>
+<div class="paragraph">
+<p>String variables may contain up to 255 characters. An explanation of how variables are stored is given at the Annex entitled <a href="annexd.html">Format of Program and Variables in Memory</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_garbage_generation"><a class="anchor" href="#_garbage_generation"></a><span id="garbage">Garbage Generation</span></h5>
+<div class="paragraph">
+<p>Unlike numeric variables, string variables do not have a fixed length. When you create a string variable, the memory used is sufficient for the initial value of the string. If you subsequently assign a longer string to the variable there will be insufficient room for it and the string will have to occupy a different area in memory. The initial area will then become 'dead'. These areas of 'dead' memory are called garbage. As more and more re-assignments take place, the area of memory used for the variables grows and eventually there is no more room. Several versions of BASIC have automatic 'garbage collection' routines which tidy up the variable memory space when this occurs. Unfortunately, this can take several seconds and can be embarrassing if your program is time conscious. BBC BASIC does not incorporate 'garbage collection' routines and it is possible to run out of room for variables even though there should be enough space.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_memory_allocation"><a class="anchor" href="#_memory_allocation"></a><span id="memory">Memory Allocation</span></h5>
+<div class="paragraph">
+<p>You can overcome the problem of 'garbage' by reserving enough memory for the longest string you will ever put into a variable before you use it. You do this simply by assigning a string of spaces to the variable. If your program needs to find an empty string the first time it is used, you can subsequently assign a null string to it. The same technique can be used for string arrays. The example below sets up a single dimensional string array with room for 20 characters in each entry, and then empties it ready for use.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 DIM names$(10)
+20 FOR i=0 TO 10
+30   name$(i)=STRING$(20," ")
+40 NEXT
+50 stop$="";
+60 FOR i=0 TO 10
+70   name$(i)="";
+80 NEXT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Assigning a null string to <code>stop$</code> prevents the space for the last entry in the array being recovered when it is emptied.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_arrays"><a class="anchor" href="#_arrays"></a><span id="arrays">Arrays</span></h4>
+<div class="paragraph">
+<p>Arrays of integer, real and string variables are allowed. All arrays must be dimensioned before use. Integers, reals and strings cannot be mixed in a multi-dimensional array; you have to use one array for each type of variable you need.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_program_flow_control"><a class="anchor" href="#_program_flow_control"></a><span id="programflow">Program Flow Control</span></h3>
+<div class="sect3">
+<h4 id="_introduction_2"><a class="anchor" href="#_introduction_2"></a><span id="flowintro">Introduction</span></h4>
+<div class="paragraph">
+<p>Whenever BBC BASIC (Z80) comes across a <a href="bbckey2.html#for">FOR</a>, <a href="bbckey4.html#repeat">REPEAT</a>, <a href="bbckey2.html#gosub">GOSUB</a>, <a href="bbckey2.html#fn">FN</a> or <a href="bbckey4.html#proc">PROC</a> statement, it needs to remember where it is in the program so that it can loop back or return there when it encounters a line with <a href="bbckey3.html#next">NEXT</a>, <a href="bbckey4.html#until">UNTIL</a> or <a href="bbckey4.html#return">RETURN</a> statement or when it reaches the end of a function or procedure. These 'return addresses' tell BBC BASIC (Z80) where it is in the structure of your program.</p>
+</div>
+<div class="paragraph">
+<p>Every time BBC BASIC (Z80) encounters a FOR, REPEAT, GOSUB, FN or PROC statement it 'pushes' the return address on to a 'stack' and every time it encounters a NEXT, UNTIL, RETURN statement or the end of a function or procedure it 'pops' the latest return address of the stack and goes back there.</p>
+</div>
+<div class="paragraph">
+<p>Unlike the BBC Micro, which has separate stacks for FOR&#8230;&#8203;NEXT, REPEAT&#8230;&#8203;UNTIL GOSUB&#8230;&#8203;RETURN and FN/PROC operations, BBC BASIC (Z80) uses a single control stack (the processor&#8217;s hardware stack) for all looping and nesting operations. The main effects of this difference are discussed below.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_loop_operation_errors"><a class="anchor" href="#_loop_operation_errors"></a><span id="looperrors">Loop Operation Errors</span></h4>
+<div class="paragraph">
+<p>Apart from memory size, there is no limit to the level of nesting of <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a>, <a href="bbckey4.html#repeat">REPEAT</a>&#8230;&#8203;<a href="bbckey4.html#until">UNTIL</a> and <a href="bbckey2.html#gosub">GOSUB</a>&#8230;&#8203;<a href="bbckey4.html#return">RETURN</a> operations. The untrappable error message <a href="annexc.html#noroom">'No room</a>' will be issued if all the stack space is used up. Because a single stack is used, the following error messages do not exist.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">Too many FORs
+Too many REPEATs
+Too many GOSUBs</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_program_structure_limitations"><a class="anchor" href="#_program_structure_limitations"></a><span id="structure">Program Structure Limitations</span></h4>
+<div class="paragraph">
+<p>The use of a common stack has one disadvantage (if it is a disadvantage) in that it forces stricter adherence to proper program structure. It is not good practice to exit from a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop without passing through the NEXT statement. It makes the program more difficult to understand and the FOR address is left on the stack. Similarly, the loop or return address is left on the stack if a <a href="bbckey4.html#repeat">REPEAT</a>&#8230;&#8203;<a href="bbckey4.html#until">UNTIL</a> loop or a <a href="bbckey2.html#gosub">GOSUB</a>&#8230;&#8203;<a href="bbckey4.html#return">RETURN</a> structure is incorrectly exited. This means that if you leave a FOR..NEXT loop without executing the NEXT statement, and then subsequently encounter, for example, a RETURN statement, BBC BASIC (Z80) will report an error. (In this case, a '<a href="annexc.html#nogosub">No GOSUB</a> at line nnnn' error.) The example below would result in the error message '<a href="annexc.html#noproc">No PROC</a> at line 500'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">400 ...
+410 INPUT "What number should I stop at", num
+420 PROC_error_demo
+430 END
+440 :
+450 DEF PROC_error_demo
+460 FOR i=1 TO 100
+470   PRINT i;
+480   IF i=num THEN 500
+490 NEXT i
+500 ENDPROC</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>BBC BASIC (Z80) is a little unusual in detecting this error, but it is always risky. It usually results in an inconsistent program structure and an unexpected 'Too many FORs/REPEATs/GOSUBs' error on the BBC Micro when the control stack overflows.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_leaving_program_loops"><a class="anchor" href="#_leaving_program_loops"></a><span id="leavingloops">Leaving Program Loops</span></h4>
+<div class="paragraph">
+<p>There are a number of ways to leave a program loop which do not conflict with the need to write tidy program structures. These are discussed below.</p>
+</div>
+<div class="sect4">
+<h5 id="_repeatuntil_loops"><a class="anchor" href="#_repeatuntil_loops"></a><span id="repeatuntil">REPEAT&#8230;&#8203;UNTIL Loops</span></h5>
+<div class="paragraph">
+<p>The simplest way to overcome the problem of exiting a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop is to restructure it as a <a href="bbckey4.html#repeat">REPEAT</a>&#8230;&#8203;<a href="bbckey4.html#until">UNTIL</a> loop. The example below performs the same function as the previous example, but exits the structure properly. It has the additional advantage of more clearly showing the conditions which will cause the loop to be terminated.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">400 ...
+410 INPUT "What number should I stop at", num
+420 PROC_error_demo
+430 END
+440 :
+450 DEF PROC_error_demo
+460 i=0
+470 REPEAT
+480   i=i+1
+490   PRINT i;
+500 UNTIL i=100 OR i=num
+510 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_changing_the_loop_variable"><a class="anchor" href="#_changing_the_loop_variable"></a><span id="changing">Changing the Loop Variable</span></h5>
+<div class="paragraph">
+<p>A simple way of forcing an exit from a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop is to set the loop variable to a value equal to the limit value and then <a href="bbckey2.html#goto">GOTO</a> to the NEXT statement. alternatively, you could set the loop variable to a value greater than the limit (assuming a positive step), but in this case the value on exit would be different depending on why the loop was terminated. (In some circumstances, this may be an advantage.) The example below uses this method to exit from the loop. Notice, however, that the conditions which cause the loop to terminate are less clear since they do not appear together.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">400 ...
+410 INPUT "What number should I stop at", num
+420 PROC_error_demo
+430 END
+440 :
+450 DEF PROC_error_demo
+460 FOR i=1 TO 100
+470   PRINT i;
+480   IF i=num THEN i=500: GOTO 510
+490   ....
+500 More program here if necessary
+510 NEXT
+520 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_popping_the_inner_variable"><a class="anchor" href="#_popping_the_inner_variable"></a><span id="popping">Popping the Inner Variable</span></h5>
+<div class="paragraph">
+<p>A less satisfactory way of exiting a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop is to enclose the loop in a dummy outer loop and rely on BBC BASIC (Z80)'s ability to 'pop' inner control variables off the stack until they match. If you use this method you MUST include the variable name in the NEXT statement. This method, which is demonstrated below, is very artificial and the conditions which cause the loop to terminate are unclear.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">400 ...
+410 INPUT "What number should I stop at", num
+420 PROC_error_demo
+430 END
+440 :
+450 DEF PROC_error_demo
+460 FOR dummy=1 TO 1 :REM Loop once only
+470 FOR i=1 TO 100
+480   PRINT i;
+490   IF i=num THEN 530 :REM Jump to outer NEXT
+500   ...
+510 More program here if necessary
+520 NEXT i
+530 NEXT dummy
+540 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_local_variables"><a class="anchor" href="#_local_variables"></a><span id="localstack">Local Variables</span></h4>
+<div class="paragraph">
+<p>Since local variables are also stored on the processor&#8217;s stack, you cannot use a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop to make an array <a href="bbckey2.html#local">LOCAL</a>. For example, the following program will give the the error message '<a href="annexc.html#notlocal">Not LOCAL</a> at line 400'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">380 DEF PROC_error_demo
+390 FOR i=1 TO 10
+400   LOCAL data(i)
+410 NEXT
+420 ENDPROC</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can overcome this by fabricating the loop using an <a href="bbckey2.html#if">IF</a>&#8230;&#8203;<a href="bbckey4.html#then">THEN</a> statement as shown below. This is probably the only occasion when the use of a single stack promotes poor program structure.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">380 DEF PROC_error_demo
+390 i=1
+400 LOCAL data(i)
+410 i=i+1
+420 IF i&lt;11 THEN 400
+430 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_stack_pointer"><a class="anchor" href="#_stack_pointer"></a><span id="stack">Stack Pointer</span></h4>
+<div class="paragraph">
+<p>The program stack is initialised to begin at <a href="bbckey2.html#himem">HIMEM</a> and, because of this, you cannot change the value of HIMEM when there is anything on the stack. As a result, you cannot change HIMEM from within a <a href="#procedures">procedure</a>, <a href="#procedures">function</a>, subroutine, <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop or <a href="bbckey4.html#repeat">REPEAT</a>&#8230;&#8203;<a href="bbckey4.html#until">UNTIL</a> loop.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_indirection"><a class="anchor" href="#_indirection"></a><span id="indirection">Indirection</span></h3>
+<div class="sect3">
+<h4 id="_introduction_3"><a class="anchor" href="#_introduction_3"></a><span id="indirintro">Introduction</span></h4>
+<div class="paragraph">
+<p>Most versions of BASIC allow access to the computer&#8217;s memory with the PEEK function and the POKE command. Such access, which is limited to one byte at a time, is sufficient for setting and reading screen locations or 'flags', but it is difficult to use for building more complicated data structures. The indirection operators provided in BBC BASIC (Z80) enable you to read and write to memory in a far more flexible way. They provide a simple equivalent of PEEK and POKE, but they come into their own when used to pass data between <a href="bbckey1.html#chain">CHAIN</a>ed programs, build complicated data structures or for use with machine code programs.</p>
+</div>
+<div class="paragraph">
+<p>The addresses used by the indirection operators are offsets from the base of the BBC BASIC&#8217;s data area (virtual addresses). Consequently, you cannot use the indirection operators to modify the BBC BASIC program or the value of its internal variables.</p>
+</div>
+<div class="paragraph">
+<p>When running BBC BASIC (Z80) you only 'see' the data segment. Thus, the indirection operators can only access this region of memory.</p>
+</div>
+<div class="paragraph">
+<p>BIGBASIC can 'see' all the computer&#8217;s memory up from the base of the data area and the indirection operators will accept 20-bit addresses in the range &amp;00000 to &amp;FFFFF. However, these addresses are still referenced to the base of the data areas; they are not true machine addresses.</p>
+</div>
+<div class="paragraph">
+<p>There are three indirection operators:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-center valign-top"><strong>Symbol</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Purpose</strong></th>
+<th class="tableblock halign-center valign-top"><strong>No. of Bytes Affected</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Byte Indirection Operator</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclamation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">!</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Word Indirection Operator</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dollar</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String Indirection Operator</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1 to 256</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_query"><a class="anchor" href="#_query"></a><span id="query">Query</span></h4>
+<div class="sect4">
+<h5 id="_byte_access"><a class="anchor" href="#_byte_access"></a><span id="byte">Byte Access</span></h5>
+<div class="paragraph">
+<p>The query operator accesses individual bytes of memory. ?M means 'the contents of' memory location 'M'. The first two examples below write &amp;23 to memory location &amp;4FA2, the second two examples set 'number' to the contents of that memory location and the third two examples print the contents of that memory location.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">     ?&amp;4FA2=&amp;23
+or
+     memory=&amp;4FA2
+     ?memory=&amp;23</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">     number=?&amp;4FA2
+or
+     memory=&amp;4FA2
+     number=?memory</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">     PRINT ?&amp;4FA2
+or
+     memory=&amp;4FA2
+     PRINT ?memory</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Thus, '?' provides a direct replacement for PEEK and POKE.</p>
+</div>
+<div class="paragraph">
+<p><code>?A=B ` is equivalent to ` POKE A,B</code><br>
+<code>B=?A ` is equivalent to ` B=PEEK(A)</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_query_as_a_byte_variable"><a class="anchor" href="#_query_as_a_byte_variable"></a><span id="bytequery">Query as a Byte Variable</span></h5>
+<div class="paragraph">
+<p>A byte variable, '?count' for instance, may be used as the control variable in a <a href="bbckey2.html#for">FOR</a>&#8230;&#8203;<a href="bbckey3.html#next">NEXT</a> loop and only one byte of memory will be used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">DIM count% 0
+FOR ?count%=0 TO 20
+  ...
+
+  ...
+NEXT</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exclamation"><a class="anchor" href="#_exclamation"></a><span id="exclamation">Exclamation</span></h4>
+<div class="paragraph">
+<p>The query (?) indirection operator works on one byte of memory. The word indirection operator (!) works on 4 bytes (an integer word) of memory. Thus,</p>
+</div>
+<div class="paragraph">
+<p>` !M=&amp;12345678`</p>
+</div>
+<div class="paragraph">
+<p>would load</p>
+</div>
+<div class="paragraph">
+<p><code>&amp;78</code> into address M<br>
+<code>&amp;56</code> into address M+1<br>
+<code>&amp;34</code> into address M+2<br>
+<code>&amp;12</code> into address M+3.<br></p>
+</div>
+<div class="paragraph">
+<p>and</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`PRINT ~!M  ` (print !M in hex format)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>would give</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`12345678`</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dollar"><a class="anchor" href="#_dollar"></a><span id="dollar">Dollar</span></h4>
+<div class="paragraph">
+<p>The string indirection operator ($) writes a string followed by a carriage-return (&amp;0D) into memory starting at the specified address. Do not confuse M$ with $M. The former is the familiar string variable whilst the latter means 'the string starting at memory location M'. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`$M="ABCDEF"`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>would load the <a href="annexa.html">ASCII</a> characters A to F into addresses M to M+5 and &amp;0D into address M+6, and</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`PRINT $M`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>would print</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`ABCDEF`</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_use_as_binary_operators"><a class="anchor" href="#_use_as_binary_operators"></a><span id="binaryoperators">Use as Binary Operators</span></h4>
+<div class="paragraph">
+<p>All the examples so far have used only one operand with the byte and word indirection operators. Provided the left-hand operand is a variable (such as 'memory') and not a constant, '?' and '!' can also be used as binary operators. (In other words, they can be used with two operands.) For instance, M?3 means 'the contents of memory location M plus 3' and M!3 means 'the contents of the 4 bytes starting at M plus 3'. In the following example, the contents of memory location &amp;4000 plus 5 (&amp;4005) is first set to &amp;50 and then printed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">memory=&amp;4000
+memory?5=&amp;50
+PRINT memory?5</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Thus,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`A?I=B ` is equivalent to ` POKE A+I,B` +
+`B=A?I ` is equivalent to ` B=PEEK(A+I)`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The two examples below show how two operands can be used with the byte indirection operator (?) to examine the contents of memory. The first example displays the contents of 12 bytes of memory from location &amp;4000. The second example displays the memory contents for a real numeric variable. (See the Annex entitled <a href="annexd.html">Format of Program and Variables in Memory</a>.)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 memory=&amp;4000
+20 FOR offset=0 TO 12
+30   PRINT ~memory+offset, ~memory?offset
+40 NEXT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Line 30 prints the memory address and the contents in hexadecimal format.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 10 NUMBER=0
+ 20 DIM A% -1
+ 30 REPEAT
+ 40   INPUT"NUMBER PLEASE "NUMBER
+ 50   PRINT "&amp; ";
+ 60   FOR I%=2 TO 5
+ 70     NUM$=STR$~(A%?-I%)
+ 80     IF LEN(NUM$)=1 NUM$="0"+NUM$
+ 90     PRINT NUM$;" ";
+100   NEXT
+110   N%=A%?-1
+120   NUM$=STR$~(N%)
+130   IF LEN(NUM$)=1 NUM$="0"+NUM$
+140   PRINT " &amp; "+NUM$''
+150 UNTIL NUMBER=0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the Annex entitled <a href="annexd.html">Format of Program and Variables In Memory</a> for an explanation of this program.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_power_of_indirection_operators"><a class="anchor" href="#_power_of_indirection_operators"></a><span id="powerofindirection">Power of Indirection Operators</span></h4>
+<div class="paragraph">
+<p>Indirection operators can be used to create special data structures, and as such they are an extremely powerful feature. For example, a structure consisting of a 10 character string, an 8 bit number and a reference to a similar structure can be constructed.</p>
+</div>
+<div class="paragraph">
+<p>If M is the address of the start of the structure then:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>$M    is the string<br></p>
+</li>
+<li>
+<p>M?11  is the 8 bit number<br></p>
+</li>
+<li>
+<p>M!12  is the address of the related structure</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Linked lists and tree structures can easily be created and manipulated in memory using this facility.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operators_and_special_symbols"><a class="anchor" href="#_operators_and_special_symbols"></a><span id="operators">Operators and Special Symbols</span></h3>
+<div class="paragraph">
+<p>The following list is a rather terse summary of the meaning of the various operators and special symbols used by BBC BASIC (Z80). It is provided for reference purposes; you will find more detailed explanations elsewhere in this manual.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unary and binary operator giving <a href="#query">8 bit indirection</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">!</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A unary and binary operator giving <a href="#exclamation">32 bit indirection</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A delimiting character in strings. Strings always have an even number of " in them. " may be introduced into a string by the escape convention "".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">#</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Precedes reference to a file channel number (and is not optional).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">$</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A character indicating that the object has something to do with a string. The syntax <a href="#dollar">$&lt;expression&gt;</a> may be used to position a string anywhere in memory, overriding the interpreter&#8217;s space allocation. As a suffix on a variable name it indicates a string variable.<br>
+`$A="WOMBAT" `Store WOMBAT at address A followed by CR.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">%</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A suffix on a variable name indicating an integer variable.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&amp;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Precedes hexadecimal constants e.g. &amp;EF.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A character which causes new lines in <a href="bbckey3.html#print">PRINT</a> or <a href="bbckey2.html#input">INPUT</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">( )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objects in parentheses have highest priority.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'Becomes' for <a href="bbckey2.html#let">LET</a> statement and <a href="bbckey2.html#for">FOR</a>, 'result is' for <a href="bbckey2.html#fn">FN</a>, relation of equal to on integers, reals and strings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unary negation and binary subtraction on integers and reals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Binary multiplication on integers and reals; statement indicating operating system command (<a href="opsys1.html#dir">*DIR</a>, <a href="opsys1.html#opt">*OPT</a>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-statement line statement delimiter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Suppresses forthcoming action in <a href="bbckey3.html#print">PRINT</a>. Comment delimiter in the <a href="bbc3.html">assembler</a>. Delimiter in <a href="bbckey4.html#vdu">VDU</a> and <a href="bbckey2.html#input">INPUT</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unary plus and binary addition on integers and reals; concatenation between strings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delimiter in lists.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimal point in real constants; abbreviation symbol on <a href="#keywords">keyword</a> entry; introduce label in <a href="bbc3.html">assembler</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relation of less than on integers, reals and strings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relation of greater than on integers, reals and strings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Binary division on integers and reals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative comment delimiter in the <a href="bbc3.html">assembler</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8656;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relation of less than or equal on integers, reals and strings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relation of greater than or equal on integers, reals and strings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relation of not equal on integers, reals and strings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[ ]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delimiters for <a href="bbc3.html">assembler</a> statements. Statements between these delimiters may need to be assembled twice in order to resolve any forward references. The pseudo operation <a href="bbckey3.html#opt">OPT</a> (initially 3) controls errors and listing.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">^</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Binary operation of exponentation between integers and reals.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">~</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A character in the start of a print field indicating that the item is to be printed in hexadecimal. Also used with <a href="bbckey4.html#str">STR$</a> to cause conversion to a hexadecimal string.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_keywords"><a class="anchor" href="#_keywords"></a><span id="keywords">Keywords</span></h3>
+<div class="paragraph">
+<p>Keywords are recognized before anything else. (For example, <a href="bbckey1.html#deg">DEG</a> and <a href="bbckey1.html#asn">ASN</a> in DEGASN are recognized, but neither is recognized in ADEGASN.) Consequently, you don&#8217;t have to type a space between a keyword and a variable (but it does make it easier to read your program).</p>
+</div>
+<div class="paragraph">
+<p>Although they are keywords, the names of pseudo variables such as <a href="bbckey3.html#pi">PI</a>, <a href="bbckey2.html#lomem">LOMEM</a>, <a href="bbckey2.html#himem">HIMEM</a>, <a href="bbckey3.html#page">PAGE</a>, <a href="bbckey4.html#time">TIME</a>, etc, act as variables in that their names can form the first part of the name of another variable. For example, if A is a variable, then AB can also be a variable. Similarly, the name PI is not recognized in the name PILE; they are both unique variable names. However, PI%, PI$ etc. are not allowed. Since variables named in lower case will never be confused with keywords, many programmers use upper case only for keywords.</p>
+</div>
+<div class="paragraph">
+<p>Ninety-three out of the total of 123 keywords are not allowed in upper case at the start of a variable name (anything may be used in lower case). Those keywords that are allowed are shown in bold type.</p>
+</div>
+<div class="paragraph">
+<p>Keywords Available</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#abs">ABS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#acs">ACS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#adval">ADVAL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#and">AND</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#asc">ASC</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#asn">ASN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#atn">ATN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#auto">AUTO</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#bget">BGET</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#bput">BPUT</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#call">CALL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#chain">CHAIN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#chr">CHR$</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#clear">CLEAR</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#clg">CLG</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#close">CLOSE</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#cls">CLS</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#colour">COLOUR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#colour">COLOR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#cos">COS</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#count">COUNT</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#data">DATA</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#def">DEF</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#deg">DEG</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#delete">DELETE</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#dim">DIM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#div">DIV</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#draw">DRAW</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#else">ELSE</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#end">END</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey1.html#endproc">ENDPROC</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey1.html#envelope">ENVELOPE</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey2.html#eof">EOF</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#eor">EOR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey2.html#erl">ERL</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey2.html#err">ERR</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#error">ERROR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#eval">EVAL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#exp">EXP</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey2.html#ext">EXT</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey2.html#false">FALSE</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#fn">FN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#for">FOR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#gcol">GCOL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#get">GET</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#get">GET$</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#gosub">GOSUB</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#goto">GOTO</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey2.html#himem">HIMEM</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#if">IF</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#inkey">INKEY</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#inkey">INKEY$</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#input">INPUT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#instr">INSTR(</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#int">INT</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#left">LEFT$(</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#len">LEN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#let">LET</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#line">LINE</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#list">LIST</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#ln">LN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#load">LOAD</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#local">LOCAL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey2.html#log">LOG</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey2.html#lomem">LOMEM</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#mid">MID$(</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#mod">MOD</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#mode">MODE</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#move">MOVE</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey3.html#new">NEW</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#next">NEXT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#not">NOT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#off">OFF</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey3.html#old">OLD</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#on">ON</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#openin">OPENIN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#openout">OPENOUT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#openup">OPENUP</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#or">OR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#oscli">OSCLI</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey3.html#page">PAGE</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey3.html#pi">PI</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#plot">PLOT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#point">POINT()</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey3.html#pos">POS</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey3.html#print">PRINT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#proc">PROC</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#ptr">PTR</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#put">PUT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#rad">RAD</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#read">READ</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#rem">REM</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#renumber">RENUMBER</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#repeat">REPEAT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#report">REPORT</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#restore">RESTORE</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#return">RETURN</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#right">RIGHT$(</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#rnd">RND</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#run">RUN</a></strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#save">SAVE</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#sgn">SGN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#sin">SIN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#sound">SOUND</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#spc">SPC</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#sqr">SQR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#step">STEP</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#stop">STOP</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#str">STR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#string">STRING$(</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#tab">TAB(</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#tan">TAN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#then">THEN</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#time">TIME</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#to">TO</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#trace">TRACE</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#true">TRUE</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#until">UNTIL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#usr">USR</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#val">VAL</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#vdu">VDU</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><a href="bbckey4.html#vpos">VPOS</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="bbckey4.html#width">WIDTH</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_error_handling"><a class="anchor" href="#_error_handling"></a><span id="errorhandling">Error Handling</span></h3>
+<div class="sect3">
+<h4 id="_introduction_4"><a class="anchor" href="#_introduction_4"></a><span id="errorintro">Introduction</span></h4>
+<div class="sect4">
+<h5 id="_types_of_errors"><a class="anchor" href="#_types_of_errors"></a><span id="errortypes">Types of Errors</span></h5>
+<div class="paragraph">
+<p>Once you have written your program and removed all the syntax errors, you might think that your program is error free. Unfortunately life is not so simple, you have only passed the first hurdle. There are two kinds of errors which you could still encounter; errors of logic and run-time errors. Errors of logic are where BBC BASIC (Z80) understands exactly what you said, but what you said is not what you meant. Run-time errors are where something occurs during the running of the program which BBC BASIC (Z80) is unable to cope with. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">answer=A/B</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>is quite correct and it will work for all values of A. But if B is zero, the answer is 'infinity'. BBC BASIC (Z80) has no way of dealing with 'infinity' and it will report a '<a href="annexc.html#divisionbyzero">Division by zero</a>' error.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_trapping_errors"><a class="anchor" href="#_trapping_errors"></a><span id="trapping">Trapping Errors</span></h5>
+<div class="paragraph">
+<p>There is no way that BBC BASIC (Z80) can trap errors of logic, since it has no way of understanding what you really meant it to do. However, you can generally predict which of the run-time errors are likely to occur and include a special 'error handling' routine in your program to recover from them.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_reasons_for_trapping_errors"><a class="anchor" href="#_reasons_for_trapping_errors"></a><span id="reasons">Reasons for Trapping Errors</span></h5>
+<div class="paragraph">
+<p>Why would you want to take over responsibility for handling run-time errors? When BBC BASIC (Z80) detects a run-time error, it reports it and RETURNS TO THE COMMAND MODE. When you write a program for yourself, you know what you want it to do and you also know what it can&#8217;t do. If, by accident, you try to make it do something which could give rise to an error, you accept the fact that BBC BASIC (Z80) might terminate the program and return to the command mode. However, when somebody else uses your program they are not blessed with your insight and they may find the program 'crashing out' to the command mode without knowing what they have done wrong. Such programs are called 'fragile'. You can protect your user from much frustration if you predict what these problems are likely to be and include an error handling routine. In the example below, a '-ve root' error would occur if the number input was negative and BBC BASIC (Z80) would return to the command mode.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 REPEAT
+20   INPUT "Type in a number " num
+30   PRINT num," ",SQR(num)
+40   PRINT
+50 UNTIL FALSE:REM  Loop until the ESCape
+60 :REM key is pressed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">RUN
+Type in a number 5
+         5          2.23606798
+
+Type in a number 23
+        23          4.79583152
+
+Type in a number 2
+         2          1.41421356
+
+Type in a number -2
+        -2
+-ve root at line 30</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_error_trapping_commands"><a class="anchor" href="#_error_trapping_commands"></a><span id="errortrapping">Error Trapping Commands</span></h4>
+<div class="paragraph">
+<p>The <strong>ON ERROR</strong> command directs BBC BASIC (Z80) to execute the statement(s) following ON ERROR when a trappable error occurs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">ON ERROR PRINT '"Oh No!":END</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If an error was detected in a program after this line had been encountered, the message 'Oh No!' would be printed and the program terminated. If, as in this example, the ON ERROR line contains the END statement or transfers control elsewhere (e.g. using GOTO) then the position of the line within the program is unimportant <em>so long as it is encountered before the error occurs</em>. If there is no transfer of control, execution following the error continues as usual on the succeeding line, so in this case the position of the ON ERROR line can matter.</p>
+</div>
+<div class="paragraph">
+<p>As explained in the <a href="#programflow">Program Flow Control</a> sub-section, every time BBC BASIC (Z80) encounters a <a href="bbckey2.html#for">FOR</a>, <a href="bbckey4.html#repeat">REPEAT</a>, <a href="bbckey2.html#gosub">GOSUB</a>, <a href="bbckey2.html#fn">FN</a> or <a href="bbckey4.html#proc">PROC</a> statement it 'pushes' the return address on to a 'stack' and every time it encounters a <a href="bbckey3.html#next">NEXT</a>, <a href="bbckey4.html#until">UNTIL</a>, <a href="bbckey4.html#return">RETURN</a> statement or the end of a function or procedure it 'pops' the latest return address of the stack and goes back there. The program stack is where BBC BASIC (Z80) records where it is within the structure of your program.</p>
+</div>
+<div class="paragraph">
+<p>When an error is detected by BBC BASIC (Z80), the stack is cleared. Thus, you cannot just take any necessary action depending on the error and return to where you were because BBC BASIC (Z80) no longer knows where you were.</p>
+</div>
+<div class="paragraph">
+<p>If an error occurs within a procedure or function, the value of any PRIVATE variables will be the last value they were set to within the procedure or function which gave rise to the error.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_error_reporting"><a class="anchor" href="#_error_reporting"></a><span id="errorreporting">Error Reporting</span></h4>
+<div class="paragraph">
+<p>There are two functions, <a href="bbckey2.html#err">ERR</a> and <a href="bbckey2.html#erl">ERL</a>, and one statement, <a href="bbckey4.html#report">REPORT</a>, which may be used to investigate and report on errors. Using these, you can trap out errors, check that you can deal with them and abort the program run if you cannot.</p>
+</div>
+<div class="sect4">
+<h5 id="_err"><a class="anchor" href="#_err"></a><span id="err">ERR</span></h5>
+<div class="paragraph">
+<p><a href="bbckey2.html#err">ERR</a> returns the error number (see the Annex entitled <a href="annexc.html">Error Messages and Codes</a>).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_erl"><a class="anchor" href="#_erl"></a><span id="erl">ERL</span></h5>
+<div class="paragraph">
+<p><a href="bbckey2.html#erl">ERL</a> returns the line number where the error occurred. If an error occurs in a procedure or function call, ERL will return the number of the calling line, not the number of the line in which the procedure/function is defined. If an error in a <a href="bbckey1.html#data">DATA</a> statement causes a <a href="bbckey4.html#read">READ</a> to fail, ERL will return the number of the line containing the READ statement, not the number of the line containing the DATA.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_report"><a class="anchor" href="#_report"></a><span id="report">REPORT</span></h5>
+<div class="paragraph">
+<p><a href="bbckey4.html#report">REPORT</a> prints out the error string associated with the last error which occurred.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_error_trapping_examples"><a class="anchor" href="#_error_trapping_examples"></a><span id="errorexamples">Error Trapping Examples</span></h4>
+<div class="paragraph">
+<p>The example below does not try to deal with errors, it just uses <a href="bbckey2.html#err">ERR</a>, <a href="bbckey2.html#erl">ERL</a> and <a href="bbckey4.html#report">REPORT</a> to tell the user about the error. Its only advantage over BBC BASIC (Z80)'s normal error handling is that it gives the error number; it would probably not be used in practice. As you can see from the second run, pressing &lt;ESC&gt; is treated as an error (number 17).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">  5 ON ERROR GOTO 100
+ 10 REPEAT
+ 20   INPUT "Type a number " num
+ 30   PRINT num," ",SQR(num)
+ 40   PRINT
+ 50 UNTIL FALSE
+ 60 :
+ 70 :
+100 PRINT
+110 PRINT "Error No ";ERR
+120 REPORT:PRINT " at line ";ERL
+130 END</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">RUN
+Type a number 1
+         1
+Type a number -2
+        -2
+Error No 21
+-ve root at line 30
+
+
+RUN
+Type a number &lt;Esc&gt;
+Error No 17
+Escape at line 20</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The example below has been further expanded to include error trapping. The only 'predictable' error is that the user will try a negative number. Any other error is unacceptable, so it is reported and the program aborted. Consequently, when &lt;ESC&gt; is used to abort the program, it is reported as an error. However, a further test for ERR=17 could be included so that the program would halt on ESCAPE without an error being reported.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">  5 ON ERROR GOTO 100
+ 10 REPEAT
+ 20  INPUT "Type a number " num
+ 30   PRINT num," ",SQR(num)
+ 40  PRINT
+ 50 UNTIL FALSE
+ 60 :
+ 70 :
+100 PRINT
+110 IF ERR=21 THEN PRINT "No negatives":GOTO 10
+120 REPORT:PRINT " at line ";ERL
+130 END</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">RUN
+Type a number 5
+         5          2.23606798
+
+
+Type a number 2
+         2          1.41421356
+
+
+Type a number -1
+        -1
+No negatives
+
+
+Type a number 4
+         4          2
+
+
+Type a number &lt;Esc&gt;
+Escape at line 20</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above example is very simple and was chosen for clarity. In practice, it would be better to test for a negative number before using SQR rather than trap the '<a href="annexc.html#negativeroot">-ve root</a>' error. A more realistic example is the evaluation of a user-supplied HEX number, where trapping '<a href="annexc.html#badhex">Bad hex</a>' would be much easier than testing the input string beforehand.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 10 ON ERROR GOTO 100
+ 20 REPEAT
+ 30   INPUT "Type a HEX number " input$
+ 40   num=EVAL("&amp;"+input$)
+ 50   PRINT input$,num
+ 60   PRINT
+ 70 UNTIL FALSE
+ 80 :
+ 90 :
+100 PRINT
+110 IF ERR=28 THEN PRINT "Not hex":GOTO 20
+120 REPORT:PRINT " at line ";ERL
+130 END</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_procedures_and_functions"><a class="anchor" href="#_procedures_and_functions"></a><span id="procedures">Procedures and Functions</span></h3>
+<div class="sect3">
+<h4 id="_introduction_5"><a class="anchor" href="#_introduction_5"></a><span id="procintro">Introduction</span></h4>
+<div class="paragraph">
+<p>Procedures and functions are similar to subroutines in that they are 'bits' of program which perform a discrete function. Like subroutines, they can be performed (called) from several places in the program. However, they have two great advantages over subroutines: you can refer to them by name and the variables used within them can be made private to the procedure or function.</p>
+</div>
+<div class="paragraph">
+<p>Arguably, the major advantage of procedures and functions is that they can be referred to by name. Consider the two similar program lines below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">100 IF name$="ZZ" THEN GOSUB 500 ELSE GOSUB 800</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">100 IF name$="ZZ" THEN PROC_end ELSE PROC_print</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first statement gives no indication of what the subroutines at 500 and 800 actually do. The second, however, tells you what to expect from the two procedures. This enhanced readability stems from the choice of meaningful names for the two procedures.</p>
+</div>
+<div class="paragraph">
+<p>A function often carries out a number of actions, but it always produces a single result. For instance, the 'built in' function <a href="bbckey2.html#int">INT</a> returns the integer part of its argument.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">age=INT(months/12)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A procedure on the other hand, is specifically intended to carry out a number of actions, some of which may affect program variables, but it does not directly return a result.</p>
+</div>
+<div class="paragraph">
+<p>Whilst BBC BASIC (Z80) has a large number of pre-defined functions (<a href="bbckey2.html#int">INT</a> and <a href="bbckey2.html#len">LEN</a> for example) it is very useful to be able to define your own to do something special. Suppose you had written a function called FN_discount to calculate the discount price from the normal retail price. You could write something similar to the following example anywhere in your program where you wished this calculation to be carried out.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">discount_price=FN_discount(retail_price)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It may seem hardly worth while defining a function to do something this simple. However, functions and procedures are not confined to single line definitions and they are very useful for improving the structure and readability of your program.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_names"><a class="anchor" href="#_names"></a><span id="names">Names</span></h4>
+<div class="paragraph">
+<p>The names of procedures and functions MUST start with <a href="bbckey4.html#proc">PROC</a> or <a href="bbckey2.html#fn">FN</a> and, like variable names, they cannot contain spaces. (A space tells BBC BASIC (Z80) that it has reached the end of the word.) This restriction can give rise to some pretty unreadable names. However, the underline character can be used to advantage. Consider the procedure and function names below and decide which is the easier to read.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">PROCPRINTDETAILS      FNDISCOUNT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">PROC_print_details    FN_discount</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Function and procedure names may end with a '$'. However, this is not compulsory for functions which return strings.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_functions_and_procedure_definitions"><a class="anchor" href="#_functions_and_procedure_definitions"></a><span id="definitions">Functions and Procedure Definitions</span></h4>
+<div class="sect4">
+<h5 id="_starting_a_definition"><a class="anchor" href="#_starting_a_definition"></a><span id="starting">Starting a Definition</span></h5>
+<div class="paragraph">
+<p>Functions and procedure definitions are 'signalled' to BBC BASIC (Z80) by preceding the function or procedure name with the keyword <a href="bbckey1.html#def">DEF</a>. DEF must be at the beginning of the line. If the computer encounters DEF during execution of the program, the rest of the line is ignored. Consequently, you can put single line definitions anywhere in your program.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_functionprocedure_body"><a class="anchor" href="#_the_functionprocedure_body"></a><span id="body">The Function/Procedure Body</span></h5>
+<div class="paragraph">
+<p>The 'body' of a procedure or function must not be executed directly - it must be performed (called) by another part of the program. Since BBC BASIC (Z80) only skips the rest of the line when it encounters <a href="bbckey1.html#def">DEF</a>, there is a danger that the remaining lines of a multi-line definition might be executed directly. You can avoid this by putting multi-line definitions at the end of the main program text after the <a href="bbckey1.html#end">END</a> statement. Procedures and functions do not need to be declared before they are used and there is no speed advantage to be gained by placing them at the start of the program.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ending_a_definition"><a class="anchor" href="#_ending_a_definition"></a><span id="ending">Ending a Definition</span></h5>
+<div class="paragraph">
+<p>The end of a procedure definition is indicated by the keyword <a href="bbckey1.html#endproc">ENDPROC</a>. The end of a function definition is signalled by using a statement which starts with an equals (=) sign. The function returns the value of the expression to the right of the equals sign.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_single_line_functionsprocedures"><a class="anchor" href="#_single_line_functionsprocedures"></a><span id="singleline">Single Line Functions/Procedures</span></h5>
+<div class="paragraph">
+<p>For single line definitions, the start and end are signalled on the same line. The first example below defines a function which returns the average of two numbers. The second defines a procedure which clears from the current cursor position to the end of line on a 40 column screen.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`120 DEF PROC_clear:PRINT SPC(40-POS);:ENDPROC`</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_extending_the_language"><a class="anchor" href="#_extending_the_language"></a><span id="extending">Extending the Language</span></h5>
+<div class="paragraph">
+<p>You can define a whole library of procedures and functions and include them in your programs. By doing this you can effectively extend the scope of the language. For instance, BBC BASIC (Z80) does not have a 'clear to end of screen' command. Some computers will perform this function on receipt of a sequence of control characters and in this case you can use <a href="bbckey4.html#vdu">VDU</a> or <a href="bbckey1.html#chr">CHR$</a> to send the appropriate codes. However, many computers do not have this facility and a procedure to clear to the end of the screen would be useful. The example below is a procedure to clear to the end of screen on a computer with an 80 by 24 display. In order to prevent the display from scrolling, you must not write to the last column of the last row. The three variables used (i, x, and y) are declared as <a href="bbckey2.html#local">LOCAL</a> to the procedure (see later).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">100 DEF PROC_clear_to_end
+110 LOCAL i,x,y
+120 x=POS:y=VPOS
+130 REM If not last line, print lines of spaces which
+140 REM will wrap around and end up on last line
+150 IF y&lt;23 FOR i=y TO 22:PRINT SPC(80);:NEXT
+160 REM Print spaces to end-1 of last line.
+170 PRINT SPC(79-x);
+180 PRINT TAB(x,y);
+190 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_passing_parameters"><a class="anchor" href="#_passing_parameters"></a><span id="parameters">Passing Parameters</span></h4>
+<div class="paragraph">
+<p>When you define a procedure or a function, you list the parameters to be passed to it in brackets. For instance, the discount example expected one parameter (the retail price) to be passed to it. You can write the definition to accept any number of parameters. For example, we may wish to pass both the retail price and the discount percentage. The function definition would then look something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">`DEF FN_discnt(price,pcent)=price*(1-pcent/100)`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this case, to use the function we would need to pass two parameters.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 90 ....
+100 retail_price=26.55
+110 discount_price=FN_discount(retail_price,25)
+120 ....</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 90 ....
+100 price=26.55
+110 discount=25
+120 price=FN_discount(price,discount)
+130 ....</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 90 ....
+100 price=FN_discount(26.55,25)
+110 ....</code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_formal_and_actual_parameters"><a class="anchor" href="#_formal_and_actual_parameters"></a><span id="formalactual">Formal and Actual Parameters</span></h5>
+<div class="paragraph">
+<p>The value of the first parameter in the line using the procedure or function is passed to the first variable named in the parameter list in the definition, the second to the second, and so on. This is termed 'passing by value'. The parameters declared in the definition are called 'formal parameters' and the values passed in the lines which perform (call) the procedure or function are called 'actual parameters'. There must be as many actual parameters passed as there are formal parameters declared in the definition. You can pass a mix of string and numeric parameters to the same procedure or function and a function can return either a string or numeric value, irrespective of the type of parameters passed to it. However, you must make sure that the parameter types match up. The first example below is correct; the second would give rise to an '<a href="annexc.html#arguments">Arguments</a> at line 10' error message and the third would cause a '<a href="annexc.html#typemismatch">Type mismatch</a> at line 10' error to be reported.</p>
+</div>
+<div class="sect5">
+<h6 id="_correct"><a class="anchor" href="#_correct"></a>Correct</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 PROC_printit(1,"FRED",2)
+20 END
+30 :
+40 DEF PROC_printit(num1,name$,num2)
+50 PRINT num1,name$,num2
+60 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_arguments_error"><a class="anchor" href="#_arguments_error"></a>Arguments Error</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 PROC_printit(1,"FRED",2,4)
+20 END
+30 :
+40 DEF PROC_printit(num1,name$,num2)
+50 PRINT num1,name$,num2
+60 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_type_mismatch"><a class="anchor" href="#_type_mismatch"></a>Type Mismatch</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">10 PROC_printit(1,"FRED","JIM")
+20 END
+30 :
+40 DEF PROC_printit(num1,name$,num2)
+50 PRINT num1,name$,num2
+60 ENDPROC</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_local_variables_2"><a class="anchor" href="#_local_variables_2"></a><span id="localvariables">Local Variables</span></h4>
+<div class="paragraph">
+<p>You can use the statement <a href="bbckey2.html#local">LOCAL</a> to define variables which are only known locally to individual procedures and functions. In addition, formal parameters are local to the procedure or function declaring them. These variables are only known locally to the defining procedure or function. They are not known to the rest of the program and they can only be changed from within the procedure or function where they are defined. Consequently, you can have two variables of the same name, say FLAG, in various parts of your program, and change the value of one without changing the other. This technique is used extensively in the <a href="bbcfile1.html">example file handling programs</a> in this manual.</p>
+</div>
+<div class="paragraph">
+<p>Declaring variables as local, creates them locally and initialises them to zero/null.</p>
+</div>
+<div class="paragraph">
+<p>Variables which are not formal variables or declared as <a href="bbckey2.html#local">LOCAL</a> are known to the whole program, including all the procedures and functions. Such variables are called GLOBAL</p>
+</div>
+<div class="sect4">
+<h5 id="_re_entrant_functionsprocedures"><a class="anchor" href="#_re_entrant_functionsprocedures"></a><span id="reentrant">Re-entrant Functions/Procedures</span></h5>
+<div class="paragraph">
+<p>Because the formal parameters which receive the passed parameters are local, all procedures and functions can be re- entrant. That is, they can call themselves. But for this feature, the short example program below would be very difficult to code. It is the often used example of a factorial number routine. (The factorial of a number n is n * n-1 * n-2 <strong>&#8230;&#8203;.</strong> 1. Factorial 6, for instance, is 6*5*4*3*2*1)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"> 10 REPEAT
+ 20   INPUT "Enter an INTEGER less than 35 "num
+ 30 UNTIL INT(num)=num AND num&lt;35
+ 40 fact=FN_fact_num(num)
+ 50 PRINT num,fact
+ 60 END
+ 70:
+ 80 DEF FN_fact_num(n)
+ 90 IF n=1 OR n=0 THEN =1
+100 REM Return with 1 if n= 0 or 1
+110 =n*FN_fact_num(n-1)
+120 REM Else go round again</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since 'n' is the input variable to the function FN_fact_num, it is local to each and every use of the function. The function keeps calling itself until it returns the answer 1. It then works its way back through all the calls until it has completed the final multiplication, when it returns the answer. The limit of 35 on the input number prevents the answer being too big for the computer to handle.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
