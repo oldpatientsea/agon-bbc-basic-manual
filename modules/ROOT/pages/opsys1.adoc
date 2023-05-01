@@ -24,7 +24,7 @@ Pull a line into the editor for editing.
 *EDIT linenum
 ----
 
-=== [#fx]#*FX
+=== [#fx]#*FX#
 
 Execute an OSBYTE command.
 
@@ -45,7 +45,7 @@ And from MOS 1.03 or above
 *FX osbyte, params
 ----
 
-=== [#version]#*VERSION
+=== [#version]#*VERSION#
 
 Display the current version of BBC BASIC
 
