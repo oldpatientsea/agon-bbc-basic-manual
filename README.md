@@ -10,7 +10,19 @@ Licence to be determined. It will be as open as possible while respecting the co
 
 ```
 ├── dist
+│   ├── EPUB
 │   └── HTML
+│       ├── _
+│       │   ├── css
+│       │   ├── font
+│       │   ├── img
+│       │   └── js
+│       │       └── vendor
+│       └── agon-bbc-basic-manual
+│           └── 0.1
+│               └── _images
+├── epub
+├── meta
 ├── modules
 │   └── ROOT
 │       ├── attachments
@@ -19,17 +31,23 @@ Licence to be determined. It will be as open as possible while respecting the co
 │       ├── pages
 │       └── partials
 └── originals
+    ├── RTRussellBBCBASICZ80
+    └── wiki
 ```
 
 ### dist
 
 This for the moment is a place to cache manually generated output files. Once a fully automated build process is in place, it will probably be removed.
 
+There will be one folder per output type. At present these comprise alpha versions of HTML and EPUB. Neither should be considered a formal release.
+
 ### originals
 
 This is a dump of the original BBC BASIC (Z80) manual, each html page transformed into adoc format. 
 
 The headers and footers have been removed from each individual page because otherwise ebook (EPUB, PDF) output repeats each at the head and foot of each section. The copyright from the footer has been placed in its own adoc file. This and the header information will need to be combined with the rest of the files in the process of transforming them into the desired output (HTML, EPUB, PDF). 
+
+The content of the BBC BASIC for Agon wiki page has also been dumped here, likewise transformed. 
 
 ### modules/ROOT/pages
 
@@ -40,6 +58,10 @@ The "pages" directory contains the .adoc files used to generate the output.
 This contains the transformed BBC BASIC (Z80) manual files which will be used as the source of the BBC BASIC (Z80) for Agon manual.
 
 The starting point is the contents of the originals directory, but these will diverge as the files are updated with Agon specific edits. 
+
+### epub
+
+This contains any files used to organise EPUB output. 
 
 ## Generating Documentation
 
@@ -69,5 +91,4 @@ TODO add antora instructions
 (a) better instructions for newcomers to BASIC (the original docs assume familiarity with the language)
 (b) More Agon-specific material, eg instructions on updating firmware
 4. Create an automated workflow for generating and publishing the outputs from the source (possibly using GitHub actions) 
-
 
