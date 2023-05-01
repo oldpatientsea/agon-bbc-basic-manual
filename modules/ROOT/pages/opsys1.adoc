@@ -1,30 +1,30 @@
-=== [#resident]#Resident Star Commands#
+== [#resident]#Resident Star Commands#
 
 The following * commands are supported
 
-==== [#bye]#*BYE#
+=== [#bye]#*BYE#
 
 Exit BASIC and return to MOS.
 
-===== Syntax
+==== Syntax
 
 [source,console]
 ----
 *BYE
 ----
 
-==== link:#edit[]EDIT
+=== [#edit]#*EDIT#
 
 Pull a line into the editor for editing.
 
-===== Syntax
+==== Syntax
 
 [source,console]
 ----
 *EDIT linenum
 ----
 
-==== link:#fx[]FX
+=== [#fx]#*FX
 
 Execute an OSBYTE command.
 
@@ -38,26 +38,25 @@ And from MOS 1.03 or above
 * 12: Set keyboard repeat rate ins ms (between 33 and 500ms)
 * 118: Set keyboard LED (Bit 0: Scroll Lock, Bit 1: Caps Lock, Bit 2: Num Lock) - does not currently change status, just the LED
 
-===== Syntax
+==== Syntax
 
 [source,console]
 ----
 *FX osbyte, params
 ----
 
-==== link:#version[]VERSION
-
+=== [#version]#*VERSION
 
 Display the current version of BBC BASIC
 
-===== Syntax
+==== Syntax
 
 [source,console]
 ----
 *VERSION
 ----
 
-==== link:#mos-commands[]MOS commands
+=== link:#mos-commands[]MOS commands
 
 In addition, any of the MOS commands can be called by prefixing them with a *
 
