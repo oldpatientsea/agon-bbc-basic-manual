@@ -1,4 +1,4 @@
-=== [#print]#PRINT##, P.
+== [#print]#PRINT##, P.
 
 A statement which writes the internal form of a value out to a data file.
 
@@ -16,21 +16,21 @@ You can use PRINT# to write data (numbers and strings) to a data file in the 'st
 
 Remember, with BBC BASIC (Z80) the format of the file is completely under your control.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 PRINT#<numeric>{,<numeric>|<str>}
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 PRINT, OPENUP, OPENOUT, CLOSE#, INPUT#, BPUT#, BGET#,  EXT#, PTR#, EOF#
 ----
 
-=== [#proc]#PROC#
+== [#proc]#PROC#
 
 A keyword used at the start of all user declared procedures. The first character of a procedure name can be an underline (or a number).
 
@@ -60,21 +60,21 @@ Procedures are re-entrant and the parameters (arguments) are passed by value.
 
 See the link:bbc2.html#procedures[Procedures and Functions] sub-section for more details.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 PROC<name>[(<exp>{,<exp>})]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 DEF, ENDPROC, LOCAL
 ----
 
-=== [#ptr]#PTR##
+== [#ptr]#PTR##
 
 A pseudo-variable allowing the random-access pointer of the file whose file handle is its argument to be read and changed.
 
@@ -94,7 +94,7 @@ A file opened with link:bbckey3.html#openup[OPENUP] may be extended by setting i
 
 By using PTR# you have complete control over where you read and write data in a file. This is simple concept, but it may initially be difficult to grasp its many ramifications. The link:bbcfile1.html[BBC BASIC (Z80) Disk Files] section has a number of examples of the use of PTR#.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -102,14 +102,14 @@ PTR#<numeric>=<numeric>
 <n-var>=PTR#<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, BGET#,  EXT#, EOF#
 ----
 
-=== [#put]#PUT#
+== [#put]#PUT#
 
 A statement to output data to an output port.
 
@@ -120,21 +120,21 @@ PUT A,N :REM output N to port A.
 
 This instruction gives direct access from BBC BASIC (Z80) to the computer's I/O hardware. Typically, you can use it to directly access I/O ports.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 PUT <numeric>,<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 GET
 ----
 
-=== [#rad]#RAD#
+== [#rad]#RAD#
 
 A function which converts degrees to radians.
 
@@ -150,21 +150,21 @@ Using RAD is equivalent to multiplying the degree value by link:bbckey3.html#pi[
 
 See link:bbckey1.html#cos[COS], link:#sin[SIN] and link:#tan[TAN] for further examples of the use of RAD.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=RAD<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 DEG
 ----
 
-=== [#read]#READ#
+== [#read]#READ#
 
 A statement which will assign to variables values read from the link:bbckey1.html#data[DATA] statements in the program. Strings must be enclosed in double quotes if they have leading spaces or contain commas.
 
@@ -179,21 +179,21 @@ A typical use for DATA and READ is a name and address list. The addresses won't 
 
 See link:bbckey1.html#data[DATA] for more details and an example of the use of DATA and READ.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 READ <n-var>|<s-var>{<n-var>|<s-var>}
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 DATA, RESTORE
 ----
 
-=== [#rem]#REM#
+== [#rem]#REM#
 
 A statement that causes the rest of the line to be ignored thereby allowing comments to be included in a program.
 
@@ -213,21 +213,21 @@ If you include nothing else, include the name of the program, the date you last 
 40 REM ones in preparation for use with WS.
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 REM any text
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#renumber]#RENUMBER#, REN.
+== [#renumber]#RENUMBER#, REN.
 
 A command which will renumber the lines and correct the cross references inside a program.
 
@@ -246,13 +246,13 @@ RENUMBER ,s
 For example:
 
 [cols=",",]
-|===
+|==
 |`RENUMBER` |First number 10, step 10
 |`RENUMBER 1000` |First number 1000, step 10
 |`RENUMBER 1000-5  ` |First number 1000, step 5
 |`RENUMBER ,5` |First number 10, step 5
 |`RENUMBER -5` |First number 10, step 5
-|===
+|==
 
 RENUMBER produces error messages when a cross reference fails. The line number containing the failed cross-reference is renumbered and the line number in the error report is the new line number.
 
@@ -267,21 +267,21 @@ ON action GOSUB 100,200,(type*10+300),400,500
 
 RENUMBER may be used in a program, but it will exit to the command mode on completion.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 RENUMBER [<n-const>[,<n-const>]]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LIST
 ----
 
-=== [#repeat]#REPEAT#, REP.
+== [#repeat]#REPEAT#, REP.
 
 A statement which is the starting point of a REPEAT...link:#until[UNTIL] loop. A single REPEAT may have more than one UNTIL, but this is bad practice.
 
@@ -324,21 +324,21 @@ See the keyword link:#until[UNTIL] for ways of using REPEAT...UNTIL loops to rep
 
 See the sub-section on link:bbc2.html#programflow[Program Flow Control] in the link:bbc2.html[General Information] section for more details on the working of the program stack.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 REPEAT
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 UNTIL
 ----
 
-=== [#report]#REPORT#
+== [#report]#REPORT#
 
 A statement which prints out the error string associated with the last error which occurred.
 
@@ -360,21 +360,21 @@ The example below is an error handling routine designed to cope only with the <E
 
 See the sub-section on link:bbc2.html#errorhandling[Error Handling] and the keywords link:bbckey2.html#err[ERR], link:bbckey2.html#erl[ERL] and link:bbckey3.html#onerror[ON ERROR] for more details.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 REPORT
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 ERR, ERL, ON ERROR
 ----
 
-=== [#restore]#RESTORE#, RES.
+== [#restore]#RESTORE#, RES.
 
 RESTORE can be used at any time in a program to set the line where link:bbckey1.html#data[DATA] is read from.
 
@@ -391,7 +391,7 @@ RESTORE (10*A+20)
 
 You can use RESTORE to reset the data pointer to the start of your data in order to re-use it. alternatively, you can have several DATA lists in your program and use RESTORE to set the data pointer to the appropriate list.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -399,14 +399,14 @@ RESTORE [<l-num>]
 RESTORE [(<numeric>)]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 READ, DATA
 ----
 
-=== [#return]#RETURN#, R.
+== [#return]#RETURN#, R.
 
 A statement causing a RETURN to the statement after the most recent link:bbckey2.html#gosub[GOSUB] statement.
 
@@ -416,21 +416,21 @@ You may have more than one return statement in a subroutine, but it is preferabl
 
 Try to structure your program so you don't leave a subroutine with a link:bbckey2.html#goto[GOTO]. If you do, you should always return to the subroutine and exit via the RETURN statement. If you insist on using GOTO all over the place, you will end up confusing yourself and maybe confusing BBC BASIC (Z80) as well. The sub-section on link:bbc2.html#programflow[Program Flow Control] explains why.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 RETURN
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 GOSUB, ON GOSUB
 ----
 
-=== [#right]#RIGHT$#
+== [#right]#RIGHT$#
 
 A string function which returns the right 'num' characters of the string. If there are insufficient characters in the string then all are returned.
 
@@ -471,30 +471,30 @@ BBC BASIC (Z80)
 BBC BASIC (Z80)
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <s-var>=RIGHT$(<str>,<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LEFT$, MID$
 ----
 
-=== [#rnd]#RND#
+== [#rnd]#RND#
 
 A function which returns a random number. The type and range of the number returned depends upon the optional parameter.
 
 [cols=",",]
-|===
+|==
 |`RND` |returns a random integer 1 - &FFFFFFFF.
 |`RND(n)` |returns an integer in the range 1 to n (n>1).
 |`RND(1)` |returns a real number in the range 0.0 to .99999999.
-|===
+|==
 
 If n is negative the pseudo random sequence generator is set to a number based on n and n is returned.
 
@@ -509,21 +509,21 @@ N=RND(6)
 
 The random number generator is initialised by link:#run[RUN] (or link:bbckey1.html#chaim[CHAIN]). Consequently, RND will return zero until the RUN (or CHAIN) command is first issued.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=RND[(<numeric>)]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#run]#RUN#
+== [#run]#RUN#
 
 Start execution of the program.
 
@@ -547,21 +547,21 @@ where nnnn is number of the line at which you wish execution of the program to s
 
 RUN "filename" can be used as an alternative to link:bbckey1.html#chain[CHAIN] "filename".
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 RUN
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 NEW, OLD, LIST, CHAIN
 ----
 
-=== [#save]#SAVE#, SA.
+== [#save]#SAVE#, SA.
 
 A statement which saves the current program area to a file, in internal (tokenised) format.
 
@@ -596,21 +596,21 @@ If you want to exclude the extension, include the full-stop in the file name, bu
 SAVE "FRED."
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 SAVE <str>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LOAD, CHAIN
 ----
 
-=== [#sgn]#SGN#
+== [#sgn]#SGN#
 
 A function returning -1 for negative argument, 0 for zero argument and +1 for positive argument.
 
@@ -625,27 +625,27 @@ You can use this function to determine whether a number is positive, negative or
 SGN returns:
 
 [cols=",",]
-|===
+|==
 |+1 |for positive numbers
 |0 |for zero
 |-1 |for negative numbers
-|===
+|==
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=SGN(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 ABS
 ----
 
-=== [#sin]#SIN#
+== [#sin]#SIN#
 
 A function giving the sine of its radian argument.
 
@@ -665,21 +665,21 @@ The example below sets Y to the sine of the angle 'degree_angle' expressed in de
 Y=SIN(RAD(degree_angle))
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=SIN(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 COS, TAN, ACS, ASN, ATN, DEG, RAD
 ----
 
-=== [#sound]#SOUND#
+== [#sound]#SOUND#
 
 
 Syntax: `SOUND channel,volume,pitch,duration`
@@ -691,21 +691,21 @@ Play a sound through the Agon Light buzzer and audio output jack
 * `Pitch`: 0 to 255
 * `Duration`: -1 to 254 (duration in 20ths of a second, -1 = play forever)
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 SOUND <numeric>,<numeric>,<numeric>,<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 ENVELOPE
 ----
 
-=== [#spc]#SPC#
+== [#spc]#SPC#
 
 A statement which prints a number of spaces to the screen (or currently selected console output stream). The argument specifies the number of spaces (up to 255) to be printed.
 
@@ -718,7 +718,7 @@ PRINT DATE;SPC(6);SALARY
 INPUT SPC(10) "What is your name ",name$
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -726,14 +726,14 @@ PRINT SPC(<numeric>)
 INPUT SPC(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 TAB, PRINT, INPUT
 ----
 
-=== [#sqr]#SQR#
+== [#sqr]#SQR#
 
 A function returning the square root of its argument.
 
@@ -744,21 +744,21 @@ X=SQR(Y)
 
 If you attempt to calculate the square root of a negative number, a 'link:annexc.html#negativeroot[-ve root]' error will occur. You could use error trapping to recover from this error, but it is better to check that the argument is not negative before using the SQR function.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=SQR(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#step]#STEP#, S.
+== [#step]#STEP#, S.
 
 Part of the link:bbckey2.html#for[FOR] statement, this optional section specifies step sizes other than 1.
 
@@ -778,21 +778,21 @@ You can use this optional part of the FOR...TO...STEP...NEXT structure to specif
 30 NEXT
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 FOR <n-var>=<numeric> TO <numeric> [STEP <numeric>]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 FOR, TO, NEXT
 ----
 
-=== [#stop]#STOP#
+== [#stop]#STOP#
 
 Syntactically identical to link:bbckey1.html#end[END], STOP also prints a message to the effect that the program has stopped.
 
@@ -802,21 +802,21 @@ Once your program has STOPped you can investigate the values of the variables to
 
 STOP DOES NOT CLOSE DATA FILES. If you use STOP to exit a program for debugging, link:bbckey1.html#close[CLOSE] all the data files before link:#run[RUN]ning the program again. If you don't you will get some most peculiar error messages.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 STOP
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 END
 ----
 
-=== [#str]#STR$#
+== [#str]#STR$#
 
 A string function which returns the string form of the numeric argument as it would have been printed.
 
@@ -832,21 +832,21 @@ B$=STR$~(100) :REM B$ will be "64"
 
 The opposite function to STR$ is performed by the link:#val[VAL] function.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <s-var>=STR$[~](<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 VAL, PRINT
 ----
 
-=== [#string]#STRING$#
+== [#string]#STRING$#
 
 A function returning N concatenations of a string.
 
@@ -885,21 +885,21 @@ would print
 012345678901234567890123456789
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <s-var>=STRING$(<numeric>,<str>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#tab]#TAB#
+== [#tab]#TAB#
 
 A keyword available in link:bbckey3.html#print[PRINT] or link:bbckey2.html#input[INPUT].
 
@@ -917,7 +917,7 @@ PRINT TAB(10);A$
 PRINT TAB(X,Y);B$
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -925,14 +925,14 @@ PRINT TAB(<numeric>[,<numeric>])
 INPUT TAB(<numeric>[,<numeric>])
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 POS, VPOS, PRINT, INPUT
 ----
 
-=== [#tan]#TAN#, T.
+== [#tan]#TAN#, T.
 
 A function giving the tangent of its radian argument.
 
@@ -952,21 +952,21 @@ The example below sets Y to the tangent of the angle 'degree_angle' expressed in
 Y=TAN(RAD(degree_angle))
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=TAN<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 COS, SIN, ACS, ATN, ASN, DEG, RAD
 ----
 
-=== [#then]#THEN#, TH.
+== [#then]#THEN#, TH.
 
 An optional part of the link:bbckey2.html#if[IF]... THEN ... link:bbckey1.html#else[ELSE] statement. It introduces the action to be taken if the testable condition evaluates to TRUE.
 
@@ -1009,21 +1009,21 @@ IF a=b THEN =num: REM THEN required on this line
 =num/256
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 IF <t-cond> THEN <stmt>{:<stmt>} [ELSE <stmt>{:<stmt>}]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 IF, ELSE
 ----
 
-=== [#time]#TIME$#, TI.
+== [#time]#TIME$#, TI.
 
 A pseudo-variable which reads and sets the elapsed time clock by accessing the ESP32 RTC data.
 
@@ -1040,21 +1040,21 @@ Example:
   50 GOTO 40
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=TIME$
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#to]#TO#
+== [#to]#TO#
 
 The part of the link:bbckey2.html#for[FOR] ... TO ... link:#step[STEP] statement which introduces the terminating value for the loop. When the loop control variable exceeds the value following 'TO' the loop is terminated.
 
@@ -1096,21 +1096,21 @@ will print
         20
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 FOR <n-var>=<numeric> TO <numeric> [STEP <numeric>]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 FOR, NEXT, STEP
 ----
 
-=== [#top]#TOP#
+== [#top]#TOP#
 
 A function which returns the value of the first free location after the end of the current program.
 
@@ -1121,21 +1121,21 @@ The length of your program is given by TOP-link:bbckey3.html#page[PAGE].
 PRINT TOP-PAGE
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=TOP
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 PAGE, HIMEM, LOMEM
 ----
 
-=== [#trace]#TRACE#, TR.
+== [#trace]#TRACE#, TR.
 
 TRACE ON causes the interpreter to print executed line numbers when it encounters them.
 
@@ -1191,7 +1191,7 @@ would trace as
 [10] [20] [30] [20] [30] [20] [30] [40] >_
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -1199,14 +1199,14 @@ TRACE ON|OFF|<l-num>
 TRACE ON|OFF|(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#true]#TRUE#
+== [#true]#TRUE#
 
 A function returning the value -1.
 
@@ -1225,21 +1225,21 @@ In practice, any value other than zero is considered TRUE. This can lead to conf
 
 See the link:bbc2.html#boolean[Variables] sub-section for more details on Boolean variables and the keyword link:bbckey1.html#and[AND] for logical tests and their results.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=TRUE
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 FALSE
 ----
 
-=== [#until]#UNTIL#, U.
+== [#until]#UNTIL#, U.
 
 The part of the link:#repeat[REPEAT] ... UNTIL structure which signifies its end.
 
@@ -1272,21 +1272,21 @@ This is a much neater way of unconditionally looping than using a link:bbckey2.h
 
 See the keyword link:#repeat[REPEAT] for more details on REPEAT...UNTIL loops. See the link:bbc2.html#boolean[Variables] sub-section for more details on Boolean variables and the keyword link:bbckey1.html#and[AND] for logical tests and their results.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 UNTIL <t-cond>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 REPEAT
 ----
 
-=== [#usr]#USR#
+== [#usr]#USR#
 
 A function which allows a link:bbc3.html[machine code] routine to return a value directly.
 
@@ -1301,21 +1301,21 @@ X=USR(lift_down)
 
 Unlike CALL, USR returns a result. Consequently, you must assign the result to a variable. It may help your understanding if you look upon CALL as the machine code equivalent to a PROCedure and USR as the equivalent to Function.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=USR(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 CALL
 ----
 
-=== [#val]#VAL#
+== [#val]#VAL#
 
 A function which converts a character string representing a number into numeric form.
 
@@ -1356,21 +1356,21 @@ would print
 
 VAL will NOT work with hexadecimal numbers. You must use link:bbckey2.html#eval[EVAL] to convert hexadecimal number strings.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=VAL(<str>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 STR$, EVAL
 ----
 
-=== [#vdu]#VDU#, V.
+== [#vdu]#VDU#, V.
 
 The VDU commands on the Agon Light will be familiar to those who have coded on Acorn machines. Please read the link:/breakintoprogram/agon-docs/wiki/VDP[VDP] documentation for details on what VDU commands are supported.
 
@@ -1388,21 +1388,21 @@ The bytes sent using the VDU statement do not contribute to the value of link:bb
 
 You can use VDU to send characters direct to the current output stream without having to use a link:bbckey3.html#print[PRINT] statement. It offers a convenient way of sending a number of control characters to the console or printer.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 VDU <numeric>{,|;<numeric>}[;]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 CHR$
 ----
 
-=== [#vpos]#VPOS#
+== [#vpos]#VPOS#
 
 A function returning the vertical cursor position. The top of the screen is line 0.
 
@@ -1424,21 +1424,21 @@ You can use VPOS in conjunction with link:bbckey3.html#pos[POS] to return to the
 1060 ENDPROC
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=VPOS
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 POS
 ----
 
-=== [#width]#WIDTH#, W.
+== [#width]#WIDTH#, W.
 
 A statement controlling output overall field width.
 
@@ -1453,14 +1453,14 @@ WIDTH n will cause the interpreter to force a new line after n link:bbckey3.html
 
 WIDTH also affects the output to the printer.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 WIDTH <numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----

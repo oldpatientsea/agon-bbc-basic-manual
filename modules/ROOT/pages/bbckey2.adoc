@@ -1,4 +1,4 @@
-=== [#eof]#EOF##
+== [#eof]#EOF##
 
 A function which will return -1 (link:bbckey4.html#true[TRUE]) if the data file whose file handle is the argument is at, or beyond, its end. In other words, when link:bbckey4.html#ptr[PTR#] points beyond the current end of the file. When reading a serial file, EOF# would go true when the last byte of the file had been read.
 
@@ -6,21 +6,21 @@ EOF# is only true if PTR# is set beyond the last byte written to the file. It wi
 
 Writing to a byte beyond the current end of file updates the file length immediately, whether the record is physically written to the disk at that time or not. However, the file must be closed in order to ensure that all the data written to it is physically written to the disk.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=EOF#(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, EXT#, PTR#
 ----
 
-=== [#eor]#EOR#
+== [#eor]#EOR#
 
 The operation of bitwise integer logical exclusive-or between two items. The two operands are internally converted to 4 byte integers before the EOR operation. EOR will return a non-zero result if the two items are different.
 
@@ -61,21 +61,21 @@ Suppose X was -20, the EOR operation would be:
 11111111 11111111 11111111 11100111  = -25
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=<numeric> EOR <numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 NOT, AND, OR
 ----
 
-=== [#erl]#ERL#
+== [#erl]#ERL#
 
 A function returning the line number of the line where the last error occurred.
 
@@ -90,20 +90,20 @@ The number returned by ERL is the line number printed out when BBC BASIC (Z80) r
 
 See the link:bbc2.html#errorhandling[Error Handling] sub-section for more information on error handling and correction.
 
-==== Syntax
+=== Syntax
 [source,console]
 ----
 <n-var>=ERL
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 ON ERROR GOTO, ON ERROR OFF, REPORT, ERR
 ----
 
-=== [#err]#ERR#
+== [#err]#ERR#
 
 A function returning the error code number of the last error which occurred (see the Annex entitled link:annexc.html[Error Messages and Codes]).
 
@@ -116,21 +116,21 @@ Once you have assumed responsibility for error handling using the link:bbckey3.h
 
 See the link:bbc2.html#errorhandling[Error Handling] sub-section for more information on error handling and correction.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=ERR
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 ON ERROR GOTO, ON ERROR OFF, ERL, REPORT
 ----
 
-=== [#eval]#EVAL#, EV.
+== [#eval]#EVAL#, EV.
 
 A function which applies the interpreter's expression evaluation program to the characters held in the argument string.
 
@@ -160,7 +160,7 @@ The example below is a 'bare bones' calculator program which evaluates the expre
 
 You can only use EVAL to work out functions (like link:bbckey4.html#sin[SIN], link:bbckey1.html#cos[COS], etc). It won't execute statements like link:bbckey3.html#mode[MODE 0], link:bbckey3.html#print[PRINT], etc.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -168,14 +168,14 @@ You can only use EVAL to work out functions (like link:bbckey4.html#sin[SIN], li
 <s-var>=EVAL(<str>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 STR$, VAL
 ----
 
-=== [#exp]#EXP#
+== [#exp]#EXP#
 
 A function returning 'e' to the power of the argument. The argument must be < 88.7228392. The 'natural' number, 'e', is approximately 2.71828183.
 
@@ -197,21 +197,21 @@ This function can be used as the 'anti-log' of a natural logarithm. Logarithms a
 
 will calculate 2.5*2 by adding their natural logarithms and print the answer.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=EXP(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LN, LOG
 ----
 
-=== [#ext]#EXT##
+== [#ext]#EXT##
 
 A function which returns the total length of the file whose file handle is its argument.
 
@@ -224,21 +224,21 @@ In the case of a sparse random-access file, the value returned is the complete f
 
 The file must have been opened before EXT# can be used to find its length.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=EXT#(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, BGET#,  PTR#, EOF#
 ----
 
-=== [#false]#FALSE#, FA.
+== [#false]#FALSE#, FA.
 
 A function returning the value zero.
 
@@ -283,21 +283,21 @@ Similarly, since FALSE=0, the following example will also have the same effect, 
 
 See the keyword link:bbckey1.html#and[AND] for logical tests and their results.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=FALSE
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 TRUE, EOR, OR, AND, NOT
 ----
 
-=== [#fn]#FN#
+== [#fn]#FN#
 
 A keyword used at the start of all user declared functions. The first character of the function name can be an underline (or a number)
 
@@ -343,7 +343,7 @@ PRINT FN_pformat(&90A) X FN_pformat(&2020A) Y
 
 will print X in G9z10 format and Y in F2z10 format. See the keyword link:bbckey3.html#print[PRINT] for print format details.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -351,14 +351,14 @@ will print X in G9z10 format and Y in F2z10 format. See the keyword link:bbckey3
 DEF FN<name>[(<n-var>|<s-var>{,<n-var>|<s-var>})]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 ENDPROC, DEF, LOCAL
 ----
 
-=== [#for]#FOR#, F.
+== [#for]#FOR#, F.
 
 A statement initialising a FOR...NEXT loop. The loop is executed at least once.
 
@@ -412,21 +412,21 @@ FOR !X=0 TO 16 STEP 4: PRINT ~!X: NEXT
 
 Because a single stack is used, you cannot use a FOR...NEXT loop to set array elements to link:#local[LOCAL] in a procedure or function.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 FOR <n-var>=<numeric> TO <numeric> [STEP <numeric>]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 TO, STEP, NEXT
 ----
 
-=== [#gcol]#GCOL#, GC.
+== [#gcol]#GCOL#, GC.
 
 A statement which sets the graphics foreground or background logical colour to be used in all subsequent graphics operations.
 
@@ -439,21 +439,21 @@ The modes are:
 3	Exclusive-OR the specified colour with that already there
 4 	Invert the colour already there
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 GCOL <numeric>,<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 CLS, CLG, MODE, COLOUR, PLOT
 ----
 
-=== [#get]#GET/GET$#
+== [#get]#GET/GET$#
 
 A function and compatible string function that reads the next character from the keyboard buffer (it waits for the character).
 
@@ -491,7 +491,7 @@ GET can also be used to input data from an I/O port:
 N=GET(X) :REM input from port X
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -500,32 +500,32 @@ N=GET(X) :REM input from port X
 <s-var>=GET$
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 GET$(x,y), PUT, INKEY, INKEY$,
 ----
 
-=== [#getxy]#GET$(x,y)#
+== [#getxy]#GET$(x,y)#
 
 Returns the ASCII character at position x,y.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=GET$(<numeric>,<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 POINT(x,y), GET 
 ----
 
-=== [#gosub]#GOSUB#
+== [#gosub]#GOSUB#
 
 A statement which calls a section of a program (which is a subroutine) at a specified line number. One subroutine may call another subroutine (or itself).
 
@@ -543,7 +543,7 @@ Very often you need to use the same group of program instructions at several dif
 
 Subroutines are similar to link:bbckey4.html#proc[PROC]edures, but they are called by line number not by name. This can make the program difficult to read because you have no idea what the subroutine does until you have followed it through. You will probably find that PROCedures offer you all the facilities of subroutines and, by choosing their names carefully, you can make your programs much more readable.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -551,14 +551,14 @@ GOSUB <l-num>
 GOSUB (<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 RETURN, ON, PROC
 ----
 
-=== [#goto]#GOTO#, G.
+== [#goto]#GOTO#, G.
 
 A statement which transfers program control to a line with a specified or calculated line number.
 
@@ -576,7 +576,7 @@ The GOTO statement makes BBC BASIC (Z80) jump to a specified line number rather 
 
 You should use GOTO with care. Uninhibited use will make your programs almost impossible to understand (and hence, debug). If you use REPEAT----UNTIL and FOR----NEXT loops you will not need to use many GOTO statements.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -584,14 +584,14 @@ GOTO <l-num>
 GOTO (<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 GOSUB, ON
 ----
 
-=== [#himem]#HIMEM#
+== [#himem]#HIMEM#
 
 A pseudo-variable which contains the address of the first byte that BBC BASIC (Z80) will not use.
 
@@ -610,7 +610,7 @@ If you want to change HIMEM, you should do so early in your program. Once it has
 
 USE WITH CARE.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -618,14 +618,14 @@ HIMEM=<numeric>
 <n-var>=HIMEM
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LOMEM, PAGE, TOP
 ----
 
-=== [#if]#IF#
+== [#if]#IF#
 
 A statement which sets up a test condition which can be used to control the subsequent flow of the program. It is part of the IF----link:bbckey4.html#then[THEN]----link:bbckey1.html#else[ELSE] structure.
 
@@ -670,7 +670,7 @@ flag=age<21
 IF flag THEN PRINT "Under 21"
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -682,14 +682,14 @@ IF <t-cond> THEN <l-num> [ELSE <l-num>]
 IF <exp> THEN <l-num> [ELSE <l-num>]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 THEN, ELSE
 ----
 
-=== [#inkey]#INKEY/INKEY$#
+== [#inkey]#INKEY/INKEY$#
 
 A function and compatible string function which does a link:#get[GET/GET$], waiting for a maximum of 'num' clock ticks of 10ms each. If no key is pressed in the time limit, INKEY will return -1 and INKEY$ will return a null string. The INKEY function will return the ASCII value of the key pressed.
 
@@ -713,7 +713,7 @@ REPEAT UNTIL INKEY(0)=-1
 
 The number in brackets is the number of 'ticks' (one hundredths of a second) which BBC BASIC (Z80) will wait for a key to be pressed. After this time, BBC BASIC (Z80) will give up and return -1 or a null string. The number of 'ticks' may have any value between 0 and 32767.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -721,14 +721,14 @@ The number in brackets is the number of 'ticks' (one hundredths of a second) whi
 <s-var>=INKEY$(<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 GET, GET$
 ----
 
-=== [#input]#INPUT#
+== [#input]#INPUT#
 
 A statement to input values from the console input channel (usually keyboard).
 
@@ -778,7 +778,7 @@ Strings in quoted form are taken as they are, with a possible error occurring fo
 
 A semicolon following a prompt string is an acceptable alternative to a comma.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -786,14 +786,14 @@ INPUT [TAB(X[,Y])][SPC(<numeric>)]['][<s-const>[,|;]]
                     <n-var>|<s-var>{,<n-var>|<s-var>}
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 INPUT LINE, INPUT#, GET, INKEY
 ----
 
-=== [#inputline]#INPUT LINE#
+== [#inputline]#INPUT LINE#
 
 A statement of identical syntax to link:#input[INPUT] which uses a new line for each item to be input. The item input is taken as is, including commas, quotes and leading spaces.
 
@@ -802,7 +802,7 @@ A statement of identical syntax to link:#input[INPUT] which uses a new line for 
 INPUT LINE A$
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -810,14 +810,14 @@ INPUT LINE[TAB(X[,Y])][SPC(<numeric>)]['][<s-const>[,|;]]
                         <s-var>{,<s-var>}
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 INPUT
 ----
 
-=== [#inputhash]#INPUT##
+== [#inputhash]#INPUT##
 
 A statement which reads data in internal format from a file and puts them in the specified variables. INPUT# is normally used with a file or device opened with link:bbckey3.html#openin[OPENIN], link:bbckey3.html#openup[OPENUP] or link:bbckey3.html#openout[OPENOUT], but may alternatively be used with the AUX device (usually a serial port) which has the 'permanently open' handle = 3.
 
@@ -833,21 +833,21 @@ link:bbckey4.html#readhash[READ#] can be used as an alternative to INPUT#.
 
 See the link:bbcfile1.html[Disk Files] section for more details and numerous examples of the use of INPUT#.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 INPUT #<numeric>,<n-var>|<s-var>{,<n-var>|<s-var>}
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 INPUT, OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, BPUT#, BGET#, EXT#, PTR#, EOF#
 ----
 
-=== [#instr]#INSTR#
+== [#instr]#INSTR#
 
 A function which returns the position of a sub-string within a string, optionally starting the search at a specified place in the string. The leftmost character position is 1. If the sub-string is not found, 0 is returned.
 
@@ -878,21 +878,21 @@ z$=CHR$(127)
 set$="FRED"+z$+"BERT"+z$+"JIM"+z$+"JOHN"
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=INSTR(<str>,<str>[,<numeric>])
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LEFT$, MID$, RIGHT$, LEN
 ----
 
-=== [#int]#INT#
+== [#int]#INT#
 
 A function truncating a real number to the lower integer.
 
@@ -921,21 +921,21 @@ INT(-14.5)
 
 gives -15.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=INT<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#left]#LEFT$#
+== [#left]#LEFT$#
 
 A string function which returns the left 'num' characters of the string. If there are insufficient characters in the source string, all the characters are returned.
 
@@ -976,21 +976,21 @@ BBC BASIC (Z80)
 BBC BASIC (Z80)
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <s-var>=LEFT$(<str>,<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 RIGHT$, MID$, LEN, INSTR
 ----
 
-=== [#len]#LEN#
+== [#len]#LEN#
 
 A function which returns the length of the argument string.
 
@@ -1025,21 +1025,21 @@ LEN is often used with a link:#for[FOR]----link:bbckey3.html#next[NEXT] loop to 
 100 UNTIL flag
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=LEN(<str>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LEFT$, MID$, RIGHT$, INSTR
 ----
 
-=== [#let]#LET#
+== [#let]#LET#
 
 LET is an optional assignment statement.
 
@@ -1061,33 +1061,33 @@ LET X=X+4
 
 Most modern versions of BASIC allow you to drop the 'LET' statement. However, if you are writing a program for a novice, the use of LET makes it more understandable.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 [LET] <var>=<exp>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#list]#LIST#, L.
+== [#list]#LIST#, L.
 
 A command which causes lines of the current program to be listed out to the currently selected output stream (see link:opsys1.html#opt[*OPT]) with the automatic formatting options specified by link:#listo[LISTO].
 
 [source,console]
 ----
-|===
+|==
 |`LIST` |lists the entire program
 |`LIST ,111` |lists up to line 111
 |`LIST 111,` |lists from line 111 to the end
 |`LIST 111,222 ` |lists lines 111 to 222 inclusive
 |`LIST 100` |lists line 100 only
-|===
+|==
 ----
 
 A hyphen is an acceptable alternative to a comma.
@@ -1100,7 +1100,7 @@ You can cause the listing to be printed by pressing ^P. Printing can be stopped 
 
 LIST may be included within a program, but it will exit to the command mode on completion of the listing.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -1111,14 +1111,14 @@ LIST ,<n-const>
 LIST <n-const>,<n-const>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LIST IF, LISTO, OLD, NEW
 ----
 
-=== [#listif]#LIST IF#
+== [#listif]#LIST IF#
 
 A command which causes lines of the current program which contain the specified string to be listed to the currently selected output stream (see link:opsys1.html#opt[*OPT]).
 
@@ -1147,7 +1147,7 @@ LIST IF DEF
 
 LIST IF is very useful for locating the lines in a program which define or use functions or procedures.
 
-==== [#limitations]#Limitations#
+=== [#limitations]#Limitations#
 
 Because keywords are tokenised wherever they occur in the command line, you cannot use LIST IF to search for a string (including a star command) which contains a keyword. For example, the following will not work:
 
@@ -1196,7 +1196,7 @@ because link:#load[LOAD] is not tokenised in any of these lines.
 
 The internal format of line numbers (link:#goto[GOTO] 1000, for example) may spuriously match a search string of three characters or less.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -1207,28 +1207,28 @@ LIST ,<n-const> IF <string>
 LIST <n-const>,<n-const> IF <string>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LIST, OLD, NEW
 ----
 
-=== [#listo]#LISTO#
+== [#listo]#LISTO#
 
 A command which controls the appearance of a link:#list[LIST]ed program. The command controls the setting of the three least significant bits of the format control byte which can, therefore, be set to an integer 0 to 7 (0=all three bits 0, 7=all three bits 1).
 
-==== [#settings]#Bit Settings#
+=== [#settings]#Bit Settings#
 
-===== Bit 0 (LSB)
+==== Bit 0 (LSB)
 
 If Bit 0 is set, a space will be printed between the line number and the remainder of the line. (All leading spaces are stripped when the line is originally entered.)
 
-===== Bit 1
+==== Bit 1
 
 If Bit 1 is set, two extra spaces will be printed out on lines between link:#for[FOR] and link:bbckey3.html#next[NEXT]. Two extra spaces will be printed for each depth of nesting.
 
-===== Bit 2
+==== Bit 2
 
 If Bit 2 is set two extra spaces will be printed out on lines between link:bbckey4.html#repeat[REPEAT] and link:bbckey4.html#until[UNTIL]. Two extra spaces will be printed for each depth of nesting.
 
@@ -1304,21 +1304,21 @@ will give
 110END
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 LISTO <n-const>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LIST
 ----
 
-=== [#ln]#LN#
+== [#ln]#LN#
 
 A function giving the natural logarithm of its argument.
 
@@ -1342,21 +1342,21 @@ Logarithms are 'traditionally' used for multiplication (by adding the logarithms
 
 will calculate 2.5*2 by adding their natural logarithms and print the answer.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=LN<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LOG, EXP
 ----
 
-=== [#load]#LOAD#, LO.
+== [#load]#LOAD#, LO.
 
 A command which loads a new program from a file and link:bbckey1.html#clear[CLEAR]s the variables of the old program. The program file must be in 'internal' (tokenised) format.
 
@@ -1377,21 +1377,21 @@ LOAD "a:\bbcprogs\demo"
 
 would load the program 'demo.bbc' from the directory 'bbcprogs' on drive a:.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 LOAD <str>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 SAVE, CHAIN
 ----
 
-=== [#local]#LOCAL#
+== [#local]#LOCAL#
 
 A statement to declare variables for local use inside a function (link:#fn[FN]) or procedure (link:bbckey4.html#proc[PROC]). A null list of variables is not permitted.
 
@@ -1408,21 +1408,21 @@ The LOCAL variables are initialised to zero/null.
 
 See the keyword link:bbckey3.html#onerrorlocal[ON ERROR LOCAL] for details of local error trapping.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 LOCAL <n-var>|<s-var>{,<n-var>|<s-var>}
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 DEF, ENDPROC, FN, PROC
 ----
 
-=== [#log]#LOG#
+== [#log]#LOG#
 
 A function giving the base-10 logarithm of its argument.
 
@@ -1444,21 +1444,21 @@ Logarithms are 'traditionally' used for multiplication (by adding the logarithms
 50 PRINT answer
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=LOG<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LN, EXP
 ----
 
-=== [#lomem]#LOMEM#
+== [#lomem]#LOMEM#
 
 A pseudo-variable which controls where in memory the dynamic data structures are to be placed. The default is link:bbckey4.html#top[TOP], the first free address after the end of the program.
 
@@ -1472,7 +1472,7 @@ Normally, dynamic variables are stored in memory immediately after your program.
 
 USE WITH CARE. Changing LOMEM in the middle of a program causes BBC BASIC (Z80) to lose track of all the variables you are using.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -1480,7 +1480,7 @@ LOMEM=<numeric>
 <n-var>=LOMEM
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----

@@ -1,4 +1,4 @@
-=== [#mid]#MID$#
+== [#mid]#MID$#
 
 A string function which returns 'num' characters of the string starting from character 'start_posn'. If 'num' is not present or if there are insufficient characters in the string, then all the characters from 'start_posn' onwards are returned.
 
@@ -59,21 +59,21 @@ C(Z80)
 )
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <s-var>=MID$(<str>,<numeric>[,<numeric>])
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 LEFT$, RIGHT$, LEN, INSTR
 ----
 
-=== [#mod]#MOD#
+== [#mod]#MOD#
 
 A binary operation giving the signed remainder of the integer division.
 
@@ -115,21 +115,21 @@ You can use real numbers in these calculations, but they are truncated to their 
 
 would give exactly the same results as the previous example.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=<numeric> MOD <numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 DIV
 ----
 
-=== [#mode]#MODE#, MO.
+== [#mode]#MODE#, MO.
 
 The MODE command sets the screen display mode. The screen is cleared and all the graphics and text parameters (colours, origin, etc) are reset to their default values.
 
@@ -144,41 +144,41 @@ From MOS 1.03, they are as follows:
 
 Modes with less than 64 colours per pixel are paletted; each logical colour can be assigned a different physical colour. See the COLOUR statement below for more information.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 MODE <numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 CLS, CLG
 ----
 
-=== [#move]#MOVE#
+== [#move]#MOVE#
 
 A statement which moves the graphics cursor to an absolute position without drawing a line.
 
 *_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 MOVE <numeric>,<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 DRAW, MODE, GCOL, PLOT
 ----
 
-=== [#new]#NEW#
+== [#new]#NEW#
 
 A command which initialises the interpreter for a new program to be typed in. The old program may be recovered with the link:#old[OLD] command provided no new program lines have been typed in or deleted and no variables have been created.
 
@@ -191,21 +191,21 @@ This command effectively 'removes' a program from the computer's memory. In real
 
 If you have made a mistake, you can recover your old program by typing link:#old[OLD]. However, this won't work if you have begun to enter a new program.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 NEW
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 OLD
 ----
 
-=== [#next]#NEXT#, N.
+== [#next]#NEXT#, N.
 
 The statement delimiting link:bbckey2.html#for[FOR]...NEXT loops. NEXT takes an optional control variable.
 
@@ -221,21 +221,21 @@ Leaving out the control variable will make the program run quicker, but this is 
 
 See the keyword link:bbckey2.html#for[FOR] for more details about the structure of FOR----NEXT loops.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 NEXT [<n-var>{,<n-var>}]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 FOR, TO, STEP
 ----
 
-=== [#not]#NOT#
+== [#not]#NOT#
 
 This is a high priority unary operator (the same priority as unary -). It causes a bit-by-bit binary inversion of the numeric to its right. The numeric may be a constant, a variable, or a mathematical or boolean expression. Expressions must be enclosed in brackets.
 
@@ -260,21 +260,21 @@ When the test in an IF----THEN----ELSE is evaluated, FALSE=0 and anything else i
 
 If the testable condition evaluates to 1, for example, the result of the test would be considered to be TRUE and the THEN part of the IF----THEN----ELSE statement would be carried out. However, using NOT in front of the testable condition would not reverse the action. NOT 1 evaluates to -2, which would also be considered to be TRUE.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=NOT<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 None
 ----
 
-=== [#old]#OLD#
+== [#old]#OLD#
 
 A command which undoes the effect of link:#new[NEW] provided no lines have been typed in or deleted, and no variables have been created.
 
@@ -285,21 +285,21 @@ OLD
 
 OLD works even if BBC BASIC (Z80) has been re-loaded and re-started from CP/M-80. However, it will only work if no other programs have been run and BBC BASIC (Z80) loads at the same address as before.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 OLD
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 NEW
 ----
 
-=== [#on]#ON#
+== [#on]#ON#
 
 A statement controlling a multi-way switch. The line numbers in the list may be constants or calculated and the 'unwanted' ones are skipped without calculation. The ON statement is used in conjunction with four other key-words: link:bbckey2.html#goto[GOTO], link:bbckey2.html#gosub[GOSUB], link:bbckey4.html#proc[PROC] and link:#onerror[ERROR]. (ON ERROR is explained separately.)
 
@@ -352,7 +352,7 @@ You can use ON...GOTO, ON...GOSUB, and ON...PROC to execute the appropriate part
 110 ... etc
 ----
 
-==== [#limitations]#Limitations#
+=== [#limitations]#Limitations#
 
 If a statement terminator (: or the token for ELSE) appears within the line, the interpreter assumes that the ON... statement is terminated. For example, you cannot pass a colon as a literal string parameter in an ON...PROC command. The program line
 
@@ -371,7 +371,7 @@ ON entry PROC_start,PROC_add("
 
 and give rise to an interesting crop of error messages.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -384,14 +384,14 @@ ON <numeric> PROC<name>[(<exp>{,<exp>})]
              [ELSE <stmt>{:<stmt>}]
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 ON ERROR, ON ERROR LOCAL, GOTO, GOSUB, PROC
 ----
 
-=== [#onerror]#ON ERROR#
+== [#onerror]#ON ERROR#
 
 A statement controlling error trapping. If an ON ERROR statement has been encountered, BBC BASIC (Z80) will transfer control to it (without taking any reporting action) when an error is detected. This allows error reporting/recovery to be controlled by the program. However, the program control stack is still cleared when the error is detected and it is not possible to link:bbckey4.html#return[RETURN] to the point where the error occurred.
 
@@ -415,7 +415,7 @@ For example, the ON ERROR statement can be used to trap out the escape key to pr
 
 Error handling is explained more fully in the link:bbc2.html#errorhandling[General Information] section.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -423,14 +423,14 @@ ON ERROR <stmt>{:<stmt>}
 ON ERROR OFF
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 ON, GOTO, GOSUB, PROC
 ----
 
-=== [#openin]#OPENIN#, OP.
+== [#openin]#OPENIN#, OP.
 
 A function which opens a file for reading and returns the file handle of the file. This number must be used in subsequent references to the file with link:bbckey1.html#bget[BGET#], link:bbckey2.html#inputhash[INPUT#], link:bbckey2.html#ext[EXT#], link:bbckey4.html#ptr[PTR#], link:bbckey2.html#eof[EOF#] or link:bbckey1.html#close[CLOSE#].
 
@@ -457,21 +457,21 @@ The example below reads data from disk into an array. If the data file does not 
 70 CLOSE#fnum
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=OPENIN(<str>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 OPENOUT, OPENUP, CLOSE#, PTR#, PRINT#, INPUT#, BGET#, BPUT#,  EOF#
 ----
 
-=== [#openout]#OPENOUT#
+== [#openout]#OPENOUT#
 
 A function which opens a file for writing and returns the file handle of the file. This number must be used in subsequent references to the file with link:bbckey1.html#bput[BPUT#], link:bbckey4.html#print[PRINT#], link:bbckey2.html#ext[EXT#], link:bbckey4.html#ptr[PTR#] or link:bbckey1.html#close[CLOSE#]. If the specified file does not exist it is created. If the specified file already exists it is truncated to zero length.
 
@@ -500,21 +500,21 @@ The example below writes the contents of two arrays (tables) to a file called 'T
 60 END
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=OPENOUT(<str>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 OPENIN, OPENUP, CLOSE#, PTR#, PRINT#, INPUT#, BGET#, BPUT#,  EOF#
 ----
 
-=== [#openup]#OPENUP#
+== [#openup]#OPENUP#
 
 A function which opens a disk data file for update (reading and writing) and returns the file handle of the file. This number must be used in subsequent references to the file with link:bbckey1.html#bget[BGET#], link:bbckey1.html#bput[BPUT#], link:bbckey2.html#inputhash[INPUT#], link:bbckey4.html#print[PRINT#], link:bbckey2.html#ext[EXT#], link:bbckey4.html#ptr[PTR#], link:bbckey2.html#eof[EOF#] or link:bbckey1.html#close[CLOSE#].
 
@@ -530,59 +530,59 @@ X=OPENUP ("FILE1")
 
 See the random file examples (F-RAND?) in the link:bbcfile3.html[BBC BASIC Disk Files] section for examples of the use of OPENUP.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=OPENUP(<str>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 OPENIN, OPENOUT, CLOSE#, PTR#, PRINT#, INPUT#, BGET#, BPUT#, EOF#
 ----
 
-=== [#opt]#OPT#
+== [#opt]#OPT#
 
 An assembler pseudo operation controlling the method of assembly. (See the link:bbc3.html[Assembler] section for more details.) OPT is followed by an expression with the following meanings:
 
-==== [#codeatp]#Code Assembled Starting at P%#
+=== [#codeatp]#Code Assembled Starting at P%#
 
 [cols="^,,",options="header",]
-|===
+|==
 | Value  |Action | 
 |0 |assembler errors suppressed;  |no listing.
 |1 |assembler errors suppressed; |listing.
 |2 |assembler errors reported; |no listing.
 |3 |assembler errors reported; |listing (default).
-|===
+|==
 
-==== [#codeato]#Code Assembled Starting at O%#
+=== [#codeato]#Code Assembled Starting at O%#
 
 [cols="^,,",options="header",]
-|===
+|==
 | Value  |Action | 
 |4 |assembler errors suppressed;  |no listing.
 |5 |assembler errors suppressed; |listing.
 |6 |assembler errors reported; |no listing.
 |7 |assembler errors reported; |listing.
-|===
+|==
 
 The possible assembler errors are:
 
 link:annexc.html#outofrange[Out of range] - error code 40. +
 link:annexc.html#nosuchvariable[No such variable] - error code 26. +
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 OPT <numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
@@ -591,7 +591,7 @@ None
 
 '''''
 
-=== [#or]#OR#
+== [#or]#OR#
 
 The operation of bitwise integer logical OR between two items. The two operands are internally converted to 4 byte integers before the OR operation.
 
@@ -634,21 +634,21 @@ the OR operation would be:
 11111111 11111111 11111111 11101111  = -17
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=<numeric> OR <numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 AND, EOR, NOT
 ----
 
-=== [#oscli]#OSCLI#
+== [#oscli]#OSCLI#
 
 This command allows a string expression to be passed to the operating system. It overcomes the problems caused by the exclusion of variables in the star (*) commands. Using this statement, you can, for instance, erase and rename files whose names you only know at run-time.
 
@@ -663,21 +663,21 @@ OSCLI command$
 
 See the link:opsys0.html[Operating System Interface] section for more details.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 OSCLI <str>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 All operating system (*) commands.
 ----
 
-=== [#page]#PAGE#, PA.
+== [#page]#PAGE#, PA.
 
 A pseudo-variable controlling the starting address of the current user program area. It addresses the area where a program is (or will be) stored.
 
@@ -698,7 +698,7 @@ With care, several programs can be left around in RAM without the need for savin
 
 USE WITH CARE.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -706,14 +706,14 @@ PAGE=<numeric>
 <n-var>=PAGE
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 TOP, LOMEM, HIMEM
 ----
 
-=== [#pi]#PI#
+== [#pi]#PI#
 
 A function returning 3.14159265.
 
@@ -743,21 +743,21 @@ degrees=180/PI*radians
 
 However, BBC BASIC (Z80) has two functions (link:bbckey4.html#rad[RAD] and link:bbckey1.html#deg[DEG]) which perform these conversions to a higher accuracy.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=PI
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 RAD, DEG
 ----
 
-=== [#plot]#PLOT#, PL.
+== [#plot]#PLOT#, PL.
 
 PLOT is a multi-purpose drawing statement. Three numbers follow the PLOT statement: the first specifies the mode, that is the type of point, line, triangle or circle to be drawn; the second and third give the X and Y coordinates to be used.
 
@@ -770,41 +770,41 @@ Plot supports the following operations:
 * 148: Circle passing through point x,y
 
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 PLOT <numeric>,<numeric>,<numeric>
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 MODE, CLG, MOVE, DRAW, POINT, VDU, GCOL
 ----
 
-=== [#point]#POINT#
+== [#point]#POINT#
 
 A function which returns a number giving the physical colour of the screen at the coordinates specified. If the point is outside the graphics window, then -1 is returned.
 
 Note, this differs from the BBC Basic standard which returns the logical colour not the physical colour.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=POINT(<numeric>,<numeric>)
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 PLOT, DRAW, MOVE, GCOL
 ----
 
-=== [#pos]#POS#
+== [#pos]#POS#
 
 A function returning the horizontal position of the cursor on the screen. The left hand column is 0 and the right hand column is one less than the width of the display.
 
@@ -817,25 +817,25 @@ COUNT will tell you the print head position of the printer. It is an uncertain i
 
 See link:bbckey4.html#vpos[VPOS] for an example of the use of POS and VPOS.
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
 <n-var>=POS
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
 COUNT, TAB, VPOS
 ----
 
-=== [#print]#PRINT#, P.
+== [#print]#PRINT#, P.
 
 A statement which prints characters on the VDU screen or printer (see link:opsys1.html#opt[*OPT]). The printer may be turned on and off manually by typing ^P. All the characters displayed on the VDU screen after the first ^P will be echoed to the printer. A second ^P will turn the printer off.
 
-==== [#printinfo]#General Information#
+=== [#printinfo]#General Information#
 
 The items following PRINT are called the print list. The print list may contain a sequence of string or numeric literals or variables. The spacing between the items printed will vary depending on the punctuation used. If the print list does not end with a semi-colon, a new-line will be printed after all the items in the print list.
 
@@ -902,7 +902,7 @@ PRINT "HELLO"12 34  HELLO,,,,,,,,12,,,,,,,,34
 PRINT "HELLO"12,34  HELLO,,,,,,,,12     ,,,,,,,,34
 ----
 
-==== [#printformat]#Print Format Control#
+=== [#printformat]#Print Format Control#
 
 Although PRINT USING is not implemented in BBC BASIC, similar control over the print format can be obtained. The overall width of the print zones and print field, the number of figures or decimal places and the print format may be controlled by setting the print variable, @%, to the appropriate value. The print variable (@%) comprises 4 bytes and each byte controls one aspect of the print format. @% can be set equal to a decimal integer, but it is easier to use hexadecimal, since each byte can then be considered separately.
 
@@ -912,19 +912,19 @@ Although PRINT USING is not implemented in BBC BASIC, similar control over the p
 ----
 
 [cols=",,,",options="header",]
-|===
+|==
 |Byte   |Range   |Default   |Purpose
 |SS |00-01 |00 |STR$ Format Control
 |NN |00-02 |00 |Format Selection
 |PP |??-?? |09 |Number of Digits Printed
 |WW |00-0F |0A(10) |Zone and Print Field Width
-|===
+|==
 
-===== [#strformat]#STR$ Format Control - SS#
+==== [#strformat]#STR$ Format Control - SS#
 
 Byte 3 effects the format of the string generated by the link:bbckey4.html#str[STR$] function. If Byte 3 is 1 the string will be generated according to the format set by @%, otherwise the G9 format will be used.
 
-===== [#formatsel]#Format Selection - NN#
+==== [#formatsel]#Format Selection - NN#
 
 Byte 2 selects the general format as follows:
 
@@ -946,12 +946,12 @@ F Format
 
 Numbers are printed with a fixed number of decimal places.
 
-===== [#numdig]#Number of Digits - PP#
+==== [#numdig]#Number of Digits - PP#
 
 Byte 1 controls the number of digits printed in the selected format. The number is rounded (NOT truncated) to this size before it is printed. If Byte 1 is set outside the range allowed for by the selected format, it is taken as 9. The effect of Byte 1 differs slightly with the various formats.
 
 [width="100%",cols="^34%,^33%,33%",options="header",]
-|===
+|==
 | Format  |  Range   |Control Function
 |G |01-0A a|
 The maximum number of digits which can be printed, excluding the decimal point, before changing to the E format.
@@ -992,9 +992,9 @@ PRINT 100.5864      ,,,,100.59
 PRINT .64862        ,,,,,,0.65
 ----
 
-|===
+|==
 
-===== [#zonewidth]#Zone Width - WW#
+==== [#zonewidth]#Zone Width - WW#
 
 Byte 0 sets the width of the print zones and field.
 
@@ -1015,7 +1015,7 @@ PRINT 10.2,3.8      ,,,10.20,,,,3.80
 PRINT 10.2,3.8      ,10.20,,3.80
 ----
 
-===== [#changingat]#Changing the Print Control Variable#
+==== [#changingat]#Changing the Print Control Variable#
 
 It is possible to change the print control variable (@%) within a print list by using the function:
 
@@ -1033,7 +1033,7 @@ PRINT FN_pformat(&90A) x FN_pformat(&2020A) y
 
 will print x in G9z10 format and y in F2z10 format.
 
-==== [#printeg]#Examples#
+=== [#printeg]#Examples#
 
 [source,console]
 ----
@@ -1139,7 +1139,7 @@ The results obtained by running the following example program show the effect of
              8.46816132E8
 ----
 
-==== Syntax
+=== Syntax
 
 [source,console]
 ----
@@ -1147,7 +1147,7 @@ PRINT {[TAB(<numeric>[,<numeric>])][SPC(<numeric>]
       ['][,][;][~][<str>|<numeric>]}
 ----
 
-==== Associated Keywords
+=== Associated Keywords
 
 [source,console]
 ----
