@@ -91,9 +91,9 @@ asciidoctor-epub3 BBCBASICforAgonLight.adoc
 
 ## Rough Roadmap
 
-1. Convert R.T. Russell’s BBC BASIC (Z80) Manual to adoc source from which the contents of the original site can be regenerated
-2. Revise, removing sections that refer to different hardware or are otherwise not relevant.
-2. Incorporate changes made to date by Dean Belfield to BBC BASIC (Z80) for Agon as documented in his wiki.
+~~1. Convert R.T. Russell’s BBC BASIC (Z80) Manual to adoc source from which the contents of the original site can be regenerated~~
+~~2. Revise, removing sections that refer to different hardware or are otherwise not relevant.~~ [First pass. Some may remain]
+~~2. Incorporate changes made to date by Dean Belfield to BBC BASIC (Z80) for Agon as documented in his wiki.~~
 3. Enhance with extra information including potentially 
 (a) better instructions for newcomers to BASIC (the original docs assume familiarity with the language)
 (b) More Agon-specific material, eg instructions on updating firmware
