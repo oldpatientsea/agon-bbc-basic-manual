@@ -56,7 +56,7 @@ Display the current version of BBC BASIC
 *VERSION
 ----
 
-=== link:#mos-commands[]MOS commands
+=== [#version]#MOS Commands#
 
 In addition, any of the MOS commands can be called by prefixing them with a *
 
