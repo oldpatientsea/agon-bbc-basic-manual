@@ -8,21 +8,21 @@ Adapted from BBC BASIC (Z80) © Doug Mounter and Richard Russell 2009, and Dean 
 [quote,John James Audubon,The Birds of America]
 When the bird and the book disagree, believe the bird. 
 
-This document is an adaptation of R.T. Russell's {url-bbc-basic-for-z80}[BBC BASIC (Z80) Manual] to describe the implementation of BBC BASIC on the Agon light™ and AgonLight 2. It is made with the permission of the original author, using information from {url-agon-docs-wiki}[Dean Belfield's wiki] with his consent. 
+This is an adaptation of R.T. Russell's {url-bbc-basic-for-z80}[BBC BASIC (Z80) Manual] to describe the implementation of BBC BASIC on the Agon light™ and AgonLight 2. It is made with the permission of the original author, using information from {url-agon-docs-wiki}[Dean Belfield's wiki] with his consent. 
 
-The Agon light™ is an open source, eZ80-based single board computer and microcontroller designed by Bernardo Kastrup. The names "Agon" and "Agon Light" in this document refer equally to Bernardo's original design, his forthcoming Origins collector's edition, and to the re-engineered AgonLight 2 by Tsvetan Usunov, owner of Olimex Ltd. All use the same firmware. The names do not refer to a possible Agon 65X which is being designed at the moment by Kyle Cardoza and will, if it is released, have a 6502-series CPU, the W65C265S. BBC BASIC (Z80) requires a Z80 processor. BASIC in this document, unless otherwise specified, refers to BBC BASIC (Z80) for the Agon light™.
+The Agon light™ is an open source, eZ80-based single board computer and microcontroller designed by Bernardo Kastrup. The names "Agon" and "Agon Light" in this manual refer equally to Bernardo's original design, his forthcoming Origins collector's edition, and to the re-engineered AgonLight 2 by Tsvetan Usunov, owner of Olimex Ltd. All use the same firmware. The names do not refer to a possible Agon 65X which is being designed at the moment by Kyle Cardoza and will, if it is released, have a 6502-series CPU, the W65C265S. BBC BASIC (Z80) requires a Z80 processor. BASIC in this manual, unless otherwise specified, refers to BBC BASIC (Z80) for the Agon light™.
 
 The original BBC BASIC (Z80) Manual includes contributions from Doug Mounter who wrote adaptations for the Z88 and Tatung Einstein. R.T. Russell, Doug Mounter, Dean Belfield, Bernardo Kastrup and Tsvetan Usunov retain any and all original copyrights to and trademarks for their work. 
 
-This first draft has been collated by Tim Delmare from information shared by the Agon Light community. Any mistakes are mine. When the code and the document disagree, believe the code.
+This first draft has been collated by Tim Delmare from information shared by the Agon Light community. Any mistakes are mine. When the code and the manual disagree, believe the code.
 
 == Contributing
 
-The source code for the content of this document can be found at https://github.com/oldpatientsea/agon-bbc-basic-manual.
+The source code for the content of this manual can be found at https://github.com/oldpatientsea/agon-bbc-basic-manual.
 
-The source code for the antora playbook used to generate a web version of the manual is at https://github.com/oldpatientsea/agon-bbc-basic-manual-playbook
+The source code for the antora playbook used to generate a web version of the manual is at https://github.com/oldpatientsea/agon-bbc-basic-manual-playbook.
 
-Please feel free to raise issues on github pages with questions, requests for clarification, errors spotted and suggestions for enhancements. 
+Please feel free to raise issues on GitHub if you have any questions, requests for clarification, have spotted errors or have suggestions for enhancements. All contributions are welcome. 
 
 == A Brief History of Agon BASIC
 
@@ -50,14 +50,14 @@ BASIC runs in Z80 mode, that is within a 64K segment. The interpreter takes arou
 
 It needs a full 64K segment, so cannot be run from the MOS folder as a star command.
 
-Those familiar with BBC BASIC on RISC OS may notice some omissions such as the absence of CASE-OF-WHEN-OTHERWISE-ENDCASE in Agon BBC BASIC. The Acorn Archimedes used a 32-bit ARM CPU and removed the 16 KB limit on the BASIC code size, allowing new features to be added in BBC BASIC V which is the version still used in RISC OS. Agon BASIC is still under development and future versions may add some of these missing BBC BASIC V features.
+TIP: Those familiar with BBC BASIC on RISC OS may notice some omissions such as the absence of CASE-OF-WHEN-OTHERWISE-ENDCASE in Agon BBC BASIC. The Acorn Archimedes used a 32-bit ARM CPU and removed the 16 KB limit on the BASIC code size, allowing new features to be added in BBC BASIC V which is the version still used in RISC OS. Agon BASIC is still under development and future versions may add some of these missing BBC BASIC V features.
 
 == System Requirements
 
 :url-agon-bbc-basic-v104: https://github.com/breakintoprogram/agon-bbc-basic/releases/tag/v1.04
 :url-updating-firmware-intructions: https://github.com/breakintoprogram/agon-docs/wiki/Updating-Firmware
 
-This document describes {url-agon-bbc-basic-v104}[v1.04 of Agon BBC BASIC]. In order to run this version, you must be using AGON QUARK Firmware v1.03 (MOS v1.03 on the eZ80 and VDP v1.03 on the ESP32). 
+This manual describes {url-agon-bbc-basic-v104}[v1.04 of Agon BBC BASIC]. In order to run this version, you must be using AGON QUARK Firmware v1.03 (MOS v1.03 on the eZ80 and VDP v1.03 on the ESP32). 
 
 Where possible, differences between BASIC versions are noted however if you are running an earlier version of the firmware and BASIC you are recommended to follow the {url-updating-firmware-intructions}[instructions for updating online].
 
@@ -83,7 +83,7 @@ BBC BASIC (Z80) Version 3.00
 (C) Copyright R.T.Russell 1987
 ----
 
-Note, MOS automatically runs the contents of the AUTOEXEC.TXT file found in the root directory of your microSD card. If you have copied the default AUTOEXEC.TXT file when setting up your device, then it will include the commands above and therefore your Agon Light will appear to boot directly to BASIC without you needed to type anything. 	
+NOTE: MOS automatically runs the contents of the AUTOEXEC.TXT file found in the root directory of your microSD card. If you have copied the default AUTOEXEC.TXT file when setting up your device, then it will include the commands above and therefore your Agon Light will appear to boot directly to BASIC without you needed to type anything. 	
 
 It is possible to automatically CHAIN (load and run) a BBC BASIC program by passing the filename as a parameter:
 
@@ -93,7 +93,7 @@ LOAD bbcbasic.bin
 RUN . /path/to/file.bas
 ----
 
-Note that passing a . as the first parameter of RUN is informing MOS to use the default value there (&40000)
+NOTE: Passing a `.` as the first parameter of RUN is informing MOS to use the default value there (&40000).
 
 To exit BBC BASIC (Z80) and return to MOS type
 
