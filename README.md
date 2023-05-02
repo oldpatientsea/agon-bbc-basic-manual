@@ -9,18 +9,6 @@ Licence to be determined. It will be as open as possible while respecting the co
 ## Directory structure
 
 ```
-├── dist
-│   ├── EPUB
-│   └── HTML
-│       ├── _
-│       │   ├── css
-│       │   ├── font
-│       │   ├── img
-│       │   └── js
-│       │       └── vendor
-│       └── agon-bbc-basic-manual
-│           └── 0.1
-│               └── _images
 ├── epub
 ├── meta
 ├── modules
@@ -34,12 +22,6 @@ Licence to be determined. It will be as open as possible while respecting the co
     ├── RTRussellBBCBASICZ80
     └── wiki
 ```
-
-### dist
-
-This for the moment is a place to cache manually generated output files. Once a fully automated build process is in place, it will probably be removed.
-
-There will be one folder per output type. At present these comprise alpha versions of HTML and EPUB. Neither should be considered a formal release.
 
 ### originals
 
