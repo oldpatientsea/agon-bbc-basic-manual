@@ -14,7 +14,7 @@ In addition to running your program, the stack is also used 'internally' by the 
 
 ==== [#memorymap]#The Memory Map#
 .Memory Map by R. T. Russell 
-image::images/MemoryMapRTRussell.png["Memory Map, by R. T. Russell"]
+image::MemoryMapRTRussell.png["Memory Map, by R. T. Russell"]
 
 The function of link:bbckey2.html#himem[HIMEM], link:bbckey2.html#lomem[LOMEM], link:bbckey4.html#top[TOP] and link:bbckey3.html#page[PAGE] are briefly discussed below. You will find more complete definitions elsewhere in this manual. You can directly set HIMEM, LOMEM and PAGE. However, for most of your programs you won't need to alter any of them. You will probably only need to change HIMEM if you want to put some machine code sub-routines at the top of memory.
 
@@ -75,7 +75,7 @@ Assigning a null string to stop$ prevents the space for the last entry in the ar
 The program is stored in memory in the format shown below. The first program line commences at link:bbckey3.html#page[PAGE].
 
 .Program Storage in Memory by R. T. Russell
-image::images/ProgramStorageinMemory.png["Program Storage in Memory, by R. T. Russell"]
+image::ProgramStorageinMemory.png["Program Storage in Memory, by R. T. Russell"]
 
 ==== [#linelength]#Line Length#
 
@@ -106,19 +106,19 @@ The first variable created for each starting character is accessed via the index
 Integers are held in two's complement format. They occupy 4 bytes, with the LSB first. Bit 7 of the MSB is the sign bit. To make up the complete variable, the address word, the name and a separator (zero) byte are added to the number. The format of the memory occupied by an integer variable called 'NUMBER%' is shown below. Note that since the first character of the name is found via the index, it is not stored with the variable.
 
 .Integer Variables by R. T. Russell
-image::images/IntegerVariables.png["Integer Variables, by R. T. Russell"]
+image::IntegerVariables.png["Integer Variables, by R. T. Russell"]
 
 The smallest amount of space is taken up by a variable with a single letter name. The static integer variables, which are not included in the variable chains, use the names A% to Z%. Thus, the only single character names available for dynamic integer variables are a% to z% plus _% and *`*% (CHR$(96)). As shown below, integer variables with these names will occupy 8 bytes.
 
 .Static Integer Variables by R. T. Russell
-image::images/StaticIntegerVariables.png["Static Integer Variables, by R. T. Russell"]
+image::StaticIntegerVariables.png["Static Integer Variables, by R. T. Russell"]
 
 ==== [#real]#Real Variables#
 
 Real numbers are held in binary floating point format. The mantissa is held as a 4 byte binary fraction in sign and magnitude format. Bit 7 of the MSB of the mantissa is the sign bit. When working out the value of the mantissa, this bit is assumed to be 1 (a decimal value of 0.5). The exponent is held as a single byte in 'excess 127' format. In other words, if the actual exponent is zero, the value of stored in the exponent byte is 127. To make up the complete variable, the address word, the name and a separator (zero) byte are added to the number. The format of the memory occupied by a real variable called 'NUMBER' is shown below.
 
 .Real Variables by R. T. Russell
-image::images/RealVariables.png["Real Variables, by R. T. Russell"]
+image::RealVariables.png["Real Variables, by R. T. Russell"]
 
 As with integer variables, variables with single character names occupy the least memory. (However, the names A to Z are available for dynamic real variables.) Whilst a real variable requires an extra byte to store the number, the '%' character is not needed in the name. Thus, integer and real variables with the same name occupy the same amount of memory. However, this does not hold for arrays, since the name is only stored once.
 
@@ -127,7 +127,7 @@ In the following examples, the bytes are shown in the more human-readable manner
 The value 5.5 would be stored as shown below.
 
 .Storage of Value 5.5 by R. T. Russell
-image::images/StorageofValue5pt5.png["Storage of Value 5.5, by R. T. Russell"]
+image::StorageofValue5pt5.png["Storage of Value 5.5, by R. T. Russell"]
 
 BBC BASIC (Z80) stores integer values in real variables in a special way which allows the faster integer arithmetic routines to be used if appropriate. The presence of an integer value in a real variable is indicated by the stored exponent being zero. Thus, if the stored exponent is zero, the real variable is being used to hold an integer and the 4 byte mantissa holds the number in normal integer format.
 
@@ -150,14 +150,14 @@ will set the exponent to &82 and the mantissa to &20 00 00 00.
 The two ways of storing an integer value are illustrated in the following four examples.
 
 .Examples of Storing Integer Value by R. T. Russell
-image::images/ExamplesofStoringIntegerValue.png["Examples of Storing Integer Value, by R. T. Russell"]
+image::ExamplesofStoringIntegerValue.png["Examples of Storing Integer Value, by R. T. Russell"]
 
 If all this seems a little complicated, try using the program on the next page to accept a number from the keyboard and display the way it is stored in memory. The program displays the 4 bytes of the mantissa in 'human readable order' followed by the exponent byte. Look at what happens when you input first 5 and then 5.0 and you will see how this corresponds to the explanation given above. Then try -5 and -5.0 and then some other numbers. (The program is an example of the use of the byte indirection operator. See the link:bbc2.html#indirection[Indirection] section for details.)
 
 The layout of the variable 'NMBR' in memory is shown below.
 
 .Layout of the Variable NMBR in Memory by R. T. Russell
-image::images/LayoutofVariableNMBR.png["Layout of Variable 'NMBR', by R. T. Russell"]
+image::LayoutofVariableNMBR.png["Layout of Variable 'NMBR', by R. T. Russell"]
 
 [source,console]
 ----
@@ -188,7 +188,7 @@ image::images/LayoutofVariableNMBR.png["Layout of Variable 'NMBR', by R. T. Russ
 String variables are stored as the string of characters. Since the current length of the string is stored in memory an explicit terminator for the string in unnecessary. As with numeric variables, the first word of the complete variable is the address of the next variable starting with the same character. However, since BBC BASIC (Z80) needs information about the length of the string and the address in memory where the it starts, the overheads for a string are more than for a numeric. The format of a string variable called 'NAME$' is shown below.
 
 .String Variables by R. T. Russell
-image::images/StringVariables.png["String Variables, by R. T. Russell"]
+image::StringVariables.png["String Variables, by R. T. Russell"]
 
 When a string variable is first created in memory, the characters of the string follow immediately after the two bytes containing the start address of the string and the current and maximum lengths are the same. While the current length of the string does not exceed its length when created, the characters of the string will follow the address bytes. When the string variable is set to a string which is longer than its original length, there will be insufficient room in the original position for the characters of the string. When this happens, the string will be placed on the top of the heap and the new start address will be loaded into the two address bytes. The original string space will remain, but it will be unusable. This unusable string space is called 'garbage'. See the link:bbc2.html#variables[Variables] sub-section for ways to avoid creating link:bbc2.html#garbage[garbage].
 
