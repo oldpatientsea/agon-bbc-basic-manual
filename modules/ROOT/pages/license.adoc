@@ -1,6 +1,18 @@
 == License
 
+=== Manual
+
 This work is licensed under Attribution-ShareAlike 4.0 International. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
 
 image::CC-BY-SA-4.png[Attribution-ShareAlike 4.0 International]
+
+=== Software
+
+BBC BASIC (Z80) is licensed under the https://github.com/breakintoprogram/agon-bbc-basic/blob/main/COPYING[zlib licence], with alterations by Dean Belfield released under the same licence.
+
+Copyright (c) 1984-2000 R.T. Russell
+
+=== Hardware
+
+Agon light™ and AgonLight 2 hardware released under CERN Open Hardware Licence Version 2 - Strongly Reciprocal, all silkscreen credits to Bernardo Kastrup and Dean Belfield should remain.
 
