@@ -12,13 +12,15 @@ This is an adaptation of R.T. Russell's {url-bbc-basic-for-z80}[BBC BASIC (Z80) 
 
 The Agon light™ is an open source, eZ80-based single board computer and microcontroller designed by Bernardo Kastrup. The names "Agon" and "Agon Light" in this manual refer equally to Bernardo's original design, his forthcoming Origins collector's edition, and to the re-engineered AgonLight 2 by Tsvetan Usunov, owner of Olimex Ltd. All use the same firmware. The names do not refer to a possible Agon 65X which is being designed at the moment by Kyle Cardoza and will, if it is released, have a 6502-series CPU, the W65C265S. BBC BASIC (Z80) requires a Z80 processor. BASIC in this manual, unless otherwise specified, refers to BBC BASIC (Z80) for the Agon light™.
 
-The original BBC BASIC (Z80) Manual includes contributions from Doug Mounter who wrote adaptations for the Z88 and Tatung Einstein. R.T. Russell, Doug Mounter, Dean Belfield, Bernardo Kastrup and Tsvetan Usunov retain any and all original copyrights to and trademarks for their work. 
+The original BBC BASIC (Z80) Manual includes contributions from Doug Mounter who also wrote adaptations for the Z88 and Tatung Einstein. R.T. Russell, Doug Mounter, Dean Belfield, Bernardo Kastrup and Tsvetan Usunov retain any and all original copyrights to and trademarks for their work. 
 
 This first draft has been collated by Tim Delmare from information shared by the Agon Light community. Any mistakes are mine. When the code and the manual disagree, believe the code.
 
 == Contributing
 
-The source code for the content of this manual can be found at https://github.com/oldpatientsea/agon-bbc-basic-manual.
+This work is licensed under Attribution-ShareAlike 4.0 International. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
+
+The source for the content of this manual including a history of the alterations from the original sources can be found at https://github.com/oldpatientsea/agon-bbc-basic-manual.
 
 The source code for the antora playbook used to generate a web version of the manual is at https://github.com/oldpatientsea/agon-bbc-basic-manual-playbook.
 
