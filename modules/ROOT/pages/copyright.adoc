@@ -1,11 +1,11 @@
-Copyright (c)  Doug Mounter 2009
+Copyright (c) Doug Mounter 2009
 
-Copyright (c)  Richard Russell 2009
+Copyright (c) Richard Russell 2009
 
-Copyright (c)  Dean Belfield 2022-2023
+Copyright (c) Dean Belfield 2022-2023
 
-Copyright (c)  Tim Delmare 2023
+Copyright (c) Tim Delmare 2023
 
-BBC BASIC (Z80) software copyright (c) 1984-2000 R.T. Russell
+BBC BASIC (Z80) software copyright (c) 1984-2000 Richard Russell
 
 Agon light™ trademark owned by Bernardo Kastrup.
