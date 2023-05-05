@@ -26,6 +26,10 @@ The source code for the antora playbook used to generate a web version of the ma
 
 Please feel free to raise issues on GitHub if you have any questions, requests for clarification, have spotted errors or have suggestions for enhancements. All contributions are welcome. 
 
+== Disclaimer of Warranty
+
+Provided as-is, expressly without warranties and/or representations of any kind. The authors disclaim all responsibility for damages incurred as a direct and/or indirect result of the use of this manual and/or the system it describes.  
+
 == A Brief History of Agon BASIC
 
 BASIC (Beginner's All-purpose Symbolic Instruction Code) was born in 1964 at Dartmouth College, New Hampshire along with DTSS, the Dartmouth Time Sharing System on which it ran, the work respectively of two brilliant mathematicians, professors John Kemeny and Thomas Kurtz.
