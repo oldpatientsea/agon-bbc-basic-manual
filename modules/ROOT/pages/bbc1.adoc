@@ -1,10 +1,18 @@
 = BBC BASIC (Z80) for the Agon light™
 Adapted from BBC BASIC (Z80) © Doug Mounter and Richard Russell 2009, and Dean Belfield's Wiki
 
-== Introduction
 :url-bbc-basic-for-z80: https://www.bbcbasic.co.uk/bbcbasic/mancpm/index.html
 :url-agon-docs-wiki: https://github.com/breakintoprogram/agon-docs/wiki/BBC-BASIC-for-Agon
+:url-agon-bbc-basic-v104: https://github.com/breakintoprogram/agon-bbc-basic/releases/tag/v1.04
+:url-updating-firmware-intructions: https://github.com/breakintoprogram/agon-docs/wiki/Updating-Firmware
+:version-basic: 1.04
+:version-MOS: 1.03
+:version-VDP: 1.03
+:version-Quark: 1.03
+:version-basic-manual: 1.04.rc1
 
+
+== Introduction
 [quote,John James Audubon,The Birds of America]
 When the bird and the book disagree, believe the bird. 
 
@@ -42,7 +50,7 @@ The original version of BBC BASIC was written by Sophie Wilson at Acorn in 1981 
 
 In 2022, Dean Belfield began work on the QUARK firmware for the Agon light™. The firmware consists of three parts: Agon MOS for the eZ80, the CPU driving the machine; Agon VDP for the ESP32-PICO-D4 that handles video and audio as well as managing keyboard input; and, BBC BASIC for Agon, a new port of BBC BASIC (Z80) with a number of modifications to make it run on this specific hardware. The same firmware runs on the AgonLight 2. 
 
-The current version of BBC BASIC for Agon is v1.04. 
+The current version of BBC BASIC for Agon is {version-basic}. 
 
 == Before You Start
 
@@ -60,10 +68,7 @@ TIP: Those familiar with BBC BASIC on RISC OS may notice some omissions such as 
 
 == System Requirements
 
-:url-agon-bbc-basic-v104: https://github.com/breakintoprogram/agon-bbc-basic/releases/tag/v1.04
-:url-updating-firmware-intructions: https://github.com/breakintoprogram/agon-docs/wiki/Updating-Firmware
-
-This manual describes {url-agon-bbc-basic-v104}[v1.04 of Agon BBC BASIC]. In order to run this version, you must be using AGON QUARK Firmware v1.03 (MOS v1.03 on the eZ80 and VDP v1.03 on the ESP32). 
+This manual describes {url-agon-bbc-basic-v104}[{version-basic} of Agon BBC BASIC]. In order to run this version, you must be using AGON QUARK Firmware {version-Quark} (MOS {version-MOS} on Z80 and VDP {version-VDP} on the ESP32). 
 
 Where possible, differences between BASIC versions are noted however if you are running an earlier version of the firmware and BASIC you are recommended to follow the {url-updating-firmware-intructions}[instructions for updating online].
 
