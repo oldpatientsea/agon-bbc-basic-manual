@@ -4,8 +4,6 @@ This repository contains source needed to generate an adaptation of R.T. Russell
 
 Documentation is written in asciidoc and asciidoctor will be used to generate HTML, ePUB and PDF output.
 
-Licence to be determined. It will be as open as possible while respecting the copyrights of the authors of the original sources.
-
 ## Directory structure
 
 ```
