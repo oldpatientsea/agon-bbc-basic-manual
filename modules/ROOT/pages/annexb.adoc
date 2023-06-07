@@ -4,83 +4,64 @@
 
 BBC BASIC (Z80) has more intrinsic mathematical functions than many other versions of BASIC. Those that are not provided may be calculated as shown below.
 
-Function`       `
+|===
+|Function | Calculation
 
-Calculation
+| *SECANT*
+| `SEC(X)=1/COS(X)`
 
-*SECANT*
+| *COSECANT*
+| `CSC(X)=1/SIN(X)`
 
-`SEC(X)=1/COS(X)`
+| *COTANGENT*
+| `COT(X)=1/TAN(X)`
 
-*COSECANT*
+| *Inverse SECANT*
+| `ARCSEC(X)=ACS(1/X)`
 
-`CSC(X)=1/SIN(X)`
+| *Inverse COSECANT*
+| `ARCCSC(X)=ASN(1/X)`
 
-*COTANGENT*
+| *Inverse COTANGENT*
+| `ARCCOT(X)=ATN(1/X) =PI/2-ATN(X)`
 
-`COT(X)=1/TAN(X)`
+| *Hyperbolic SINE*
+| `SINH(X)=(EXP(X)-EXP(-X))/2`
 
-*Inverse SECANT*
+| *Hyperbolic COSINE*
+| `COSH(X)=(EXP(X)+EXP(-X))/2`
 
-`ARCSEC(X)=ACS(1/X)`
+| *Hyperbolic TANGENT*
+| `TANH(X)=EXP(-X)/(EXP(X)+EXP(-X))*2+1`
 
-*Inverse COSECANT*
+| *Hyperbolic SECANT*
+| `SECH(X)=2/(EXP(X)+EXP(-X))`
 
-`ARCCSC(X)=ASN(1/X)`
+| *Hyperbolic COSECANT*
+| `CSCH(X)=2/(EXP(X)-EXP(-X))`
 
-*Inverse COTANGENT*
+| *Hyperbolic COTANGENT*
+| `COTH(X)=EXP(-X)/(EXP(X)-EXP(-X))*2+1`
 
-`ARCCOT(X)=ATN(1/X) =PI/2-ATN(X)`
+| *Inverse Hyperbolic SIN*
+| `ARCSINH(X)=LN(X+SQR(X*X+1))`
 
-*Hyperbolic SINE*
+| *Inverse Hyperbolic COSINE*
+| `ARCCOSH(X)=LN(X+SQR(X*X-1))`
 
-`SINH(X)=(EXP(X)-EXP(-X))/2`
+| *Inverse Hyperbolic TANGENT*
+| `ARCTANH(X)=LN((1+X)/(1-X))/2`
 
-*Hyperbolic COSINE*
+| *Inverse Hyperbolic SECANT*
+| `ARCSECH(X)=LN((SQR(-X*X+1)+1)/X)`
 
-`COSH(X)=(EXP(X)+EXP(-X))/2`
+| *Inverse Hyperbolic COSECANT*
+| `ARCCSCH(X)=LN((SGN(X)*SQR(X*X+1)+1)/X`
 
-*Hyperbolic TANGENT*
+| *Inverse Hyperbolic COTANGENT*
+| `ARCCOTH(X)=LN((X+1)/(X-1))/2`
 
-`TANH(X)=EXP(-X)/(EXP(X)+EXP(-X))*2+1`
+| *LOGn(X)*
+| `LOGn(X)=LN(X)/LN(n) =LOG(X)/LOG(n)`
 
-*Hyperbolic SECANT*
-
-`SECH(X)=2/(EXP(X)+EXP(-X))`
-
-*Hyperbolic COSECANT*
-
-`CSCH(X)=2/(EXP(X)-EXP(-X))`
-
-*Hyperbolic COTANGENT*
-
-`COTH(X)=EXP(-X)/(EXP(X)-EXP(-X))*2+1`
-
-*Inverse Hyperbolic SIN*
-
-`ARCSINH(X)=LN(X+SQR(X*X+1))`
-
-*Inverse Hyperbolic COSINE*
-
-`ARCCOSH(X)=LN(X+SQR(X*X-1))`
-
-*Inverse Hyperbolic TANGENT*
-
-`ARCTANH(X)=LN((1+X)/(1-X))/2`
-
-*Inverse Hyperbolic SECANT*
-
-`ARCSECH(X)=LN((SQR(-X*X+1)+1)/X)`
-
-*Inverse Hyperbolic COSECANT*
-
-`ARCCSCH(X)=LN((SGN(X)*SQR(X*X+1)+1)/X`
-
-*Inverse Hyperbolic COTANGENT*
-
-`ARCCOTH(X)=LN((X+1)/(X-1))/2`
-
-*LOGn(X)*
-
-`LOGn(X)=LN(X)/LN(n) =LOG(X)/LOG(n) `
-
+|===
