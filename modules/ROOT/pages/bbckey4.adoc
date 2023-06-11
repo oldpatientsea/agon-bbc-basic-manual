@@ -1372,9 +1372,7 @@ STR$, EVAL
 
 == [#vdu]#VDU#, V.
 
-The VDU commands on the Agon Light will be familiar to those who have coded on Acorn machines. Please read the link:/breakintoprogram/agon-docs/wiki/VDP[VDP] documentation for details on what VDU commands are supported.
-
-A statement which takes a list of numeric arguments and sends their least-significant bytes as characters to the current 'output stream' (see link:opsys1.html#opt[*OPT]).
+The VDU commands on the Agon Light will be familiar to those who have coded on Acorn machines. Please refer to the [VDP wiki](https://github.com/breakintoprogram/agon-docs/wiki/VDP/ff9e72943455a90430c31c097fd7083616bc857e) for details on what VDU commands are supported.
 
 A 16-bit value can be sent if the value is followed by a '*;*'. It is sent as a pair of characters, least significant byte first.
 
