@@ -687,8 +687,6 @@ OPENIN, OPENUP, OPENOUT, PRINT#, INPUT#, BPUT#, BGET#, EXT#,  PTR#, EOF#
 
 A statement which clears the graphics area of the screen and sets it to the currently selected graphics background colour,
 
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
-
 === Syntax
 
 [source,console]
@@ -1121,8 +1119,6 @@ MOD
 == [#draw]#DRAW#
 
 A statement which draws a line on the screen in the graphics modes. The statement is followed by the X and Y coordinates of the end of the line.
-
-*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
 
 === Syntax
 
