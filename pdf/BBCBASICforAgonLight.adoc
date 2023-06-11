@@ -1,8 +1,16 @@
 = BBC BASIC (Z80) Manual for the Agon Light
 R. T. Russell, Doug Mounter, Dean Belfield, Tim Delmare
-:doctype: book
-:imagesdir: ../modules/ROOT/images 
 
+:doctype: book
+:source-highlighter: rouge
+
+:sectnums:
+:toc:
+:toclevels: 5
+
+:doctype: book
+
+:imagesdir: ../modules/ROOT/images 
 :doctitle: BBC BASIC (Z80) Manual for the Agon Light
 :author: R. T. Russell, Doug Mounter, Dean Belfield, Tim Delmare
 :description: A manual describing BBC BASIC (Z80) as adapted for the Agon Light
@@ -25,3 +33,5 @@ include::../modules/ROOT/pages/annexb.adoc[]
 include::../modules/ROOT/pages/annexc.adoc[]
 include::../modules/ROOT/pages/annexd.adoc[]
 
+[Index]
+= Index
