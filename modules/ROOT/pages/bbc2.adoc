@@ -2,7 +2,7 @@
 
 === Introduction
 
-==== [#linenumbers]Line Numbers
+==== [#linenumbers]#Line Numbers#
 
 Line numbers up to 65535 are allowed. If line 65535 does not exist, then GOTO 65535 is equivalent to END. Line number 0 is not permitted.
 
@@ -17,7 +17,7 @@ For example, the following will work.
  10 FOR i=1 TO 5 PRINT i : NEXT
 ----
 
-=== [#editing]The Line Editor
+=== [#editing]#The Line Editor#
 
 The link:bbckey1.html#edit[EDIT] command may be used to edit the specified program line. By changing only the line number, you can also use EDIT to duplicate a line.
 
