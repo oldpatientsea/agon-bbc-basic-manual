@@ -693,6 +693,6 @@ You can use this routine to add numbers to the list in order. If you can't find 
 
 Have a look at the flow chart below and work through a couple of dry runs with a short list of numbers. You may think that it's not worth doing it this way and that a 'linear search' would be as quick. Try it with a list of 100 numbers. It should take you no more than 7 goes to find the number. The AVERAGE number of comparisons required for a linear search would be 50.
 
-image:flowchart.gif[Flow chart,width=517,height=722]
+image:flowchart.png[Flow chart,width=517,height=722]
 
 

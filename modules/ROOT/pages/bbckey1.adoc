@@ -56,7 +56,7 @@ If you know the cosine of the angle, this function will tell you the angle (in r
 
 The following diagram illustrates the problem:
 
-image:acs.gif[Arc cosine,width=352,height=236]
+image:acs.png[Arc cosine,width=352,height=236]
 
 Within the four quadrants, there are two angles which have the same cosine, two with the same sine and two with the same tangent. When you are working back from the cosine, sine or tangent you don't know which of the two possible angles is correct.
 
