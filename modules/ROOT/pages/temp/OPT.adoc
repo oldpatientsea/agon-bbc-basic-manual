@@ -1,0 +1,47 @@
+== [#opt]#OPT#
+
+An assembler pseudo operation controlling the method of assembly. (See the link:bbc3.html[Assembler] section for more details.) OPT is followed by an expression with the following meanings:
+
+=== [#codeatp]#Code Assembled Starting at P%#
+
+[cols="^,,",options="header",]
+|==
+| Value  |Action | 
+|0 |assembler errors suppressed;  |no listing.
+|1 |assembler errors suppressed; |listing.
+|2 |assembler errors reported; |no listing.
+|3 |assembler errors reported; |listing (default).
+|==
+
+=== [#codeato]#Code Assembled Starting at O%#
+
+[cols="^,,",options="header",]
+|==
+| Value  |Action | 
+|4 |assembler errors suppressed;  |no listing.
+|5 |assembler errors suppressed; |listing.
+|6 |assembler errors reported; |no listing.
+|7 |assembler errors reported; |listing.
+|==
+
+The possible assembler errors are:
+
+link:annexc.html#outofrange[Out of range] - error code 40. +
+link:annexc.html#nosuchvariable[No such variable] - error code 26. +
+
+=== Syntax
+
+[source,console]
+----
+OPT <numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+None
+----
+
+'''''
+

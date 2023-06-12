@@ -1,0 +1,36 @@
+== [#let]#LET#
+
+LET is an optional assignment statement.
+
+LET is not permitted in the assignment of the pseudo-variables link:#lomem[LOMEM], link:#himem[HIMEM], link:bbckey3.html#page[PAGE], link:bbckey4.html#ptr[PTR#] and link:bbckey4.html#time[TIME].
+
+LET was mandatory in early versions of BASIC. Its use emphasised that when we write
+
+[source,console]
+----
+X=X+4
+----
+
+we don't mean to state that X equals X+4 - it can't be, but rather 'let X become equal to what it was plus 4':
+
+[source,console]
+----
+LET X=X+4
+----
+
+Most modern versions of BASIC allow you to drop the 'LET' statement. However, if you are writing a program for a novice, the use of LET makes it more understandable.
+
+=== Syntax
+
+[source,console]
+----
+[LET] <var>=<exp>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+None
+----
+

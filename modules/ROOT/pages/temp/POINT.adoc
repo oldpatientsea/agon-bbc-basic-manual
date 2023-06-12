@@ -1,0 +1,20 @@
+== [#point]#POINT#
+
+A function which returns a number giving the physical colour of the screen at the coordinates specified. If the point is outside the graphics window, then -1 is returned.
+
+Note, this differs from the BBC Basic standard which returns the logical colour not the physical colour.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=POINT(<numeric>,<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+PLOT, DRAW, MOVE, GCOL
+----
+

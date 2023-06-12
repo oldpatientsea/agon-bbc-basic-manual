@@ -1,0 +1,30 @@
+== [#deg]#DEG#
+
+A function which converts radians to degrees.
+
+[source,console]
+----
+degree_angle=DEG(PI/2)
+X=DEG(ATN(1))
+----
+
+You can use this function to convert an angle expressed in radians to degrees. One radian is approximately 57 degrees (actually 180/PI). PI/2 radians is 90 degrees and link:bbckey3.html#pi[PI] radians is 180 degrees.
+
+Using DEG is equivalent to multiplying the radian value by 180/PI, but the result is calculated internally to a greater accuracy.
+
+See link:#acs[ACS], link:#asn[ASN] and link:#atn[ATN] for further examples of the use of DEG.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=DEG(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+RAD, SIN, COS, TAN, ACS, ASN, ATN, PI
+----
+

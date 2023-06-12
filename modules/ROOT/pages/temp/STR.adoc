@@ -1,0 +1,30 @@
+== [#str]#STR$#
+
+A string function which returns the string form of the numeric argument as it would have been printed.
+
+If the most significant byte of @% is not zero, STR$ uses the current @% description when generating the string. If it is zero (the initial value) then the G9 format (see link:bbckey3.html#print[PRINT]) is used.
+
+If STR$ is followed by ~ (tilde) then a hexadecimal conversion is carried out.
+
+[source,console]
+----
+A$=STR$(PI)
+B$=STR$~(100) :REM B$ will be "64"
+----
+
+The opposite function to STR$ is performed by the link:#val[VAL] function.
+
+=== Syntax
+
+[source,console]
+----
+<s-var>=STR$[~](<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+VAL, PRINT
+----
+

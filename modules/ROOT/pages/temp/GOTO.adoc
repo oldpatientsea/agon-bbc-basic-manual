@@ -1,0 +1,33 @@
+== [#goto]#GOTO#, G.
+
+A statement which transfers program control to a line with a specified or calculated line number.
+
+[source,console]
+----
+GOTO 100
+GOTO (X*10)
+----
+
+You may not GOTO a line which is outside the current link:#for[FOR]...link:bbckey3.html#next[NEXT], link:bbckey4.html#repeat[REPEAT]...link:bbckey4.html#until[UNTIL] or link:#gosub[GOSUB] loop.
+
+If a calculated value is used, the program should not be link:bbckey4.html#renumber[RENUMBER]ed. A calculated value must be placed in brackets.
+
+The GOTO statement makes BBC BASIC (Z80) jump to a specified line number rather than continuing with the next statement in the program.
+
+You should use GOTO with care. Uninhibited use will make your programs almost impossible to understand (and hence, debug). If you use REPEAT----UNTIL and FOR----NEXT loops you will not need to use many GOTO statements.
+
+=== Syntax
+
+[source,console]
+----
+GOTO <l-num>
+GOTO (<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+GOSUB, ON
+----
+

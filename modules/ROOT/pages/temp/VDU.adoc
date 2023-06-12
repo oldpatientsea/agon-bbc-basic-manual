@@ -1,0 +1,30 @@
+== [#vdu]#VDU#, V.
+
+The VDU commands on the Agon Light will be familiar to those who have coded on Acorn machines. Please refer to the [VDP wiki](https://github.com/breakintoprogram/agon-docs/wiki/VDP/ff9e72943455a90430c31c097fd7083616bc857e) for details on what VDU commands are supported.
+
+A 16-bit value can be sent if the value is followed by a '*;*'. It is sent as a pair of characters, least significant byte first.
+
+[source,console]
+----
+VDU 8,8 :REM cursor left two places.
+VDU &0A0D;&0A0D; :REM CRLF twice
+----
+
+The bytes sent using the VDU statement do not contribute to the value of link:bbckey1.html#count[COUNT], but may well change link:bbckey3.html#pos[POS] and link:#vpos[VPOS].
+
+You can use VDU to send characters direct to the current output stream without having to use a link:bbckey3.html#print[PRINT] statement. It offers a convenient way of sending a number of control characters to the console or printer.
+
+=== Syntax
+
+[source,console]
+----
+VDU <numeric>{,|;<numeric>}[;]
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+CHR$
+----
+

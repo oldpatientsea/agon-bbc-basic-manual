@@ -1,0 +1,104 @@
+== [#listo]#LISTO#
+
+A command which controls the appearance of a link:#list[LIST]ed program. The command controls the setting of the three least significant bits of the format control byte which can, therefore, be set to an integer 0 to 7 (0=all three bits 0, 7=all three bits 1).
+
+=== [#settings]#Bit Settings#
+
+==== Bit 0 (LSB)
+
+If Bit 0 is set, a space will be printed between the line number and the remainder of the line. (All leading spaces are stripped when the line is originally entered.)
+
+==== Bit 1
+
+If Bit 1 is set, two extra spaces will be printed out on lines between link:#for[FOR] and link:bbckey3.html#next[NEXT]. Two extra spaces will be printed for each depth of nesting.
+
+==== Bit 2
+
+If Bit 2 is set two extra spaces will be printed out on lines between link:bbckey4.html#repeat[REPEAT] and link:bbckey4.html#until[UNTIL]. Two extra spaces will be printed for each depth of nesting.
+
+The default setting of LISTO is 7. This will give a properly formatted listing. The indentation of the FOR..NEXT and REPEAT..UNTIL lines is done in the correct manner, in that the NEXT is aligned with the FOR and the REPEAT with the UNTIL.
+
+[source,console]
+----
+LISTO 7
+----
+
+will give
+
+ [source,console]
+----
+10 A=20
+ 20 TEST$="FRED"
+ 30 FOR I=1 TO A
+ 40   Z=2^I
+ 50   PRINT I,Z
+ 60   REPEAT
+ 70     PRINT TEST$
+ 80     TEST$=LEFT$(TEST$,LEN(TEST$)-1)
+ 90   UNTIL LEN(TEST$)=0
+100 NEXT
+110 END
+----
+
+at the other extreme
+
+[source,console]
+----
+LISTO 0
+----
+
+will give
+
+ [source,console]
+----
+10A=20
+ 20TEST$="FRED"
+ 30FOR I=1 TO A
+ 40Z=2^I
+ 50PRINT I,Z
+ 60REPEAT
+ 70PRINT TEST$
+ 80TEST$=LEFT$(TEST$,LEN(TEST$)-1)
+ 90UNTIL LEN(TEST$)=0
+100NEXT
+110END
+----
+
+and
+
+[source,console]
+----
+LISTO 2
+----
+
+will give
+
+ [source,console]
+----
+10A=20
+ 20TEST$="FRED"
+ 30FOR I=1 TO A
+ 40  Z=2^Z
+ 50  PRINT I,Z
+ 60  REPEAT
+ 70  PRINT TEST$
+ 80  TEST$=LEFT$(TEST$,LEN(TEST$)-1)
+ 90  UNTIL LEN(TEST$)=0
+100NEXT
+110END
+----
+
+=== Syntax
+
+[source,console]
+----
+LISTO <n-const>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+LIST
+----
+

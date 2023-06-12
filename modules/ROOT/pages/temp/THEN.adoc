@@ -1,0 +1,57 @@
+== [#then]#THEN#, TH.
+
+An optional part of the link:bbckey2.html#if[IF]... THEN ... link:bbckey1.html#else[ELSE] statement. It introduces the action to be taken if the testable condition evaluates to TRUE.
+
+[source,console]
+----
+IF A=B THEN 3000
+IF A=B THEN PRINT "Equal" ELSE PRINT "Help"
+----
+
+You need to use THEN if it is followed by:
+
+* A line number.
+
+[source,console]
+----
+IF a=b THEN 320
+----
+
+* A 'star' (*) command.
+
+[source,console]
+----
+IF a=b THEN *DIR
+----
+
+* An assignment of a pseudo-variable.
+
+[source,console]
+----
+IF a=b THEN TIME=0
+----
+
+or you wish to exit from a function as a result of the test. This is because BBC BASIC (Z80) can't work out what you mean in these circumstances if you leave the THEN out.
+
+[source,console]
+----
+IF A=B PRINT "Equal" ELSE PRINT "Help"
+DEF FN_test(num)
+IF a=b THEN =num: REM THEN required on this line
+=num/256
+----
+
+=== Syntax
+
+[source,console]
+----
+IF <t-cond> THEN <stmt>{:<stmt>} [ELSE <stmt>{:<stmt>}]
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+IF, ELSE
+----
+

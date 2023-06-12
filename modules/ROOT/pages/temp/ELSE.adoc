@@ -1,0 +1,57 @@
+== [#else]#ELSE#, EL.
+
+A statement delimiter which provides an alternative course of action in link:bbckey2.html#if[IF]...link:bbckey4.html#then[THEN], link:bbckey3.html#on[ON...GOSUB], link:bbckey3.html#on[ON...GOTO] and link:bbckey3.html#on[ON...PROC] statements.
+
+In an link:bbckey2.html#if[IF] statement, if the test is link:bbckey2.html#false[FALSE], the statements after ELSE will be executed. This makes the following work:
+
+[source,console]
+----
+IF A=B THEN B=C ELSE B=D
+IF A=B THEN B=C:PRINT"WWW" ELSE B=D:PRINT"QQQ"
+IF A=B THEN B=C ELSE IF A=C THEN------------...
+----
+
+In a multi statement line containing more than one link:bbckey2.html#if[IF], the statement(s) after the ELSE delimiter will be actioned if ANY of the tests fail. For instance, the example below would print the error message '`er$`' if 'x' did not equal 3 OR if 'a' did not equal 'b'.
+
+[source,console]
+----
+IF x=3 THEN IF a=b THEN PRINT a$ ELSE PRINT er$
+----
+
+If you want to 'nest' the tests, you should use a procedure call. The following example, would print 'Bad' ONLY if x was equal to 3 AND 'a' was not equal to 'b'.
+
+[source,console]
+----
+IF x=3 THEN PROC_ab_test
+...
+DEF PROC_ab_test
+IF a=b THEN PRINT a$ ELSE PRINT er$
+ENDPROC
+----
+
+You can use ELSE with link:bbckey3.html#on[ON...GOSUB], link:bbckey3.html#on[ON...GOTO] and link:bbckey3.html#on[ON...PROC] statements to prevent an out of range control variable causing an 'link:annexc.html#onrange[ON range]' error.
+
+[source,console]
+----
+ON action GOTO 100, 200, 300 ELSE PRINT "Error"
+ON number GOSUB 100,200,300 ELSE PRINT "Error"
+ON value PROCa,PROCb,PROCc ELSE PRINT "Error"
+----
+
+=== Syntax
+
+[source,console]
+----
+IF <t-cond> THEN <stmt> ELSE <stmt>
+ON <n-var> GOTO <l-num>{,<l-num>} ELSE <stmt>
+ON <n-var> GOSUB <l-num>{,<l-num>} ELSE <stmt>
+ON <n-var> PROC<name>{,PROC<name>} ELSE <stmt>
+----
+
+=== Associated Keywords:
+
+[source,console]
+----
+IF, THEN, ON
+----
+

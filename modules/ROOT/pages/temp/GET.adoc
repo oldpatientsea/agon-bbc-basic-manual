@@ -1,0 +1,18 @@
+== [#getxy]#GET$(x,y)#
+
+Returns the ASCII character at position x,y.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=GET$(<numeric>,<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+POINT(x,y), GET 
+----
+

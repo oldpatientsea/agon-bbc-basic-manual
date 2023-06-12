@@ -1,0 +1,45 @@
+== [#instr]#INSTR#
+
+A function which returns the position of a sub-string within a string, optionally starting the search at a specified place in the string. The leftmost character position is 1. If the sub-string is not found, 0 is returned.
+
+The first string is searched for any occurrence of the second string.
+
+There must not be any spaces between INSTR and the opening bracket.
+
+[source,console]
+----
+X=INSTR(A$,B$)
+position=INSTR(word$,guess$)
+Y=INSTR(A$,B$,Z%) :REM START AT POSITION Z%
+----
+
+You can use this function for validation purposes. If you wished to test A$ to see if was one of the set 'FRED BERT JIM JOHN', you could use the following:
+
+[source,console]
+----
+set$="FRED BERT JIM JOHN"
+IF INSTR(set$,A$) PROC_valid ELSE PROC_invalid
+----
+
+The character used to separate the items in the set must be excluded from the characters possible in A$. One way to do this is to make the separator an unusual character, say CHR$(127).
+
+[source,console]
+----
+z$=CHR$(127)
+set$="FRED"+z$+"BERT"+z$+"JIM"+z$+"JOHN"
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=INSTR(<str>,<str>[,<numeric>])
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+LEFT$, MID$, RIGHT$, LEN
+----
+

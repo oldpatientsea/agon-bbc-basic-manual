@@ -1,0 +1,30 @@
+== [#next]#NEXT#, N.
+
+The statement delimiting link:bbckey2.html#for[FOR]...NEXT loops. NEXT takes an optional control variable.
+
+[source,console]
+----
+NEXT
+NEXT J
+----
+
+If the control variable is present then FOR----NEXT loops may be 'popped' automatically in an attempt to match the correct link:bbckey2.html#for[FOR] statement (this should not be necessary). If a matching FOR statement cannot be found, a 'link:annexc.html#cantmatchfor[Can't match FOR]' error will be reported.
+
+Leaving out the control variable will make the program run quicker, but this is not to be encouraged.
+
+See the keyword link:bbckey2.html#for[FOR] for more details about the structure of FOR----NEXT loops.
+
+=== Syntax
+
+[source,console]
+----
+NEXT [<n-var>{,<n-var>}]
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+FOR, TO, STEP
+----
+

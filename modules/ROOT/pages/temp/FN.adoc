@@ -1,0 +1,61 @@
+== [#fn]#FN#
+
+A keyword used at the start of all user declared functions. The first character of the function name can be an underline (or a number)
+
+If there are spaces between the function name and the opening bracket of the parameter list (if any) they must be present both in the definition and the call. It's safer not to have spaces between the function name and the opening bracket.
+
+A function may be defined with any number of parameters of any type, and may return (using =) a string or numeric result. It does not have to be defined before it is used.
+
+A function definition is terminated by '=' used in the statement position.
+
+The following examples show the '=' as part of a program line and at the start of a line. The first two examples are single line function definitions.
+
+[source,console]
+----
+DEF FN_mean(Q1,Q2,Q3,Q4)=(Q1+Q2+Q3+Q4)/4
+
+DEF FN_fact(N) IF N<2 =1 ELSE =N*FN_fact(N-1)
+
+DEF FN_reverse(A$)
+LOCAL B$,Z%
+FOR Z%=1 TO LEN(A$)
+  B$=MID$(A$,Z%,1)+B$
+NEXT
+=B$
+----
+
+Functions are re-entrant and the parameters (arguments) are passed by value.
+
+You can write single line, multi statement functions so long as you have a colon after the definition statement.
+
+The following function sets the print control variable to the parameter passed and returns a null string. It may be used in a link:bbckey3.html#print[PRINT] command to change the print control variable (@%) within a print list.
+
+[source,console]
+----
+DEF FN_pformat(N):@%=N:=""
+----
+
+Functions have to return an answer, but the value returned by this function is a null string. Consequently, its only effect is to change the print control variable. Thus the PRINT statement
+
+[source,console]
+----
+PRINT FN_pformat(&90A) X FN_pformat(&2020A) Y
+----
+
+will print X in G9z10 format and Y in F2z10 format. See the keyword link:bbckey3.html#print[PRINT] for print format details.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>|<s-var>=FN<name>[(<exp>{,<exp>})]
+DEF FN<name>[(<n-var>|<s-var>{,<n-var>|<s-var>})]
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+ENDPROC, DEF, LOCAL
+----
+

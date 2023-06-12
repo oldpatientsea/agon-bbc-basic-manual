@@ -1,0 +1,27 @@
+== [#gcol]#GCOL#, GC.
+
+A statement which sets the graphics foreground or background logical colour to be used in all subsequent graphics operations.
+
+The first number sets the mode of action, which is currently ignored. 
+
+The modes are:
+0	plot the colour specified
+1	OR the specified colour with that already there
+2	AND the specified colour with that already there
+3	Exclusive-OR the specified colour with that already there
+4 	Invert the colour already there
+
+=== Syntax
+
+[source,console]
+----
+GCOL <numeric>,<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+CLS, CLG, MODE, COLOUR, PLOT
+----
+

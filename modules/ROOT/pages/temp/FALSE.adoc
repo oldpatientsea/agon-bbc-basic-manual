@@ -1,0 +1,59 @@
+== [#false]#FALSE#, FA.
+
+A function returning the value zero.
+
+[source,console]
+----
+10 flag=FALSE
+20 ...
+150 IF flag ...
+----
+
+BBC BASIC (Z80) does not have true Boolean variables. Instead, numeric variables are used and their value is interpreted in a 'logical' manner.
+
+A value of zero is interpreted as FALSE and link:bbckey3.html#not[NOT] FALSE (in other words, NOT 0) is interpreted as TRUE. In practice, any value other than zero is considered TRUE.
+
+You can use FALSE in a link:bbckey4.html#repeat[REPEAT]----link:bbckey4.html#until[UNTIL] loop to make the loop repeat for ever. Consider the following example.
+
+[source,console]
+----
+10 terminator=10
+20 REPEAT
+30 PRINT "An endless loop"
+40 UNTIL terminator=0
+----
+
+Since 'terminator' will never be zero, the result of the test 'terminator=0' will always be FALSE. Thus, the following example has the same effect as the previous one.
+
+[source,console]
+----
+10 REPEAT
+20 PRINT "An endless loop"
+30 UNTIL FALSE
+----
+
+Similarly, since FALSE=0, the following example will also have the same effect, but its meaning is less clear.
+
+[source,console]
+----
+10 REPEAT
+20 PRINT "An endless loop"
+30 UNTIL 0
+----
+
+See the keyword link:bbckey1.html#and[AND] for logical tests and their results.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=FALSE
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+TRUE, EOR, OR, AND, NOT
+----
+

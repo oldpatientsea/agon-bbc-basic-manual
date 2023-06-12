@@ -1,0 +1,26 @@
+== [#sound]#SOUND#
+
+
+Syntax: `SOUND channel,volume,pitch,duration`
+
+Play a sound through the Agon Light buzzer and audio output jack
+
+* `Channel`: 0 to 2
+* `Volume`: 0 (off) to -15 (full volume)
+* `Pitch`: 0 to 255
+* `Duration`: -1 to 254 (duration in 20ths of a second, -1 = play forever)
+
+=== Syntax
+
+[source,console]
+----
+SOUND <numeric>,<numeric>,<numeric>,<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+ENVELOPE
+----
+

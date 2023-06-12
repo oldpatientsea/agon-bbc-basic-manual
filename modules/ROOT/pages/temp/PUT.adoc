@@ -1,0 +1,25 @@
+== [#put]#PUT#
+
+A statement to output data to an output port.
+
+[source,console]
+----
+PUT A,N :REM output N to port A.
+----
+
+This instruction gives direct access from BBC BASIC (Z80) to the computer's I/O hardware. Typically, you can use it to directly access I/O ports.
+
+=== Syntax
+
+[source,console]
+----
+PUT <numeric>,<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+GET
+----
+

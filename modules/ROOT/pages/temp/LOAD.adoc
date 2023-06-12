@@ -1,0 +1,35 @@
+== [#load]#LOAD#, LO.
+
+A command which loads a new program from a file and link:bbckey1.html#clear[CLEAR]s the variables of the old program. The program file must be in 'internal' (tokenised) format.
+
+[source,console]
+----
+LOAD "PROG1"
+LOAD A$
+----
+
+File names must conform to the standard CP/M-80 format. However, if no extension is given, .BBC is assumed. If no disk and/or path are given, the current disk and/or path are assumed. See the link:opsys0.html[Operating System Interface] section for a more detailed description of valid file names.
+
+You use LOAD to bring a program in a disk file into memory. The keyword LOAD should be followed by the name of the program file. If the program file is in the current directory, only the file name needs to be given. If the program is not in the current directory, its full drive, path and file name must be specified. For example:
+
+[source,console]
+----
+LOAD "a:\bbcprogs\demo"
+----
+
+would load the program 'demo.bbc' from the directory 'bbcprogs' on drive a:.
+
+=== Syntax
+
+[source,console]
+----
+LOAD <str>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+SAVE, CHAIN
+----
+

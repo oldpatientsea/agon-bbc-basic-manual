@@ -1,0 +1,48 @@
+== [#edit]#EDIT#, E.
+
+A command to edit or concatenate and edit the specified program line(s). The specified lines (including their line numbers) are listed as a single line. By changing only the line number, you can also use EDIT to duplicate a line.
+
+[source,console]
+----
+EDIT 230
+EDIT 200,230
+----
+
+The codes shown are the default codes as supplied; they may be changed by editing the *BBCDIST.MAC* link:bbc1.html#configuration[patch program]:
+
+[cols="^,",]
+|==
+|Ctrl/E |Move the cursor up one line
+|Ctrl/X |Move the cursor down one line
+|Ctrl/S |Move the cursor left one character
+|Ctrl/D |Move the cursor right one character
+|Ctrl/A |Move the cursor to the start of the line
+|Ctrl/F |Move the cursor to the end of the line
+|Del |Backspace and delete
+|Ctrl/G |Delete the character at the cursor
+|Ctrl/U |Clear line to the left of the cursor
+|Ctrl/T |Clear the line to the right of the cursor
+|Ctrl/V |Insert a space at the cursor position
+|Enter |Enter the line and exit the edit mode
+|Esc |Abort and leave the line unchanged
+|==
+
+To abort the single line editor and leave the line unchanged, press <Esc>.
+
+You can use the link:bbckey1.html#edit[EDIT] command to edit and join (concatenate) program lines. When you use it to join lines, remember to delete any unwanted ones. EDIT on its own will start at the beginning of the program and concatenate as many lines as it can. This process will stop when the concatenated line length exceeds 255.
+
+=== Syntax
+
+[source,console]
+----
+EDIT <l-num>
+EDIT <l-num>,<l-num>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+DELETE, LIST, OLD, NEW
+----
+

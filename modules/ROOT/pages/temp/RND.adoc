@@ -1,0 +1,38 @@
+== [#rnd]#RND#
+
+A function which returns a random number. The type and range of the number returned depends upon the optional parameter.
+
+[cols=",",]
+|==
+|`RND` |returns a random integer 1 - &FFFFFFFF.
+|`RND(n)` |returns an integer in the range 1 to n (n>1).
+|`RND(1)` |returns a real number in the range 0.0 to .99999999.
+|==
+
+If n is negative the pseudo random sequence generator is set to a number based on n and n is returned.
+
+If n is 0 the last random number is returned in RND(1) format.
+
+[source,console]
+----
+X=RND(1)
+X%=RND
+N=RND(6)
+----
+
+The random number generator is initialised by link:#run[RUN] (or link:bbckey1.html#chaim[CHAIN]). Consequently, RND will return zero until the RUN (or CHAIN) command is first issued.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=RND[(<numeric>)]
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+None
+----
+

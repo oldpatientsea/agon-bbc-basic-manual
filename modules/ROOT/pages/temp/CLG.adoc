@@ -1,0 +1,18 @@
+== [#clg]#CLG#
+
+A statement which clears the graphics area of the screen and sets it to the currently selected graphics background colour,
+
+=== Syntax
+
+[source,console]
+----
+CLG
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+CLS, GCOL
+----
+

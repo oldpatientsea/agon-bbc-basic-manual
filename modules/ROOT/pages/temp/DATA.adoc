@@ -1,0 +1,45 @@
+== DATA, D.
+
+A program object which must precede all lists of data for use by the link:bbckey4.html#read[READ] statement.
+
+As for link:bbckey2.html#input[INPUT], string values may be quoted or unquoted. However, quotes need to be used if the string contains commas or leading spaces.
+
+Numeric values may include calculation so long as there are no keywords.
+
+Data items in the list should be separated by a comma.
+
+[source,console]
+----
+DATA 10.7,2,HELLO," THIS IS A COMMA,",1/3,PRINT
+DATA " This is a string with leading spaces."
+----
+
+You can use DATA in conjunction with link:bbckey4.html#read[READ] to include data in your program which you may need to change from time to time, but which does not need to be different every time you run the program.
+
+The following example program segment reads through a list of names looking for the name in 'name$'. If the name is found, the name and age are printed. If not, an error message is printed.
+
+[source,console]
+----
+100 DATA FRED,17,BILL,21,ALLISON,21,NOEL,32
+110 DATA JOAN,26,JOHN,19,WENDY,35,ZZZZ,0
+120 REPEAT
+130 READ list$,age
+140 IF list$=name$ THEN PRINT name$,age
+150 UNTIL list$=name$ OR list$="ZZZZ"
+160 IF list$="ZZZZ" PRINT "Name not in list"
+----
+
+=== Syntax
+
+[source,console]
+----
+DATA <s-const>|<n-const>{,<s-const>|<n-const>}
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+READ, RESTORE
+----
+

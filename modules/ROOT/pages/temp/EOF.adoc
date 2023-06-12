@@ -1,0 +1,22 @@
+== [#eof]#EOF##
+
+A function which will return -1 (link:bbckey4.html#true[TRUE]) if the data file whose file handle is the argument is at, or beyond, its end. In other words, when link:bbckey4.html#ptr[PTR#] points beyond the current end of the file. When reading a serial file, EOF# would go true when the last byte of the file had been read.
+
+EOF# is only true if PTR# is set beyond the last byte written to the file. It will NOT be true if an attempt has been made to read from an empty block of a sparse random access file. Because of this, it is difficult to tell which records of a random access file have had data written to them. These files need to be initialised and the unused records marked as empty.
+
+Writing to a byte beyond the current end of file updates the file length immediately, whether the record is physically written to the disk at that time or not. However, the file must be closed in order to ensure that all the data written to it is physically written to the disk.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=EOF#(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, EXT#, PTR#
+----
+

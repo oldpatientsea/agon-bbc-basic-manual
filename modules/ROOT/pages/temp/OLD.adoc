@@ -1,0 +1,25 @@
+== [#old]#OLD#
+
+A command which undoes the effect of link:#new[NEW] provided no lines have been typed in or deleted, and no variables have been created.
+
+[source,console]
+----
+OLD
+----
+
+OLD works even if BBC BASIC (Z80) has been re-loaded and re-started from CP/M-80. However, it will only work if no other programs have been run and BBC BASIC (Z80) loads at the same address as before.
+
+=== Syntax
+
+[source,console]
+----
+OLD
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+NEW
+----
+

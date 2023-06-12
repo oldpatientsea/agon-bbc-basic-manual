@@ -1,0 +1,77 @@
+== [#and]#AND, A.#
+
+The operation of integer bitwise logical AND between two items. The 2 operands are internally converted to four byte integers before the AND operation.
+
+[source,console]
+----
+answer=num1 AND num2
+char=byte AND &7F
+
+IF (num AND &F0)
+
+test=(count=3 AND total=5)
+----
+
+You can use AND as a logical operator or as a 'bit-by-bit' (bitwise) operator. The operands can be boolean (logical) or numeric.
+
+In the following example program segment, AND is used as a bitwise operator to remove the most significant bit of a byte read from a file before writing it to another file. This is useful for converting some word-processor files into standard link:annexa.html[ASCII] format.
+
+[source,console]
+----
+210 byte=BGET#infile AND &7F
+220 BPUT#outfile,byte
+----
+
+Unfortunately, BBC BASIC does not have true boolean variables; it uses numeric variables and assigns the value 0 for link:bbckey2.html#false[FALSE] and -1 for link:bbckey4.html#true[TRUE]. This can lead to confusion at times. (See link:bbckey3.html#not[NOT] for more details.) In the example below, the operands are boolean (logical). In other words, the result of the tests (IF) A=2 and (IF) B=3 is either TRUE or FALSE. The result of this example will be TRUE if A=2 and B=3.
+
+[source,console]
+----
+answer=(A=2 AND B=3)
+----
+
+The brackets are not necessary, they have been included to make the example easier to follow.
+
+The second example is similar to the first, but in the more familiar surroundings of an IF statement.
+
+[source,console]
+----
+IF A=2 AND B=3 THEN 110
+----
+
+or
+[source,console]
+----
+answer= A=2 AND B=3     `(without brackets this time)` IF answer THEN 110      
+----
+
+The final example, uses the AND in a similar fashion to the numeric operators (+, -, etc).
+
+[source,console]
+----
+`A=X AND 11`
+----
+
+Suppose X was -20, the AND operation would be:
+
+[source,console]
+----
+11111111 11111111 11111111 11101100
+00000000 00000000 00000000 00001011
+00000000 00000000 00000000 00001000  = 8
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=<numeric> AND <numeric>
+----
+
+=== Associated Keywords
+[source,console]
+----
+EOR, OR, FALSE, TRUE, NOT
+----
+
+'''''
+

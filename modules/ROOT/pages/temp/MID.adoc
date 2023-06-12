@@ -1,0 +1,75 @@
+== [#mid]#MID$#
+
+A string function which returns 'num' characters of the string starting from character 'start_posn'. If 'num' is not present or if there are insufficient characters in the string, then all the characters from 'start_posn' onwards are returned.
+
+[source,console]
+----
+C$=MID$(A$,start_posn,num)
+C$=MID$(A$,Z)
+----
+
+You can use this function to select any part of a string. For instance, if
+
+[source,console]
+----
+name$="BBC BASIC (Z80)"
+----
+
+then
+
+[source,console]
+----
+part$=MID$(name$,4,5)
+----
+
+would assign BASIC to 'part$'. If the last number is omitted or there are insufficient characters to the right of the specified position, MID$ returns with the right hand part of the string starting at the specified position. Thus,
+
+[source,console]
+----
+part$=MID$(name$,9)
+----
+
+would assign `(Z80)` to 'part$'.
+
+For example,
+
+[source,console]
+----
+10 name$="BBC BASIC (Z80)"
+20 FOR i=1 TO LEN(name$)
+30   PRINT MID$(name$,i,10)
+40 NEXT
+----
+
+would print
+
+[source,console]
+----
+BBC BASIC(8
+BCBASIC(86
+CBASIC (Z80)
+BASIC (Z80)
+ASIC(Z80)
+SIC(Z80)
+IC(Z80)
+C(Z80)
+(Z80)
+86)
+6)
+)
+----
+
+=== Syntax
+
+[source,console]
+----
+<s-var>=MID$(<str>,<numeric>[,<numeric>])
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+LEFT$, RIGHT$, LEN, INSTR
+----
+

@@ -1,0 +1,28 @@
+== [#spc]#SPC#
+
+A statement which prints a number of spaces to the screen (or currently selected console output stream). The argument specifies the number of spaces (up to 255) to be printed.
+
+SPC can only be used within a PRINT or INPUT statement.
+
+[source,console]
+----
+PRINT DATE;SPC(6);SALARY
+
+INPUT SPC(10) "What is your name ",name$
+----
+
+=== Syntax
+
+[source,console]
+----
+PRINT SPC(<numeric>)
+INPUT SPC(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+TAB, PRINT, INPUT
+----
+

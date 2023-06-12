@@ -1,0 +1,71 @@
+== [#trace]#TRACE#, TR.
+
+TRACE ON causes the interpreter to print executed line numbers when it encounters them.
+
+TRACE X sets a limit on the size of line numbers which will be printed out. Only those line numbers less than X will appear. If you are careful and place all your subroutines at the end of the main program, you can display the main structure of the program without cluttering up the trace with the subroutines.
+
+TRACE OFF turns trace off. TRACE is also turned off if an error is reported or you press <Esc>.
+
+Line numbers are printed as the line is entered. For example,
+
+[source,console]
+----
+10 FOR Z=0 TO 2:Q=Q*Z:NEXT
+20 END
+----
+
+would trace as
+
+[source,console]
+----
+[10] [20] >_
+----
+
+whereas
+
+[source,console]
+----
+10 FOR Z=0 TO 2
+20   Q=Q*Z:NEXT
+30 END
+----
+
+would trace as
+
+[source,console]
+----
+[10] [20] [20] [20] [30] >_
+----
+
+and
+
+[source,console]
+----
+10 FOR Z=0 TO 3
+20 Q=Q*Z
+30 NEXT
+40 END
+----
+
+would trace as
+
+[source,console]
+----
+[10] [20] [30] [20] [30] [20] [30] [40] >_
+----
+
+=== Syntax
+
+[source,console]
+----
+TRACE ON|OFF|<l-num>
+TRACE ON|OFF|(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+None
+----
+

@@ -1,0 +1,57 @@
+== [#or]#OR#
+
+The operation of bitwise integer logical OR between two items. The two operands are internally converted to 4 byte integers before the OR operation.
+
+[source,console]
+----
+IF A=2 OR B=3 THEN 110
+X=B OR 4
+----
+
+You can leave out the space between OR and a preceding constant, but it makes your programs difficult to read.
+
+You can use OR as a logical operator or as a 'bit-by-bit' (bitwise) operator. The operands can be boolean (logical) or numeric.
+
+Unfortunately, BBC BASIC does not have true boolean variables; it uses numeric variables and assigns the value 0 for link:bbckey2.html#false[FALSE] and -1 for link:bbckey4.html#true[TRUE]. This can lead to confusion at times. (See link:#not[NOT] for more details.)
+
+In the example below, the operands are boolean (logical). In other words, the result of the tests (IF) A=2 and (IF) B=3 is either TRUE or FALSE. The result of this example will be TRUE if A=2 or B=3.
+
+[source,console]
+----
+answer=(A=2 OR B=3)
+----
+
+The brackets are not necessary, they have been included to make the example easier to follow.
+
+The last example, uses the OR in a similar fashion to the numeric operators (+, -, etc).
+
+Suppose X was -20 in the following example,
+
+[source,console]
+----
+A=X OR 11
+----
+
+the OR operation would be:
+
+[source,console]
+----
+11111111 11111111 11111111 11101100
+00000000 00000000 00000000 00001011
+11111111 11111111 11111111 11101111  = -17
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=<numeric> OR <numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+AND, EOR, NOT
+----
+

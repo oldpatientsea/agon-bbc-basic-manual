@@ -40,7 +40,7 @@ Provided as-is, expressly without warranties and/or representations of any kind.
 
 == A Brief History of Agon BASIC
 
-BASIC (Beginner's All-purpose Symbolic Instruction Code) was born in 1964 at Dartmouth College, New Hampshire along with DTSS, the Dartmouth Time Sharing System on which it ran, the work respectively of two brilliant mathematicians, professors John Kemeny and Thomas Kurtz.
+BASIC (**B**eginner's **A**ll-purpose **S**ymbolic **I**nstruction **C**ode) was born in 1964 at Dartmouth College, New Hampshire along with DTSS, the Dartmouth Time Sharing System on which it ran, the work respectively of two brilliant mathematicians, professors John Kemeny and Thomas Kurtz.
 
 Immediately popular, the language proliferated and later saw an explosion of different dialects during the home computer boom of the 80s, a period of creativity within tight constraints that retains a particular charm for many. Kemeny and Kurtz were less impressed. "We are greatly concerned that a generation of students is growing up learning Street BASIC, an illiterate dialect of a lovely language." 
 

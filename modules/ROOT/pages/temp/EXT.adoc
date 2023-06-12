@@ -1,0 +1,27 @@
+== [#ext]#EXT##
+
+A function which returns the total length of the file whose file handle is its argument.
+
+[source,console]
+----
+length=EXT#f_num
+----
+
+In the case of a sparse random-access file, the value returned is the complete file length from byte zero to the last byte written. This may well be greater than the actual amount of data on the disk, but it is the amount of disk space allocated to the file by CP/M-80.
+
+The file must have been opened before EXT# can be used to find its length.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=EXT#(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, BGET#,  PTR#, EOF#
+----
+

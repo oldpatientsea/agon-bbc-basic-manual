@@ -1,0 +1,38 @@
+== [#run]#RUN#
+
+Start execution of the program.
+
+[source,console]
+----
+RUN
+----
+
+RUN is a statement and so programs can re-execute themselves.
+
+All variables except @% to Z% are link:bbckey1.html#clear[CLEAR]ed by RUN.
+
+If you want to start a program without clearing all the variables, you can use the statement
+
+[source,console]
+----
+GOTO nnnn
+----
+
+where nnnn is number of the line at which you wish execution of the program to start.
+
+RUN "filename" can be used as an alternative to link:bbckey1.html#chain[CHAIN] "filename".
+
+=== Syntax
+
+[source,console]
+----
+RUN
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+NEW, OLD, LIST, CHAIN
+----
+

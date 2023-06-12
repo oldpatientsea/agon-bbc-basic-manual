@@ -1,0 +1,47 @@
+== [#until]#UNTIL#, U.
+
+The part of the link:#repeat[REPEAT] ... UNTIL structure which signifies its end.
+
+You can use a REPEAT...UNTIL loop to repeat a set of program instructions until some condition is met.
+
+If the condition associated with the UNTIL statement is never met, the loop will execute for ever. (At least, until <Esc> is pressed or some other error occurs.)
+
+The following example will continually ask for a number and print its square. The only way to stop it is by pressing <Esc> or forcing a 'link:annexc.html#toobig[Too big]' error.
+
+[source,console]
+----
+10 z=1
+20 REPEAT
+30   INPUT "Enter a number " num
+40   PRINT "The square of ";num;" is ";num*num
+50 UNTIL z=0
+----
+
+Since the result of the test z=0 is ALWAYS FALSE, we can replace z=0 with link:bbckey2.html#false[FALSE]. The program now becomes:
+
+[source,console]
+----
+20 REPEAT
+30   INPUT "Enter a number " num
+40   PRINT "The square of ";num;" is ";num*num
+50 UNTIL FALSE
+----
+
+This is a much neater way of unconditionally looping than using a link:bbckey2.html#goto[GOTO] statement. The program executes at least as fast and the section of program within the loop is highlighted by the indentation.
+
+See the keyword link:#repeat[REPEAT] for more details on REPEAT...UNTIL loops. See the link:bbc2.html#boolean[Variables] sub-section for more details on Boolean variables and the keyword link:bbckey1.html#and[AND] for logical tests and their results.
+
+=== Syntax
+
+[source,console]
+----
+UNTIL <t-cond>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+REPEAT
+----
+

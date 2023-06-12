@@ -1,0 +1,19 @@
+== [#adval]#ADVAL#
+
+This function returns information about the analogue to digital converter channels on the Games Adapter card (if fitted). The information returned depends upon the argument passed to ADVAL.
+
+*_Not implemented_*
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=ADVAL(<numeric>)
+----
+
+=== Associated Keywords
+[source,console]
+----
+SOUND, INPUT, GET
+----
+

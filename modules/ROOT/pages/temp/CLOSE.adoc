@@ -1,0 +1,32 @@
+== [#close]#CLOSE##, CLO.
+
+A statement used to close a data file. CLOSE #0 will close all data files.
+
+[source,console]
+----
+CLOSE#file_num
+CLOSE#0
+----
+
+You use CLOSE# to tell BBC BASIC (Z80) that you have completely finished with a data file for this phase of the program. Any data still in the file buffer is written to the file before the file is closed.
+
+You can open and close a file several times within one program, but it is generally considered 'better form' not to close a file until you have finally finished with it. However, if you wish to link:#clear[CLEAR] the variables, it is simpler if you close the data files first.
+
+You should also close data files before chaining another program. link:#chain[CHAIN] does not automatically close data files, but it does clear the variables in which the file handles were stored. You can still access the open file if you have used one of the static variables (A% to Z%) to store the file handle. Alternatively, you could reserve an area of memory (by moving link:bbckey2.html#himem[HIMEM] down for example) and use the byte indirection operator to store the file handle. (See the keyword link:#chain[CHAIN] for more details.)
+
+link:#end[END] or 'dropping off' the end of a program will also close all open data files. However, link:bbckey4.html#stop[STOP] does not close data files.
+
+=== Syntax
+
+[source,console]
+----
+CLOSE#<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+OPENIN, OPENUP, OPENOUT, PRINT#, INPUT#, BPUT#, BGET#, EXT#,  PTR#, EOF#
+----
+

@@ -1,0 +1,55 @@
+== [#val]#VAL#
+
+A function which converts a character string representing a number into numeric form.
+
+[source,console]
+----
+X=VAL(A$)
+----
+
+VAL makes the best sense it can of its argument. If the argument starts with numeric characters (with or without a preceding sign), VAL will work from left to right until it meets a non numeric character. It will then 'give up' and return what it has got so far. If it can't make any sense of its argument, it returns zero.
+
+For example,
+
+[source,console]
+----
+PRINT VAL("-123.45.67ABC")
+----
+
+would print
+
+[source,console]
+----
+-123.45
+----
+
+and
+
+[source,console]
+----
+PRINT VAL("A+123.45")
+----
+
+would print
+
+[source,console]
+----
+0
+----
+
+VAL will NOT work with hexadecimal numbers. You must use link:bbckey2.html#eval[EVAL] to convert hexadecimal number strings.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=VAL(<str>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+STR$, EVAL
+----
+

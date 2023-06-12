@@ -1,0 +1,30 @@
+== [#openup]#OPENUP#
+
+A function which opens a disk data file for update (reading and writing) and returns the file handle of the file. This number must be used in subsequent references to the file with link:bbckey1.html#bget[BGET#], link:bbckey1.html#bput[BPUT#], link:bbckey2.html#inputhash[INPUT#], link:bbckey4.html#print[PRINT#], link:bbckey2.html#ext[EXT#], link:bbckey4.html#ptr[PTR#], link:bbckey2.html#eof[EOF#] or link:bbckey1.html#close[CLOSE#].
+
+A returned value of zero signifies that the specified file was not found on the disk.
+
+[source,console]
+----
+X=OPENUP "jim"
+X=OPENUP A$
+X=OPENUP (A$)
+X=OPENUP ("FILE1")
+----
+
+See the random file examples (F-RAND?) in the link:bbcfile3.html[BBC BASIC Disk Files] section for examples of the use of OPENUP.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=OPENUP(<str>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+OPENIN, OPENOUT, CLOSE#, PTR#, PRINT#, INPUT#, BGET#, BPUT#, EOF#
+----
+

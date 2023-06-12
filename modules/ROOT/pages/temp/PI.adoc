@@ -1,0 +1,44 @@
+== [#pi]#PI#
+
+A function returning 3.14159265.
+
+[source,console]
+----
+X=PI
+----
+
+You can use PI to calculate the circumference and area of a circle. The example below calculates the circumference and area of a circle of a given radius.
+
+[source,console]
+----
+10 CLS
+20 INPUT "What is the radius of the circle ",rad
+30 PRINT "The circumference is: ";2*PI*rad
+40 PRINT "The area is: ";PI*rad*rad
+50 END
+----
+
+PI can also be used to convert degrees to radians and radians to degrees.
+
+[source,console]
+----
+radians=PI/180*degrees
+degrees=180/PI*radians
+----
+
+However, BBC BASIC (Z80) has two functions (link:bbckey4.html#rad[RAD] and link:bbckey1.html#deg[DEG]) which perform these conversions to a higher accuracy.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=PI
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+RAD, DEG
+----
+

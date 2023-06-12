@@ -1,0 +1,29 @@
+== [#read]#READ#
+
+A statement which will assign to variables values read from the link:bbckey1.html#data[DATA] statements in the program. Strings must be enclosed in double quotes if they have leading spaces or contain commas.
+
+[source,console]
+----
+READ C,D,A$
+----
+
+In many of your programs, you will want to use data values which do not change frequently. Because these values are subject to some degree of change, you won't want to use constants. On the other hand, you won't want to input them every time you run the program either. You can get the best of both worlds by declaring these values in DATA statements at the beginning or end of your program and READing them into variables in your program.
+
+A typical use for DATA and READ is a name and address list. The addresses won't change very often, but when they do you can easily amend the appropriate DATA statement.
+
+See link:bbckey1.html#data[DATA] for more details and an example of the use of DATA and READ.
+
+=== Syntax
+
+[source,console]
+----
+READ <n-var>|<s-var>{<n-var>|<s-var>}
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+DATA, RESTORE
+----
+

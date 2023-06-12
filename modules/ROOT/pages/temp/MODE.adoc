@@ -1,0 +1,29 @@
+== [#mode]#MODE#, MO.
+
+The MODE command sets the screen display mode. The screen is cleared and all the graphics and text parameters (colours, origin, etc) are reset to their default values.
+
+The modes differ from those on the BBC series of microcomputers.
+
+From MOS 1.03, they are as follows:
+
+* 0: 1024 x 768 @ 60Hz, 2 colours per pixel
+* 1: 512 x 384 @ 60Hz, 16 colours per pixel
+* 2: 320 x 200 @ 75Hz, 64 colours per pixel
+* 3: 640 x 480 @ 60Hz, 16 colours per pixel
+
+Modes with less than 64 colours per pixel are paletted; each logical colour can be assigned a different physical colour. See the COLOUR statement below for more information.
+
+=== Syntax
+
+[source,console]
+----
+MODE <numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+CLS, CLG
+----
+

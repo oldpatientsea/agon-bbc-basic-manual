@@ -1,0 +1,37 @@
+== [#bput]#BPUT##, BP.
+
+A statement which puts a byte to the data file whose file handle is the first argument. The second argument's least significant byte is written to the file. The file pointer is incremented after the byte has been written.
+
+[source,console]
+----
+BPUT#E,32
+BPUT#staff_file,A/256
+BPUT#4,prn
+----
+
+Before you use this statement you must normally have opened a file for output using link:bbckey3.html#openout[OPENOUT] or link:bbckey3.html#openup[OPENUP]. (See these keywords and the link:bbcfile1.html[BBC BASIC (Z80) Disk Files] section for details.) BPUT# may alternatively be used with the AUX device (usually a serial port), which has the 'permanently open' handle = 3, or the PRN device (usually a parallel port) which has the 'permanently open' handle = 4.
+
+You can use this statement to write single bytes to a disk file. The number that is sent to the file is in the range 0 to 255. Real numbers are converted internally to integers and the top three bytes are 'masked off'. Each byte written is numeric, but you can use link:#asc[ASC](character$) to convert (the first character of) 'character$' to a number.
+
+The example below is a program segment that 'packs' an integer number between 0 and 65535 (&FFFF) into two bytes, least significant byte first. The file must have already been opened for output and the file handle stored in 'fnum'. The integer variable number% contains the value to be written to the file.
+
+[source,console]
+----
+100 BPUT#fnum,number% MOD 256
+110 BPUT#fnum,number% DIV 256
+----
+
+=== Syntax
+
+[source,console]
+----
+BPUT#<numeric>,<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BGET#, EXT#, PTR#, EOF#
+----
+

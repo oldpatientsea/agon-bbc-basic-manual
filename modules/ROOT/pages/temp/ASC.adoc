@@ -1,0 +1,36 @@
+== [#asc]#ASC#
+
+A function returning the ASCII character value of the first character of the argument string. If the string is null then -1 will be returned.
+
+A computer only understands numbers. In order to deal with characters, each character is assigned a code number. For example (in the link:annexa.html[ASCII code table]) the character 'A' is given the code number 65 (decimal). A part of the computer generates special electronic signals which cause the characters to be displayed on the screen. The signals generated vary according to the code number.
+
+You could use this function to convert ASCII codes to some other coding scheme.
+
+[cols=",",]
+|==
+|`ascii_code=ASC("H")` |Result would be 72
+|`X=ASC("HELLO")` |Result would be 72
+| |
+|`name$="FRED"` |
+|`ascii_code=ASC(name$)` |Result would be 70
+|`X=ASC"e"` |Result would be 101
+| |
+|`X=ASC(MID$(A$,position))` |Result depends on A$ and position.
+|==
+
+ASC is the complement of link:#chr[CHR$].
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=ASC(<str>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+CHR$, STR$, VAL
+----
+

@@ -1,0 +1,39 @@
+== [#inkey]#INKEY/INKEY$#
+
+A function and compatible string function which does a link:#get[GET/GET$], waiting for a maximum of 'num' clock ticks of 10ms each. If no key is pressed in the time limit, INKEY will return -1 and INKEY$ will return a null string. The INKEY function will return the ASCII value of the key pressed.
+
+[source,console]
+----
+key=INKEY(num)
+N=INKEY(0)
+N$=INKEY$(100)
+----
+
+Since INKEY and INKEY$ remove characters from the keyboard buffer, one character will be returned every time an INKEY is issued. A single INKEY will return the first character and leave the rest in the keyboard buffer.
+
+You can use this function to wait for a specified time for a key to be pressed. A key can be pressed at any time before INKEY is used.
+
+Pressed keys are stored in an input buffer. Since INKEY and INKEY$ get a character from the normal input stream, you may need to empty the input buffer before you use them. You can do this with the following program line.
+
+[source,console]
+----
+REPEAT UNTIL INKEY(0)=-1
+----
+
+The number in brackets is the number of 'ticks' (one hundredths of a second) which BBC BASIC (Z80) will wait for a key to be pressed. After this time, BBC BASIC (Z80) will give up and return -1 or a null string. The number of 'ticks' may have any value between 0 and 32767.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=INKEY(<numeric>)
+<s-var>=INKEY$(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+GET, GET$
+----
+

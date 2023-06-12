@@ -1,0 +1,27 @@
+== [#plot]#PLOT#, PL.
+
+PLOT is a multi-purpose drawing statement. Three numbers follow the PLOT statement: the first specifies the mode, that is the type of point, line, triangle or circle to be drawn; the second and third give the X and Y coordinates to be used.
+
+Plot supports the following operations:
+
+* 4: Move
+* 5: Line
+* 80: Filled Triangle
+* 144: Circle with radius specified either by x or y
+* 148: Circle passing through point x,y
+
+
+=== Syntax
+
+[source,console]
+----
+PLOT <numeric>,<numeric>,<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+MODE, CLG, MOVE, DRAW, POINT, VDU, GCOL
+----
+

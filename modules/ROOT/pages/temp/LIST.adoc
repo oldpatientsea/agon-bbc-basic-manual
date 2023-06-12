@@ -1,0 +1,96 @@
+== [#listif]#LIST IF#
+
+A command which causes lines of the current program which contain the specified string to be listed to the currently selected output stream (see link:opsys1.html#opt[*OPT]).
+
+[source,console]
+----
+LIST IF *FX
+LIST IF Please press <ENTER> to continue
+----
+
+You can specify the range of line numbers to be listed in a similar manner to LIST. For example,
+
+[source,console]
+----
+LIST 100,2500 IF DEF
+----
+
+Will list all the lines between 100 and 2500 which contain the keyword 'DEF'
+
+Keywords are tokenised before the search begins. Consequently, you can use LIST IF to find lines with particular commands in them.
+
+[source,console]
+----
+LIST IF PROC
+LIST IF DEF
+----
+
+LIST IF is very useful for locating the lines in a program which define or use functions or procedures.
+
+=== [#limitations]#Limitations#
+
+Because keywords are tokenised wherever they occur in the command line, you cannot use LIST IF to search for a string (including a star command) which contains a keyword. For example, the following will not work:
+
+[source,console]
+----
+LIST IF *LOAD
+LIST IF DO YOU WANT TO PRINT THE RESULTS?
+----
+
+You cannot search for the 'left' form of those pseudo-variables which have two forms ( link:bbckey4.html#ptr[PTR#=], link:bbckey3.html#page[PAGE=], link:bbckey4.html#time[TIME=], link:bbckey4.html#times[TIME$=], link:#lomem[LOMEM=], link:#himem[HIMEM=]) because the 'right' form is assumed when the name is tokenised. Consequently,
+
+[source,console]
+----
+LIST IF TIME
+----
+
+will find line 20 but not line 10 in the following program segment
+
+[source,console]
+----
+10 TIME=20
+20 now=TIME
+----
+
+You cannot search for 'keywords' which are not tokenised in the context of the program. For example,
+
+[source,console]
+----
+LIST IF LOAD
+----
+
+will not list lines containing
+
+[source,console]
+----
+ZLOAD=1
+PROCLOAD
+FNLOAD
+"LOAD"
+REM LOAD
+
+etc
+----
+
+because link:#load[LOAD] is not tokenised in any of these lines.
+
+The internal format of line numbers (link:#goto[GOTO] 1000, for example) may spuriously match a search string of three characters or less.
+
+=== Syntax
+
+[source,console]
+----
+LIST IF <string>
+LIST <n-const> IF <string>
+LIST <n-const>, IF <string>
+LIST ,<n-const> IF <string>
+LIST <n-const>,<n-const> IF <string>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+LIST, OLD, NEW
+----
+

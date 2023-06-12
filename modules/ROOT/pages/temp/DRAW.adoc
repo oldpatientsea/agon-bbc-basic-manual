@@ -1,0 +1,18 @@
+== [#draw]#DRAW#
+
+A statement which draws a line on the screen in the graphics modes. The statement is followed by the X and Y coordinates of the end of the line.
+
+=== Syntax
+
+[source,console]
+----
+DRAW <numeric>,<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+MODE, PLOT, MOVE, CLG, VDU, GCOL
+----
+

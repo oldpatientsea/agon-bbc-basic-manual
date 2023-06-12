@@ -1,0 +1,24 @@
+== [#return]#RETURN#, R.
+
+A statement causing a RETURN to the statement after the most recent link:bbckey2.html#gosub[GOSUB] statement.
+
+You use RETURN at the end of a subroutine to make BBC BASIC (Z80) return to the place in your program which originally 'called' the subroutine.
+
+You may have more than one return statement in a subroutine, but it is preferable to have only one entry point and one exit point (RETURN).
+
+Try to structure your program so you don't leave a subroutine with a link:bbckey2.html#goto[GOTO]. If you do, you should always return to the subroutine and exit via the RETURN statement. If you insist on using GOTO all over the place, you will end up confusing yourself and maybe confusing BBC BASIC (Z80) as well. The sub-section on link:bbc2.html#programflow[Program Flow Control] explains why.
+
+=== Syntax
+
+[source,console]
+----
+RETURN
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+GOSUB, ON GOSUB
+----
+

@@ -1,0 +1,56 @@
+== [#mod]#MOD#
+
+A binary operation giving the signed remainder of the integer division.
+
+[source,console]
+----
+X=A MOD B
+----
+
+MOD is defined such that,
+
+[source,console]
+----
+A MOD B = A - ( A DIV B ) * B.
+----
+
+If you are doing integer division (link:bbckey1.html#div[DIV]) of whole numbers it is often desirable to know the remainder. (A 'teach children to divide' program for instance.) For example, 23 divided by 3 is 7, remainder 2. Thus,
+
+[source,console]
+----
+10 PRINT 23 DIV 3
+20 PRINT 23 MOD 3
+----
+
+would print
+
+         [source,console]
+----
+7
+2
+----
+
+You can use real numbers in these calculations, but they are truncated to their integer part before BBC BASIC (Z80) calculates the result. Thus,
+
+[source,console]
+----
+10 PRINT 23.1 DIV 3.9
+20 PRINT 23.1 MOD 3.9
+----
+
+would give exactly the same results as the previous example.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=<numeric> MOD <numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+DIV
+----
+

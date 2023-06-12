@@ -1,0 +1,20 @@
+== [#move]#MOVE#
+
+A statement which moves the graphics cursor to an absolute position without drawing a line.
+
+*_Not implemented in the generic CP/M version of BBC BASIC (Z80)_*
+
+=== Syntax
+
+[source,console]
+----
+MOVE <numeric>,<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+DRAW, MODE, GCOL, PLOT
+----
+

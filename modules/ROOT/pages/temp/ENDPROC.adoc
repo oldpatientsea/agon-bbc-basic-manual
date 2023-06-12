@@ -1,0 +1,20 @@
+== [#endproc]#ENDPROC#
+
+A statement denoting the end of a procedure.
+
+All local variables and the dummy arguments are restored at ENDPROC and the program returns to the statement after the calling statement.
+
+=== Syntax
+
+[source,console]
+----
+ENDPROC
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+DEF, FN, PROC, LOCAL
+----
+

@@ -1,0 +1,42 @@
+== [#colour]#COLOUR#, #COLOR#, C.
+
+Change the the current text output colour.
+
+* If c is between 0 and 63, the foreground text colour will be set
+* If c is between 128 and 191, the background text colour will be set
+
+Note, since BBC BASIC is British, the British spelling of "colour" is the default. The US spelling is however recognised as an alternative.
+
+The following two commands are only applicable to paletted modes with fewer than 64 colours.
+
+[source,console]
+----
+COLOUR l,p
+----
+
+Set the logical colour l to the physical colour p
+
+[source,console]
+----
+COLOUR l,r,g,b
+----
+
+Set the logical colour l to the physical colour represented by the RGB value where r(ed), g(reen) and b(lue) are each specified as a base 10 integer value in the range 0-255.
+
+=== Syntax
+
+[source,console]
+----
+COLOUR c
+COLOUR l,p
+COLOUR l,r,g,b
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+VDU, GCOL, MODE
+----
+
+

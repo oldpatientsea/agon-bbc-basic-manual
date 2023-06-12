@@ -1,0 +1,35 @@
+== [#ptr]#PTR##
+
+A pseudo-variable allowing the random-access pointer of the file whose file handle is its argument to be read and changed.
+
+[source,console]
+----
+PTR#F=PTR#F+5 :REM Move pointer to next number
+PTR#F=recordnumber*recordlength
+----
+
+Reading or writing (using link:bbckey1.html#bget[BGET#], link:bbckey1.html#bput[BPUT#], link:bbckey2.html#inputhash[INPUT#] or link:#print[PRINT#]) takes place at the current position of the pointer. The pointer is automatically updated following a read or write operation.
+
+You can use PTR# to select which item in a file is to be read or written to next. In a random file (see the section on link:bbcfile3.html[BBC BASIC (Z80) Disk Files]) you use PTR# to select the record you wish to read or write.
+
+If you wish to move about in a file using PTR# you will need to know the precise format of the data in the file.
+
+A file opened with link:bbckey3.html#openup[OPENUP] may be extended by setting its pointer to its end (PTR#fnum = link:bbckey2.html#ext[EXT#]fnum) and then writing to it. If you do this, you must remember to link:bbckey1.html#close[CLOSE] the file when you have finished with it in order to update the directory entry.
+
+By using PTR# you have complete control over where you read and write data in a file. This is simple concept, but it may initially be difficult to grasp its many ramifications. The link:bbcfile1.html[BBC BASIC (Z80) Disk Files] section has a number of examples of the use of PTR#.
+
+=== Syntax
+
+[source,console]
+----
+PTR#<numeric>=<numeric>
+<n-var>=PTR#<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, INPUT#, BPUT#, BGET#,  EXT#, EOF#
+----
+

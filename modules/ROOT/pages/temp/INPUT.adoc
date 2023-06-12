@@ -1,0 +1,30 @@
+== [#inputhash]#INPUT##
+
+A statement which reads data in internal format from a file and puts them in the specified variables. INPUT# is normally used with a file or device opened with link:bbckey3.html#openin[OPENIN], link:bbckey3.html#openup[OPENUP] or link:bbckey3.html#openout[OPENOUT], but may alternatively be used with the AUX device (usually a serial port) which has the 'permanently open' handle = 3.
+
+[source,console]
+----
+INPUT #E,A,B,C,D$,E$,F$
+INPUT #3,aux$
+----
+
+It is possible to read past the end-of-file without an error being reported. You should always include some form of check for the end of the file.
+
+link:bbckey4.html#readhash[READ#] can be used as an alternative to INPUT#.
+
+See the link:bbcfile1.html[Disk Files] section for more details and numerous examples of the use of INPUT#.
+
+=== Syntax
+
+[source,console]
+----
+INPUT #<numeric>,<n-var>|<s-var>{,<n-var>|<s-var>}
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+INPUT, OPENIN, OPENUP, OPENOUT, CLOSE#, PRINT#, BPUT#, BGET#, EXT#, PTR#, EOF#
+----
+

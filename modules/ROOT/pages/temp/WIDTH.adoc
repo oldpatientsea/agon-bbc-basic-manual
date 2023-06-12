@@ -1,0 +1,29 @@
+== [#width]#WIDTH#, W.
+
+A statement controlling output overall field width.
+
+[source,console]
+----
+WIDTH 80
+----
+
+If the specified width is zero (the initial value) the interpreter will not attempt to control the overall field width.
+
+WIDTH n will cause the interpreter to force a new line after n link:bbckey3.html#mod[MOD] 256 characters have been printed.
+
+WIDTH also affects the output to the printer.
+
+=== Syntax
+
+[source,console]
+----
+WIDTH <numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+COUNT
+----
+

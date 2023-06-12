@@ -1,0 +1,25 @@
+== [#top]#TOP#
+
+A function which returns the value of the first free location after the end of the current program.
+
+The length of your program is given by TOP-link:bbckey3.html#page[PAGE].
+
+[source,console]
+----
+PRINT TOP-PAGE
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=TOP
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+PAGE, HIMEM, LOMEM
+----
+

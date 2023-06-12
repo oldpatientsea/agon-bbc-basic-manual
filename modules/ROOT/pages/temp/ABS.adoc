@@ -1,0 +1,50 @@
+== [#abs]#ABS#
+
+A function giving the absolute value of its argument.
+
+[source,console]
+----
+X = ABS(deficit)
+length = ABS(X1-X2)
+----
+
+This function converts negative numbers into positive ones. It can be used to give the difference between two numbers without regard to the sign of the answer.
+
+It is particularly useful when you want to know the difference between two values, but you don't know which is the larger. For instance, if X=6 and Y=10 then the following examples would give the same result.
+
+[source,console]
+----
+difference = ABS(X-Y)
+difference = ABS(Y-X)
+----
+
+You can use this function to check that a calculated answer is within certain limits of a specified value. For example, suppose you wanted to check that 'answer' was equal to 'ideal' plus or minus (up to) 0.5. One way would be:
+
+[source,console]
+----
+IF answer>ideal-0.5 AND answer<ideal+0.5 THEN----
+----
+
+However, the following example would be a more elegant solution.
+
+[source,console]
+----
+IF ABS(answer-ideal)<0.5 THEN----
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=ABS(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+SGN
+----
+
+'''''
+

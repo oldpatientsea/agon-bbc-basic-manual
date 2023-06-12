@@ -1,0 +1,28 @@
+== [#erl]#ERL#
+
+A function returning the line number of the line where the last error occurred.
+
+[source,console]
+----
+X=ERL
+----
+
+If there was an error in a procedure call, the line number of the calling line would be returned, not the line number of the definition.
+
+The number returned by ERL is the line number printed out when BBC BASIC (Z80) reports an error.
+
+See the link:bbc2.html#errorhandling[Error Handling] sub-section for more information on error handling and correction.
+
+=== Syntax
+[source,console]
+----
+<n-var>=ERL
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+ON ERROR GOTO, ON ERROR OFF, REPORT, ERR
+----
+

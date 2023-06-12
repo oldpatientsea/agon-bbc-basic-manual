@@ -1,0 +1,35 @@
+== [#div]#DIV#
+
+A binary operation giving the integer quotient of two items. The result is always an integer.
+
+[source,console]
+----
+X=A DIV B
+y=(top+bottom+1) DIV 2
+----
+
+You can use this function to give the 'whole number' part of the answer to a division. For example,
+
+[source,console]
+----
+21 DIV 4
+----
+
+would give 5 (with a 'remainder' of 1).
+
+Whilst it is possible to use DIV with real numbers, it is really intended for use with integers. If you do use real numbers, BBC BASIC (Z80) converts them to integers by truncation before DIViding them.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=<numeric> DIV <numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+MOD
+----
+

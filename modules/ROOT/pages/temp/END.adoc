@@ -1,0 +1,22 @@
+== [#end]#END#
+
+A statement causing the interpreter to return to direct mode. There can be any number (>=0) of END statements anywhere in a program. END closes all open data files.
+
+END tells BBC BASIC (Z80) that it has reached the end of the program. You don't have to use END, just 'running out of program' will have the same effect, but it's a bit messy.
+
+You can use END within, for instance, an link:bbckey2.html#if[IF]...link:bbckey4.html#then[THEN]...link:#else[ELSE] statement to stop your program if certain conditions are satisfied. You should also use END to stop BBC BASIC (Z80) 'running into' any procedure or function definitions at the end of your program.
+
+=== Syntax
+
+[source,console]
+----
+END
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+STOP
+----
+

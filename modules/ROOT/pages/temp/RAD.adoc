@@ -1,0 +1,30 @@
+== [#rad]#RAD#
+
+A function which converts degrees to radians.
+
+[source,console]
+----
+X=RAD(Y)
+X=SIN RAD(90)
+----
+
+Unlike humans, BBC BASIC (Z80) wants angles expressed in radians. You can use this function to convert an angle expressed in degrees to radians before using one of the angle functions (link:#sin[SIN], link:bbckey1.html#cos[COS], etc).
+
+Using RAD is equivalent to multiplying the degree value by link:bbckey3.html#pi[PI]/180, but the result is calculated internally to a greater accuracy.
+
+See link:bbckey1.html#cos[COS], link:#sin[SIN] and link:#tan[TAN] for further examples of the use of RAD.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=RAD<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+DEG
+----
+

@@ -1,0 +1,24 @@
+== [#stop]#STOP#
+
+Syntactically identical to link:bbckey1.html#end[END], STOP also prints a message to the effect that the program has stopped.
+
+You can use STOP at various places in your program to aid debugging. If your program is going wrong, you can place STOP commands at various points to see the path taken by your program. (link:#trace[TRACE] is generally a more useful aid to tracing a program's flow unless you are using formatted screen displays.)
+
+Once your program has STOPped you can investigate the values of the variables to find out why things happened the way they did.
+
+STOP DOES NOT CLOSE DATA FILES. If you use STOP to exit a program for debugging, link:bbckey1.html#close[CLOSE] all the data files before link:#run[RUN]ning the program again. If you don't you will get some most peculiar error messages.
+
+=== Syntax
+
+[source,console]
+----
+STOP
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+END
+----
+

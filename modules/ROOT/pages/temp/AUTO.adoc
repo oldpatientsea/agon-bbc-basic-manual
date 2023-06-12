@@ -1,0 +1,40 @@
+== [#auto]#AUTO#, AU.
+
+A command allowing the user to enter lines without first typing in the number of the line. The line numbers are preceded by the usual prompt (>).
+
+You can use this command to tell the computer to type the line numbers automatically for you when you are entering a program (or part of a program).
+
+If AUTO is used on its own, the line numbers will start at 10 and go up by 10 for each line. However, you can specify the start number and the value by which the line numbers will increment. The step size can be in the range 1 to 255.
+
+You cannot use the AUTO command within a program or a multi-statement command line.
+
+You can leave the AUTO mode by pressing the escape key.
+
+[source,console]
+----
+AUTO start_number,step_size
+----
+
+[cols=",",]
+|==
+|`AUTO` |offers line numbers 10, 20, 30 ...
+|`AUTO 100` |starts at 100 with step 10
+|`AUTO 100,1` |starts at 100 with step 1
+|`AUTO ,2` |starts at 10 with step 2
+|==
+
+A hyphen is an acceptable alternative to a comma.
+
+=== Syntax
+
+[source,console]
+----
+AUTO [<n-const> [,<n-const>]]
+----
+
+=== Associated Keywords
+[source,console]
+----
+None
+----
+

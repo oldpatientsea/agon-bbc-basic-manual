@@ -1,0 +1,43 @@
+== [#openout]#OPENOUT#
+
+A function which opens a file for writing and returns the file handle of the file. This number must be used in subsequent references to the file with link:bbckey1.html#bput[BPUT#], link:bbckey4.html#print[PRINT#], link:bbckey2.html#ext[EXT#], link:bbckey4.html#ptr[PTR#] or link:bbckey1.html#close[CLOSE#]. If the specified file does not exist it is created. If the specified file already exists it is truncated to zero length.
+
+A returned value of zero indicates that the specified file could not be created.
+
+[source,console]
+----
+X=OPENOUT(A$)
+X=OPENOUT("DATAFILE")
+X=OPENOUT("LPT1")
+----
+
+You can also read from a file which has been opened using OPENOUT. This is of little use until you have written some data to it. However, once you have done so, you can move around the file using link:bbckey4.html#ptr[PTR#] and read back previously written data.
+
+Data is not written to the file at the time it is opened. Consequently, it is possible to successfully open a file on a full disk. Under these circumstances, a 'link:annexc.html#diskfull[Disk full]' error would be reported when you tried to write data to the file for the first time.
+
+The example below writes the contents of two arrays (tables) to a file called 'TOPTEN.BBC'.
+
+[source,console]
+----
+10 A=OPENOUT "TOPTEN"
+20 FOR Z=1 TO 10
+30   PRINT#A,N(Z),N$(Z)
+40 NEXT
+50 CLOSE#A
+60 END
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=OPENOUT(<str>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+OPENIN, OPENUP, CLOSE#, PTR#, PRINT#, INPUT#, BGET#, BPUT#,  EOF#
+----
+

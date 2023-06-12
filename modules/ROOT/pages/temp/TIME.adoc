@@ -1,0 +1,31 @@
+== [#time]#TIME$#, TI.
+
+A pseudo-variable which reads and sets the elapsed time clock by accessing the ESP32 RTC data.
+
+NB: This is a virtual string variable; at the moment only getting the time works. Setting is not yet implemented.
+
+Example:
+
+[source,console]
+----
+  10 REM CLOCK
+  20 : 
+  30 CLS
+  40 PRINT TAB(2,2); TIME$
+  50 GOTO 40
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=TIME$
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+None
+----
+

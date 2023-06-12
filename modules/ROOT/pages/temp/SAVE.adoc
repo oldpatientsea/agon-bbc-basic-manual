@@ -1,0 +1,49 @@
+== [#save]#SAVE#, SA.
+
+A statement which saves the current program area to a file, in internal (tokenised) format.
+
+[source,console]
+----
+SAVE "FRED.BBC"
+SAVE A$
+----
+
+You use SAVE to save your program for use at a later time. The program must be given a name (file-specifier) and this name becomes the name of the file in which your program is saved.
+
+The name (file-specifier) must follow the normal CP/M-80 naming conventions. See the link:opsys0.html[Operating System Interface] section for a description of a file-specifier (name).
+
+The following file extensions are supported:
+
+* `.BBC`: LOAD and SAVE in BBC BASIC for Z80 tokenised format
+* `.BAS`: LOAD and SAVE in plain text format (also `.TXT` and `.ASC`)
+
+Unless a different extension is specified in the file-specifier, .BBC is automatically used. Thus,
+
+[source,console]
+----
+SAVE "FRED"
+----
+
+would save the current program to a file called FRED.BBC in the current directory.
+
+If you want to exclude the extension, include the full-stop in the file name, but don't follow it with anything. For example, to save a program to a file called 'FRED', type,
+
+[source,console]
+----
+SAVE "FRED."
+----
+
+=== Syntax
+
+[source,console]
+----
+SAVE <str>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+LOAD, CHAIN
+----
+

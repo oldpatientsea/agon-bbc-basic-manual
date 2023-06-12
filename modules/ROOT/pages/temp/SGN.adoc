@@ -1,0 +1,35 @@
+== [#sgn]#SGN#
+
+A function returning -1 for negative argument, 0 for zero argument and +1 for positive argument.
+
+[source,console]
+----
+X=SGN(Y)
+result=SGN(answer)
+----
+
+You can use this function to determine whether a number is positive, negative or zero.
+
+SGN returns:
+
+[cols=",",]
+|==
+|+1 |for positive numbers
+|0 |for zero
+|-1 |for negative numbers
+|==
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=SGN(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+ABS
+----
+

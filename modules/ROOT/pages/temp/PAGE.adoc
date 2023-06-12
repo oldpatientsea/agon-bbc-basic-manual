@@ -1,0 +1,36 @@
+== [#page]#PAGE#, PA.
+
+A pseudo-variable controlling the starting address of the current user program area. It addresses the area where a program is (or will be) stored.
+
+[source,console]
+----
+PAGE=&3100
+PRINT ~PAGE
+PAGE=TOP+&100: REM Move to start of next page.
+----
+
+PAGE is automatically initialised by BBC BASIC (Z80) to the address of the lowest available page in RAM, but you may change it.
+
+If you make PAGE less than its original value or greater than the original value of link:bbckey2.html#himem[HIMEM], you will get a 'link:annexc.html#badprogram[Bad program]' error when you try to enter a program line and you may well crash BBC BASIC (Z80).
+
+If you make PAGE greater than HIMEM, a 'link:annexc.html#noroom[No room]' error will occur if the program exits to command level.
+
+With care, several programs can be left around in RAM without the need for saving them.
+
+USE WITH CARE.
+
+=== Syntax
+
+[source,console]
+----
+PAGE=<numeric>
+<n-var>=PAGE
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+TOP, LOMEM, HIMEM
+----
+

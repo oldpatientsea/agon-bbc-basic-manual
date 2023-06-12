@@ -1,0 +1,53 @@
+== [#string]#STRING$#
+
+A function returning N concatenations of a string.
+
+[source,console]
+----
+A$=STRING$(N,"hello")
+B$=STRING$(10,"-*-")
+C$=STRING$(Z%,S$)
+----
+
+You can use this function to print repeated copies of a string. It is useful for printing headings or underlinings. The last example for link:bbckey3.html#print[PRINT] uses the STRING$ function to print the column numbers across the page. For example,
+
+[source,console]
+----
+PRINT STRING$(4,"-=*=-")
+----
+
+would print
+
+[source,console]
+----
+-=*=--=*=--=*=--=*=-
+----
+
+and
+
+[source,console]
+----
+PRINT STRING$(3,"0123456789")
+----
+
+would print
+
+[source,console]
+----
+012345678901234567890123456789
+----
+
+=== Syntax
+
+[source,console]
+----
+<s-var>=STRING$(<numeric>,<str>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+None
+----
+

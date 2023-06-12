@@ -1,0 +1,20 @@
+== [#envelope]#ENVELOPE#
+
+A statement which is used, in conjunction with the link:bbckey4.html#sound[SOUND] statement, to control the pitch of a sound whilst it is playing.
+
+*_Not implemented_*
+
+=== Syntax
+
+[source,console]
+----
+ENVELOPE <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>, <numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+SOUND
+----
+

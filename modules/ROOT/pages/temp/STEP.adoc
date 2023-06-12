@@ -1,0 +1,34 @@
+== [#step]#STEP#, S.
+
+Part of the link:bbckey2.html#for[FOR] statement, this optional section specifies step sizes other than 1.
+
+[source,console]
+----
+FOR i=1 TO 20 STEP 5
+----
+
+The step may be positive or negative. STEP is optional; if it is omitted, a step size of +1 is assumed.
+
+You can use this optional part of the FOR...TO...STEP...NEXT structure to specify the amount by which the link:bbckey2.html#for[FOR]...link:bbckey3.html#next[NEXT] loop control variable is changed each time round the loop. In the example below, the loop control variable, 'cost' starts as 20, ends at 5 and is changed by -5 each time round the loop.
+
+[source,console]
+----
+10 FOR cost=20 TO 5 STEP -5
+20   PRINT cost,cost*1.15
+30 NEXT
+----
+
+=== Syntax
+
+[source,console]
+----
+FOR <n-var>=<numeric> TO <numeric> [STEP <numeric>]
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+FOR, TO, NEXT
+----
+

@@ -1,0 +1,36 @@
+== [#report]#REPORT#
+
+A statement which prints out the error string associated with the last error which occurred.
+
+You can use this statement within your own error handling routines to print out an error message for those errors you are not able to cope with.
+
+The example below is an error handling routine designed to cope only with the <ESCAPE> key being pressed. All other errors are reported and the program terminated.
+
+[source,console]
+----
+  10 ON ERROR GOTO 1000
+  20 ----.
+ 970 ----.
+ 980 END
+ 990 :
+1000 PRINT
+1010 IF ERR=17 THEN PRINT "<ESCAPE> ignored":GOTO 20
+1020 REPORT:PRINT " at line ";ERL
+----
+
+See the sub-section on link:bbc2.html#errorhandling[Error Handling] and the keywords link:bbckey2.html#err[ERR], link:bbckey2.html#erl[ERL] and link:bbckey3.html#onerror[ON ERROR] for more details.
+
+=== Syntax
+
+[source,console]
+----
+REPORT
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+ERR, ERL, ON ERROR
+----
+

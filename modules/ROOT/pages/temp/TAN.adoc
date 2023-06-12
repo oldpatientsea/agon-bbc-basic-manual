@@ -1,0 +1,34 @@
+== [#tan]#TAN#, T.
+
+A function giving the tangent of its radian argument.
+
+[source,console]
+----
+X = TAN(Y)
+----
+
+This function returns the tangent of an angle. The angle must be expressed in radians, not degrees.
+
+Whilst the computer is quite happy dealing with angles expressed in radians, you may prefer to express angles in degrees. You can use the link:#rad[RAD] function to convert an angle from degrees to radians.
+
+The example below sets Y to the tangent of the angle 'degree_angle' expressed in degrees.
+
+[source,console]
+----
+Y=TAN(RAD(degree_angle))
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=TAN<numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+COS, SIN, ACS, ATN, ASN, DEG, RAD
+----
+

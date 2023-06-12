@@ -1,0 +1,25 @@
+== [#sqr]#SQR#
+
+A function returning the square root of its argument.
+
+[source,console]
+----
+X=SQR(Y)
+----
+
+If you attempt to calculate the square root of a negative number, a 'link:annexc.html#negativeroot[-ve root]' error will occur. You could use error trapping to recover from this error, but it is better to check that the argument is not negative before using the SQR function.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=SQR(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+None
+----
+

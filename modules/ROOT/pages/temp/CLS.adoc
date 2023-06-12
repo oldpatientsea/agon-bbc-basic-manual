@@ -1,0 +1,18 @@
+== [#cls]#CLS#
+
+A statement which clears the text area of the screen and sets it to the currently selected text background colour. The text cursor is moved to the 'home' position (0,0) at the top left-hand corner of the text area.
+
+=== Syntax
+
+[source,console]
+----
+CLS
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+CLG, COLOUR
+----
+

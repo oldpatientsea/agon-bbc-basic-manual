@@ -1,0 +1,55 @@
+== [#left]#LEFT$#
+
+A string function which returns the left 'num' characters of the string. If there are insufficient characters in the source string, all the characters are returned.
+
+There must not be any spaces between LEFT$ and the opening bracket.
+
+[source,console]
+----
+newstring$=LEFT$(A$,num)
+A$=LEFT$(A$,2)
+A$=LEFT$(RIGHT$(A$,3),2)
+----
+
+For example,
+
+[source,console]
+----
+10 name$="BBC BASIC (Z80)"
+20 FOR i=3 TO 13
+30   PRINT LEFT$(name$,i)
+40 NEXT
+50 END
+----
+
+would print
+
+[source,console]
+----
+BBC
+BBCB
+BBCBA
+BBCBAS
+BBCBASI
+BBC BASIC
+BBC BASIC(
+BBC BASIC(8
+BBC BASIC(86
+BBC BASIC (Z80)
+BBC BASIC (Z80)
+----
+
+=== Syntax
+
+[source,console]
+----
+<s-var>=LEFT$(<str>,<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+RIGHT$, MID$, LEN, INSTR
+----
+

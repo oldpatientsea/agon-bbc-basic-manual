@@ -1,0 +1,39 @@
+== [#onerror]#ON ERROR#
+
+A statement controlling error trapping. If an ON ERROR statement has been encountered, BBC BASIC (Z80) will transfer control to it (without taking any reporting action) when an error is detected. This allows error reporting/recovery to be controlled by the program. However, the program control stack is still cleared when the error is detected and it is not possible to link:bbckey4.html#return[RETURN] to the point where the error occurred.
+
+ON ERROR OFF returns the control of error handling to BBC BASIC (Z80).
+
+[source,console]
+----
+ON ERROR PRINT"Suicide":END
+ON ERROR GOTO 100
+ON ERROR OFF
+----
+
+For example, the ON ERROR statement can be used to trap out the escape key to prevent a program being terminated at the wrong time by its accidental use.
+
+[source,console]
+----
+50 ON ERROR IF ERR=17 THEN 70
+60 PRINT:REPORT:PRINT " at line ";ERL:END
+70 : etc.
+----
+
+Error handling is explained more fully in the link:bbc2.html#errorhandling[General Information] section.
+
+=== Syntax
+
+[source,console]
+----
+ON ERROR <stmt>{:<stmt>}
+ON ERROR OFF
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+ON, GOTO, GOSUB, PROC
+----
+

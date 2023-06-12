@@ -1,0 +1,49 @@
+== [#len]#LEN#
+
+A function which returns the length of the argument string.
+
+[source,console]
+----
+X=LEN"fred"
+X=LENA$
+X=LEN(A$+B$)
+----
+
+This function 'counts' the number of characters in a string. For example,
+
+[source,console]
+----
+length=LEN("BBC BASIC (Z80)   ")
+----
+
+would set 'length' to 15 since the string consists of the 12 characters of BBC BASIC (Z80) followed by three spaces.
+
+LEN is often used with a link:#for[FOR]----link:bbckey3.html#next[NEXT] loop to 'work down' a string doing something with each letter in the string. For example, the following program looks at each character in a string and checks that it is a valid hexadecimal numeric character.
+
+ [source,console]
+----
+10 valid$="0123456789ABCDEF"
+ 20 REPEAT
+ 30   INPUT "Type in a HEX number" hex$
+ 40   flag=TRUE
+ 50   FOR i=1 TO LEN(hex$)
+ 60     IF INSTR(valid$,MID$(hex$,i,1))=0 flag=FALSE
+ 80   NEXT
+ 90   IF NOT flag THEN PRINT "Bad HEX"
+100 UNTIL flag
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=LEN(<str>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+LEFT$, MID$, RIGHT$, INSTR
+----
+

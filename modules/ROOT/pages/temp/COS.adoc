@@ -1,0 +1,35 @@
+== [#cos]#COS#
+
+A function giving the cosine of its radian argument.
+
+[source,console]
+----
+X=COS(angle)
+----
+
+This function returns the cosine of an angle. The angle must be expressed in radians, not degrees.
+
+Whilst the computer is quite happy dealing with angles expressed in radians, you may prefer to express angles in degrees. You can use the link:bbckey4.html#rad[RAD] function to convert an angle from degrees to radians.
+
+The example below sets Y to the cosine of the angle 'degree_angle' expressed in degrees.
+
+[source,console]
+----
+Y=COS(RAD(degree_angle))
+----
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=COS(<numeric>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+SIN, TAN, ACS, ASN, ATN, DEG, RAD
+----
+
+

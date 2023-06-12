@@ -1,0 +1,29 @@
+== [#oscli]#OSCLI#
+
+This command allows a string expression to be passed to the operating system. It overcomes the problems caused by the exclusion of variables in the star (*) commands. Using this statement, you can, for instance, erase and rename files whose names you only know at run-time.
+
+[source,console]
+----
+command$="ERA PHONE.DTA"
+OSCLI command$
+
+command$="REN ADDRESS.DTA=NAME.DTA"
+OSCLI command$
+----
+
+See the link:opsys0.html[Operating System Interface] section for more details.
+
+=== Syntax
+
+[source,console]
+----
+OSCLI <str>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+All operating system (*) commands.
+----
+

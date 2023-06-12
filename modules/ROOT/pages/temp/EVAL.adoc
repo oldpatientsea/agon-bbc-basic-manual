@@ -1,0 +1,45 @@
+== [#eval]#EVAL#, EV.
+
+A function which applies the interpreter's expression evaluation program to the characters held in the argument string.
+
+[source,console]
+----
+X=EVAL("X^Q+Y^P")
+X=EVAL"A$+B$"
+X$=EVAL(A$)
+----
+
+In effect, you pass the string to BBC BASIC (Z80)'s evaluation program and say 'work this out'.
+
+You can use this function to accept and evaluate an expression, such as a mathematical equation, whilst the program is running. You could, for instance, use it in a 'calculator' program to accept and evaluate the calculation you wished to perform. Another use would be in a graph plotting program to accept the mathematical equation you wished to plot.
+
+The example below is a 'bare bones' calculator program which evaluates the expression typed in by the user.
+
+[source,console]
+----
+10 PRINT "This program evaluates the expression"
+20 PRINT "you type in and prints the answer"
+30 REPEAT
+40   INPUT "Enter an expression" exp$
+50   IF exp$<>"END" PRINT EVAL exp$
+60 UNTIL exp$="END" 
+70 END
+----
+
+You can only use EVAL to work out functions (like link:bbckey4.html#sin[SIN], link:bbckey1.html#cos[COS], etc). It won't execute statements like link:bbckey3.html#mode[MODE 0], link:bbckey3.html#print[PRINT], etc.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=EVAL(<str>)
+<s-var>=EVAL(<str>)
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+STR$, VAL
+----
+

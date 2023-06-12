@@ -1,0 +1,47 @@
+== [#def]#DEF#
+
+A program object which must precede declaration of a user defined function (link:bbckey2.html#fn[FN]) or procedure (link:bbckey4.html#proc[PROC]). DEF must be used at the start of a program line.
+
+If DEF is encountered during execution, the rest of the line is ignored. As a consequence, single line definitions can be put anywhere in the program.
+
+Multi-line definitions must not be executed. The safest place to put multi-line definitions is at the end of the main program after the link:#end[END] statement.
+
+There is no speed advantage to be gained by placing function or procedure definitions at the start of the program.
+
+[source,console]
+----
+DEF FNMEAN ----
+DEF PROCJIM ----
+----
+
+In order to make the text more readable (always a GOOD THING) the function or procedure name may start with an underline.
+
+[source,console]
+----
+DEF FN_mean ----
+DEF PROC_Jim$ ----
+----
+
+Function and procedure names may end with a '$'. This is not compulsory for functions which return strings.
+
+A procedure definition is terminated by the statement link:#endproc[ENDPROC].
+
+A function definition is terminated by a statement which starts with an equals (=) sign. The function returns the value of the expression to the right of the equals sign.
+
+For examples of function and procedure declarations, see link:bbckey2.html#fn[FN] and link:bbckey4.html#proc[PROC]. For a general explanation of functions and procedures, refer to the link:bbc2.html#procedures[Procedures and Functions] sub-section in the link:bbc2.html[General Information] section.
+
+=== Syntax
+
+[source,console]
+----
+DEF PROC<name>[(<s-var>|<n-var>{,<s-var>|<n-var>})]
+DEF FN<name>[(<s-var>|<n-var>{,<s-var>|<n-var>})]
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+ENDPROC, FN, PROC
+----
+

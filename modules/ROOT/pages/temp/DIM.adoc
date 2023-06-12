@@ -1,0 +1,70 @@
+== [#dim]#DIM#
+
+There are two quite different uses for the DIM statement: the first dimensions an array and the second reserves an area of memory for special applications.
+
+=== [#dimarrays]#Dimensioning Arrays#
+
+The DIM statement is used to declare arrays. Arrays must be pre-declared before use and they must not be re-dimensioned. Both numeric and string arrays may be multi dimensional.
+
+[source,console]
+----
+DIM A(2),Ab(2,3),A$(2,3,4),A%(3,4,5,6)
+----
+
+After DIM, all elements in the array are 0/null.
+
+The subscript base is 0, so `DIM X(12)` defines an array of 13 elements.
+
+Arrays are like lists or tables. A list of names is a single dimension array. In other words, there is only one column - the names. Its single dimension in a DIM statement would be the maximum number of names you expected in the table less 1.
+
+If you wanted to describe the position of the pieces on a chess board you could use a two dimensional array. The two dimensions would represent the row (numbered 0 to 7) and the column (also numbered 0 to 7). The contents of each 'cell' of the array would indicate the presence (if any) of a piece and its value.
+
+[source,console]
+----
+DIM chess_board(7,7)
+----
+
+Such an array would only represent the chess board at one moment of play. If you wanted to represent a series of board positions you would need to use a three dimensional array. The third dimension would represent the 'move number'. Each move would use about 320 bytes of memory, so you could record 40 moves in about 12.5k bytes.
+
+[source,console]
+----
+DIM chess_game(7,7,40)
+----
+
+=== [#dimreserving]#Reserving an Area of Memory#
+
+A DIM statement is used to reserve an area of memory which the interpreter will not then use. The variable in the DIM statement is set by BBC BASIC (Z80) to the start address of this memory area. This reserved area can be used by the indirection operators, machine code, etc.
+
+The example below reserves 68 bytes of memory and sets A% equal to the address of the first byte. Thus A%?0 to A%?67 are free for use by the program (68 bytes in all):
+
+[source,console]
+----
+DIM A% 67
+----
+
+A 'link:annexc.html#dimspace[DIM space]' error will occur if a size of less than -1 is used (DIM P% -2). DIM P%-1 is a special case; it reserves zero bytes of memory. This is of more use than you might think, since it tells you the limit of the dynamic variable allocation. Thus,
+
+[source,console]
+----
+DIM P% -1
+PRINT HIMEM-P%
+----
+
+is the equivalent of PRINT FREE(0) in some other versions of BASIC. See the link:bbc3.html[Assembler] section for a more detailed description of the use of DIM for reserving memory for machine code programs.
+
+=== Syntax
+
+[source,console]
+----
+DIM <n-var>|<s-var>(<numeric>{,<numeric>})
+DIM <n-var> <numeric>
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+CLEAR
+----
+
+

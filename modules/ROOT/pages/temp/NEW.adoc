@@ -1,0 +1,27 @@
+== [#new]#NEW#
+
+A command which initialises the interpreter for a new program to be typed in. The old program may be recovered with the link:#old[OLD] command provided no new program lines have been typed in or deleted and no variables have been created.
+
+[source,console]
+----
+NEW
+----
+
+This command effectively 'removes' a program from the computer's memory. In reality, the program is still there, but BBC BASIC (Z80) has been told to forget about it.
+
+If you have made a mistake, you can recover your old program by typing link:#old[OLD]. However, this won't work if you have begun to enter a new program.
+
+=== Syntax
+
+[source,console]
+----
+NEW
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+OLD
+----
+

@@ -1,0 +1,31 @@
+== [#local]#LOCAL#
+
+A statement to declare variables for local use inside a function (link:#fn[FN]) or procedure (link:bbckey4.html#proc[PROC]). A null list of variables is not permitted.
+
+[source,console]
+----
+LOCAL A$,X,Y%
+----
+
+LOCAL saves the values of its arguments in such a way that they will be restored at '=' or link:bbckey1.html#endproc[ENDPROC].
+
+If a function or a procedure is used recursively, the LOCAL variables will be preserved at each level.
+
+The LOCAL variables are initialised to zero/null.
+
+See the keyword link:bbckey3.html#onerrorlocal[ON ERROR LOCAL] for details of local error trapping.
+
+=== Syntax
+
+[source,console]
+----
+LOCAL <n-var>|<s-var>{,<n-var>|<s-var>}
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+DEF, ENDPROC, FN, PROC
+----
+

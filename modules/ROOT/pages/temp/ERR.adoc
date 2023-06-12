@@ -1,0 +1,27 @@
+== [#err]#ERR#
+
+A function returning the error code number of the last error which occurred (see the Annex entitled link:annexc.html[Error Messages and Codes]).
+
+[source,console]
+----
+X=ERR
+----
+
+Once you have assumed responsibility for error handling using the link:bbckey3.html#onerror[ON ERROR] statement, you can use this function to discover which error occurred.
+
+See the link:bbc2.html#errorhandling[Error Handling] sub-section for more information on error handling and correction.
+
+=== Syntax
+
+[source,console]
+----
+<n-var>=ERR
+----
+
+=== Associated Keywords
+
+[source,console]
+----
+ON ERROR GOTO, ON ERROR OFF, ERL, REPORT
+----
+
