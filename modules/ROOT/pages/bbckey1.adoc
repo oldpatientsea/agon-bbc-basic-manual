@@ -1140,18 +1140,14 @@ Instead of implenting an EDIT keywords, BBC BASIC for Z80 (Agon) delegates this 
 
 Remember therefore to use the `*` key when calling it.
 
-A command to edit or concatenate and edit the specified program line(s). The specified lines (including their line numbers) are listed as a single line. By changing only the line number, you can also use EDIT to duplicate a line.
+A command to edit specified lines. By changing only the line number, you can also use EDIT to duplicate a line.
 
 [source,console]
 ----
 *EDIT 230
 ----
 
-[cols="^,",]
-|==
-|Enter |Enter the line and exit the edit mode
-|Esc |Abort and leave the line unchanged
-|==
+To save your changes and exit the edit mode, press <Enter>.
 
 To abort the single line editor and leave the line unchanged, press <Esc>.
 
@@ -1160,7 +1156,6 @@ To abort the single line editor and leave the line unchanged, press <Esc>.
 [source,console]
 ----
 EDIT <l-num>
-EDIT <l-num>,<l-num>
 ----
 
 === Associated Keywords
