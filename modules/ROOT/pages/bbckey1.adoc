@@ -1134,13 +1134,11 @@ DRAW <numeric>,<numeric>
 MODE, PLOT, MOVE, CLG, VDU, GCOL
 ----
 
-== [#edit]#EDIT#, E.
-
-Instead of implenting an EDIT keywords, BBC BASIC for Z80 (Agon) delegates this functionality to the MOS command of the same name.
-
-Remember therefore to use the `*` key when calling it.
+== [#edit]#* EDIT#
 
 A command to edit specified lines. By changing only the line number, you can also use EDIT to duplicate a line.
+
+WARNING: Instead of implementing an EDIT keyword, BBC BASIC (Z80) for the Agon Light delegates this functionality to the MOS command of the same name. Because EDIT is a MOS command, you need to prefix any call to it using `*`. It is very easy to trip up and forget this!
 
 [source,console]
 ----
