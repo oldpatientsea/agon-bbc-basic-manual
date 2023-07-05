@@ -772,9 +772,9 @@ Plot supports the following operations:
 
 WARNING: For those familiar with BASIC on the original BBC Micro, relative coordinates and plot modes like invert are not currently implemented. For example, PLOT 70 does not plot the inverse of a given point. 
 
-BBC BASIC by default uses pixel coordinates that run from 0 to 1280 left-to-right and from 0 to 1024 bottom to top. This means that you can change modes and anything you draw will still appear in the same position on screen despite the physical resolution being different.
+BBC BASIC by default uses logical coordinates that run from 0 to 1280 left-to-right and from 0 to 1024 bottom to top. This logical screen is the same size in all screen modes with the same aspect ratio irrespective of the number of physical pixels. This means that you can run the same code under different modes and anything you draw will still appear in the same position on screen despite the physical resolution being different.
 
-The point 640x512 will always appear at the centre of the screen.
+The point 640,512 will always appear at the centre of the screen.
 
 [NOTE] 
 ====
