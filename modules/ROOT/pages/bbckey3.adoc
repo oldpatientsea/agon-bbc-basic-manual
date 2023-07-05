@@ -765,10 +765,24 @@ Plot supports the following operations:
 
 * 4: Move
 * 5: Line
+* 69: Plot a single point
 * 80: Filled Triangle
 * 144: Circle with radius specified either by x or y
 * 148: Circle passing through point x,y
 
+WARNING: For those familiar with BASIC on the original BBC Micro, relative coordinates and plot modes like invert are not currently implemented. For example, PLOT 70 does not plot the inverse of a given point. 
+
+BBC BASIC by default uses pixel coordinates that run from 0 to 1280 left-to-right and from 0 to 1024 bottom to top. This means that you can change modes and anything you draw will still appear in the same position on screen despite the physical resolution being different.
+
+The point 640x512 will always appear at the centre of the screen.
+
+NOTE: 
+===
+You can switch to using normal (non-BBC BASIC, non-scaled) PLOT coordinates by calling:
+---
+VDU 23,0,192,0
+---
+===
 
 === Syntax
 
