@@ -779,9 +779,9 @@ The point 640x512 will always appear at the centre of the screen.
 [NOTE] 
 ====
 You can switch to using normal (non-BBC BASIC, non-scaled) PLOT coordinates by calling:
----
+----
 VDU 23,0,192,0
----
+----
 ====
 
 === Syntax
