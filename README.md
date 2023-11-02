@@ -1,5 +1,11 @@
 # agon-bbc-basic-manual
 
+Note: if you wish to read the manual, you can find it online here: https://oldpatientsea.github.io/agon-bbc-basic-manual/0.1/bbc1.html
+
+Greetings Console8 owners - the manual has not yet been updated to include mentions of your platform but applies equally well to the version of BASIC that you will be running. This is a work in progress and will be updated when the current release candidates for Quark (MOS/VDP/BBC BASIC) are formally released. Because of other demands on my time, it makes more sense for me to wait until then rather than to track the beta versions and continue to revise the documentation as features are added and changed. Most of the changes apply to MOS and VDP so the description of BBC BASIC should remain relatively unchanged.
+
+## About
+
 This repository contains source needed to generate an adaptation of R.T. Russell’s BBC BASIC (Z80) Manual to describe the implementation of BBC BASIC on the Agon light™ and AgonLight 2. It is made with the permission of the original author, using information from Dean Belfield’s wiki with his consent.
 
 Documentation is written in asciidoc and asciidoctor will be used to generate HTML, ePUB and PDF output.
