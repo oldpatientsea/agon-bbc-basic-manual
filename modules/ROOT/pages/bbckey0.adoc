@@ -22,7 +22,7 @@ The following symbols have special meaning in the syntax definitions.
 
 [cols="^,",]
 |===
-|\{ } |The enclosed item may be repeated zero or more times.
+|{ } |The enclosed item may be repeated zero or more times.
 |[ ] |The items enclosed are optional, they may occur zero or one time.
 || |Indicates alternatives; one of which must be used.
 |<stmt> |Means a BBC BASIC (Z80) statement.
