@@ -1,3 +1,7 @@
+# Project Archived
+
+Sorry but I no longer have time to maintain this and am archiving the repository. Please feel free to fork and make any adjustments there.
+
 # agon-bbc-basic-manual
 
 Note: if you wish to read the manual, you can find it online here: https://oldpatientsea.github.io/agon-bbc-basic-manual/0.1/bbc1.html
